@@ -3,6 +3,7 @@ import Nav from './components/nav'
 import Info from './components/info'
 import Search from './components/search'
 import ConteinerCard  from './components/conteinerCard'
+import Modal from './components/Modal/modal'
 
 function App() {
 

@@ -5,13 +5,20 @@ import iconBook from '../images/bookIcon.svg'
 import iconBookBlank from '../images/bookIcon_blank.svg'
 import imgCat from '../images/Rectangle 1.png'
 
+import Modal from './Modal/modal'
+
 
 export default function Nav() {
 
   const [toggleMenu, setToggleMenu] = useState("burguerMenu sm:hidden");
   const [lowerMenu, setLowerMenu] = useState("desployMenu sm:hidden");
 
+  const [toggleOpen, setToggleOpen] = useState(false);
 
+
+  const openModal = (newValue:boolean) => {
+    setToggleOpen(newValue);
+  }
 
   return (
     <div>
@@ -36,7 +43,7 @@ export default function Nav() {
             <div className="relative w-20 h-16"><img src={iconNameBlank} className="object-cover w-24 h-24 sm:hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"/></div>
         </div>
         <div className="flex m-5 items-center z-10">
-            <button className="mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple max-sm:hidden"> Iniciar Sesion </button>
+            <button className="mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple max-sm:hidden" onClick={()=>{openModal(toggleOpen)}}> Iniciar Sesion </button>
             <button className="mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-neutral-50 bg-vet-purple rounded-lg hover:text-vet-purple hover:bg-neutral-50 max-sm:hidden"> Registrate Aquí </button>
         </div>
         <img src={imgCat} className="absolute right-0 top-0 z-[-1] max-sm:opacity-20"/>
@@ -54,6 +61,7 @@ export default function Nav() {
           <a href="#" className="text-white text-xs my-2">¿No tiene Cuenta?. Registrate Aquí</a>
         </form>
       </div>  
+      <Modal/>
     </div>
   )
 }
