@@ -55,17 +55,6 @@
     transform: translate(-50%, -50%) rotate(-45deg);
 }
 
-.desployedMenu{
-    background-color: #410756;
-    width: 100%;
-    overflow: hidden;
-    position: absolute;
-    animation-name: desployed;
-    animation-duration: 1s;
-    z-index: 10;
-    height: 100%;
-}
-
 .desployMenu{
     width: 100%;
     background-color: #410756;
@@ -74,11 +63,22 @@
     position: absolute;
     z-index: 10;
 
+    height: 0%;
     animation-name: contract;
     animation-duration: 1s;
     transition: 1s;
-    height: 0%;
 }
+.desployedMenu{
+    background-color: #410756;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    animation-name: desployed;
+    animation-duration: 0.5s;
+    z-index: 10;
+    height: 100%;
+}
+
 
 @keyframes contract {
     from {height: 100%}
