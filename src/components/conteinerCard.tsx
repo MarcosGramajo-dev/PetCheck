@@ -13,6 +13,10 @@ export default function ContainerTarjet(){
                 <Card/>
                 <Card/>
                 <Card/>
+                <Card/>
+                <Card/>
+                <Card/>
+                <Card/>
             </div>
         </div>
     )
