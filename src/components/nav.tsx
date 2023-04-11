@@ -11,7 +11,7 @@ import Modal from './Modal/modal'
 export default function Nav() {
 
   const [toggleMenu, setToggleMenu] = useState("burguerMenu sm:hidden");
-  const [lowerMenu, setLowerMenu] = useState("");
+  const [lowerMenu, setLowerMenu] = useState("sm:hidden h-0 overflow-hidden");
 
   const [toggleOpen, setToggleOpen] = useState(false);
 
@@ -23,13 +23,13 @@ export default function Nav() {
   return (
     <div>
       <div className="flex w-auto my-0 justify-between items-center m-auto max-sm:bg-vet-purple-dark relative">
-        <div className={toggleMenu} onClick={ ()=> { if(toggleMenu === 'burguerMenu sm:hidden' || toggleMenu === ""){
-          setToggleMenu("crossMenu sm:hidden") 
-          setLowerMenu("desployedMenu sm:hidden")
-        }
-        else{
+        <div className={toggleMenu} onClick={ ()=> { if(toggleMenu != 'burguerMenu sm:hidden'){
           setToggleMenu("burguerMenu sm:hidden")
           setLowerMenu("desployMenu sm:hidden")
+        }
+        else{
+          setToggleMenu("crossMenu sm:hidden") 
+          setLowerMenu("desployedMenu sm:hidden")
         }
         }}>
           <div></div>

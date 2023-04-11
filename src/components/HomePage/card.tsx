@@ -1,12 +1,12 @@
-import Bag from '../images/icons/bag.svg'
-import Car from '../images/icons/car.svg'
-import Emergency from '../images/icons/emergency.svg'
-import Local24 from '../images/icons/local_24.svg'
-import Shower from '../images/icons/shower.svg'
-import Vet from '../images/localVet.jpg'
-import Facebook from '../images/redes/Facebook.svg'
-import Instagram from '../images/redes/Instagram.svg'
-import Whatsapp from '../images/redes/Whatsapp.svg'
+import Bag from '../../images/icons/bag.svg'
+import Car from '../../images/icons/car.svg'
+import Emergency from '../../images/icons/emergency.svg'
+import Local24 from '../../images/icons/local_24.svg'
+import Shower from '../../images/icons/shower.svg'
+import Vet from '../../images/localVet.jpg'
+import Facebook from '../../images/redes/Facebook.svg'
+import Instagram from '../../images/redes/Instagram.svg'
+import Whatsapp from '../../images/redes/Whatsapp.svg'
 
 export default function Card(){
     return(
