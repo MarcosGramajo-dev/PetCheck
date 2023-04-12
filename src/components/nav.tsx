@@ -16,11 +16,23 @@ export default function Nav() {
   const [lowerMenu, setLowerMenu] = useState("sm:hidden h-0 overflow-hidden");
   const [state, setState] = useState(false)
 
-  const [toggleOpen, setToggleOpen] = useState(false);
+  const [toggleOpen, setToggleOpen] = useState(true);
 
 
   const openModal = (newValue:boolean) => {
     setToggleOpen(newValue);
+  }
+
+  function changeState(){
+    if(state){
+
+      setToggleMenu("burguerMenu sm:hidden")
+      setLowerMenu("desployMenu sm:hidden")
+    }
+    else{
+      setToggleMenu("crossMenu sm:hidden") 
+      setLowerMenu("desployedMenu sm:hidden")
+    }
   }
 
   function menuMobile(sesion:boolean){
@@ -28,7 +40,7 @@ export default function Nav() {
       return(
         <div className="border-t-2 border-vet-purple-light w-11/12 m-auto flex flex-col justify-between h-full">
           <div className="w-full pt-20">
-          <Link to="gestion"><button onClick={()=>{setToggleMenu("burguerMenu"); setLowerMenu("sm:hidden h-0 overflow-hidden")}} className="my-1 h-12 w-full m-auto border-2 border-vet-purple-dark text-vet-purple-dark bg-white hover:bg-vet-purple-dark hover:border-white hover:text-white"> Gestion </button> </Link>
+          <Link to="gestion"><button onClick={()=>{setState(!state); changeState()}} className="my-1 h-12 w-full m-auto border-2 border-vet-purple-dark text-vet-purple-dark bg-white hover:bg-vet-purple-dark hover:border-white hover:text-white"> Gestion </button> </Link>
           <button className="my-1 h-12 w-full m-auto border-2 border-vet-purple-dark text-vet-purple-dark bg-white hover:bg-vet-purple-dark hover:border-white hover:text-white"> Perfil </button>
           </div>
           <div>
@@ -78,17 +90,7 @@ export default function Nav() {
   return (
     <div>
       <div className="flex w-full z-50 my-0 justify-between items-center m-auto max-sm:bg-vet-purple-dark relative max-sm:fixed">
-        <div className={toggleMenu} onClick={ ()=> { if(toggleMenu != 'burguerMenu sm:hidden'){
-          setToggleMenu("burguerMenu sm:hidden")
-          setLowerMenu("desployMenu sm:hidden")
-        }
-        else{
-          setToggleMenu("crossMenu sm:hidden") 
-          setLowerMenu("desployedMenu sm:hidden")
-        }
-
-
-        }}>
+        <div className={toggleMenu} onClick={ ()=> { setState(!state); changeState() }}>
           <div></div>
           <div></div>
           <div></div>
