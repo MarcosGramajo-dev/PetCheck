@@ -44,7 +44,7 @@ export default function Nav() {
           <button className="my-1 h-12 w-full m-auto border-2 border-vet-purple-dark text-vet-purple-dark bg-white hover:bg-vet-purple-dark hover:border-white hover:text-white"> Perfil </button>
           </div>
           <div>
-            <button className="my-3 h-12 w-full m-auto text-white bg-vet-red hover:bg-white hover:text-vet-red"> Salir </button>
+            <button className="my-3 h-12 w-full m-auto mb-10 text-white bg-vet-red hover:bg-white hover:text-vet-red"> Salir </button>
           </div>
         </div>
       )
