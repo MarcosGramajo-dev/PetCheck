@@ -12,7 +12,7 @@ import Modal from './Modal/modal'
 
 export default function Nav() {
 
-  const [toggleMenu, setToggleMenu] = useState("burguerMenu");
+  const [toggleMenu, setToggleMenu] = useState("burguerMenu sm:hidden");
   const [lowerMenu, setLowerMenu] = useState("sm:hidden h-0 overflow-hidden");
   const [state, setState] = useState(false)
 
@@ -24,8 +24,8 @@ export default function Nav() {
   }
 
   function changeState(){
+    setState(!state)
     if(state){
-
       setToggleMenu("burguerMenu sm:hidden")
       setLowerMenu("desployMenu sm:hidden")
     }
@@ -40,11 +40,11 @@ export default function Nav() {
       return(
         <div className="border-t-2 border-vet-purple-light w-11/12 m-auto flex flex-col justify-between h-full">
           <div className="w-full pt-20">
-          <Link to="gestion"><button onClick={()=>{setState(!state); changeState()}} className="my-1 h-12 w-full m-auto border-2 border-vet-purple-dark text-vet-purple-dark bg-white hover:bg-vet-purple-dark hover:border-white hover:text-white"> Gestion </button> </Link>
+          <Link to="gestion"><button onClick={()=> changeState()} className="my-1 h-12 w-full m-auto border-2 border-vet-purple-dark text-vet-purple-dark bg-white hover:bg-vet-purple-dark hover:border-white hover:text-white"> Gestion </button> </Link>
           <button className="my-1 h-12 w-full m-auto border-2 border-vet-purple-dark text-vet-purple-dark bg-white hover:bg-vet-purple-dark hover:border-white hover:text-white"> Perfil </button>
           </div>
           <div>
-            <button className="my-3 h-12 w-full m-auto mb-10 text-white bg-vet-red hover:bg-white hover:text-vet-red"> Salir </button>
+            <button className="my-3 h-12 w-full m-auto mb-16 text-white bg-vet-red hover:bg-white hover:text-vet-red"> Salir </button>
           </div>
         </div>
       )
@@ -90,17 +90,22 @@ export default function Nav() {
   return (
     <div>
       <div className="flex w-full z-50 my-0 justify-between items-center m-auto max-sm:bg-vet-purple-dark relative max-sm:fixed">
-        <div className={toggleMenu} onClick={ ()=> { setState(!state); changeState() }}>
+        <div className={toggleMenu} onClick={ ()=> changeState() }>
           <div></div>
           <div></div>
           <div></div>
         </div>
-        <div className=" mx-5 z-10">
+        <div className=" mx-5 z-10 flex">
           <Link to="/" className="flex justify-center items-center">
             <img src={iconBook} className="w-20 mx-3 max-sm:hidden pt-3"/>
             <img src={iconName} className="w-36 max-sm:hidden pt-3"/>
-            <div className="relative w-16 h-16"><img src={iconBookBlank} className="object-cover w-24 h-24 sm:hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"/></div>
-            <div className="relative w-20 h-16"><img src={iconNameBlank} className="object-cover w-24 h-24 sm:hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"/></div>
+          </Link>
+
+          <Link onClick={ ()=> state ? changeState() : "" } to="/" className="flex justify-center items-center">
+            <div className="flex">
+              <div className="relative w-16 h-16"><img src={iconBookBlank} className="object-cover w-24 h-24 sm:hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"/></div>
+              <div className="relative w-20 h-16"><img src={iconNameBlank} className="object-cover w-24 h-24 sm:hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"/></div>
+            </div>
           </Link>
         </div>
         {btnDesktop(true)}
