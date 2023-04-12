@@ -60,7 +60,7 @@
     background-color: #410756;
     
     overflow: hidden;
-    position: absolute;
+    position: fixed;
     z-index: 10;
 
     height: 0%;
@@ -72,22 +72,36 @@
     background-color: #410756;
     width: 100%;
     overflow: hidden;
-    position: absolute;
+    position: fixed;
     animation-name: desployed;
     animation-duration: 0.5s;
     z-index: 10;
+    height: 100vh;
+}
+
+.expand{
+    overflow: hidden;
+    z-index: 10;
+    height: 10%;
+    animation-name: contract;
+    animation-duration: 1s;
+}
+.contract{
+    overflow: hidden;
+    animation-name: desployed;
+    animation-duration: 0.5s;
     height: 100%;
 }
 
 
 @keyframes contract {
-    from {height: 100%}
+    from {height: 100vh}
     to {height: 0;}
     }
 
 @keyframes desployed {
     from {height: 0;}
-    to {height: 100%;}
+    to {height: 100vh;}
   }
 
 

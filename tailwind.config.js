@@ -8,6 +8,7 @@ module.exports = {
         'vet-purple': '#8842CF',
         'vet-purple-light': '#E7DDF1',
         'vet-blue': '#6C74BB',
+        'vet-red': '#F55C5C'
       }
     },
   },
