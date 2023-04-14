@@ -16,11 +16,11 @@ export default function Nav() {
   const [lowerMenu, setLowerMenu] = useState("sm:hidden h-0 overflow-hidden");
   const [state, setState] = useState(false)
 
-  const [toggleOpen, setToggleOpen] = useState(true);
+  const [showModal, setShowModal] = useState(false);
 
 
-  const openModal = (newValue:boolean) => {
-    setToggleOpen(newValue);
+  function toggleOpen():void {
+    setShowModal(!showModal)
   }
 
   function changeState(){
@@ -60,7 +60,7 @@ export default function Nav() {
           <div className="relative w-60 object-cover my-2">
             <input className="w-60 rounded-lg px-2"  type="password" placeholder='Password'/>
           </div>
-          <button className="mx-1 w-32 px-4 h-8 border bg-white border-vet-purple-dark text-vet-purple-dark rounded-lg hover:text-white hover:bg-vet-purple-dark hover:border-white text-sm">Iniciar Sesion</button>
+          <button onClick={()=> toggleOpen()} className="mx-1 w-32 px-4 h-8 border bg-white border-vet-purple-dark text-vet-purple-dark rounded-lg hover:text-white hover:bg-vet-purple-dark hover:border-white text-sm">Iniciar Sesion</button>
           <a href="#" className="text-white text-xs my-2">¿No tiene Cuenta?. Registrate Aquí</a> {/* FALTA CREAR VISTA */}
         </form>
       )
@@ -79,7 +79,7 @@ export default function Nav() {
     } else{
       return(
         <div className="flex m-5 items-center z-10">
-          <button className="min-w-[120px] mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple max-sm:hidden" onClick={()=>{openModal(toggleOpen)}}> Iniciar Sesion </button>
+          <button className="min-w-[120px] mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple max-sm:hidden" onClick={()=>{toggleOpen()}}> Iniciar Sesion </button>
           <button className="min-w-[120px] mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-neutral-50 bg-vet-purple rounded-lg hover:text-vet-purple hover:bg-neutral-50 max-sm:hidden"> Registrate Aquí </button>
         </div>
         
@@ -108,15 +108,15 @@ export default function Nav() {
             </div>
           </Link>
         </div>
-        {btnDesktop(true)}
+        {btnDesktop(false)}
       </div>
         <img src={imgCat} className="absolute right-0 top-0 z-[-1] max-sm:opacity-20"/>
       <div className={lowerMenu}>
         
-        {menuMobile(true)}
+        {menuMobile(false)}
         
       </div>  
-      <Modal/>
+      <Modal toggleOpen={toggleOpen} show={showModal} modalType={"login"} />
     </div>
   )
 }

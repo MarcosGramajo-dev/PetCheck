@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import ArrowDown from '../../images/icons/arrow_down.svg'
+import Modal from '../Modal/modal'
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -59,6 +60,13 @@ export const data = {
 export default function gestion(){
 const [toggleExpand, setToggleExpand] = useState('')
 
+const [showModal, setShowModal] = useState(false);
+
+
+function toggleOpen():void {
+  setShowModal(!showModal)
+}
+
     return(
         <div className="mt-20">
             <div onClick={() => { /*toggleExpand === 'expand' ? setToggleExpand('contract') : setToggleExpand('expand')*/ }} className={toggleExpand + " " + "border-4 border-vet-purple-light w-11/12 m-auto bg-white/80 flex-col justify-start items-center rounded-lg my-5 cursor-pointer h-auto"}>
@@ -74,7 +82,7 @@ const [toggleExpand, setToggleExpand] = useState('')
             <div className="border-4 border-vet-purple-light w-11/12 m-auto bg-white flex-col justify-start items-center rounded-lg my-5 pb-3">
                 <div className="flex items-center justify-between px-5">
                     <p className="text-vet-blue pl-3">Venta Diaria</p>
-                    <button className="my-2 duration-300 text-xs px-4 h-6 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple"> Agregar Venta </button>
+                    <button onClick={()=> toggleOpen()} className="my-2 duration-300 text-xs px-4 h-6 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple"> Agregar Venta </button>
                 </div>
                 <div className=" overflow-x-auto px-3">
                     <table className="w-11/12 m-auto min-w-[32rem]">
@@ -110,6 +118,7 @@ const [toggleExpand, setToggleExpand] = useState('')
                     </table>
                 </div>
             </div>
+            <Modal toggleOpen={toggleOpen} show={showModal} modalType={"newSell"}/>
         </div>
     )
 }

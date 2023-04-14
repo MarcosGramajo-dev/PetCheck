@@ -4,15 +4,20 @@ import Close from '../../images/icons/close.svg'
 
 import Login from './login'
 import NewSell from './newSell'
+interface IProps {
+  show: boolean,
+  toggleOpen(): void,
+  modalType: string
+}
 
-export default function Example() {
-  const [open, setOpen] = useState(false)
+export default function Modal(props:IProps) {
+  // const [open, setOpen] = useState(false)
 
   const cancelButtonRef = useRef(null)
 
   return (
-    <Transition.Root show={open} as={Fragment}>
-      <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={setOpen}>
+    <Transition.Root show={props.show} as={Fragment}>
+      <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={props.toggleOpen}>
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"
@@ -38,9 +43,9 @@ export default function Example() {
             >
 
               <Dialog.Panel className="w-full py-5 px-3 relative transform overflow-hidden rounded-lg border-vet-purple-light border-4 bg-white text-left shadow-xl transition-all sm:my-8 max-sm:w-full sm:max-w-lg">
-              <div onClick={() => setOpen(!open)} className="absolute right-[-0.5rem] top-[-0.5rem] w-10 h-10 p-2 rounded-full bg-vet-purple-light"> <img src={Close} alt="#" /> </div>
-              {false ? <Login/> : ""}
-              {false ? <NewSell/> : ""}
+              <div onClick={() => props.toggleOpen()} className="cursor-pointer absolute right-[-0.5rem] top-[-0.5rem] w-10 h-10 p-2 rounded-full bg-vet-purple-light"> <img src={Close} alt="#" /> </div>
+              {props.modalType === "login" ? <Login/> : null}
+              {props.modalType === "newSell" ? <NewSell/> : null}
 
               </Dialog.Panel>
             </Transition.Child>
