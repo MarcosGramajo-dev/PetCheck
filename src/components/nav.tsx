@@ -61,7 +61,9 @@ export default function Nav() {
             <input className="w-60 rounded-lg px-2"  type="password" placeholder='Password'/>
           </div>
           <button onClick={()=> toggleOpen()} className="mx-1 w-32 px-4 h-8 border bg-white border-vet-purple-dark text-vet-purple-dark rounded-lg hover:text-white hover:bg-vet-purple-dark hover:border-white text-sm">Iniciar Sesion</button>
-          <a href="#" className="text-white text-xs my-2">¿No tiene Cuenta?. Registrate Aquí</a> {/* FALTA CREAR VISTA */}
+          <Link to="register">
+            <a href="#" className="text-white text-xs my-2">¿No tiene Cuenta?. Registrate Aquí</a>
+          </Link>
         </form>
       )
     }
@@ -80,7 +82,9 @@ export default function Nav() {
       return(
         <div className="flex m-5 items-center z-10">
           <button className="min-w-[120px] mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple max-sm:hidden" onClick={()=>{toggleOpen()}}> Iniciar Sesion </button>
-          <button className="min-w-[120px] mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-neutral-50 bg-vet-purple rounded-lg hover:text-vet-purple hover:bg-neutral-50 max-sm:hidden"> Registrate Aquí </button>
+          <Link to="register">
+            <button className="min-w-[120px] mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-neutral-50 bg-vet-purple rounded-lg hover:text-vet-purple hover:bg-neutral-50 max-sm:hidden"> Registrate Aquí </button>
+          </Link>
         </div>
         
       )
