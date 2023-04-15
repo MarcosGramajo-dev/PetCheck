@@ -1,5 +1,7 @@
+import Provincias from './provincias'
 
 export default function Register(){
+
     return(
         <div className="w-full h-full flex justify-center items-center ">
             <div className="max-sm:w-full max-sm:border-0 w-11/12 p-5 m-auto my-20 bg-white border-8 border-vet-purple-light rounded-lg max-w-[900px] flex flex-col justify-center">
@@ -13,6 +15,7 @@ export default function Register(){
                             <input type="number" placeholder="Numero de Matricula" className="my-3 mx-3 min-w-[200px] max-[500px]:w-full w-auto border-b-2 border-vet-purple-light"/>
                         </div>
                         <div className="flex justify-between flex-wrap"> 
+                            <Provincias />
                             <input type="text" placeholder="Direccion" className="my-3 mx-3 min-w-[200px] max-[500px]:w-full w-auto border-b-2 border-vet-purple-light"/>
                         </div>
                         <div className="flex justify-between flex-wrap">
