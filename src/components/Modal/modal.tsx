@@ -10,7 +10,7 @@ interface IProps {
   modalType: string
 }
 
-export default function Modal(props:IProps) {
+export default function Modal(props: IProps) {
   // const [open, setOpen] = useState(false)
 
   const cancelButtonRef = useRef(null)
@@ -43,9 +43,9 @@ export default function Modal(props:IProps) {
             >
 
               <Dialog.Panel className="w-full py-5 px-3 relative transform overflow-hidden rounded-lg border-vet-purple-light border-4 bg-white text-left shadow-xl transition-all sm:my-8 max-sm:w-full sm:max-w-lg">
-              <div onClick={() => props.toggleOpen()} className="cursor-pointer absolute right-[-0.5rem] top-[-0.5rem] w-10 h-10 p-2 rounded-full bg-vet-purple-light"> <img src={Close} alt="#" /> </div>
-              {props.modalType === "login" ? <Login/> : null}
-              {props.modalType === "newSell" ? <NewSell/> : null}
+                <div onClick={() => props.toggleOpen()} className="cursor-pointer absolute right-[-0.5rem] top-[-0.5rem] w-10 h-10 p-2 rounded-full bg-vet-purple-light"> <img src={Close} alt="#" /> </div>
+                {props.modalType === "login" ? <Login toggleOpen={props.toggleOpen} /> : null}
+                {props.modalType === "newSell" ? <NewSell /> : null}
 
               </Dialog.Panel>
             </Transition.Child>
