@@ -11,6 +11,10 @@ export default function Register(){
                     <p className="text-center text-vet-purple text-xl my-5">REGISTRO DE VETERINARIA</p>
                     <form className="flex justify-center flex-col">
                         <p>Datos de la Veterinaria</p>
+                        <div className='h-[100px] flex justify-left items-center'>
+                            <input type="file" id="img" className='hidden'/>
+                            <label htmlFor="img" className="text-center cursor-pointer w-full border-dashed border-2 border-vet-purple px-2 py-6"> Foto del Local </label>
+                        </div>
                         <input required type="text" placeholder="Nombre de la Veterinaria" className="my-3 mx-3 border-b-2 border-vet-purple-light" />
                         <div className="flex justify-between flex-wrap">
                             <input type="text" placeholder="Titular de la Veterinaria" className="my-3 mx-3 min-w-[200px] max-[500px]:w-full border-b-2 border-vet-purple-light"/>

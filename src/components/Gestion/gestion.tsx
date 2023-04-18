@@ -65,8 +65,12 @@ const [showModal, setShowModal] = useState(false);
 
 function toggleOpen():void {
   setShowModal(!showModal)
+  
 }
 
+function toggleLogin(){
+  return true
+}
     return(
         <div className="mt-20">
             <div onClick={() => { /*toggleExpand === 'expand' ? setToggleExpand('contract') : setToggleExpand('expand')*/ }} className={toggleExpand + " " + "border-4 border-vet-purple-light w-11/12 m-auto bg-white/80 flex-col justify-start items-center rounded-lg my-5 cursor-pointer h-auto"}>
@@ -118,7 +122,7 @@ function toggleOpen():void {
                     </table>
                 </div>
             </div>
-            <Modal toggleOpen={toggleOpen} show={showModal} modalType={"newSell"}/>
+            <Modal toggleOpen={toggleOpen} show={showModal} modalType={"newSell"} toggleLogin={toggleLogin} isLogin={true}/>
         </div>
     )
 }
