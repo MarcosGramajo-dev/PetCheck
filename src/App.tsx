@@ -3,6 +3,7 @@ import Nav from './components/nav'
 import Home from './components/HomePage/home'
 import Gestion from './components/Gestion/gestion'
 import Register from './components/Register/register'
+import Perfil from './components/Profile/perfil'
 
 import Chart from 'chart.js/auto';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
@@ -18,6 +19,7 @@ function App() {
               <Route path="/" Component={Home}/> 
               <Route path="gestion" Component={Gestion}/>
               <Route path="register" Component={Register}/>
+              <Route path="perfil" Component={Perfil}/>
             </Routes>
           </Router>
         </div>

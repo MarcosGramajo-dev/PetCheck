@@ -15,12 +15,18 @@ export default function Nav() {
   const [toggleMenu, setToggleMenu] = useState("burguerMenu sm:hidden");
   const [lowerMenu, setLowerMenu] = useState("sm:hidden h-0 overflow-hidden");
   const [state, setState] = useState(false)
+  const [isLogin, setIsLogin] = useState(true)
 
   const [showModal, setShowModal] = useState(false);
 
 
+
   function toggleOpen():void {
     setShowModal(!showModal)
+  }
+
+  function toggleLogin(){
+    setIsLogin(!isLogin);
   }
 
   function changeState(){
@@ -40,11 +46,11 @@ export default function Nav() {
       return(
         <div className="border-t-2 border-vet-purple-light w-11/12 m-auto flex flex-col justify-between h-full">
           <div className="w-full pt-20">
-          <Link to="gestion"><button onClick={()=> changeState()} className="my-1 h-12 w-full m-auto border-2 border-vet-purple-dark text-vet-purple-dark bg-white hover:bg-vet-purple-dark hover:border-white hover:text-white"> Gestion </button> </Link>
-          <button className="my-1 h-12 w-full m-auto border-2 border-vet-purple-dark text-vet-purple-dark bg-white hover:bg-vet-purple-dark hover:border-white hover:text-white"> Perfil </button>
+            <Link to="gestion"><button onClick={()=> changeState()} className="my-1 h-12 w-full m-auto border-2 border-vet-purple-dark text-vet-purple-dark bg-white hover:bg-vet-purple-dark hover:border-white hover:text-white"> Gestion </button> </Link>
+            <Link to="perfil"><button onClick={()=> changeState()} className="my-1 h-12 w-full m-auto border-2 border-vet-purple-dark text-vet-purple-dark bg-white hover:bg-vet-purple-dark hover:border-white hover:text-white"> Perfil </button></Link>
           </div>
           <div>
-            <button className="my-3 h-12 w-full m-auto mb-16 text-white bg-vet-red hover:bg-white hover:text-vet-red"> Salir </button>
+            <button onClick={() => toggleLogin()} className="my-3 h-12 w-full m-auto mb-16 text-white bg-vet-red hover:bg-white hover:text-vet-red"> Salir </button>
           </div>
         </div>
       )
@@ -60,7 +66,7 @@ export default function Nav() {
           <div className="relative w-60 object-cover my-2">
             <input className="w-60 rounded-lg px-2"  type="password" placeholder='Password'/>
           </div>
-          <button onClick={()=> toggleOpen()} className="mx-1 w-32 px-4 h-8 border bg-white border-vet-purple-dark text-vet-purple-dark rounded-lg hover:text-white hover:bg-vet-purple-dark hover:border-white text-sm">Iniciar Sesion</button>
+          <button onClick={()=> toggleLogin()} className="mx-1 w-32 px-4 h-8 border bg-white border-vet-purple-dark text-vet-purple-dark rounded-lg hover:text-white hover:bg-vet-purple-dark hover:border-white text-sm">Iniciar Sesion</button>
             <Link to="register" className="text-white text-xs my-2">¿No tiene Cuenta?. Registrate Aquí</Link>
         </form>
       )
@@ -72,7 +78,8 @@ export default function Nav() {
       return(
         <div className="flex m-5 items-center z-10">
           <Link to="gestion"> <button className="mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple max-sm:hidden"> Gestion </button> </Link>
-          <button className=" mx-1 duration-300 text-xs px-4 h-6 border border-vet-red text-white bg-vet-red rounded-lg hover:text-vet-red hover:bg-neutral-50 max-sm:hidden"> Salir </button>
+          <Link to="perfil"> <button className="mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple max-sm:hidden"> Perfil </button> </Link>
+          <button onClick={() => toggleLogin()} className=" mx-1 duration-300 text-xs px-4 h-6 border border-vet-red text-white bg-vet-red rounded-lg hover:text-vet-red hover:bg-neutral-50 max-sm:hidden"> Salir </button>
 
         </div>
       )
@@ -110,15 +117,15 @@ export default function Nav() {
             </div>
           </Link>
         </div>
-        {btnDesktop(false)}
+        {btnDesktop(isLogin)}
       </div>
-        <img src={imgCat} className="absolute right-0 top-0 z-[-1] max-sm:opacity-20"/>
+        <img src={imgCat} className="absolute right-0 top-0 z-[-1] max-sm:hidden"/>
       <div className={lowerMenu}>
         
-        {menuMobile(false)}
+        {menuMobile(isLogin)}
         
       </div>  
-      <Modal toggleOpen={toggleOpen} show={showModal} modalType={"login"} />
+      <Modal toggleOpen={toggleOpen} show={showModal} modalType={"login"} isLogin={isLogin} toggleLogin={toggleLogin}/>
     </div>
   )
 }
