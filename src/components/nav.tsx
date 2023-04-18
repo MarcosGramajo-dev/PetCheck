@@ -67,7 +67,7 @@ export default function Nav() {
             <input className="w-60 rounded-lg px-2"  type="password" placeholder='Password'/>
           </div>
           <button onClick={()=> toggleLogin()} className="mx-1 w-32 px-4 h-8 border bg-white border-vet-purple-dark text-vet-purple-dark rounded-lg hover:text-white hover:bg-vet-purple-dark hover:border-white text-sm">Iniciar Sesion</button>
-            <Link to="register" className="text-white text-xs my-2">¿No tiene Cuenta?. Registrate Aquí</Link>
+            <Link onClick={() => changeState()} to="register" className="text-white text-xs my-2">¿No tiene Cuenta?. Registrate Aquí</Link>
         </form>
       )
     }
