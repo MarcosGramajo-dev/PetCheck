@@ -9,6 +9,8 @@ import Chart from 'chart.js/auto';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 function App() {
 
+  //comentario
+
   return (
     <div>
       <div className='absolute w-full background-complete overflow-hidden'>
