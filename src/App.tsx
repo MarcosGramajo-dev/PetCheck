@@ -28,7 +28,7 @@ function App() {
               <Route path="perfil" Component={Perfil}/>
               <Route path="nuevaHistoria" Component={NuevaHistoria}/>
               <Route path='historiaClinica' Component={HistoriaClinica}/>
-              <Route Component={Error404} />
+              <Route path='*' Component={Error404} />
             </Routes>
           </Router>
         </div>
