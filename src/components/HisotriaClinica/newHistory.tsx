@@ -8,9 +8,10 @@ export default function NuevaHistoria(){
             <div className="w-full m-auto flex flex-col justify-center">
                 <p className="text-center text-vet-purple text-xl my-5">NUEVA HISTORIA CLINICA</p>
                 <form className="flex justify-center flex-col">
-                    <div className='h-[100px] flex justify-left items-center'>
+                    <div className='h-[100px] flex justify-left items-center flex-col'>
                         <input type="file" id="img" className='hidden'/>
                         <label htmlFor="img" className="text-center cursor-pointer w-full border-dashed border-2 border-vet-purple px-2 py-6"> Foto de la mascota </label>
+                        <input type="number" className="m-1 my-4 max-sm:w-full w-[250px] font-semibold border-b-2 border-vet-purple-light" placeholder="ID de la Libreta"/>
                     </div>
                     <p className="py-2">DATOS DEL PROPIETARIO</p>
                     <div className="flex flex-wrap justify-around border-b-2 border-vet-purple py-2 border-dashed">
@@ -38,7 +39,7 @@ export default function NuevaHistoria(){
                             <select id="" className="m-1 my-2 max-sm:w-full w-[250px] font-semibold border-b-2 border-vet-purple-light">
                                 <option value="">Selecciona el tipo de Vacuna</option>
                                 <option value="">Vacuna Antirrabica</option>
-                                <option value="">Desparasitaciones</option>
+                                <option value="">Quintuple Felina</option>
                             </select>
                             <div>
                                 <input type="text" className="m-1 my-2 max-sm:w-full w-[250px] font-semibold border-b-2 border-vet-purple-light" placeholder="Detalle la Vacuna" />
