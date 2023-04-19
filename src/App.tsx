@@ -4,6 +4,7 @@ import Home from './components/HomePage/home'
 import Gestion from './components/Gestion/gestion'
 import Register from './components/Register/register'
 import Perfil from './components/Profile/perfil'
+import NuevaHistoria from './components/HisotriaClinica/newHistory'
 
 import Chart from 'chart.js/auto';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
@@ -22,6 +23,8 @@ function App() {
               <Route path="gestion" Component={Gestion}/>
               <Route path="register" Component={Register}/>
               <Route path="perfil" Component={Perfil}/>
+              <Route path="nuevaHistoria" Component={NuevaHistoria}/>
+
             </Routes>
           </Router>
         </div>

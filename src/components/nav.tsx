@@ -15,13 +15,13 @@ export default function Nav() {
   const [toggleMenu, setToggleMenu] = useState("burguerMenu sm:hidden");
   const [lowerMenu, setLowerMenu] = useState("sm:hidden h-0 overflow-hidden");
   const [state, setState] = useState(false)
-  const [isLogin, setIsLogin] = useState(true)
+  const [isLogin, setIsLogin] = useState(false)
 
   const [showModal, setShowModal] = useState(false);
 
 
 
-  function toggleOpen():void {
+  function toggleOpen() {
     setShowModal(!showModal)
   }
 
@@ -46,6 +46,7 @@ export default function Nav() {
       return(
         <div className="border-t-2 border-vet-purple-light w-11/12 m-auto flex flex-col justify-between h-full">
           <div className="w-full pt-20">
+          <Link to="nuevaHistoria"><button onClick={()=> changeState()} className="my-1 h-12 w-full m-auto border-2 border-vet-purple-dark text-vet-purple-dark bg-white hover:bg-vet-purple-dark hover:border-white hover:text-white"> Nueva Historia Clinica </button> </Link>
             <Link to="gestion"><button onClick={()=> changeState()} className="my-1 h-12 w-full m-auto border-2 border-vet-purple-dark text-vet-purple-dark bg-white hover:bg-vet-purple-dark hover:border-white hover:text-white"> Gestion </button> </Link>
             <Link to="perfil"><button onClick={()=> changeState()} className="my-1 h-12 w-full m-auto border-2 border-vet-purple-dark text-vet-purple-dark bg-white hover:bg-vet-purple-dark hover:border-white hover:text-white"> Perfil </button></Link>
           </div>
@@ -77,6 +78,7 @@ export default function Nav() {
     if(sesion){
       return(
         <div className="flex m-5 items-center z-10">
+          <Link to="nuevaHistoria"> <button className=" min-w-[150px] mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple max-sm:hidden"> Nueva Historia Clinica </button> </Link>
           <Link to="gestion"> <button className="mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple max-sm:hidden"> Gestion </button> </Link>
           <Link to="perfil"> <button className="mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple max-sm:hidden"> Perfil </button> </Link>
           <button onClick={() => toggleLogin()} className=" mx-1 duration-300 text-xs px-4 h-6 border border-vet-red text-white bg-vet-red rounded-lg hover:text-vet-red hover:bg-neutral-50 max-sm:hidden"> Salir </button>
