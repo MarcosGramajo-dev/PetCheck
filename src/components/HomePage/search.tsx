@@ -1,4 +1,6 @@
+import { Link } from 'react-router-dom'
 import Arrow from '../../images/arrow.png'
+import Historiaclinica from '../HisotriaClinica/HistoryForm'
 
 export default function search(){
     return(
@@ -7,7 +9,7 @@ export default function search(){
                 <p className="font-semibold text-lg my-1 ">Ingresa el ID de tu libreta</p>
                 <p className="text-vet-blue text-xs my-1">TODA LA INFORMACION DE TU MASCOTA A UN CLICK</p>
                 <input minLength={6} placeholder='Ej: 489465' className=" border-vet-purple border-2 rounded-lg my-2 max-w-[300px] m-auto px-2" type="number" />
-                <button className=" w-24 m-auto mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-neutral-50 bg-vet-purple rounded-lg hover:text-vet-purple hover:bg-neutral-50">BUSCAR</button>
+               <Link to="Historiaclinica"> <button className=" w-24 m-auto mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-neutral-50 bg-vet-purple rounded-lg hover:text-vet-purple hover:bg-neutral-50"> BUSCAR</button></Link> 
                 <img src={Arrow} className="absolute right-[-40%] top-[-30%] max-sm:hidden"/>
             </div>
 
