@@ -8,21 +8,26 @@ interface IProps {
 }
 
 export default function Login(props: IProps) {
-   
-  const[username, setUsername]= useState("");
+  
+  const [email, setEmail] = useState("")
+  const [isEmailValid, setIsEmailValid] = useState(false);
   const[password, setPassword]= useState("");
   const [errorMessage, setErrorMessage]= React.useState<string | null>();
-  console.log(username);
   console.log(password)
 
-  const hadleUsernameChange= (event: React.ChangeEvent<HTMLInputElement>)=>{
-    setUsername(event.target.value);
-    if(username.length<4){
-      setErrorMessage("El nombre es demasiado corto");
-      // return;
-    }
-  } 
-
+  function validateEmail(email: string) {
+    // Expresión regular para correo electrónico
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  }
+  
+  const handleEmailChange=(event: React.ChangeEvent<HTMLInputElement>)=>{
+    const emailValue = event.target.value;
+    setEmail(emailValue);
+    setIsEmailValid(validateEmail(emailValue));
+  }
+  
+  
   const handlePasswordChange=(event: React.ChangeEvent<HTMLInputElement>)=>{
     setPassword(event.target.value);
     if(password.length<6){
@@ -33,10 +38,11 @@ export default function Login(props: IProps) {
     }
   }
 
+
   const handleSubmit=(event:React.FormEvent<HTMLFormElement>)=>{
     event.preventDefault();
     setErrorMessage("");
-    console.log(username, username.length)
+  
     
     props.toggleOpen();
     props.toggleLogin()
@@ -45,8 +51,8 @@ export default function Login(props: IProps) {
     <div className="relative">
       <form className="flex flex-col justify-center items-center py-3" onSubmit={handleSubmit}>
         <p className=" text-xl pb-2">Iniciar Sesion</p>
-        <div className="relative w-60 object-cover my-2">
-          <input className="my-1 w-60 px-2 border-b-4 border-t-2 border-vet-purple-light rounded-md" type="text" placeholder='Usuario'  onChange={hadleUsernameChange} />
+        <div className={`relative w-60 object-cover my-2 ${!isEmailValid ? "border-red-500" : ""}`}>
+          <input className="my-1 w-60 px-2 border-b-4 border-t-2 border-vet-purple-light rounded-md" type="text" placeholder='Usuario'  onChange={handleEmailChange} />
         </div>
         <div className="relative w-60 object-cover my-2">
           <input className="my-1 w-60 px-2 border-b-4 border-t-2 border-vet-purple-light rounded-md" type="password" placeholder='Password'  onChange={handlePasswordChange}/>
