@@ -1,10 +1,22 @@
 import { Attributes, ChangeEvent, FormEvent, useState } from "react";
 import provinciasJSON from "../../provincias.json";
 import Provincias from "./provincias";
+import departamentosJSON from "../../departamentos.json";
 
 interface CheckboxState {
   value: string;
   isChecked: boolean;
+}
+
+interface Depart {
+  properties: {
+    nombre: string;
+    id: string;
+    provincia: {
+      nombre: string;
+      id: string;
+    };
+  };
 }
 
 export default function Register() {
@@ -14,16 +26,16 @@ export default function Register() {
     { value: "Guarderia", isChecked: false },
     { value: "Cirugias", isChecked: false },
   ]);
-  let [imgBase64, setImgBase64] = useState('')
+  let [imgBase64, setImgBase64] = useState("");
+  const [arrayDepart, setArrayDepart] = useState<Depart[]>([]);
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(newUser);
+    console.log(arrayDepart);
   };
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.type === "checkbox") {
       const { value, checked } = e.target;
       const updatedCheckboxes = checkboxes.map((checkbox) =>
@@ -33,24 +45,32 @@ export default function Register() {
       );
       setCheckboxes(updatedCheckboxes);
       setNewUser({ ...newUser, service: updatedCheckboxes });
-    } else if(e.target.type === "file"){
+    } else if (e.target.type === "file") {
       const file = e.target.files?.[0];
-        if (file) {
-          const reader = new FileReader();
-          reader.readAsDataURL(file);
-          reader.onloadend = () => {
-            const base64String = reader.result as string;
-            // Hacer algo con la cadena codificada en base64
-            imgBase64 = base64String.split(",")[1]
-            setImgBase64(imgBase64)
-            setNewUser({...newUser, image: imgBase64})
-          };
-        }
-    }
-    
-    else {
+      if (file) {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onloadend = () => {
+          const base64String = reader.result as string;
+          // Hacer algo con la cadena codificada en base64
+          imgBase64 = base64String.split(",")[1];
+          setImgBase64(imgBase64);
+          setNewUser({ ...newUser, image: imgBase64 });
+        };
+      }
+    } else {
       setNewUser({ ...newUser, [e.target.name]: e.target.value, service: [] });
     }
+  };
+
+  const selectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    console.log(e.target.value);
+    console.log(departamentosJSON);
+
+    let arrayDepartamentos = departamentosJSON.features.filter(
+      (depart) => depart.properties.provincia.id === e.target.value
+    );
+    setArrayDepart(arrayDepartamentos);
   };
 
   return (
@@ -84,7 +104,10 @@ export default function Register() {
             </div>
 
             <p>Datos de la Veterinaria</p>
-            <div className="h-[100px] flex justify-left items-center" onChange={handleChange}>
+            <div
+              className="h-[100px] flex justify-left items-center"
+              onChange={handleChange}
+            >
               <input type="file" id="img" className="hidden" />
               <label
                 htmlFor="img"
@@ -94,6 +117,197 @@ export default function Register() {
                 Foto del Local{" "}
               </label>
             </div>
+            <p>Horarios de Atencion</p>
+            <div className="flex justify-between flex-wrap items-center">
+              <label>Lunes:</label>
+              <input
+                onChange={handleChange}
+                type="number"
+                placeholder="Mañana desde"
+                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
+              />
+              <input
+                onChange={handleChange}
+                type="number"
+                placeholder="Hasta"
+                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
+              />
+              <input
+                onChange={handleChange}
+                type="number"
+                placeholder="Tarde desde"
+                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
+              />
+              <input
+                onChange={handleChange}
+                type="number"
+                placeholder="Hasta"
+                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
+              />
+            </div>
+            <div className="flex justify-between flex-wrap items-center">
+              <label>Martes:</label>
+              <input
+                onChange={handleChange}
+                type="number"
+                placeholder="Mañana desde"
+                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
+              />
+              <input
+                onChange={handleChange}
+                type="number"
+                placeholder="Hasta"
+                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
+              />
+              <input
+                onChange={handleChange}
+                type="number"
+                placeholder="Tarde desde"
+                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
+              />
+              <input
+                onChange={handleChange}
+                type="number"
+                placeholder="Hasta"
+                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
+              />
+            </div>
+            <div className="flex justify-between flex-wrap items-center">
+              <label>Miercoles:</label>
+              <input
+                onChange={handleChange}
+                type="number"
+                placeholder="Mañana desde"
+                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
+              />
+              <input
+                onChange={handleChange}
+                type="number"
+                placeholder="Hasta"
+                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
+              />
+              <input
+                onChange={handleChange}
+                type="number"
+                placeholder="Tarde desde"
+                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
+              />
+              <input
+                onChange={handleChange}
+                type="number"
+                placeholder="Hasta"
+                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
+              />
+            </div>
+            <div className="flex justify-between flex-wrap items-center">
+              <label>Jueves:</label>
+              <input
+                onChange={handleChange}
+                type="number"
+                placeholder="Mañana desde"
+                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
+              />
+              <input
+                onChange={handleChange}
+                type="number"
+                placeholder="Hasta"
+                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
+              />
+              <input
+                onChange={handleChange}
+                type="number"
+                placeholder="Tarde desde"
+                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
+              />
+              <input
+                onChange={handleChange}
+                type="number"
+                placeholder="Hasta"
+                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
+              />
+            </div>
+            <div className="flex justify-between flex-wrap items-center">
+              <label>Viernes:</label>
+              <input
+                onChange={handleChange}
+                type="number"
+                placeholder="Mañana desde"
+                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
+              />
+              <input
+                onChange={handleChange}
+                type="number"
+                placeholder="Hasta"
+                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
+              />
+              <input
+                onChange={handleChange}
+                type="number"
+                placeholder="Tarde desde"
+                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
+              />
+              <input
+                onChange={handleChange}
+                type="number"
+                placeholder="Hasta"
+                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
+              />
+            </div>
+            <div className="flex justify-between flex-wrap items-center">
+              <label>Sabado:</label>
+              <input
+                onChange={handleChange}
+                type="number"
+                placeholder="Mañana desde"
+                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
+              />
+              <input
+                onChange={handleChange}
+                type="number"
+                placeholder="Hasta"
+                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
+              />
+              <input
+                onChange={handleChange}
+                type="number"
+                placeholder="Tarde desde"
+                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
+              />
+              <input
+                onChange={handleChange}
+                type="number"
+                placeholder="Hasta"
+                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
+              />
+            </div>
+            <div className="flex justify-between flex-wrap items-center">
+              <label>Domingo:</label>
+              <input
+                onChange={handleChange}
+                type="number"
+                placeholder="Mañana desde"
+                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
+              />
+              <input
+                onChange={handleChange}
+                type="number"
+                placeholder="Hasta"
+                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
+              />
+              <input
+                onChange={handleChange}
+                type="number"
+                placeholder="Tarde desde"
+                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
+              />
+              <input
+                onChange={handleChange}
+                type="number"
+                placeholder="Hasta"
+                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
+              />
+            </div>
+
             <input
               required
               type="text"
@@ -102,6 +316,7 @@ export default function Register() {
             />
             <div className="flex justify-between flex-wrap">
               <input
+                required
                 onChange={handleChange}
                 name="ownerVet"
                 type="text"
@@ -109,6 +324,7 @@ export default function Register() {
                 className="my-3 mx-3 min-w-[200px] max-[500px]:w-full border-b-2 border-vet-purple-light"
               />
               <input
+                required
                 onChange={handleChange}
                 name="numMatricula"
                 type="number"
@@ -116,10 +332,12 @@ export default function Register() {
                 className=" my-3 mx-3 min-w-[200px] max-[500px]:w-full w-auto border-b-2 border-vet-purple-light"
               />
             </div>
-            <div className="flex justify-between flex-wrap">
-              <div className="flex flex-wrap min-w-[200px] max-[500px]:w-full w-auto">
+            <div className="flex justify-between flex-wrap  min-w-[200px] max-[500px]:w-full w-auto">
+              <div className="flex flex-wrap justify-between min-w-[200px] max-[500px]:w-full w-auto">
                 <select
+                  required
                   className="my-3 mx-3 w-[200px] max-[500px]:w-full border-b-2 border-vet-purple-light"
+                  onChange={selectChange}
                 >
                   <option value=""> Selecciona una Provincia </option>
                   {provinciasJSON.features.map((option) => (
@@ -132,12 +350,24 @@ export default function Register() {
                   ))}
                 </select>
 
-                <select className="my-3 mx-3 w-[200px] max-[500px]:w-full border-b-2 border-vet-purple-light">
-                  <option value="hola">Seleccione su Localidad</option>
+                <select 
+                  className="my-3 mx-3 w-[200px] max-[500px]:w-full border-b-2 border-vet-purple-light"
+                  required
+                >
+                  <option value="">Seleccione su Localidad</option>
+                  {arrayDepart.map((element) => (
+                    <option
+                      key={element.properties.id}
+                      value={element.properties.id}
+                    >
+                      {element.properties.nombre}
+                    </option>
+                  ))}
                 </select>
               </div>
 
               <input
+                required
                 onChange={handleChange}
                 name="address"
                 type="text"
@@ -147,6 +377,7 @@ export default function Register() {
             </div>
             <div className="flex justify-between flex-wrap">
               <input
+                required
                 onChange={handleChange}
                 name="tel"
                 type="number"
@@ -154,6 +385,7 @@ export default function Register() {
                 className="my-3 mx-3 min-w-[200px] max-[500px]:w-full w-auto border-b-2 border-vet-purple-light"
               />
               <input
+                required
                 onChange={handleChange}
                 name="telWp"
                 type="number"
@@ -164,6 +396,7 @@ export default function Register() {
             <p>Redes Solciales</p>
             <div className="flex justify-between flex-wrap">
               <input
+                required
                 onChange={handleChange}
                 name="web"
                 type="text"
@@ -171,6 +404,7 @@ export default function Register() {
                 className="my-3 mx-3 min-w-[200px] max-[500px]:w-full w-auto border-b-2 border-vet-purple-light"
               />
               <input
+                required
                 onChange={handleChange}
                 name="instagram"
                 type="text"
@@ -180,6 +414,7 @@ export default function Register() {
             </div>
             <div className="flex justify-between flex-wrap">
               <input
+                required
                 onChange={handleChange}
                 name="facebook"
                 type="text"
@@ -187,6 +422,7 @@ export default function Register() {
                 className="my-3 mx-3 min-w-[200px] max-[500px]:w-full w-auto border-b-2 border-vet-purple-light"
               />
               <input
+                required
                 onChange={handleChange}
                 name="tiktok"
                 type="text"
@@ -208,7 +444,7 @@ export default function Register() {
                 </label>
               ))}
 
-                            {/*                             
+              {/*                             
                             <div className="flex items-center m-5">
                                 <input onChange={handleChange} value={checkbox.value} checked={checkbox.isChecked} name="Guarderia" type="checkbox" id='Baño y Corte'/>
                                 <label htmlFor='Baño y Corte' > Baño y Corte </label>

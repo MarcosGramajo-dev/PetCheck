@@ -338,13 +338,13 @@
     },
     {
       "properties": {
-        "nombre_completo": "Ciudad AutÃ³noma de Buenos Aires",
+        "nombre_completo": "Ciudad Autonoma de Buenos Aires",
         "fuente": "IGN",
         "iso_id": "AR-C",
-        "nombre": "Ciudad AutÃ³noma de Buenos Aires",
+        "nombre": "Ciudad Autonoma de Buenos Aires",
         "id": "02",
-        "categoria": "Ciudad AutÃ³noma",
-        "iso_nombre": "Ciudad AutÃ³noma de Buenos Aires"
+        "categoria": "Ciudad Autonoma",
+        "iso_nombre": "Ciudad Autonoma de Buenos Aires"
       },
       "type": "Feature",
       "geometry": {
