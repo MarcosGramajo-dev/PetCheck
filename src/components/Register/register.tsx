@@ -64,14 +64,19 @@ export default function Register() {
   };
 
   const selectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    console.log(e.target.value);
-    console.log(departamentosJSON);
+    // console.log(e.target.value);
+    // console.log(departamentosJSON);
 
     let arrayDepartamentos = departamentosJSON.features.filter(
       (depart) => depart.properties.provincia.id === e.target.value
     );
     setArrayDepart(arrayDepartamentos);
+    setNewUser({...newUser, ['province']: e.target.value})
   };
+
+  const selectDepart = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setNewUser({...newUser, ['departament']: e.target.value})
+  }
 
   return (
     <div className="w-full h-full flex justify-center items-center ">
@@ -353,6 +358,7 @@ export default function Register() {
                 <select 
                   className="my-3 mx-3 w-[200px] max-[500px]:w-full border-b-2 border-vet-purple-light"
                   required
+                  onChange={selectDepart}
                 >
                   <option value="">Seleccione su Localidad</option>
                   {arrayDepart.map((element) => (
