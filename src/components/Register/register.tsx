@@ -71,12 +71,23 @@ export default function Register() {
       (depart) => depart.properties.provincia.id === e.target.value
     );
     setArrayDepart(arrayDepartamentos);
-    setNewUser({...newUser, ['province']: e.target.value})
+
+    setNewUser({
+      ...newUser,
+      ["province"]: arrayDepartamentos[0].properties.provincia.nombre,
+    });
   };
 
   const selectDepart = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setNewUser({...newUser, ['departament']: e.target.value})
-  }
+    let departSelect = arrayDepart.filter(
+      (departSelected) => departSelected.properties.id === e.target.value
+    );
+
+    setNewUser({
+      ...newUser,
+      ["departament"]: departSelect[0].properties.nombre,
+    });
+  };
 
   return (
     <div className="w-full h-full flex justify-center items-center ">
@@ -355,7 +366,7 @@ export default function Register() {
                   ))}
                 </select>
 
-                <select 
+                <select
                   className="my-3 mx-3 w-[200px] max-[500px]:w-full border-b-2 border-vet-purple-light"
                   required
                   onChange={selectDepart}
