@@ -52,7 +52,7 @@ export default function Login(props: IProps) {
       <form className="flex flex-col justify-center items-center py-3" onSubmit={handleSubmit}>
         <p className=" text-xl pb-2">Iniciar Sesion</p>
         <div className={`relative w-60 object-cover my-2 ${!isEmailValid ? "border-red-500" : ""}`}>
-          <input className="my-1 w-60 px-2 border-b-4 border-t-2 border-vet-purple-light rounded-md" type="text" placeholder='Usuario'  onChange={handleEmailChange} />
+          <input className="my-1 w-60 px-2 border-b-4 border-t-2 border-vet-purple-light rounded-md" type="email" placeholder='Usuario'  onChange={handleEmailChange} />
         </div>
         <div className="relative w-60 object-cover my-2">
           <input className="my-1 w-60 px-2 border-b-4 border-t-2 border-vet-purple-light rounded-md" type="password" placeholder='Password'  onChange={handlePasswordChange}/>
