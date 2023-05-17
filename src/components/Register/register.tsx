@@ -133,7 +133,7 @@ export default function Register() {
                 Foto del Local{" "}
               </label>
             </div>
-            <p>Horarios de Atencion</p>
+            {/* <p>Horarios de Atencion</p>
             <div className="flex justify-between flex-wrap items-center">
               <label>Lunes:</label>
               <input
@@ -322,7 +322,7 @@ export default function Register() {
                 placeholder="Hasta"
                 className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
               />
-            </div>
+            </div> */}
 
             <input
               required
@@ -450,7 +450,7 @@ export default function Register() {
             <p>Selecciones todos los servicios que brinda</p>
             <div className="flex flex-wrap">
               {checkboxes.map((checkbox) => (
-                <label key={checkbox.value}>
+                <label key={checkbox.value} className="mx-2">
                   <input
                     type="checkbox"
                     value={checkbox.value}
