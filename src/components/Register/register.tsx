@@ -71,7 +71,7 @@ export default function Register() {
                 onChange={handleChange}
                 type="email"
                 name="email"
-                className="my-3 mx-3 min-w-[200px] max-[500px]:w-full border-b-2 border-vet-purple-light"
+                className="my-3 mx-3 min-w-[200px] max-[500px]:w-full border-b-2 border-vet-purple-light invalid:border-red-600 valid:border-green-600"
                 placeholder="Correo ELectronico"
               />
               <input
