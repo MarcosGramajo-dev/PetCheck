@@ -1,7 +1,8 @@
-import { Attributes, ChangeEvent, FormEvent, useState } from "react";
+import React, { Attributes, ChangeEvent, FormEvent, useState } from "react";
 import provinciasJSON from "../../provincias.json";
 import Provincias from "./provincias";
 import departamentosJSON from "../../departamentos.json";
+import axios from 'axios'
 
 interface CheckboxState {
   value: string;
@@ -20,6 +21,8 @@ interface Depart {
 }
 
 export default function Register() {
+  const [user, setUser] = useState({})
+  const [vet, setVet] = useState({})
   const [newUser, setNewUser] = useState({});
   const [checkboxes, setCheckboxes] = useState<CheckboxState[]>([
     { value: "Baño y corte", isChecked: false },
@@ -31,10 +34,23 @@ export default function Register() {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(newUser);
-    console.log(arrayDepart);
+    setNewUser({['User']: user, ['Vet']: vet})
+    sendtoBack();
   };
 
+  const sendtoBack = () =>{
+    console.log(newUser)
+    axios.post('http://localhost:3000/auth/singUp', newUser).then( res => {
+      console.log(res)
+    })
+  }
+
+  //informacion del Usuario, Email y Contraseña
+  const handleChangeUser = (e: React.ChangeEvent<HTMLInputElement>) =>{
+    setUser({...user, [e.target.name]: e.target.value})
+  }
+
+  //Informacion de la Vet, Datos, fotos, horarios y especialidades
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.type === "checkbox") {
       const { value, checked } = e.target;
@@ -44,7 +60,7 @@ export default function Register() {
           : checkbox
       );
       setCheckboxes(updatedCheckboxes);
-      setNewUser({ ...newUser, service: updatedCheckboxes });
+      setVet({ ...vet, service: updatedCheckboxes });
     } else if (e.target.type === "file") {
       const file = e.target.files?.[0];
       if (file) {
@@ -55,11 +71,11 @@ export default function Register() {
           // Hacer algo con la cadena codificada en base64
           imgBase64 = base64String.split(",")[1];
           setImgBase64(imgBase64);
-          setNewUser({ ...newUser, image: imgBase64 });
+          setVet({ ...vet, image: imgBase64 });
         };
       }
     } else {
-      setNewUser({ ...newUser, [e.target.name]: e.target.value, service: [] });
+      setVet({ ...vet, [e.target.name]: e.target.value, service: [] });
     }
   };
 
@@ -72,8 +88,8 @@ export default function Register() {
     );
     setArrayDepart(arrayDepartamentos);
 
-    setNewUser({
-      ...newUser,
+    setVet({
+      ...vet,
       ["province"]: arrayDepartamentos[0].properties.provincia.nombre,
     });
   };
@@ -83,8 +99,8 @@ export default function Register() {
       (departSelected) => departSelected.properties.id === e.target.value
     );
 
-    setNewUser({
-      ...newUser,
+    setVet({
+      ...vet,
       ["departament"]: departSelect[0].properties.nombre,
     });
   };
@@ -104,14 +120,14 @@ export default function Register() {
 
             <div className="flex justify-between flex-wrap">
               <input
-                onChange={handleChange}
+                onChange={handleChangeUser}
                 type="email"
                 name="email"
                 className="my-3 mx-3 min-w-[200px] max-[500px]:w-full border-b-2 border-vet-purple-light invalid:border-red-600 valid:border-green-600"
                 placeholder="Correo ELectronico"
               />
               <input
-                onChange={handleChange}
+                onChange={handleChangeUser}
                 name="password"
                 type="password"
                 className="my-3 mx-3 min-w-[200px] max-[500px]:w-full border-b-2 border-vet-purple-light"

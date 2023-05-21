@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.13",
+    "axios": "^1.4.0",
     "chart.js": "^4.2.1",
     "faker": "^5.5.3",
     "heroicons": "^2.0.17",
