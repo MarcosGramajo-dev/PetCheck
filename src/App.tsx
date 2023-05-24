@@ -5,7 +5,7 @@ import Gestion from './components/Gestion/gestion'
 import Register from './components/Register/register'
 import Perfil from './components/Profile/perfil'
 import NuevaHistoria from './components/HisotriaClinica/newHistory'
-import HistoriaClinica from './components/HisotriaClinica/HistoryForm'
+import HistoriaClinica from './components/HisotriaClinica/HistoriaClinica'
 import Error404 from './components/Error/Error404'
 
 import Chart from 'chart.js/auto';

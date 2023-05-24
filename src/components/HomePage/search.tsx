@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import Arrow from '../../images/arrow.png'
-import Historiaclinica from '../HisotriaClinica/HistoryForm'
+import Historiaclinica from '../HisotriaClinica/HistoriaClinica'
 
 export default function search(){
     return(
