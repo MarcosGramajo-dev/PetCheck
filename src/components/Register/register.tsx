@@ -344,6 +344,7 @@ export default function Register() {
               required
               type="text"
               placeholder="Nombre de la Veterinaria"
+              name="nameLocal"
               className="my-3 mx-3 border-b-2 border-vet-purple-light"
             />
             <div className="flex justify-between flex-wrap">
@@ -476,32 +477,6 @@ export default function Register() {
                   {checkbox.value}
                 </label>
               ))}
-
-              {/*                             
-                            <div className="flex items-center m-5">
-                                <input onChange={handleChange} value={checkbox.value} checked={checkbox.isChecked} name="Guarderia" type="checkbox" id='Baño y Corte'/>
-                                <label htmlFor='Baño y Corte' > Baño y Corte </label>
-                            </div>
-                            <div className="flex items-center m-5">
-                                <input onChange={handleChange} value={checkbox.value} checked={checkbox.isChecked} name="Guarderia" type="checkbox" id='Guarderia'/>
-                                <label htmlFor='Guarderia' >Guarderia</label>
-                            </div>
-                            <div className="flex items-center m-5">
-                                <input onChange={handleChange} value={checkbox.value} checked={checkbox.isChecked} name="Guarderia" type="checkbox" id="Cirugias" />
-                                <label htmlFor='Cirugias'>Cirugias</label>
-                            </div>
-                            <div className="flex items-center m-5">
-                                <input type="checkbox" id="Traslados" />
-                                <label htmlFor='Traslados'>Traslados</label>
-                            </div>
-                            <div className="flex items-center m-5">
-                                <input type="checkbox" id="Emergencias" />
-                                <label htmlFor='Emergencias' className='cursor-pointer' >Emergencias</label>
-                            </div>
-                            <div className="flex items-center m-5">
-                                <input type="checkbox" id="Atencion de animales exoticos" />
-                                <label htmlFor='Atencion de animales exoticos' >Atencion de animales exoticos</label>
-                            </div> */}
             </div>
             <button
               type="submit"
