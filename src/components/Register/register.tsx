@@ -34,11 +34,11 @@ export default function Register() {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setNewUser({['User']: user, ['Vet']: vet})
-    sendtoBack();
+    // setNewUser()
+    sendtoBack({user, vet});
   };
 
-  const sendtoBack = () =>{
+  const sendtoBack = (newUser: {}) =>{
     console.log(newUser)
     axios.post('http://localhost:3000/auth/singUp', newUser).then( res => {
       console.log(res)
@@ -48,6 +48,7 @@ export default function Register() {
   //informacion del Usuario, Email y Contraseña
   const handleChangeUser = (e: React.ChangeEvent<HTMLInputElement>) =>{
     setUser({...user, [e.target.name]: e.target.value})
+
   }
 
   //Informacion de la Vet, Datos, fotos, horarios y especialidades
