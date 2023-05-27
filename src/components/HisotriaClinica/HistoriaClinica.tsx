@@ -1,6 +1,5 @@
 
 import React, { useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
 
 interface HistoriaClinica {
     
@@ -10,9 +9,6 @@ const HistoriaClinica: React.FC = () => {
   const [historiaClinica, setHistoriaClinica] = useState<HistoriaClinica>({
     // Inicializar la historia clínica con los valores predeterminados o vacíos
   });
-
-  const [searchParams] = useSearchParams()
-  console.log(searchParams.get('search'))
 
   useEffect(() => {
     // Lógica adicional que se ejecuta después de que el componente se monta o actualiza

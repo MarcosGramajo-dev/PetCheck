@@ -71,7 +71,7 @@ export default function NuevaHistoria() {
 
     setDataOwnerPet({
       ...dataOwnerPet,
-      "province": arrayDepartamentos[0].properties.provincia.nombre,
+      ["province"]: arrayDepartamentos[0].properties.provincia.nombre,
     });
   };
 

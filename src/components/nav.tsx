@@ -15,7 +15,6 @@ export default function Nav() {
   const [toggleMenu, setToggleMenu] = useState("burguerMenu sm:hidden");
   const [lowerMenu, setLowerMenu] = useState("sm:hidden h-0 overflow-hidden");
   const [state, setState] = useState(false)
-  
   const [isLogin, setIsLogin] = useState(false)
 
   const [showModal, setShowModal] = useState(false);
