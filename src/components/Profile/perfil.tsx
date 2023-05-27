@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { ReactNode, useState } from 'react'
 import Vet from '../../images/localVet.jpg'
 import provinciasJSON from "../../provincias.json";
 import departamentosJSON from "../../departamentos.json";
 
 import userJSON from "./user.json" 
+import { callback } from 'chart.js/dist/helpers/helpers.core';
 
 
 
@@ -70,8 +71,6 @@ export default function Perfil(){
       };
 
     const selectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    // console.log(e.target.value);
-    // console.log(departamentosJSON);
 
     let arrayDepartamentos = departamentosJSON.features.filter(
         (depart) => depart.properties.provincia.id === e.target.value
@@ -100,6 +99,13 @@ export default function Perfil(){
         console.log(changeUser)
     }
 
+    const base64ToImg = (): any =>{
+        var img = new Image();
+        img.src = userJSON.Vet.image;
+        console.log(img)
+        return img
+    }
+
     function changeForInfo(){
 
         return (
@@ -114,7 +120,7 @@ export default function Perfil(){
 
                 <div className="max-sm:w-full max-sm:border-0 w-11/12 p-5 m-auto my-20 bg-white/80 border-8 border-vet-purple-light rounded-lg max-w-[900px] flex flex-col justify-center">
                     <p className="font-semibold text-vet-blue text-2xl text-center m-1">PERFIL DE LOCAL</p>
-                        <div className='w-1/3 m-auto p-1'> <img src={Vet} alt="#" /> </div>
+                        <div className='w-1/3 m-auto p-1'> <img src={"data:image/png;base64,"+userJSON.Vet.image} alt="#"/> </div>
                     <div>
                         <p className="m-1 font-semibold w-64" >Nombre: <span className="font-normal">{userJSON.Vet.nameLocal}</span></p>
                     </div>

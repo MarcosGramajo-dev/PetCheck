@@ -69,7 +69,7 @@ export default function Register() {
         reader.onloadend = () => {
           const base64String = reader.result as string;
           // Hacer algo con la cadena codificada en base64
-          imgBase64 = base64String.split(",")[1];
+          imgBase64 = base64String
           setImgBase64(imgBase64);
           setVet({ ...vet, image: imgBase64 });
         };
