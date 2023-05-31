@@ -126,7 +126,7 @@ interface CheckboxState {
                     <p className="font-semibold text-vet-blue text-2xl text-center">PERFIL DE USUARIO</p>
                     <div>
                         <p className="m-1 font-semibold text-center">Correo Electronico: <span className="font-normal">{userJSON ? userJSON.email : ""}</span> </p>
-                        <p className="m-1 font-semibold text-center">Contraseña: <span className="font-normal">{userJSON ? userJSON.password : ""}</span></p>
+                        <p className="m-1 font-semibold text-center">Contraseña: <span className="font-normal">{""}</span></p>
                     </div>
                 </div>
 
