@@ -132,7 +132,7 @@ interface CheckboxState {
 
                 <div className="max-sm:w-full max-sm:border-0 w-11/12 p-5 m-auto my-20 bg-white/80 border-8 border-vet-purple-light rounded-lg max-w-[900px] flex flex-col justify-center">
                     <p className="font-semibold text-vet-blue text-2xl text-center m-1">PERFIL DE LOCAL</p>
-                        <div className='w-1/3 m-auto p-1'> <img src={Vet} alt="#" /> </div>
+                        <div className='w-1/3 m-auto p-1'> <img src={userJSON ? userJSON.vet.image : ""} alt="#" /> </div>
                     <div>
                         <p className="m-1 font-semibold w-64" >Nombre: <span className="font-normal">{userJSON ? userJSON.vet.nameLocal : ""}</span></p>
                     </div>
