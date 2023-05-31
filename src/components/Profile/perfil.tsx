@@ -1,9 +1,12 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Vet from '../../images/localVet.jpg'
 import provinciasJSON from "../../provincias.json";
 import departamentosJSON from "../../departamentos.json";
+import axios from "axios"
 
-import userJSON from "./user.json" 
+//import userJSON from "./user.json" 
+import { useLoginState } from '../Context/Context';
+import { UserVet } from '../Context/Type';
 
 
 
@@ -13,33 +16,48 @@ interface CheckboxState {
   }
   
   interface Depart {
-    properties: {
-      nombre: string;
-      id: string;
-      provincia: {
-        nombre: string;
-        id: string;
-      };
-    };
-  }
-
-export default function Perfil(){
-
+      properties: {
+          nombre: string;
+          id: string;
+          provincia: {
+              nombre: string;
+              id: string;
+            };
+        };
+    }
+    
+    export default function Perfil(){
+        
     const [toggleEdit, setToggleEdit] = useState(false)
-
+    
     const [vet, setVet] = useState({})
     const [changeUser, setChangeUser] = useState({});
     const [checkboxes, setCheckboxes] = useState<CheckboxState[]>([
-      { value: "Baño y corte", isChecked: false },
-      { value: "Guarderia", isChecked: false },
-      { value: "Cirugias", isChecked: false },
+        { value: "Baño y corte", isChecked: false },
+        { value: "Guarderia", isChecked: false },
+        { value: "Cirugias", isChecked: false },
     ]);
     let [imgBase64, setImgBase64] = useState("");
     const [arrayDepart, setArrayDepart] = useState<Depart[]>([]);
+    
+    const login = useLoginState()
+    
+    // const userJSON = login?.user
 
-    function changeState(){
+    //por que usando el useEffect esto se muere????????
+    let usuario = localStorage.getItem('vet')
+    let userJSON: UserVet
+    
+    if(usuario !== null && usuario !== ""){
+        userJSON = JSON.parse(usuario)
+    }   
+
+    //-----------------
+
+    function edit(){
         setToggleEdit(!toggleEdit);
     }
+
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (e.target.type === "checkbox") {
@@ -107,8 +125,8 @@ export default function Perfil(){
                 <div className="max-sm:w-full max-sm:border-0 w-11/12 p-5 m-auto my-20 bg-white/80 border-8 border-vet-purple-light rounded-lg max-w-[900px] flex flex-col justify-center">
                     <p className="font-semibold text-vet-blue text-2xl text-center">PERFIL DE USUARIO</p>
                     <div>
-                        <p className="m-1 font-semibold text-center">Correo Electronico: <span className="font-normal">{userJSON.User.email}</span> </p>
-                        <p className="m-1 font-semibold text-center">Contraseña: <span className="font-normal">{userJSON.User.password}</span></p>
+                        <p className="m-1 font-semibold text-center">Correo Electronico: <span className="font-normal">{userJSON ? userJSON.email : ""}</span> </p>
+                        <p className="m-1 font-semibold text-center">Contraseña: <span className="font-normal">{userJSON ? userJSON.password : ""}</span></p>
                     </div>
                 </div>
 
@@ -116,45 +134,45 @@ export default function Perfil(){
                     <p className="font-semibold text-vet-blue text-2xl text-center m-1">PERFIL DE LOCAL</p>
                         <div className='w-1/3 m-auto p-1'> <img src={Vet} alt="#" /> </div>
                     <div>
-                        <p className="m-1 font-semibold w-64" >Nombre: <span className="font-normal">{userJSON.Vet.nameLocal}</span></p>
+                        <p className="m-1 font-semibold w-64" >Nombre: <span className="font-normal">{userJSON ? userJSON.vet.nameLocal : ""}</span></p>
                     </div>
                     <div className="flex justify-between flex-wrap max-sm:flex-col">
-                        <p className="m-1 font-semibold w-64" >Titular: <span className="font-normal">{userJSON.Vet.ownerVet}</span></p>
-                        <p className="m-1 font-semibold w-64" >Matricula: <span className="font-normal">{userJSON.Vet.numMatricula}</span></p>
+                        <p className="m-1 font-semibold w-64" >Titular: <span className="font-normal">{userJSON ? userJSON.vet.ownerVet : ""}</span></p>
+                        <p className="m-1 font-semibold w-64" >Matricula: <span className="font-normal">{userJSON ? userJSON.vet.numMatricula : ""}</span></p>
                     </div>
                     <div className="flex justify-between flex-wrap max-sm:flex-col">
-                        <p className="m-1 font-semibold w-64" >Provincias: <span className="font-normal">{userJSON.Vet.province}</span></p>
-                        <p className="m-1 font-semibold w-64" >Localidad: <span className="font-normal">{userJSON.Vet.departament}</span></p>
+                        <p className="m-1 font-semibold w-64" >Provincias: <span className="font-normal">{userJSON ? userJSON.vet.province : ""}</span></p>
+                        <p className="m-1 font-semibold w-64" >Localidad: <span className="font-normal">{userJSON ? userJSON.vet.departament : ""}</span></p>
                     </div>
                     <div className="flex justify-between flex-wrap max-sm:flex-col">
-                        <p className="m-1 font-semibold w-64" >Direccion: <span className="font-normal">{userJSON.Vet.address}</span></p>
+                        <p className="m-1 font-semibold w-64" >Direccion: <span className="font-normal">{userJSON ? userJSON.vet.address : ""}</span></p>
                     </div>
                     <div className="flex justify-between flex-wrap max-sm:flex-col">
-                        <p className="m-1 font-semibold w-64" >Contacto: <span className="font-normal">{userJSON.Vet.tel}</span></p>
-                        <p className="m-1 font-semibold w-64" >WathsApp: <span className="font-normal">{userJSON.Vet.telWp}</span></p>
+                        <p className="m-1 font-semibold w-64" >Contacto: <span className="font-normal">{userJSON ? userJSON.vet.tel : ""}</span></p>
+                        <p className="m-1 font-semibold w-64" >WathsApp: <span className="font-normal">{userJSON ? userJSON.vet.telWp : ""}</span></p>
                     </div>
                     <div className="flex justify-between flex-wrap max-sm:flex-col">
-                        <p className="m-1 font-semibold" >Pagina: <span className="font-normal">{userJSON.Vet.web}</span></p>
-                        <p className="m-1 font-semibold" >Instagram: <span className="font-normal">{userJSON.Vet.instagram}</span></p>
-                        <p className="m-1 font-semibold" >Facebook: <span className="font-normal">{userJSON.Vet.facebook}</span></p>
-                        <p className="m-1 font-semibold" >Tiktok: <span className="font-normal">{userJSON.Vet.tiktok}</span></p>
+                        <p className="m-1 font-semibold" >Pagina: <span className="font-normal">{userJSON ? userJSON.vet.web : ""}</span></p>
+                        <p className="m-1 font-semibold" >Instagram: <span className="font-normal">{userJSON ? userJSON.vet.instagram : ""}</span></p>
+                        <p className="m-1 font-semibold" >Facebook: <span className="font-normal">{userJSON ? userJSON.vet.facebook : ""}</span></p>
+                        <p className="m-1 font-semibold" >Tiktok: <span className="font-normal">{userJSON ? userJSON.vet.tiktok : ""}</span></p>
                     </div>
                     <div className="m-2">
                         <p>Servicios:</p>
                         <div className="flex flex-wrap">
-                            {
-                                userJSON.Vet.service.map( (element, index) => 
+                            {/* {
+                                userJSON ? userJSON.vet.service.map( (element, index) => 
                                     <div key={index} className={element.isChecked ? "m-1 border-2 border-vet-purple rounded-lg w-40" : "hidden"}> 
                                         <p className=" text-center px-3 py-1 text-vet-purple" > {element.value} </p>
                                     </div>
-                                )
-                            }
+                                ) : ""
+                            } */}
                             
                         </div>
                     </div>
 
                     <div className="flex justify-center">
-                        <button onClick={(event) => {event.preventDefault; changeState()}} className="min-w-[120px] mx-1 duration-300 text-lg px-4 border border-vet-purple text-neutral-50 bg-vet-purple rounded-lg hover:text-vet-purple hover:bg-neutral-50">Editar</button>
+                        <button onClick={(event) => {event.preventDefault; edit()}} className="min-w-[120px] mx-1 duration-300 text-lg px-4 border border-vet-purple text-neutral-50 bg-vet-purple rounded-lg hover:text-vet-purple hover:bg-neutral-50">Editar</button>
                     </div>
                 </div>
 
@@ -331,7 +349,7 @@ export default function Perfil(){
                         
                         <div className="flex justify-center">
                             <button onClick={() => handleSubmit()} className="min-w-[120px] mx-1 duration-300 text-lg px-4 border border-vet-purple text-neutral-50 bg-vet-purple rounded-lg hover:text-vet-purple hover:bg-neutral-50">Guarda Cambios</button>
-                            <button onClick={(event) => {event.preventDefault; changeState()}} className="min-w-[120px] mx-1 duration-300 text-lg px-4 border border-vet-purple text-neutral-50 bg-vet-purple rounded-lg hover:text-vet-purple hover:bg-neutral-50">Cancelar</button>
+                            <button onClick={(event) => {event.preventDefault; edit()}} className="min-w-[120px] mx-1 duration-300 text-lg px-4 border border-vet-purple text-neutral-50 bg-vet-purple rounded-lg hover:text-vet-purple hover:bg-neutral-50">Cancelar</button>
                         </div>
                     
                     </form>

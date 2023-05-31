@@ -4,6 +4,7 @@ import Close from '../../images/icons/close.svg'
 
 import Login from './login'
 import NewSell from './newSell'
+import { useLoginState } from '../Context/Context'
 interface IProps {
   show: boolean,
   toggleOpen(): void,
@@ -15,6 +16,8 @@ interface IProps {
 export default function Modal(props: IProps) {
 
   const cancelButtonRef = useRef(null)
+
+  const login = useLoginState()
 
   return (
     <Transition.Root show={props.show} as={Fragment}>

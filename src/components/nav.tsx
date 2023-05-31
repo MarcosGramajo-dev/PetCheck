@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import iconName from '../images/nameIcon.svg'
 import iconNameBlank from '../images/nameIcon_blank.svg'
 import iconBook from '../images/bookIcon.svg'
@@ -8,6 +8,11 @@ import imgCat from '../images/Rectangle 1.png'
 import {Link} from 'react-router-dom'
 
 import Modal from './Modal/modal'
+import { useLoginState } from './Context/Context'
+
+import { UserVet } from './Context/Type'
+
+import axios from 'axios'
 
 
 export default function Nav() {
@@ -20,6 +25,26 @@ export default function Nav() {
 
   const [showModal, setShowModal] = useState(false);
 
+  const login = useLoginState();
+  let tokenLocal
+
+  useEffect(()=>{
+    getToken()
+  },[])
+
+  
+  const getToken = () => {
+    tokenLocal = localStorage.getItem('token')
+    // console.log(tokenLocal)
+    
+    axios.get('https://backpetcheck2.onrender.com/auth/perfil', {params: {tokenLocal}}).then(res => {
+      if(res.data === 'Success'){
+        setIsLogin(true)
+      }
+    }).catch(error => console.log(error))
+  }
+  
+  setInterval(getToken, 5 * 60 * 1000)
 
 
   function toggleOpen() {
@@ -27,7 +52,8 @@ export default function Nav() {
   }
 
   function toggleLogin(){
-    setIsLogin(!isLogin);
+      setIsLogin(!isLogin);
+      console.log(isLogin)
   }
 
   function changeState(){
@@ -42,6 +68,64 @@ export default function Nav() {
     }
   }
 
+  const [user, setUser] = useState({});
+  const [errorMessage, setErrorMessage] = React.useState<string | null>();
+  let token = 0
+
+  if(!login){
+    return null
+  }
+    
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      if (event.target.name === "password") {
+      if (event.target.value.length < 6 && event.target.value.length >= 1) {
+        setErrorMessage("La contraseña debe tener al menos 6 caracteres");
+      } else {
+        setErrorMessage("");
+      }
+    }
+    setUser({ ...user, [event.target.name]: event.target.value });
+  };
+
+  const verifyUser = () =>{
+    //consultar si existe el usuario
+    axios.post("https://backpetcheck2.onrender.com/auth/login", user)
+    .then(res => {
+      console.log(res.status)
+      console.log(res)
+      //si existe debera cambiar el estado login e inicar sesion
+      //si NO existe mostrara un mensaje de error
+      if(res.status === 200){
+        token = res.data.password
+        changeState()
+        saveInLocalStorage(res.data)
+      }
+    })
+    .catch(error => {
+      console.log(error)
+      console.log(error.response.data)
+      if(error.response.data === "Usuario no encontrado"){
+        setErrorMessage("El Usuario y/o Contrasela son Incorrectos")
+      }
+    })
+  }
+  
+  const saveInLocalStorage = (dataUser: UserVet) =>{
+        login.user = dataUser
+        localStorage.setItem('token', JSON.stringify(token));
+        localStorage.setItem('vet', JSON.stringify(dataUser))
+        login.changeState()
+        toggleLogin()
+  }
+
+  // const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  //   event.preventDefault();
+  //   setErrorMessage("");
+
+  //   toggleOpen();
+  //   // props.toggleLogin()
+  // };
+
   function menuMobile(sesion:boolean){
     if(sesion){
       return(
@@ -52,7 +136,7 @@ export default function Nav() {
             <Link to="perfil"><button onClick={()=> changeState()} className="my-1 h-12 w-full m-auto border-2 border-vet-purple-dark text-vet-purple-dark bg-white hover:bg-vet-purple-dark hover:border-white hover:text-white"> Perfil </button></Link>
           </div>
           <div>
-            <button onClick={() => toggleLogin()} className="my-3 h-12 w-full m-auto mb-16 text-white bg-vet-red hover:bg-white hover:text-vet-red"> Salir </button>
+            <Link to="/"><button onClick={() =>{ toggleLogin(), localStorage.clear()}} className="my-3 h-12 w-full m-auto mb-16 text-white bg-vet-red hover:bg-white hover:text-vet-red"> Salir </button></Link>
           </div>
         </div>
       )
@@ -63,12 +147,13 @@ export default function Nav() {
         <form className="flex flex-col justify-center items-center py-3 mt-16">
           <button className="text-white text-xl pb-2">Iniciar Sesion</button>
           <div className="relative w-60 object-cover my-2">
-            <input className="w-60 rounded-lg px-2" type="text" placeholder='Usuario'/>
+            <input className="w-60 rounded-lg px-2" name="email"  onChange={handleChange} type="email" placeholder='Correo Electronico'/>
           </div>
           <div className="relative w-60 object-cover my-2">
-            <input className="w-60 rounded-lg px-2"  type="password" placeholder='Password'/>
+            <input className="w-60 rounded-lg px-2" name="password"  onChange={handleChange} type="password" placeholder='Password'/>
           </div>
-          <button onClick={()=> toggleLogin()} className="mx-1 w-32 px-4 h-8 border bg-white border-vet-purple-dark text-vet-purple-dark rounded-lg hover:text-white hover:bg-vet-purple-dark hover:border-white text-sm">Iniciar Sesion</button>
+          {errorMessage ? <p className="text-red-500">{errorMessage}</p> : ""}
+          <button onClick={(e)=>{e.preventDefault(), verifyUser()}} className="mx-1 w-32 px-4 h-8 border bg-white border-vet-purple-dark text-vet-purple-dark rounded-lg hover:text-white hover:bg-vet-purple-dark hover:border-white text-sm">Iniciar Sesion</button>
             <Link onClick={() => changeState()} to="register" className="text-white text-xs my-2">¿No tiene Cuenta?. Registrate Aquí</Link>
         </form>
       )
@@ -82,14 +167,13 @@ export default function Nav() {
           <Link to="nuevaHistoria"> <button className=" min-w-[150px] mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple max-sm:hidden"> Nueva Historia Clinica </button> </Link>
           <Link to="gestion"> <button className="mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple max-sm:hidden"> Gestion </button> </Link>
           <Link to="perfil"> <button className="mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple max-sm:hidden"> Perfil </button> </Link>
-          <button onClick={() => toggleLogin()} className=" mx-1 duration-300 text-xs px-4 h-6 border border-vet-red text-white bg-vet-red rounded-lg hover:text-vet-red hover:bg-neutral-50 max-sm:hidden"> Salir </button>
-
+          <Link to="/"> <button onClick={() => {toggleLogin(), localStorage.clear()}} className=" mx-1 duration-300 text-xs px-4 h-6 border border-vet-red text-white bg-vet-red rounded-lg hover:text-vet-red hover:bg-neutral-50 max-sm:hidden"> Salir </button></Link>
         </div>
       )
     } else{
       return(
         <div className="flex m-5 items-center z-10">
-          <button className="min-w-[120px] mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple max-sm:hidden" onClick={()=>{toggleOpen()}}> Iniciar Sesion </button>
+          <button className="min-w-[120px] mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple max-sm:hidden" onClick={()=>{toggleOpen(), login?.changeState()}}> Iniciar Sesion </button>
           <Link to="register">
             <button className="min-w-[120px] mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-neutral-50 bg-vet-purple rounded-lg hover:text-vet-purple hover:bg-neutral-50 max-sm:hidden"> Registrate Aquí </button>
           </Link>

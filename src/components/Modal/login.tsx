@@ -2,6 +2,8 @@ import React, { useContext, useState } from "react";
 import Close from "../../images/icons/close.svg";
 import { Link } from "react-router-dom";
 import { useLoginState } from "../Context/Context";
+import axios from 'axios'
+import { UserVet } from "../Context/Type";
 
 interface IProps {
   toggleOpen(): void;
@@ -12,7 +14,7 @@ interface IProps {
 export default function Login(props: IProps) {
   const [user, setUser] = useState({});
   const [errorMessage, setErrorMessage] = React.useState<string | null>();
-
+  let token = 0
   const login = useLoginState()
 
   if(!login){
@@ -29,7 +31,38 @@ export default function Login(props: IProps) {
     }
     setUser({ ...user, [event.target.name]: event.target.value });
   };
+
+  const verifyUser = () =>{
+    //consultar si existe el usuario
+    axios.post("https://backpetcheck2.onrender.com/auth/login", user)
+    .then(res => {
+      console.log(res.status)
+      console.log(res)
+      //si existe debera cambiar el estado login e inicar sesion
+      //si NO existe mostrara un mensaje de error
+      if(res.status === 200){
+        token = res.data.password
+        saveInLocalStorage(res.data)
+      }
+    })
+    .catch(error => {
+      console.log(error)
+      console.log(error.response.data)
+      if(error.response.data === "Usuario no encontrado"){
+        setErrorMessage("El Usuario y/o Contrasela son Incorrectos")
+      }
+    })
+  }
   
+  const saveInLocalStorage = (dataUser: UserVet) =>{
+        login.user = dataUser
+        localStorage.setItem('token', JSON.stringify(token));
+        localStorage.setItem('vet', JSON.stringify(dataUser))
+        login.changeState()
+        props.toggleLogin()
+        props.toggleOpen()
+  }
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setErrorMessage("");
@@ -69,7 +102,8 @@ export default function Login(props: IProps) {
             event.preventDefault();
             // props.toggleOpen();
             // props.toggleLogin();
-            login.changeState()
+            verifyUser();
+            
           }}
           className="my-2 w-32 px-4 h-8 border bg-white border-vet-purple text-vet-purple rounded-lg hover:text-white hover:bg-vet-purple hover:border-white text-sm"
         >

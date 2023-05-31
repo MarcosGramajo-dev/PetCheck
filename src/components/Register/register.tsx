@@ -3,6 +3,7 @@ import provinciasJSON from "../../provincias.json";
 import Provincias from "./provincias";
 import departamentosJSON from "../../departamentos.json";
 import axios from 'axios'
+import { UserVet } from "../Context/Type";
 
 interface CheckboxState {
   value: string;
@@ -21,7 +22,26 @@ interface Depart {
 }
 
 export default function Register() {
-  const [user, setUser] = useState({})
+  const [user, setUser] = useState<UserVet>({
+    email: "",
+    password: "",
+    vet: {
+        image: "",
+        nameLocal: "" ,
+        ownerVet: "",
+        service: [{value: "", isChecked: false}],
+        numMatricula: 0,
+        province: "",
+        departament: "",
+        address: "",
+        tel: 0,
+        telWp: 0,
+        web: "",
+        instagram: "",
+        facebook: "",
+        tiktok: ""
+    }
+})
   const [vet, setVet] = useState({})
   const [newUser, setNewUser] = useState({});
   const [checkboxes, setCheckboxes] = useState<CheckboxState[]>([
@@ -31,6 +51,7 @@ export default function Register() {
   ]);
   let [imgBase64, setImgBase64] = useState("");
   const [arrayDepart, setArrayDepart] = useState<Depart[]>([]);
+  const [message, setMessage] = useState("")
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -40,9 +61,14 @@ export default function Register() {
 
   const sendtoBack = (newUser: {}) =>{
     console.log(newUser)
-    axios.post('http://localhost:3000/auth/singUp', newUser).then( res => {
-      console.log(res)
+    axios.post('https://backpetcheck2.onrender.com/auth/signUp', newUser)
+    .then( res => {
+      if(res.data === "El Email ya esta en uso!"){
+        setMessage(res.data)
+      } else if( res.data === "Se registro con exito!" )
+        setMessage(res.data)
     })
+    .catch(error => console.log(error))
   }
 
   //informacion del Usuario, Email y Contraseña
@@ -70,7 +96,7 @@ export default function Register() {
         reader.onloadend = () => {
           const base64String = reader.result as string;
           // Hacer algo con la cadena codificada en base64
-          imgBase64 = base64String.split(",")[1];
+          imgBase64 = base64String
           setImgBase64(imgBase64);
           setVet({ ...vet, image: imgBase64 });
         };
@@ -343,6 +369,7 @@ export default function Register() {
 
             <input
               required
+              onChange={handleChange}
               type="text"
               placeholder="Nombre de la Veterinaria"
               name="nameLocal"
@@ -479,6 +506,7 @@ export default function Register() {
                 </label>
               ))}
             </div>
+            <span className="text-red-600 text-sm text-center" > {message} </span>
             <button
               type="submit"
               className="my-2 m-auto duration-300 text-lg px-6 py-1 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple"
