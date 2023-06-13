@@ -5,16 +5,11 @@ import { useLoginState } from "../Context/Context";
 import axios from 'axios'
 import { UserVet } from "../Context/Type";
 
-interface IProps {
-  toggleOpen(): void;
-  toggleLogin(): void;
-}
 
-
-export default function Login(props: IProps) {
+export default function Login() {
   const [user, setUser] = useState({});
   const [errorMessage, setErrorMessage] = React.useState<string | null>();
-  let token = 0
+  // let token = 0
   const login = useLoginState()
 
   if(!login){
@@ -34,15 +29,17 @@ export default function Login(props: IProps) {
 
   const verifyUser = () =>{
     //consultar si existe el usuario
-    axios.post("https://backpetcheck2.onrender.com/auth/login", user)
+    axios.post(`${login?.authContext.URL}auth/login`, user)
     .then(res => {
       console.log(res.status)
       console.log(res)
       //si existe debera cambiar el estado login e inicar sesion
       //si NO existe mostrara un mensaje de error
       if(res.status === 200){
-        token = res.data.password
-        saveInLocalStorage(res.data)
+        login.authContext.addToken(res.data.password)
+        login.authContext.saveInLocalStorage(res.data)
+        login.authContext.toggleLogin(true)
+        login.authContext.toggleOpen()
       }
     })
     .catch(error => {
@@ -54,20 +51,17 @@ export default function Login(props: IProps) {
     })
   }
   
-  const saveInLocalStorage = (dataUser: UserVet) =>{
-        login.user = dataUser
-        localStorage.setItem('token', JSON.stringify(token));
-        localStorage.setItem('vet', JSON.stringify(dataUser))
-        login.changeState()
-        props.toggleLogin()
-        props.toggleOpen()
-  }
+  // const saveInLocalStorage = (dataUser: UserVet) =>{
+  //       login.user = dataUser
+  //       localStorage.setItem('token', JSON.stringify(token));
+  //       localStorage.setItem('vet', JSON.stringify(dataUser))
+  // }
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setErrorMessage("");
 
-    props.toggleOpen();
+    // props.toggleOpen();
     // props.toggleLogin()
   };
 

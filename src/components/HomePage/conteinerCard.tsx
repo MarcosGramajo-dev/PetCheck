@@ -2,15 +2,18 @@ import { useEffect, useState } from 'react'
 import Card from './card'
 import axios from 'axios'
 import { UserVet } from '../Context/Type'
+import { useLoginState } from '../Context/Context'
 
 export default function ContainerTarjet(){
     const [cardsDB, setCardsDB] = useState([])
     const [loading, setLoading] = useState(false)
 
+    const login = useLoginState()
+    
     useEffect(()=>{
         setLoading(true)
-        axios.get('https://backpetcheck2.onrender.com/')
-        .then(res => setCardsDB(res.data))
+        axios.get(`${login?.authContext.URL}`)
+        .then(res => setCardsDB(res.data.data))
         .catch(error => console.log(error))
         .finally(()=> setLoading(false))
     },[])

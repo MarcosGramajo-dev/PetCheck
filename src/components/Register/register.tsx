@@ -4,6 +4,7 @@ import Provincias from "./provincias";
 import departamentosJSON from "../../departamentos.json";
 import axios from 'axios'
 import { UserVet } from "../Context/Type";
+import { useLoginState } from "../Context/Context";
 
 interface CheckboxState {
   value: string;
@@ -53,6 +54,8 @@ export default function Register() {
   const [arrayDepart, setArrayDepart] = useState<Depart[]>([]);
   const [message, setMessage] = useState("")
 
+  const login = useLoginState()
+
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // setNewUser()
@@ -61,7 +64,7 @@ export default function Register() {
 
   const sendtoBack = (newUser: {}) =>{
     console.log(newUser)
-    axios.post('https://backpetcheck2.onrender.com/auth/signUp', newUser)
+    axios.post(`${login?.authContext.URL}auth/signUp`, newUser)
     .then( res => {
       if(res.data === "El Email ya esta en uso!"){
         setMessage(res.data)
@@ -176,196 +179,87 @@ export default function Register() {
                 Foto del Local{" "}
               </label>
             </div>
-            {/* <p>Horarios de Atencion</p>
+            <p>Horarios de Atencion</p>
             <div className="flex justify-between flex-wrap items-center">
-              <label>Lunes:</label>
-              <input
-                onChange={handleChange}
-                type="number"
-                placeholder="Mañana desde"
-                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
-              />
-              <input
-                onChange={handleChange}
-                type="number"
-                placeholder="Hasta"
-                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
-              />
-              <input
-                onChange={handleChange}
-                type="number"
-                placeholder="Tarde desde"
-                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
-              />
-              <input
-                onChange={handleChange}
-                type="number"
-                placeholder="Hasta"
-                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
-              />
+              <div className="flex flex-col">
+                <label className=" w-32 text-sm">Lunes a Viernes:</label>
+                  <div className="flex items-center justify-center">
+                    <p className=" w-32 ml-6 text-sm">Mañana</p>                
+                      <input
+                        onChange={handleChange}
+                        type="time"
+                        placeholder="Turno Mañana Ej: 8:00 a 12:00"
+                        name="LaVManana"
+                        className="my-1 mx-3 px-2 border-b-2 border-vet-purple-light w-24 max-sm:mx-1 max-sm:my-1"
+                      />
+                      <p>a</p>
+                      <input
+                        onChange={handleChange}
+                        type="time"
+                        placeholder="Turno Tarde Ej: 15:00 a 17:00"
+                        name="LaVTarde"
+                        className="my-1 mx-3 px-2 border-b-2 border-vet-purple-light w-24 max-sm:mx-1 max-sm:my-1"
+                      />
+                  </div>
+                  <div className="flex items-center">
+                    <p className=" w-32 ml-6 text-sm">Tarde</p>
+                      <input
+                        onChange={handleChange}
+                        type="time"
+                        placeholder="Turno Mañana Ej: 8:00 a 12:00"
+                        name="LaVManana"
+                        className="my-1 mx-3 px-2 border-b-2 border-vet-purple-light w-24 max-sm:mx-1 max-sm:my-1"
+                      />
+                      <p>a</p>
+                      <input
+                        onChange={handleChange}
+                        type="time"
+                        placeholder="Turno Tarde Ej: 15:00 a 17:00"
+                        name="LaVTarde"
+                        className="my-1 mx-3 px-2 border-b-2 border-vet-purple-light w-24 max-sm:mx-1 max-sm:my-1"
+                      />
+                  </div>
+              </div>
+
+              <div className="w-full h-[2px] bg-vet-blue bg-opacity-25"></div>
+
+              <div className="flex justify-between flex-wrap items-center">
+                <label className=" w-32">Sabados:</label>
+                <input
+                  onChange={handleChange}
+                  type="time"
+                  placeholder="Turno Mañana Ej: 8:00 a 12:00"
+                  name="SabManana"
+                  className="my-3 mx-3 px-2 border-b-2 border-vet-purple-light w-24 max-sm:mx-1 max-sm:my-1"
+                />
+                <p>A</p>
+                <input
+                  onChange={handleChange}
+                  type="time"
+                  placeholder="Turno Tarde Ej: 15:00 a 19:00"
+                  name="SabTarde"
+                  className="my-3 mx-3 px-2 border-b-2 border-vet-purple-light w-24 max-sm:mx-1 max-sm:my-1"
+                />
+              </div>
+
+              <div className="flex justify-between flex-wrap items-center">
+                <label className="w-32">Domingos:</label>
+                <input
+                  onChange={handleChange}
+                  type="time"
+                  placeholder="Turno Mañana Ej: 8:00 a 12:00"
+                  name="DomMañana"
+                  className="my-3 mx-3 px-2 border-b-2 border-vet-purple-light w-24 max-sm:mx-1 max-sm:my-1"
+                />
+                <input
+                  onChange={handleChange}
+                  type="time"
+                  placeholder="Turno Tarde Ej: 15:00 a 19:00"
+                  name="DomTarde"
+                  className="my-3 mx-3 px-2 border-b-2 border-vet-purple-light w-24 max-sm:mx-1 max-sm:my-1"
+                />
+              </div>
             </div>
-            <div className="flex justify-between flex-wrap items-center">
-              <label>Martes:</label>
-              <input
-                onChange={handleChange}
-                type="number"
-                placeholder="Mañana desde"
-                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
-              />
-              <input
-                onChange={handleChange}
-                type="number"
-                placeholder="Hasta"
-                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
-              />
-              <input
-                onChange={handleChange}
-                type="number"
-                placeholder="Tarde desde"
-                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
-              />
-              <input
-                onChange={handleChange}
-                type="number"
-                placeholder="Hasta"
-                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
-              />
-            </div>
-            <div className="flex justify-between flex-wrap items-center">
-              <label>Miercoles:</label>
-              <input
-                onChange={handleChange}
-                type="number"
-                placeholder="Mañana desde"
-                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
-              />
-              <input
-                onChange={handleChange}
-                type="number"
-                placeholder="Hasta"
-                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
-              />
-              <input
-                onChange={handleChange}
-                type="number"
-                placeholder="Tarde desde"
-                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
-              />
-              <input
-                onChange={handleChange}
-                type="number"
-                placeholder="Hasta"
-                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
-              />
-            </div>
-            <div className="flex justify-between flex-wrap items-center">
-              <label>Jueves:</label>
-              <input
-                onChange={handleChange}
-                type="number"
-                placeholder="Mañana desde"
-                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
-              />
-              <input
-                onChange={handleChange}
-                type="number"
-                placeholder="Hasta"
-                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
-              />
-              <input
-                onChange={handleChange}
-                type="number"
-                placeholder="Tarde desde"
-                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
-              />
-              <input
-                onChange={handleChange}
-                type="number"
-                placeholder="Hasta"
-                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
-              />
-            </div>
-            <div className="flex justify-between flex-wrap items-center">
-              <label>Viernes:</label>
-              <input
-                onChange={handleChange}
-                type="number"
-                placeholder="Mañana desde"
-                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
-              />
-              <input
-                onChange={handleChange}
-                type="number"
-                placeholder="Hasta"
-                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
-              />
-              <input
-                onChange={handleChange}
-                type="number"
-                placeholder="Tarde desde"
-                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
-              />
-              <input
-                onChange={handleChange}
-                type="number"
-                placeholder="Hasta"
-                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
-              />
-            </div>
-            <div className="flex justify-between flex-wrap items-center">
-              <label>Sabado:</label>
-              <input
-                onChange={handleChange}
-                type="number"
-                placeholder="Mañana desde"
-                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
-              />
-              <input
-                onChange={handleChange}
-                type="number"
-                placeholder="Hasta"
-                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
-              />
-              <input
-                onChange={handleChange}
-                type="number"
-                placeholder="Tarde desde"
-                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
-              />
-              <input
-                onChange={handleChange}
-                type="number"
-                placeholder="Hasta"
-                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
-              />
-            </div>
-            <div className="flex justify-between flex-wrap items-center">
-              <label>Domingo:</label>
-              <input
-                onChange={handleChange}
-                type="number"
-                placeholder="Mañana desde"
-                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
-              />
-              <input
-                onChange={handleChange}
-                type="number"
-                placeholder="Hasta"
-                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
-              />
-              <input
-                onChange={handleChange}
-                type="number"
-                placeholder="Tarde desde"
-                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
-              />
-              <input
-                onChange={handleChange}
-                type="number"
-                placeholder="Hasta"
-                className="my-3 mx-3 border-b-2 border-vet-purple-light w-12 max-sm:mx-1 max-sm:my-1"
-              />
-            </div> */}
 
             <input
               required

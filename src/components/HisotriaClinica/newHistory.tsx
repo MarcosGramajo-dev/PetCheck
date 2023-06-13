@@ -16,11 +16,11 @@ interface Depart {
   };
 }
 
-interface Data {
-  [key: string]: {
-    [key: string]: string;
-  };
-}
+// interface Data {
+//   [key: string]: {
+//     [key: string]: string;
+//   };
+// }
 
 export default function NuevaHistoria() {
   let [imgBase64, setImgBase64] = useState("");
@@ -29,7 +29,7 @@ export default function NuevaHistoria() {
 
   const [newHC, setNewHC] = useState<History>({
       Vacunas: [{}],
-      Registro: [{}],
+      Registros: [{}],
       DataPet: {},
       ownerPet: {},
       id: 0
@@ -38,13 +38,13 @@ export default function NuevaHistoria() {
   const [dataPet, setDataPet] = useState({});
 
   const [vacunaSelected, setVacunaSelected] = useState("");
-  const [dataVacunas, setDataVacunas] = useState<Data>({});
+  const [dataVacunas, setDataVacunas] = useState({});
   const [booleanVacunas, setBooleanVacunas] = useState(false)
 
   const [dataOwnerPet, setDataOwnerPet] = useState({});
 
   const [registerSelected, setRegisterSelected] = useState("");
-  const [dataRegister, setDataRegister] = useState<Data>({});
+  const [dataRegister, setDataRegister] = useState({});
 
   const [idLibreta, setIdLibreta] = useState(0)
 
@@ -67,7 +67,7 @@ export default function NuevaHistoria() {
     } else {
       setDataOwnerPet({ ...dataOwnerPet, [e.target.name]: e.target.value });
     }
-    setNewHC({...newHC, "Vacunas": [dataVacunas], "Registro": [dataRegister], "DataPet": {dataPet}, "ownerPet": {dataOwnerPet}, "id": idLibreta });
+    setNewHC({...newHC, "Vacunas": [dataVacunas], "Registros": [dataRegister], "DataPet": {dataPet}, "ownerPet": {dataOwnerPet}, "id": idLibreta });
   };
 
   const selectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -95,7 +95,7 @@ export default function NuevaHistoria() {
 
 const handleChangePet = (e: React.ChangeEvent<HTMLInputElement>) => {
     setDataPet({ ...dataPet, [e.target.name]: e.target.value });
-    setNewHC({...newHC, "Vacunas": [dataVacunas], "Registro": [dataRegister], "DataPet": {dataPet}, "ownerPet": {dataOwnerPet}, "id": idLibreta });
+    setNewHC({...newHC, "Vacunas": [dataVacunas], "Registros": [dataRegister], "DataPet": {dataPet}, "ownerPet": {dataOwnerPet}, "id": idLibreta });
   };
 
   const handleChangeVacunas = (
@@ -108,13 +108,12 @@ const handleChangePet = (e: React.ChangeEvent<HTMLInputElement>) => {
 
     } else {
       setDataVacunas({
-        [vacunaSelected]: {
-          ...dataVacunas[vacunaSelected],
+          ...dataVacunas,
+          "Vacuna" : vacunaSelected,
           [e.target.name]: e.target.value,
-        },
       });
     }
-    setNewHC({...newHC, "Vacunas": [dataVacunas], "Registro": [dataRegister], "DataPet": {dataPet}, "ownerPet": {dataOwnerPet}, "id": idLibreta });
+    setNewHC({...newHC, "Vacunas": [dataVacunas], "Registros": [dataRegister], "DataPet": {dataPet}, "ownerPet": {dataOwnerPet}, "id": idLibreta });
     console.log(booleanVacunas)
   };
 
@@ -127,13 +126,12 @@ const handleChangePet = (e: React.ChangeEvent<HTMLInputElement>) => {
       setRegisterSelected(e.target.value);
     } else {
       setDataRegister({
-        [registerSelected]: {
-          ...dataRegister[registerSelected],
-          ["Data"]: e.target.value,
-        },
+          ...dataRegister,
+          "Registro": registerSelected,
+          "Data": e.target.value,
       });
     }
-    setNewHC({...newHC, "Vacunas": [dataVacunas], "Registro": [dataRegister], "DataPet": {dataPet}, "ownerPet": {dataOwnerPet}, "id": idLibreta });
+    setNewHC({...newHC, "Vacunas": [dataVacunas], "Registros": [dataRegister], "DataPet": {dataPet}, "ownerPet": {dataOwnerPet}, "id": idLibreta });
   };
 
   const submit = (e: FormEvent<HTMLFormElement>) => {

@@ -1,8 +1,11 @@
-interface IProps {
-    toggleOpen():void
-}
+import { useLoginState } from "../Context/Context";
 
-export default function NewSell(props: IProps){
+
+export default function NewSell(){
+
+    const login = useLoginState()
+
+
     return(
         <div>
             <form className="flex flex-col justify-center items-center w-4/5 m-auto">
@@ -13,7 +16,7 @@ export default function NewSell(props: IProps){
                     <input className="border-b-2 border-vet-purple-light m-1 w-1/2" type="number" placeholder="Cantidad"/>
                     <input className="border-b-2 border-vet-purple-light m-1 w-1/2" type="number" placeholder="Precio Unitario" />
                 </div>
-                <button onClick={(event)=> {event.preventDefault(); props.toggleOpen()}} className="my-3 duration-300 text-base px-6 h-8 border border-vet-purple text-neutral-50 bg-vet-purple rounded-lg hover:text-vet-purple hover:bg-neutral-50 ">CARGAR</button>
+                <button onClick={(event)=> {event.preventDefault(); login?.authContext.toggleOpen()}} className="my-3 duration-300 text-base px-6 h-8 border border-vet-purple text-neutral-50 bg-vet-purple rounded-lg hover:text-vet-purple hover:bg-neutral-50 ">CARGAR</button>
             </form>
         </div>
     )

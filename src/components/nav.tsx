@@ -11,7 +11,6 @@ import Modal from './Modal/modal'
 import { useLoginState } from './Context/Context'
 
 import { UserVet } from './Context/Type'
-
 import axios from 'axios'
 
 
@@ -20,13 +19,10 @@ export default function Nav() {
   const [toggleMenu, setToggleMenu] = useState("burguerMenu sm:hidden");
   const [lowerMenu, setLowerMenu] = useState("sm:hidden h-0 overflow-hidden");
   const [state, setState] = useState(false)
-  
-  const [isLogin, setIsLogin] = useState(false)
-
-  const [showModal, setShowModal] = useState(false);
 
   const login = useLoginState();
   let tokenLocal
+  
 
   useEffect(()=>{
     getToken()
@@ -37,9 +33,9 @@ export default function Nav() {
     tokenLocal = localStorage.getItem('token')
     // console.log(tokenLocal)
     
-    axios.get('https://backpetcheck2.onrender.com/auth/perfil', {params: {tokenLocal}}).then(res => {
+    axios.get( `${login?.authContext.URL}auth/perfil`, {params: {tokenLocal}}).then(res => {
       if(res.data === 'Success'){
-        setIsLogin(true)
+        login?.authContext.toggleLogin(true)
       }
     }).catch(error => console.log(error))
   }
@@ -47,14 +43,14 @@ export default function Nav() {
   setInterval(getToken, 5 * 60 * 1000)
 
 
-  function toggleOpen() {
-    setShowModal(!showModal)
-  }
+  // function toggleOpen() {
+  //   setShowModal(!showModal)
+  // }
 
-  function toggleLogin(){
-      setIsLogin(!isLogin);
-      console.log(isLogin)
-  }
+  // function toggleLogin(){
+  //     setIsLogin(!isLogin);
+  //     console.log(isLogin)
+  // }
 
   function changeState(){
     setState(!state)
@@ -89,7 +85,7 @@ export default function Nav() {
 
   const verifyUser = () =>{
     //consultar si existe el usuario
-    axios.post("https://backpetcheck2.onrender.com/auth/login", user)
+    axios.post(`${login?.authContext.URL}auth/login`, user)
     .then(res => {
       console.log(res.status)
       console.log(res)
@@ -115,7 +111,7 @@ export default function Nav() {
         localStorage.setItem('token', JSON.stringify(token));
         localStorage.setItem('vet', JSON.stringify(dataUser))
         login.changeState()
-        toggleLogin()
+        login.authContext.toggleLogin(true)
   }
 
   // const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -136,7 +132,7 @@ export default function Nav() {
             <Link to="perfil"><button onClick={()=> changeState()} className="my-1 h-12 w-full m-auto border-2 border-vet-purple-dark text-vet-purple-dark bg-white hover:bg-vet-purple-dark hover:border-white hover:text-white"> Perfil </button></Link>
           </div>
           <div>
-            <Link to="/"><button onClick={() =>{ toggleLogin(), localStorage.clear()}} className="my-3 h-12 w-full m-auto mb-16 text-white bg-vet-red hover:bg-white hover:text-vet-red"> Salir </button></Link>
+            <Link to="/"><button onClick={() =>{ login?.authContext.toggleLogin(false), localStorage.clear()}} className="my-3 h-12 w-full m-auto mb-16 text-white bg-vet-red hover:bg-white hover:text-vet-red"> Salir </button></Link>
           </div>
         </div>
       )
@@ -167,13 +163,13 @@ export default function Nav() {
           <Link to="nuevaHistoria"> <button className=" min-w-[150px] mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple max-sm:hidden"> Nueva Historia Clinica </button> </Link>
           <Link to="gestion"> <button className="mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple max-sm:hidden"> Gestion </button> </Link>
           <Link to="perfil"> <button className="mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple max-sm:hidden"> Perfil </button> </Link>
-          <Link to="/"> <button onClick={() => {toggleLogin(), localStorage.clear()}} className=" mx-1 duration-300 text-xs px-4 h-6 border border-vet-red text-white bg-vet-red rounded-lg hover:text-vet-red hover:bg-neutral-50 max-sm:hidden"> Salir </button></Link>
+          <Link to="/"> <button onClick={() => {login?.authContext.toggleLogin(false), localStorage.clear()}} className=" mx-1 duration-300 text-xs px-4 h-6 border border-vet-red text-white bg-vet-red rounded-lg hover:text-vet-red hover:bg-neutral-50 max-sm:hidden"> Salir </button></Link>
         </div>
       )
     } else{
       return(
         <div className="flex m-5 items-center z-10">
-          <button className="min-w-[120px] mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple max-sm:hidden" onClick={()=>{toggleOpen(), login?.changeState()}}> Iniciar Sesion </button>
+          <button className="min-w-[120px] mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple max-sm:hidden" onClick={()=>{login?.authContext.toggleOpen(), login?.changeState()}}> Iniciar Sesion </button>
           <Link to="register">
             <button className="min-w-[120px] mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-neutral-50 bg-vet-purple rounded-lg hover:text-vet-purple hover:bg-neutral-50 max-sm:hidden"> Registrate Aquí </button>
           </Link>
@@ -204,15 +200,15 @@ export default function Nav() {
             </div>
           </Link>
         </div>
-        {btnDesktop(isLogin)}
+        {btnDesktop(login.authContext.isLogin)}
       </div>
         <img src={imgCat} className="absolute right-0 top-0 z-[-1] max-sm:hidden"/>
       <div className={lowerMenu}>
         
-        {menuMobile(isLogin)}
+        {menuMobile(login.authContext.isLogin)}
         
       </div>  
-      <Modal toggleOpen={toggleOpen} show={showModal} modalType={"login"} isLogin={isLogin} toggleLogin={toggleLogin}/>
+      <Modal modalType={"login"}/>
     </div>
   )
 }

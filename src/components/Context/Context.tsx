@@ -1,4 +1,4 @@
-import React, {useState, useContext, createContext, ReactNode} from 'react'
+import React, {useState, useContext, createContext, ReactNode, Dispatch} from 'react'
 import axios from 'axios';
 import Login from '../Modal/login';
 import { loginContext, UserVet } from './Type';
@@ -21,6 +21,14 @@ export default function LoginContextProvider({children}:Props){
 
     const [login, setLogin] = useState(false)
     const [isOpen, setisOpen] = useState(false)
+
+    const [isLogin, setIsLogin] = useState(false)
+    const [showModal, setShowModal] = useState(false);
+
+    // const URL = "https://backpetcheck2.onrender.com"
+    const URL = "http://localhost:3000/"
+
+    const [token, setToken] = useState("")
     let user =
         {
             email: "",
@@ -43,6 +51,16 @@ export default function LoginContextProvider({children}:Props){
             }
         }
 
+    function toggleOpen() {
+        setShowModal(!showModal);
+        }
+    
+    function toggleLogin(bool:boolean){
+        setIsLogin(bool);
+        console.log(isLogin)
+    }
+          
+
     const changeState = () =>{
         setLogin(!login);
         setisOpen(!isOpen);
@@ -50,8 +68,35 @@ export default function LoginContextProvider({children}:Props){
         console.log(user);
     }
 
+    const addToken = (newToken: string) => {
+        setToken(newToken)
+    }
+
+    
+
+    const saveInLocalStorage = (dataUser: UserVet) =>{
+        localStorage.setItem('token', JSON.stringify(dataUser.password));
+        localStorage.setItem('vet', JSON.stringify(dataUser))
+  }
+
+    const authContext = {
+        changeState,
+        login,
+        user,
+        saveInLocalStorage,
+        token,
+        URL,
+        addToken,
+        toggleLogin,
+        toggleOpen,
+        isOpen,
+        showModal,
+        isLogin
+        
+    }
+
     return(
-        <LoginContext.Provider value={{changeState, login, user}}>
+        <LoginContext.Provider value={{changeState, login, user, authContext}}>
                 {children}
         </LoginContext.Provider>
     )

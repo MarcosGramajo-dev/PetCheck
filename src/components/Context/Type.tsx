@@ -21,15 +21,29 @@ export type UserVet = {
 
 export type History = {
         Vacunas: [{}],
-        Registro: [{}],
+        Registros: [{}],
         DataPet: {},
         ownerPet: {},
         id: number
 }
 
 export type loginContext = {
-    login: Boolean, 
     changeState: () => void,
+    login: Boolean, 
     user: UserVet,
+    authContext: {
+        changeState: () => void,
+        login: boolean,
+        user: UserVet,
+        saveInLocalStorage: (dataUser: UserVet) => void,
+        token: string,
+        URL: string,
+        addToken: (snewToken:string) => void,
+        toggleLogin: (bool: boolean) => void,
+        toggleOpen: () => void,
+        isOpen: boolean,
+        showModal: boolean,
+        isLogin: boolean
+    }
 }
 // setUser: React.Dispatch<React.SetStateAction<UserVet>>
