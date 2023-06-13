@@ -48,6 +48,14 @@ export default function NuevaHistoria() {
 
   const [idLibreta, setIdLibreta] = useState(0)
 
+  function diaMesAño (){
+    const tiempoTranscurrido = Date.now();
+  
+    const hoy = new Date(tiempoTranscurrido);
+
+    return hoy.toLocaleDateString()
+  }
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.type === "file") {
       const file = e.target.files?.[0];
@@ -110,6 +118,7 @@ const handleChangePet = (e: React.ChangeEvent<HTMLInputElement>) => {
       setDataVacunas({
           ...dataVacunas,
           "Vacuna" : vacunaSelected,
+          "fecha": diaMesAño(),
           [e.target.name]: e.target.value,
       });
     }
@@ -128,7 +137,8 @@ const handleChangePet = (e: React.ChangeEvent<HTMLInputElement>) => {
       setDataRegister({
           ...dataRegister,
           "Registro": registerSelected,
-          "Data": e.target.value,
+          "fecha": diaMesAño(),
+          "Info": e.target.value,
       });
     }
     setNewHC({...newHC, "Vacunas": [dataVacunas], "Registros": [dataRegister], "DataPet": {dataPet}, "ownerPet": {dataOwnerPet}, "id": idLibreta });
@@ -153,12 +163,6 @@ const handleChangePet = (e: React.ChangeEvent<HTMLInputElement>) => {
         type="text"
         className="m-1 my-2 max-sm:w-full w-[250px] font-semibold border-b-2 border-vet-purple-light"
         placeholder="Detalle la Vacuna"
-      />
-      <input
-        onChange={handleChangeVacunas}
-        name="Date"
-        type="date"
-        className="m-1 my-2 max-sm:w-full w-[250px] font-semibold border-b-2 border-vet-purple-light"
       />
       <input
         onChange={handleChangeVacunas}

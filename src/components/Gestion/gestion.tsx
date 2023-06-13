@@ -13,6 +13,7 @@ import {
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import RowTable from './rowTable';
+import { useLoginState } from '../Context/Context';
 
 ChartJS.register(
   CategoryScale,
@@ -60,17 +61,9 @@ export const data = {
 export default function gestion(){
 const [toggleExpand, setToggleExpand] = useState('')
 
-const [showModal, setShowModal] = useState(false);
 
+const login = useLoginState();
 
-function toggleOpen():void {
-  setShowModal(!showModal)
-  
-}
-
-function toggleLogin(){
-  return true
-}
     return(
         <div className="mt-20">
             <div onClick={() => { /*toggleExpand === 'expand' ? setToggleExpand('contract') : setToggleExpand('expand')*/ }} className={toggleExpand + " " + "border-4 border-vet-purple-light w-11/12 m-auto bg-white/80 flex-col justify-start items-center rounded-lg my-5 cursor-pointer h-auto"}>
@@ -86,7 +79,7 @@ function toggleLogin(){
             <div className="border-4 border-vet-purple-light w-11/12 m-auto bg-white flex-col justify-start items-center rounded-lg my-5 pb-3">
                 <div className="flex items-center justify-between px-5">
                     <p className="text-vet-blue pl-3">Venta Diaria</p>
-                    <button onClick={()=> toggleOpen()} className="my-2 duration-300 text-xs px-4 h-6 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple"> Agregar Venta </button>
+                    <button onClick={()=> login?.authContext.toggleOpen} className="my-2 duration-300 text-xs px-4 h-6 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple"> Agregar Venta </button>
                 </div>
                 <div className=" overflow-x-auto px-3">
                     <table className="w-11/12 m-auto min-w-[32rem]">
@@ -122,7 +115,7 @@ function toggleLogin(){
                     </table>
                 </div>
             </div>
-            <Modal toggleOpen={toggleOpen} show={showModal} modalType={"newSell"} toggleLogin={toggleLogin} isLogin={true}/>
+            <Modal modalType={"newSell"}/>
         </div>
     )
 }
