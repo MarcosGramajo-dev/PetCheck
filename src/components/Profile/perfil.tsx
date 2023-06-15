@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Vet from '../../images/localVet.jpg'
 import provinciasJSON from "../../provincias.json";
 import departamentosJSON from "../../departamentos.json";
 import axios from "axios"
