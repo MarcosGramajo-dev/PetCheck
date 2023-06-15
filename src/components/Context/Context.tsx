@@ -25,7 +25,7 @@ export default function LoginContextProvider({children}:Props){
     const [isLogin, setIsLogin] = useState(false)
     const [showModal, setShowModal] = useState(false);
 
-    const URL = "https://backpetcheck2.onrender.com"
+    const URL = "https://backpetcheck2.onrender.com/"
     //const URL = "http://localhost:3000/"
 
     const [token, setToken] = useState("")
