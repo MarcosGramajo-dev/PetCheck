@@ -13,7 +13,7 @@ export default function ContainerTarjet(){
     useEffect(()=>{
         setLoading(true)
         axios.get(`${login?.authContext.URL}`)
-        .then(res =>{console.log(res.data); setCardsDB(res.data.data)})
+        .then(res =>{console.log(res.data); setCardsDB(res.data)})
         .catch(error => console.log(error))
         .finally(()=> setLoading(false))
     },[])
