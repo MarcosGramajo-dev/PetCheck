@@ -8,8 +8,6 @@ export default function NewPass (){
     function handleChange (e: React.ChangeEvent<HTMLInputElement>){
             setEmail(e.target.value)
             setUserEmail({...userEmail, "email": email})
-
-            console.log(userEmail)
     }
     return (
         <div className="w-full h-full flex justify-center items-center ">
