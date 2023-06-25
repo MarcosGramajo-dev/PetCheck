@@ -4,6 +4,8 @@ import provinciasJSON from "../../provincias.json";
 import departamentosJSON from "../../departamentos.json";
 import React from "react";
 import { History } from "../Context/Type";
+import axios from "axios";
+import { useLoginState } from "../Context/Context";
 
 interface Depart {
   properties: {
@@ -48,6 +50,8 @@ export default function NuevaHistoria() {
 
   const [idLibreta, setIdLibreta] = useState(0)
 
+  const login = useLoginState()
+
   function diaMesAño (){
     const tiempoTranscurrido = Date.now();
   
@@ -75,7 +79,7 @@ export default function NuevaHistoria() {
     } else {
       setDataOwnerPet({ ...dataOwnerPet, [e.target.name]: e.target.value });
     }
-    setNewHC({...newHC, "Vacunas": [dataVacunas], "Registros": [dataRegister], "DataPet": {dataPet}, "ownerPet": {dataOwnerPet}, "id": idLibreta });
+    setNewHC({...newHC, "Vacunas": [dataVacunas], "Registros": [dataRegister], "DataPet": dataPet, "ownerPet": dataOwnerPet, "id": idLibreta });
   };
 
   const selectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -103,7 +107,7 @@ export default function NuevaHistoria() {
 
 const handleChangePet = (e: React.ChangeEvent<HTMLInputElement>) => {
     setDataPet({ ...dataPet, [e.target.name]: e.target.value });
-    setNewHC({...newHC, "Vacunas": [dataVacunas], "Registros": [dataRegister], "DataPet": {dataPet}, "ownerPet": {dataOwnerPet}, "id": idLibreta });
+    setNewHC({...newHC, "Vacunas": [dataVacunas], "Registros": [dataRegister], "DataPet": dataPet, "ownerPet": dataOwnerPet, "id": idLibreta });
   };
 
   const handleChangeVacunas = (
@@ -122,8 +126,8 @@ const handleChangePet = (e: React.ChangeEvent<HTMLInputElement>) => {
           [e.target.name]: e.target.value,
       });
     }
-    setNewHC({...newHC, "Vacunas": [dataVacunas], "Registros": [dataRegister], "DataPet": {dataPet}, "ownerPet": {dataOwnerPet}, "id": idLibreta });
-    console.log(booleanVacunas)
+    setNewHC({...newHC, "Vacunas": [dataVacunas], "Registros": [dataRegister], "DataPet": dataPet, "ownerPet": dataOwnerPet, "id": idLibreta });
+    // console.log(booleanVacunas)
   };
 
   const handleChangeRegister = (
@@ -141,14 +145,14 @@ const handleChangePet = (e: React.ChangeEvent<HTMLInputElement>) => {
           "Info": e.target.value,
       });
     }
-    setNewHC({...newHC, "Vacunas": [dataVacunas], "Registros": [dataRegister], "DataPet": {dataPet}, "ownerPet": {dataOwnerPet}, "id": idLibreta });
+    setNewHC({...newHC, "Vacunas": [dataVacunas], "Registros": [dataRegister], "DataPet": dataPet, "ownerPet": dataOwnerPet, "id": idLibreta });
   };
 
   const submit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("vacunas", dataVacunas);
-    console.log("Registro", dataRegister);
-    console.log("dataPet", dataPet)
+    axios.post(`${login?.authContext.URL}auth/newHistory`, newHC)
+    .then((res)=> console.log(res))
+    .then(err => console.log(err))
 
     console.log(newHC);
   };
