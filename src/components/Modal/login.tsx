@@ -45,8 +45,9 @@ export default function Login() {
     .catch(error => {
       console.log(error)
       console.log(error.response.data)
-      if(error.response.data === "Usuario no encontrado"){
-        setErrorMessage("El Usuario y/o Contrasela son Incorrectos")
+      if(true){
+        //error.response.data === "Usuario no encontrado"
+        setErrorMessage(error.response.data)
       }
     })
   }

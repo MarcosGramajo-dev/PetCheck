@@ -23,25 +23,9 @@ interface Depart {
 }
 
 export default function Register() {
-  const [user, setUser] = useState<UserVet>({
+  const [user, setUser] = useState({
     email: "",
-    password: "",
-    vet: {
-        image: "",
-        nameLocal: "" ,
-        ownerVet: "",
-        service: [{value: "", isChecked: false}],
-        numMatricula: 0,
-        province: "",
-        departament: "",
-        address: "",
-        tel: 0,
-        telWp: 0,
-        web: "",
-        instagram: "",
-        facebook: "",
-        tiktok: ""
-    }
+    password: ""
 })
   const [vet, setVet] = useState({})
   const [newUser, setNewUser] = useState({});
@@ -58,6 +42,7 @@ export default function Register() {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    console.log({user, vet})
     // setNewUser()
     sendtoBack({user, vet});
   };
