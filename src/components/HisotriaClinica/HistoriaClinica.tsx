@@ -44,7 +44,7 @@ const HistoriaClinica: React.FC = () => {
   return (
     <div>
       <div>
-        <p>id: {login?.authContext.HC.id ? login?.authContext.HC.id : ""}</p>
+        
       </div>
       <button onClick={() => handleChange()}> Presiona </button>
     </div>
