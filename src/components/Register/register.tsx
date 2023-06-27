@@ -48,7 +48,6 @@ export default function Register() {
   };
 
   const sendtoBack = (newUser: {}) =>{
-    console.log(newUser)
     axios.post(`${login?.authContext.URL}auth/signUp`, newUser)
     .then( res => {
       if(res.data === "El Email ya esta en uso!"){

@@ -1,25 +1,39 @@
 
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { useLoginState } from '../Context/Context';
+import { History } from '../Context/Type';
+
+
 
 interface HistoriaClinica {
     
 }
 
 const HistoriaClinica: React.FC = () => {
-  const [historiaClinica, setHistoriaClinica] = useState<HistoriaClinica>({
-    // Inicializar la historia clínica con los valores predeterminados o vacíos
-  });
+  const [historiaClinica, setHistoriaClinica] = useState({});
+  const [localHC, setLocalHC] = useState<History>({
+    Vacunas: [{}],
+    Registros: [{}],
+    DataPet: {},
+    ownerPet: {},
+    id: 0
+  })
 
-  const [searchParams] = useSearchParams()
-  console.log(searchParams.get('search'))
+  const login = useLoginState()
+
+
+
+  // const [searchParams] = useSearchParams()
+  // console.log(searchParams.get('search'))
 
   useEffect(() => {
-    // Lógica adicional que se ejecuta después de que el componente se monta o actualiza
+    
   }, []);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  function handleChange() {
     // Lógica para manejar los cambios en los campos de entrada
+    console.log(login?.authContext.HC)
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -29,7 +43,10 @@ const HistoriaClinica: React.FC = () => {
 
   return (
     <div>
-      {/* Estructura del JSX para la representación visual de la historia clínica */}
+      <div>
+        <p>id: {login?.authContext.HC.id ? login?.authContext.HC.id : ""}</p>
+      </div>
+      <button onClick={() => handleChange()}> Presiona </button>
     </div>
   );
 };

@@ -1,13 +1,21 @@
+import axios from "axios";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import Arrow from "../../images/arrow.png";
+import { LoginContext, useLoginState } from "../Context/Context";
 import Historiaclinica from "../HisotriaClinica/HistoriaClinica";
+import { useNavigate } from 'react-router-dom';
+
+
 
 export default function search() {
   const [toggleButton, setToggleButton] = useState(false);
   const [idLibreta, setIdLibreta] = useState("");
   const [mensaje, setMensaje] = useState("");
-
+  const [status, setStatus] = useState(false);
+  
+  const navigate = useNavigate();
+  const login = useLoginState()
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setIdLibreta(e.target.value);
     
@@ -22,8 +30,18 @@ export default function search() {
   //si es correcto redireccionamos a "Historiaclinica", sino a la pestaña de "Error" pero con un mensaje mas personalizado "No se encontro la libreta"
   //la otra opcion es ponele un pequeño modal que salte diciendo que no se encontro
 
-  const verifyId = () => {
+  const verifyId = async () => {
     // consultamos con axios al back, segun la repuesta utilizamos un boolean para manejar la redireccion
+    await axios.get(`${login?.authContext.URL}HistoryClinic/${idLibreta}`)
+    .then( res => {
+      login?.authContext.addHC(res.data)
+      setStatus(true)
+      navigate("/historiaClinica")
+    })
+    .catch(error => {
+      console.log(error)
+      setStatus(false)
+    })
   };
 
   return (
@@ -44,8 +62,8 @@ export default function search() {
           className="border-vet-purple border-2 rounded-lg my-2 max-w-[300px] m-auto px-2"
           type="number"
         />
-        <Link to={idLibreta.length >= 6 ? `historiaClinica?search=${idLibreta}` : ""}>
-          <button className="disabled:opacity-75 w-24 m-auto mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-neutral-50 bg-vet-purple rounded-lg hover:text-vet-purple hover:bg-neutral-50">
+        <Link to={idLibreta.length >= 6 && status ? `historiaClinica?search=${idLibreta}` : ""}>
+          <button onClick={()=> verifyId()} className="disabled:opacity-75 w-24 m-auto mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-neutral-50 bg-vet-purple rounded-lg hover:text-vet-purple hover:bg-neutral-50">
             BUSCAR
           </button>
         </Link>

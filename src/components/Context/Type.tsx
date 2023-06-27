@@ -38,12 +38,14 @@ export type loginContext = {
         saveInLocalStorage: (dataUser: UserVet) => void,
         token: string,
         URL: string,
-        addToken: (snewToken:string) => void,
+        addToken: (newToken:string) => void,
         toggleLogin: (bool: boolean) => void,
         toggleOpen: () => void,
         isOpen: boolean,
         showModal: boolean,
-        isLogin: boolean
+        isLogin: boolean,
+        HC: {},
+        addHC: (history: {}) => void
     }
 }
 // setUser: React.Dispatch<React.SetStateAction<UserVet>>
