@@ -20,12 +20,38 @@ export type UserVet = {
 }
 
 export type History = {
-        Vacunas: [{}],
-        Registros: [{}],
-        DataPet: {},
-        ownerPet: {},
-        id: number
-}
+    Vacunas: [{
+      Certification: number,
+      DataVacuna: string,
+      Vacuna: string,
+      fecha: string,
+      nameAndMatricule: string
+    }],
+    Registros: [{
+      Info: string,
+      Registro: string,
+      fecha: string
+    }],
+    DataPet: {
+        image: string,
+        NombreMascota: string,
+        Especie: string,
+        Sexo: string,
+        Nchip: number,
+        Pedigree: number,
+        Date: string,
+        detalles: string
+    },
+    ownerPet: {
+        NombreDueño: string,
+        DNI: number,
+        Telefono: number,
+        Direccion: string,
+        province: string,
+        departament: string
+    },
+    id: number
+  }
 
 export type loginContext = {
     changeState: () => void,
@@ -44,8 +70,41 @@ export type loginContext = {
         isOpen: boolean,
         showModal: boolean,
         isLogin: boolean,
-        HC: {},
-        addHC: (history: {}) => void
+        addHC: (history: History) => void,
+        HC: History
     }
 }
+export type dataOwnerPet = {
+    NombreDueño: string,
+    DNI: number,
+    Telefono: number,
+    Direccion: string,
+    province: string,
+    departament: string
+    }
+
+export type dataPet = {
+    image: string;
+    NombreMascota: string;
+    Especie: string;
+    Sexo: string;
+    Nchip: number;
+    Pedigree: number;
+    Date: string;
+    detalles: string;
+}
+
+export type Vacunas = [{
+    Certification: number,
+    DataVacuna: string,
+    Vacuna: string,
+    fecha: string,
+    nameAndMatricule: string
+  }]
+
+export type Registros = [{
+    Info: string,
+    Registro: string,
+    fecha: string
+  }]
 // setUser: React.Dispatch<React.SetStateAction<UserVet>>

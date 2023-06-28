@@ -1,7 +1,7 @@
 import React, {useState, useContext, createContext, ReactNode, Dispatch} from 'react'
 import axios from 'axios';
 import Login from '../Modal/login';
-import { loginContext, UserVet } from './Type';
+import { History, loginContext, UserVet } from './Type';
 
 
 
@@ -25,10 +25,42 @@ export default function LoginContextProvider({children}:Props){
     const [isLogin, setIsLogin] = useState(false)
     const [showModal, setShowModal] = useState(false);
 
-    const [HC, setHC] = useState({})
+    const [HC, setHC] = useState<History>({
+        Vacunas: [{
+            Certification: 0,
+            DataVacuna: "",
+            Vacuna: "",
+            fecha: "",
+            nameAndMatricule: ""
+          }],
+          Registros: [{
+            Info: "",
+            Registro: "",
+            fecha: ""
+          }],
+          DataPet: {
+              image: "",
+              NombreMascota: "",
+              Especie: "",
+              Sexo: "",
+              Nchip: 0,
+              Pedigree: 0,
+              Date: "",
+              detalles: ""
+          },
+          ownerPet: {
+              NombreDueño: "",
+              DNI: 0,
+              Telefono: 0,
+              Direccion: "",
+              province: "",
+              departament: ""
+          },
+          id: 0        
+    })
 
-    const URL = "https://backpetcheck2.onrender.com/"
-    // const URL = "http://localhost:3000/"
+    // const URL = "https://backpetcheck2.onrender.com/"
+    const URL = "http://localhost:3000/"
 
     const [token, setToken] = useState("")
     let user =
@@ -74,9 +106,8 @@ export default function LoginContextProvider({children}:Props){
         setToken(newToken)
     }
 
-    const addHC = (history: {}) => {
-        console.log(history)
-        setHC(history)
+    const addHC = (history: History) => {
+        setHC(history);
     }
 
     
@@ -99,8 +130,8 @@ export default function LoginContextProvider({children}:Props){
         isOpen,
         showModal,
         isLogin,
-        HC,
-        addHC
+        addHC,
+        HC
     }
 
     return(

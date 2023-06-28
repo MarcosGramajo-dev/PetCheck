@@ -3,7 +3,7 @@ import { useState, FormEvent, JSXElementConstructor } from "react";
 import provinciasJSON from "../../provincias.json";
 import departamentosJSON from "../../departamentos.json";
 import React from "react";
-import { History } from "../Context/Type";
+import { dataOwnerPet, dataPet, History, Registros, Vacunas } from "../Context/Type";
 import axios from "axios";
 import { useLoginState } from "../Context/Context";
 
@@ -30,23 +30,75 @@ export default function NuevaHistoria() {
   const [arrayDepart, setArrayDepart] = useState<Depart[]>([]);
 
   const [newHC, setNewHC] = useState<History>({
-      Vacunas: [{}],
-      Registros: [{}],
-      DataPet: {},
-      ownerPet: {},
-      id: 0
+    Vacunas: [{
+      Certification: 0,
+      DataVacuna: "",
+      Vacuna: "",
+      fecha: "",
+      nameAndMatricule: ""
+    }],
+    Registros: [{
+      Info: "",
+      Registro: "",
+      fecha: ""
+    }],
+    DataPet: {
+        image: "",
+        NombreMascota: "",
+        Especie: "",
+        Sexo: "",
+        Nchip: 0,
+        Pedigree: 0,
+        Date: "",
+        detalles: ""
+    },
+    ownerPet: {
+        NombreDueño: "",
+        DNI: 0,
+        Telefono: 0,
+        Direccion: "",
+        province: "",
+        departament: ""
+    },
+    id: 0  
       });
 
-  const [dataPet, setDataPet] = useState({});
+  const [dataPet, setDataPet] = useState<dataPet>({
+    image: "",
+    NombreMascota: "",
+    Especie: "",
+    Sexo: "",
+    Nchip: 0,
+    Pedigree: 0,
+    Date: "",
+    detalles: ""
+  });
 
   const [vacunaSelected, setVacunaSelected] = useState("");
-  const [dataVacunas, setDataVacunas] = useState({});
+  const [dataVacunas, setDataVacunas] = useState<Vacunas>([{
+    Certification: 0,
+    DataVacuna: "",
+    Vacuna: "",
+    fecha: "",
+    nameAndMatricule: ""
+  }]);
   const [booleanVacunas, setBooleanVacunas] = useState(false)
 
-  const [dataOwnerPet, setDataOwnerPet] = useState({});
+  const [dataOwnerPet, setDataOwnerPet] = useState<dataOwnerPet>({
+        NombreDueño: "",
+        DNI: 0,
+        Telefono: 0,
+        Direccion: "",
+        province: "",
+        departament: ""
+  });
 
   const [registerSelected, setRegisterSelected] = useState("");
-  const [dataRegister, setDataRegister] = useState({});
+  const [dataRegister, setDataRegister] = useState<Registros>([{
+      Info: "",
+      Registro: "",
+      fecha: ""
+  }]);
 
   const [idLibreta, setIdLibreta] = useState(0)
 
@@ -79,7 +131,7 @@ export default function NuevaHistoria() {
     } else {
       setDataOwnerPet({ ...dataOwnerPet, [e.target.name]: e.target.value });
     }
-    setNewHC({...newHC, "Vacunas": [dataVacunas], "Registros": [dataRegister], "DataPet": dataPet, "ownerPet": dataOwnerPet, "id": idLibreta });
+    // setNewHC({...newHC, "Vacunas": {dataVacunas}, "Registros": dataRegister, "DataPet": dataPet, "ownerPet": dataOwnerPet, "id": idLibreta });
   };
 
   const selectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -87,12 +139,13 @@ export default function NuevaHistoria() {
       (depart) => depart.properties.provincia.id === e.target.value
     );
     setArrayDepart(arrayDepartamentos);
-
     setDataOwnerPet({
       ...dataOwnerPet,
-      "province": arrayDepartamentos[0].properties.provincia.nombre,
+      province : arrayDepartamentos[0].properties.provincia.nombre,
     });
+    console.log("province" + ":" + e.target.value)
   };
+  
 
   const selectDepart = (e: React.ChangeEvent<HTMLSelectElement>) => {
     let departSelect = arrayDepart.filter(
@@ -101,59 +154,123 @@ export default function NuevaHistoria() {
 
     setDataOwnerPet({
       ...dataOwnerPet,
-      ["departament"]: departSelect[0].properties.nombre,
+      departament: departSelect[0].properties.nombre,
     });
+
   };
 
 const handleChangePet = (e: React.ChangeEvent<HTMLInputElement>) => {
     setDataPet({ ...dataPet, [e.target.name]: e.target.value });
-    setNewHC({...newHC, "Vacunas": [dataVacunas], "Registros": [dataRegister], "DataPet": dataPet, "ownerPet": dataOwnerPet, "id": idLibreta });
+    // setNewHC({...newHC, "Vacunas": [dataVacunas], "Registros": [dataRegister], "DataPet": dataPet, "ownerPet": dataOwnerPet, "id": idLibreta });
   };
 
-  const handleChangeVacunas = (
-    e:
-      | React.ChangeEvent<HTMLSelectElement>
-      | React.ChangeEvent<HTMLInputElement>
-  ) => {
-    if (e.target.type == "select-one") {
+  // const handleChangeVacunas = (
+  //   e:
+  //     | React.ChangeEvent<HTMLSelectElement>
+  //     | React.ChangeEvent<HTMLInputElement>
+  // ) => {
+  //   if (e.target.type == "select-one") {
+  //     setVacunaSelected(e.target.value);
+
+  //   } else {
+  //     setDataVacunas({
+  //         ...dataVacunas,
+  //         "Vacuna" : vacunaSelected,
+  //         "fecha": diaMesAño(),
+  //         [e.target.name]: e.target.value,
+  //     });
+  //   }
+  //   // setNewHC({...newHC, "Vacunas": [dataVacunas], "Registros": [dataRegister], "DataPet": dataPet, "ownerPet": dataOwnerPet, "id": idLibreta });
+  //   // console.log(booleanVacunas)
+  // };
+
+  // const handleChangeVacunas = (
+  //   e: React.ChangeEvent<HTMLSelectElement> | React.ChangeEvent<HTMLInputElement>
+  // ) => {
+  //   if (e.target.type === "select-one") {
+  //     setVacunaSelected(e.target.value);
+  //   } else {
+  //     setDataVacunas((prevDataVacunas) => ({
+  //       ...prevDataVacunas,
+  //       Vacuna: vacunaSelected,
+  //       fecha: diaMesAño(),
+  //       [e.target.name]: e.target.value,
+  //     }));
+  //   }
+  // };
+
+  // const handleChangeRegister = (
+  //   e:
+  //     | React.ChangeEvent<HTMLSelectElement>
+  //     | React.ChangeEvent<HTMLTextAreaElement>
+  // ) => {
+  //   if (e.target.type == "select-one") {
+  //     setRegisterSelected(e.target.value);
+  //   } else {
+  //     setDataRegister({
+  //         ...dataRegister,
+  //         "Registro": registerSelected,
+  //         "fecha": diaMesAño(),
+  //         "Info": e.target.value,
+  //     });
+  //   }
+  //   // setNewHC({...newHC, "Vacunas": [dataVacunas], "Registros": [dataRegister], "DataPet": dataPet, "ownerPet": dataOwnerPet, "id": idLibreta });
+  // };
+
+  // const submit = (e: FormEvent<HTMLFormElement>) => {
+  //   setNewHC({...newHC, "Vacuna": [dataVacunas], "Registro": dataRegister, "DataPet": dataPet, "ownerPet": dataOwnerPet, "id": idLibreta });
+  //   e.preventDefault();
+  //   axios.post(`${login?.authContext.URL}auth/newHistory`, newHC)
+  //   .then((res)=> console.log(res))
+  //   .then(err => console.log(err))
+
+  //   console.log(newHC);
+  // };
+
+  const handleChangeVacunas = (e: React.ChangeEvent<HTMLSelectElement> | React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.type === "select-one") {
       setVacunaSelected(e.target.value);
-
     } else {
-      setDataVacunas({
-          ...dataVacunas,
-          "Vacuna" : vacunaSelected,
-          "fecha": diaMesAño(),
-          [e.target.name]: e.target.value,
-      });
+      setDataVacunas((dataVacunas) => ({
+        ...dataVacunas,
+            Vacuna: vacunaSelected,
+            fecha: diaMesAño(),
+            [e.target.name]: e.target.value
+      }));
     }
-    setNewHC({...newHC, "Vacunas": [dataVacunas], "Registros": [dataRegister], "DataPet": dataPet, "ownerPet": dataOwnerPet, "id": idLibreta });
-    // console.log(booleanVacunas)
   };
-
-  const handleChangeRegister = (
-    e:
-      | React.ChangeEvent<HTMLSelectElement>
-      | React.ChangeEvent<HTMLTextAreaElement>
-  ) => {
-    if (e.target.type == "select-one") {
+  
+  const handleChangeRegister = (e: React.ChangeEvent<HTMLSelectElement> | React.ChangeEvent<HTMLTextAreaElement>) => {
+    if (e.target.type === "select-one") {
       setRegisterSelected(e.target.value);
     } else {
-      setDataRegister({
-          ...dataRegister,
-          "Registro": registerSelected,
-          "fecha": diaMesAño(),
-          "Info": e.target.value,
-      });
+      setDataRegister((dataRegister) => ({
+        ...dataRegister,
+        Registro: registerSelected,
+        fecha: diaMesAño(),
+        Info: e.target.value
+      }));
     }
-    setNewHC({...newHC, "Vacunas": [dataVacunas], "Registros": [dataRegister], "DataPet": dataPet, "ownerPet": dataOwnerPet, "id": idLibreta });
   };
-
+  
   const submit = (e: FormEvent<HTMLFormElement>) => {
+    const newHC: History = {
+      Vacunas: dataVacunas,
+      Registros: dataRegister,
+      DataPet: dataPet,
+      ownerPet: dataOwnerPet,
+      id: idLibreta,
+    };
+  
+    setNewHC(newHC);
+  
     e.preventDefault();
-    axios.post(`${login?.authContext.URL}auth/newHistory`, newHC)
-    .then((res)=> console.log(res))
-    .then(err => console.log(err))
-
+  
+    axios
+      .post(`${login?.authContext.URL}auth/newHistory`, newHC)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  
     console.log(newHC);
   };
 
