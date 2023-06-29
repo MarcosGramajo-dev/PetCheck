@@ -289,6 +289,7 @@ export default function Register() {
               <div className="flex justify-between flex-wrap  min-w-[200px] max-[500px]:w-full w-auto">
                 <div className="flex flex-wrap justify-between min-w-[200px] max-[500px]:w-full w-auto">
                   <select
+                    id="provinciatRegister"
                     required
                     className="my-3 mx-3 w-[200px] max-[500px]:w-full border-b-2 border-vet-purple-light"
                     onChange={selectChange}
@@ -306,6 +307,7 @@ export default function Register() {
                   </select>
 
                   <select
+                    id="departRegister"
                     className="my-3 mx-3 w-[200px] max-[500px]:w-full border-b-2 border-vet-purple-light"
                     required
                     onChange={selectDepart}
