@@ -5,12 +5,7 @@ import { useLoginState } from '../Context/Context';
 import { History } from '../Context/Type';
 
 
-
-interface HistoriaClinica {
-    
-}
-
-const HistoriaClinica: React.FC = () => {
+export default function HistoriaClinica() {
   const [historiaClinica, setHistoriaClinica] = useState({});
   const [localHC, setLocalHC] = useState<History>({
     Vacunas: [{
@@ -130,5 +125,3 @@ const HistoriaClinica: React.FC = () => {
     </div>
   );
 };
-
-export default HistoriaClinica

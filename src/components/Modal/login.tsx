@@ -78,6 +78,7 @@ export default function Login() {
         <p className=" text-xl pb-2">Iniciar Sesion</p>
         <div className={`relative w-60 object-cover my-2`}>
           <input
+            id="emailLogin"
             name="email"
             className="my-1 w-60 px-2 border-b-4 border-t-2 border-vet-purple-light rounded-md"
             type="email"
@@ -87,6 +88,7 @@ export default function Login() {
         </div>
         <div className="relative w-60 object-cover my-2">
           <input
+            id="pass"
             name="password"
             className="my-1 w-60 px-2 border-b-4 border-t-2 border-vet-purple-light rounded-md"
             type="password"
@@ -96,7 +98,9 @@ export default function Login() {
         </div>
         {errorMessage ? <p className="text-red-500">{errorMessage}</p> : ""}
         {successMessage ? <p className="text-green-500">{successMessage}</p> : ""}
-        <button disabled={stateBtn}
+        <button 
+          id="submitLogin"
+          disabled={stateBtn}
           onClick={(event) => {
             event.preventDefault();
             // props.toggleOpen();
