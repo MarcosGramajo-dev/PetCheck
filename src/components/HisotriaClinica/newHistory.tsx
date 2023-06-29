@@ -279,6 +279,7 @@ const handleChangePet = (e: React.ChangeEvent<HTMLInputElement>) => {
     return(
       <div>        
       <input
+        id="dataVacunasNewHC"
         onChange={handleChangeVacunas}
         name="DataVacuna"
         type="text"
@@ -286,6 +287,7 @@ const handleChangePet = (e: React.ChangeEvent<HTMLInputElement>) => {
         placeholder="Detalle la Vacuna"
       />
       <input
+        id="certificationNewHC"
         onChange={handleChangeVacunas}
         name="Certification"
         type="number"
@@ -293,6 +295,7 @@ const handleChangePet = (e: React.ChangeEvent<HTMLInputElement>) => {
         placeholder="N° de Certificacion"
       />
       <input
+        id="nameAndMatriculeNewHC"
         onChange={handleChangeVacunas}
         name="nameAndMatricule"
         type="text"
@@ -311,6 +314,7 @@ if(registerSelected != ""){
   return (
     <div>
       <textarea
+        id="textAreaNewHC"
         onChange={handleChangeRegister}
         name=""
         cols={40}
@@ -334,7 +338,6 @@ return (
       <div className="h-[100px] flex justify-left items-center flex-col">
         <input
           type="file"
-          id="img"
           className="hidden"
           onChange={handleChange}
         />
@@ -346,6 +349,7 @@ return (
           Foto de la mascota{" "}
         </label>
         <input
+          id="idLibretaNewHC"
           type="number"
           onChange={handleChange}
           name="IDLibreta"
@@ -359,7 +363,7 @@ return (
           onChange={handleChange}
           name="NombreDueño"
           type="text"
-          id="Nombre"
+          id="NombreNewHC"
           className="m-1 my-2 max-sm:w-full w-[250px] font-semibold border-b-2 border-vet-purple-light"
           placeholder="Nombre"
         />
@@ -367,7 +371,7 @@ return (
           onChange={handleChange}
           name="DNI"
           type="number"
-          id="DNI"
+          id="DNINewHC"
           className="m-1 my-2 max-sm:w-full w-[250px] font-semibold border-b-2 border-vet-purple-light"
           placeholder="D.N.I"
         />
@@ -375,7 +379,7 @@ return (
           onChange={handleChange}
           name="Telefono"
           type="number"
-          id="telefono"
+          id="telefonoNewHC"
           className="m-1 my-2 max-sm:w-full w-[250px] font-semibold border-b-2 border-vet-purple-light"
           placeholder="Telefono"
         />
@@ -383,12 +387,13 @@ return (
           onChange={handleChange}
           name="Direccion"
           type="text"
-          id="direccion"
+          id="direccionNewHC"
           className="m-1 my-2 max-sm:w-full w-[250px] font-semibold border-b-2 border-vet-purple-light"
           placeholder="Direccion"
         />
         <div className="flex flex-wrap justify-between min-w-[200px] max-[500px]:w-full w-auto">
           <select
+            id="provinciaNewHC"
             required
             className="my-3 mx-3 w-[200px] max-[500px]:w-full border-b-2 border-vet-purple-light"
             onChange={selectChange}
@@ -405,6 +410,7 @@ return (
           </select>
 
           <select
+            id="departamentNewHC"
             className="my-3 mx-3 w-[200px] max-[500px]:w-full border-b-2 border-vet-purple-light"
             required
             onChange={selectDepart}
@@ -425,13 +431,15 @@ return (
       <p className="py-2">DATOS DE LA MASCOTA</p>
       <div className="flex flex-wrap justify-around border-b-2 border-vet-purple py-2 border-dashed">
         <input
-          onChange={handleChangePet}
+          id="nombreMascotaNewHC"
+          onChange={handleChangePet}          
           type="text"
           name="NombreMascota"
           className="m-1 my-2 max-sm:w-full w-[250px] font-semibold border-b-2 border-vet-purple-light"
           placeholder="Nombre"
         />
         <input
+          id="especieNewHC"
           onChange={handleChangePet}
           type="text"
           name="Especie"
@@ -439,6 +447,7 @@ return (
           placeholder="Especie"
         />
         <input
+          id="sexoNewHC"
           onChange={handleChangePet}
           type="text"
           name="Sexo"
@@ -446,6 +455,7 @@ return (
           placeholder="Sexo"
         />
         <input
+          id="NchipNewHC"
           onChange={handleChangePet}
           type="number"
           name="Nchip"
@@ -453,6 +463,7 @@ return (
           placeholder="N° Chip"
         />
         <input
+          id="pedigreeNewHC"
           onChange={handleChangePet}
           type="number"
           name="Pedigree"
@@ -460,6 +471,7 @@ return (
           placeholder="Registro Pedigree"
         />
         <input
+          id="dateNewHC"
           onChange={handleChangePet}
           type="date"
           name="Date"
@@ -467,6 +479,7 @@ return (
           placeholder="Fecha de nacimiento"
         />
         <input
+          id="detallesNewHC"
           onChange={handleChangePet}
           type="text"
           name="detalles"
@@ -479,6 +492,7 @@ return (
         <p>VACUNAS</p>
         <div className=" w-3/4 m-auto flex flex-wrap justify-around">
           <select
+            id="vacunasNewHC"
             onChange={handleChangeVacunas}
             className="m-1 my-2 max-sm:w-full w-[250px] font-semibold border-b-2 border-vet-purple-light"
           >
@@ -494,6 +508,7 @@ return (
         <p>REGISTRO</p>
         <div className=" w-3/4 m-auto flex flex-col justify-center items-center">
           <select
+            id="RegistroNewHC"
             onChange={handleChangeRegister}
             className="m-1 my-2 max-sm:w-full w-[250px] font-semibold border-b-2 border-vet-purple-light"
           >
@@ -509,7 +524,7 @@ return (
       </div>
 
       <div className="flex justify-center">
-        <button className="min-w-[120px] my-3 m-auto duration-300 text-lg px-4 border border-vet-purple text-neutral-50 bg-vet-purple rounded-lg hover:text-vet-purple hover:bg-neutral-50 max-sm:hidden">
+        <button id="SubmitNewHC" className="min-w-[120px] my-3 m-auto duration-300 text-lg px-4 border border-vet-purple text-neutral-50 bg-vet-purple rounded-lg hover:text-vet-purple hover:bg-neutral-50 max-sm:hidden">
           {" "}
           Crear Nueva Historia Clinica{" "}
         </button>
