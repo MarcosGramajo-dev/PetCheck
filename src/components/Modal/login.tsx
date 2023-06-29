@@ -9,6 +9,8 @@ import { UserVet } from "../Context/Type";
 export default function Login() {
   const [user, setUser] = useState({});
   const [errorMessage, setErrorMessage] = React.useState<string | null>();
+  const [successMessage, setSuccessMessage] = React.useState<string | null>();
+  const [stateBtn, setStateBtn] = useState(false)
   // let token = 0
   const login = useLoginState()
 
@@ -28,27 +30,28 @@ export default function Login() {
   };
 
   const verifyUser = () =>{
+    setStateBtn(true)
     //consultar si existe el usuario
     axios.post(`${login?.authContext.URL}auth/login`, user)
     .then(res => {
-      console.log(res.status)
-      console.log(res)
+      // console.log(res.status)
+      // console.log(res)
       //si existe debera cambiar el estado login e inicar sesion
       //si NO existe mostrara un mensaje de error
       if(res.status === 200){
+        setSuccessMessage('Usuario Confirmado')
+        login.authContext.toggleOpen()
         login.authContext.addToken(res.data.password)
         login.authContext.saveInLocalStorage(res.data)
         login.authContext.toggleLogin(true)
-        login.authContext.toggleOpen()
+        setStateBtn(true)
       }
     })
     .catch(error => {
-      console.log(error)
-      console.log(error.response.data)
-      if(true){
-        //error.response.data === "Usuario no encontrado"
-        setErrorMessage(error.response.data)
-      }
+      // console.log(error)
+      // console.log(error.response.data)
+      setErrorMessage(error.response.data)
+      setStateBtn(false)
     })
   }
   
@@ -92,7 +95,8 @@ export default function Login() {
           />
         </div>
         {errorMessage ? <p className="text-red-500">{errorMessage}</p> : ""}
-        <button
+        {successMessage ? <p className="text-green-500">{successMessage}</p> : ""}
+        <button disabled={stateBtn}
           onClick={(event) => {
             event.preventDefault();
             // props.toggleOpen();

@@ -23,6 +23,7 @@ interface Depart {
 }
 
 export default function Register() {
+  const [stateForm, setStateForm] = useState(true)
   const [user, setUser] = useState({
     email: "",
     password: ""
@@ -130,267 +131,283 @@ export default function Register() {
             onSubmit={handleSubmit}
             className="flex justify-center flex-col"
           >
-            <p>Datos del Usuario</p>
+            <div className={!stateForm ? "hidden" : ""}>
+              <p>Datos del Usuario</p>
 
-            <div className="flex justify-between flex-wrap">
-              <input
-                onChange={handleChangeUser}
-                type="email"
-                name="email"
-                className="my-3 mx-3 min-w-[200px] max-[500px]:w-full border-b-2 border-vet-purple-light invalid:border-red-600 valid:border-green-600"
-                placeholder="Correo ELectronico"
-              />
-              <input
-                onChange={handleChangeUser}
-                name="password"
-                type="password"
-                className="my-3 mx-3 min-w-[200px] max-[500px]:w-full border-b-2 border-vet-purple-light"
-                placeholder="Contraseña"
-              />
+              <div className="flex justify-between flex-wrap">
+                <input
+                  onChange={handleChangeUser}
+                  type="email"
+                  name="email"
+                  className="my-3 mx-3 min-w-[200px] max-[500px]:w-full border-b-2 border-vet-purple-light invalid:border-red-600 valid:border-green-600"
+                  placeholder="Correo ELectronico"
+                />
+                <input
+                  onChange={handleChangeUser}
+                  name="password"
+                  type="password"
+                  className="my-3 mx-3 min-w-[200px] max-[500px]:w-full border-b-2 border-vet-purple-light"
+                  placeholder="Contraseña"
+                />
+
+                <button 
+                  className="my-2 m-auto duration-300 text-lg px-6 py-1 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple"
+                  onClick={() => setStateForm(!stateForm)}
+                > Siguiente </button>
+              </div>
             </div>
 
-            <p>Datos de la Veterinaria</p>
-            <div
-              className="h-[100px] flex justify-left items-center"
-              onChange={handleChange}
-            >
-              <input type="file" id="img" className="hidden" />
-              <label
-                htmlFor="img"
-                className="text-center cursor-pointer w-full border-dashed border-2 border-vet-purple px-2 py-6"
+            <div className={stateForm ? "hidden" : ""}>
+              <p>Datos de la Veterinaria</p>
+              <div
+                className="h-[100px] flex justify-left items-center"
+                onChange={handleChange}
               >
-                {" "}
-                Foto del Local{" "}
-              </label>
-            </div>
-            <p>Horarios de Atencion</p>
-            <div className="flex justify-between flex-wrap items-center">
-              <div className="flex flex-col">
-                <label className=" w-32 text-sm">Lunes a Viernes:</label>
-                  <div className="flex items-center justify-center">
-                    <p className=" w-32 ml-6 text-sm">Mañana</p>                
-                      <input
-                        onChange={handleChange}
-                        type="time"
-                        placeholder="Turno Mañana Ej: 8:00 a 12:00"
-                        name="LaVManana"
-                        className="my-1 mx-3 px-2 border-b-2 border-vet-purple-light w-24 max-sm:mx-1 max-sm:my-1"
-                      />
-                      <p>a</p>
-                      <input
-                        onChange={handleChange}
-                        type="time"
-                        placeholder="Turno Tarde Ej: 15:00 a 17:00"
-                        name="LaVTarde"
-                        className="my-1 mx-3 px-2 border-b-2 border-vet-purple-light w-24 max-sm:mx-1 max-sm:my-1"
-                      />
-                  </div>
-                  <div className="flex items-center">
-                    <p className=" w-32 ml-6 text-sm">Tarde</p>
-                      <input
-                        onChange={handleChange}
-                        type="time"
-                        placeholder="Turno Mañana Ej: 8:00 a 12:00"
-                        name="LaVManana"
-                        className="my-1 mx-3 px-2 border-b-2 border-vet-purple-light w-24 max-sm:mx-1 max-sm:my-1"
-                      />
-                      <p>a</p>
-                      <input
-                        onChange={handleChange}
-                        type="time"
-                        placeholder="Turno Tarde Ej: 15:00 a 17:00"
-                        name="LaVTarde"
-                        className="my-1 mx-3 px-2 border-b-2 border-vet-purple-light w-24 max-sm:mx-1 max-sm:my-1"
-                      />
-                  </div>
-              </div>
-
-              <div className="w-full h-[2px] bg-vet-blue bg-opacity-25"></div>
-
-              <div className="flex justify-between flex-wrap items-center">
-                <label className=" w-32">Sabados:</label>
-                <input
-                  onChange={handleChange}
-                  type="time"
-                  placeholder="Turno Mañana Ej: 8:00 a 12:00"
-                  name="SabManana"
-                  className="my-3 mx-3 px-2 border-b-2 border-vet-purple-light w-24 max-sm:mx-1 max-sm:my-1"
-                />
-                <p>A</p>
-                <input
-                  onChange={handleChange}
-                  type="time"
-                  placeholder="Turno Tarde Ej: 15:00 a 19:00"
-                  name="SabTarde"
-                  className="my-3 mx-3 px-2 border-b-2 border-vet-purple-light w-24 max-sm:mx-1 max-sm:my-1"
-                />
-              </div>
-
-              <div className="flex justify-between flex-wrap items-center">
-                <label className="w-32">Domingos:</label>
-                <input
-                  onChange={handleChange}
-                  type="time"
-                  placeholder="Turno Mañana Ej: 8:00 a 12:00"
-                  name="DomMañana"
-                  className="my-3 mx-3 px-2 border-b-2 border-vet-purple-light w-24 max-sm:mx-1 max-sm:my-1"
-                />
-                <input
-                  onChange={handleChange}
-                  type="time"
-                  placeholder="Turno Tarde Ej: 15:00 a 19:00"
-                  name="DomTarde"
-                  className="my-3 mx-3 px-2 border-b-2 border-vet-purple-light w-24 max-sm:mx-1 max-sm:my-1"
-                />
-              </div>
-            </div>
-
-            <input
-              required
-              onChange={handleChange}
-              type="text"
-              placeholder="Nombre de la Veterinaria"
-              name="nameLocal"
-              className="my-3 mx-3 border-b-2 border-vet-purple-light"
-            />
-            <div className="flex justify-between flex-wrap">
-              <input
-                required
-                onChange={handleChange}
-                name="ownerVet"
-                type="text"
-                placeholder="Titular de la Veterinaria"
-                className="my-3 mx-3 min-w-[200px] max-[500px]:w-full border-b-2 border-vet-purple-light"
-              />
-              <input
-                required
-                onChange={handleChange}
-                name="numMatricula"
-                type="number"
-                placeholder="Numero de Matricula"
-                className=" my-3 mx-3 min-w-[200px] max-[500px]:w-full w-auto border-b-2 border-vet-purple-light"
-              />
-            </div>
-            <div className="flex justify-between flex-wrap  min-w-[200px] max-[500px]:w-full w-auto">
-              <div className="flex flex-wrap justify-between min-w-[200px] max-[500px]:w-full w-auto">
-                <select
-                  required
-                  className="my-3 mx-3 w-[200px] max-[500px]:w-full border-b-2 border-vet-purple-light"
-                  onChange={selectChange}
+                <input type="file" id="img" className="hidden" />
+                <label
+                  htmlFor="img"
+                  className="text-center cursor-pointer w-full border-dashed border-2 border-vet-purple px-2 py-6"
                 >
-                  <option value=""> Selecciona una Provincia </option>
-                  {provinciasJSON.features.map((option) => (
-                    <option
-                      key={option.properties.id}
-                      value={option.properties.id}
-                    >
-                      {option.properties.nombre}
-                    </option>
-                  ))}
-                </select>
-
-                <select
-                  className="my-3 mx-3 w-[200px] max-[500px]:w-full border-b-2 border-vet-purple-light"
-                  required
-                  onChange={selectDepart}
-                >
-                  <option value="">Seleccione su Localidad</option>
-                  {arrayDepart.map((element) => (
-                    <option
-                      key={element.properties.id}
-                      value={element.properties.id}
-                    >
-                      {element.properties.nombre}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <input
-                required
-                onChange={handleChange}
-                name="address"
-                type="text"
-                placeholder="Direccion"
-                className="my-3 mx-3 min-w-[200px] max-[500px]:w-full w-auto border-b-2 border-vet-purple-light"
-              />
-            </div>
-            <div className="flex justify-between flex-wrap">
-              <input
-                required
-                onChange={handleChange}
-                name="tel"
-                type="number"
-                placeholder="Numero de Contacto"
-                className="my-3 mx-3 min-w-[200px] max-[500px]:w-full w-auto border-b-2 border-vet-purple-light"
-              />
-              <input
-                required
-                onChange={handleChange}
-                name="telWp"
-                type="number"
-                placeholder="Numero de WhatsApp"
-                className="my-3 mx-3 min-w-[200px] max-[500px]:w-full w-auto border-b-2 border-vet-purple-light"
-              />
-            </div>
-            <p>Redes Solciales</p>
-            <div className="flex justify-between flex-wrap">
-              <input
-                required
-                onChange={handleChange}
-                name="web"
-                type="text"
-                placeholder="Pagina Web"
-                className="my-3 mx-3 min-w-[200px] max-[500px]:w-full w-auto border-b-2 border-vet-purple-light"
-              />
-              <input
-                required
-                onChange={handleChange}
-                name="instagram"
-                type="text"
-                placeholder="Instagram"
-                className="my-3 mx-3 min-w-[200px] max-[500px]:w-full w-auto border-b-2 border-vet-purple-light"
-              />
-            </div>
-            <div className="flex justify-between flex-wrap">
-              <input
-                required
-                onChange={handleChange}
-                name="facebook"
-                type="text"
-                placeholder="Facebook"
-                className="my-3 mx-3 min-w-[200px] max-[500px]:w-full w-auto border-b-2 border-vet-purple-light"
-              />
-              <input
-                required
-                onChange={handleChange}
-                name="tiktok"
-                type="text"
-                placeholder="Tiktok"
-                className="my-3 mx-3 min-w-[200px] max-[500px]:w-full w-auto border-b-2 border-vet-purple-light"
-              />
-            </div>
-            <p>Selecciones todos los servicios que brinda</p>
-            <div className="flex flex-wrap">
-              {checkboxes.map((checkbox) => (
-                <label key={checkbox.value} className="mx-2">
-                  <input
-                    type="checkbox"
-                    value={checkbox.value}
-                    checked={checkbox.isChecked}
-                    onChange={handleChange}
-                  />
-                  {checkbox.value}
+                  {" "}
+                  Foto del Local{" "}
                 </label>
-              ))}
-            </div>
-            <span className="text-red-600 text-sm text-center" > {message} </span>
-            <button
-              type="submit"
+              </div>
+              <p>Horarios de Atencion</p>
+              <div className="flex justify-between flex-wrap items-center">
+                <div className="flex flex-col">
+                  <label className=" w-32 text-sm">Lunes a Viernes:</label>
+                    <div className="flex items-center justify-center">
+                      <p className=" w-32 ml-6 text-sm">Mañana</p>                
+                        <input
+                          onChange={handleChange}
+                          type="time"
+                          placeholder="Turno Mañana Ej: 8:00 a 12:00"
+                          name="LaVManana"
+                          className="my-1 mx-3 px-2 border-b-2 border-vet-purple-light w-24 max-sm:mx-1 max-sm:my-1"
+                        />
+                        <p>a</p>
+                        <input
+                          onChange={handleChange}
+                          type="time"
+                          placeholder="Turno Tarde Ej: 15:00 a 17:00"
+                          name="LaVTarde"
+                          className="my-1 mx-3 px-2 border-b-2 border-vet-purple-light w-24 max-sm:mx-1 max-sm:my-1"
+                        />
+                    </div>
+                    <div className="flex items-center">
+                      <p className=" w-32 ml-6 text-sm">Tarde</p>
+                        <input
+                          onChange={handleChange}
+                          type="time"
+                          placeholder="Turno Mañana Ej: 8:00 a 12:00"
+                          name="LaVManana"
+                          className="my-1 mx-3 px-2 border-b-2 border-vet-purple-light w-24 max-sm:mx-1 max-sm:my-1"
+                        />
+                        <p>a</p>
+                        <input
+                          onChange={handleChange}
+                          type="time"
+                          placeholder="Turno Tarde Ej: 15:00 a 17:00"
+                          name="LaVTarde"
+                          className="my-1 mx-3 px-2 border-b-2 border-vet-purple-light w-24 max-sm:mx-1 max-sm:my-1"
+                        />
+                    </div>
+                </div>
+
+                <div className="w-full h-[2px] bg-vet-blue bg-opacity-25"></div>
+
+                <div className="flex justify-between flex-wrap items-center">
+                  <label className=" w-32">Sabados:</label>
+                  <input
+                    onChange={handleChange}
+                    type="time"
+                    placeholder="Turno Mañana Ej: 8:00 a 12:00"
+                    name="SabManana"
+                    className="my-3 mx-3 px-2 border-b-2 border-vet-purple-light w-24 max-sm:mx-1 max-sm:my-1"
+                  />
+                  <p>A</p>
+                  <input
+                    onChange={handleChange}
+                    type="time"
+                    placeholder="Turno Tarde Ej: 15:00 a 19:00"
+                    name="SabTarde"
+                    className="my-3 mx-3 px-2 border-b-2 border-vet-purple-light w-24 max-sm:mx-1 max-sm:my-1"
+                  />
+                </div>
+
+                <div className="flex justify-between flex-wrap items-center">
+                  <label className="w-32">Domingos:</label>
+                  <input
+                    onChange={handleChange}
+                    type="time"
+                    placeholder="Turno Mañana Ej: 8:00 a 12:00"
+                    name="DomMañana"
+                    className="my-3 mx-3 px-2 border-b-2 border-vet-purple-light w-24 max-sm:mx-1 max-sm:my-1"
+                  />
+                  <input
+                    onChange={handleChange}
+                    type="time"
+                    placeholder="Turno Tarde Ej: 15:00 a 19:00"
+                    name="DomTarde"
+                    className="my-3 mx-3 px-2 border-b-2 border-vet-purple-light w-24 max-sm:mx-1 max-sm:my-1"
+                  />
+                </div>
+              </div>
+
+              <input
+                required
+                onChange={handleChange}
+                type="text"
+                placeholder="Nombre de la Veterinaria"
+                name="nameLocal"
+                className="my-3 mx-3 border-b-2 border-vet-purple-light"
+              />
+              <div className="flex justify-between flex-wrap">
+                <input
+                  required
+                  onChange={handleChange}
+                  name="ownerVet"
+                  type="text"
+                  placeholder="Titular de la Veterinaria"
+                  className="my-3 mx-3 min-w-[200px] max-[500px]:w-full border-b-2 border-vet-purple-light"
+                />
+                <input
+                  required
+                  onChange={handleChange}
+                  name="numMatricula"
+                  type="number"
+                  placeholder="Numero de Matricula"
+                  className=" my-3 mx-3 min-w-[200px] max-[500px]:w-full w-auto border-b-2 border-vet-purple-light"
+                />
+              </div>
+              <div className="flex justify-between flex-wrap  min-w-[200px] max-[500px]:w-full w-auto">
+                <div className="flex flex-wrap justify-between min-w-[200px] max-[500px]:w-full w-auto">
+                  <select
+                    required
+                    className="my-3 mx-3 w-[200px] max-[500px]:w-full border-b-2 border-vet-purple-light"
+                    onChange={selectChange}
+                  >
+                    <option value=""> Selecciona una Provincia </option>
+                    {provinciasJSON.features.map((option) => (
+                      <option
+                        key={option.properties.id}
+                        value={option.properties.id}
+                      >
+                        {option.properties.nombre}
+                      </option>
+                    ))}
+                  </select>
+
+                  <select
+                    className="my-3 mx-3 w-[200px] max-[500px]:w-full border-b-2 border-vet-purple-light"
+                    required
+                    onChange={selectDepart}
+                  >
+                    <option value="">Seleccione su Localidad</option>
+                    {arrayDepart.map((element) => (
+                      <option
+                        key={element.properties.id}
+                        value={element.properties.id}
+                      >
+                        {element.properties.nombre}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <input
+                  required
+                  onChange={handleChange}
+                  name="address"
+                  type="text"
+                  placeholder="Direccion"
+                  className="my-3 mx-3 min-w-[200px] max-[500px]:w-full w-auto border-b-2 border-vet-purple-light"
+                />
+              </div>
+              <div className="flex justify-between flex-wrap">
+                <input
+                  required
+                  onChange={handleChange}
+                  name="tel"
+                  type="number"
+                  placeholder="Numero de Contacto"
+                  className="my-3 mx-3 min-w-[200px] max-[500px]:w-full w-auto border-b-2 border-vet-purple-light"
+                />
+                <input
+                  required
+                  onChange={handleChange}
+                  name="telWp"
+                  type="number"
+                  placeholder="Numero de WhatsApp"
+                  className="my-3 mx-3 min-w-[200px] max-[500px]:w-full w-auto border-b-2 border-vet-purple-light"
+                />
+              </div>
+              <p>Redes Solciales</p>
+              <div className="flex justify-between flex-wrap">
+                <input
+                  required
+                  onChange={handleChange}
+                  name="web"
+                  type="text"
+                  placeholder="Pagina Web"
+                  className="my-3 mx-3 min-w-[200px] max-[500px]:w-full w-auto border-b-2 border-vet-purple-light"
+                />
+                <input
+                  required
+                  onChange={handleChange}
+                  name="instagram"
+                  type="text"
+                  placeholder="Instagram"
+                  className="my-3 mx-3 min-w-[200px] max-[500px]:w-full w-auto border-b-2 border-vet-purple-light"
+                />
+              </div>
+              <div className="flex justify-between flex-wrap">
+                <input
+                  required
+                  onChange={handleChange}
+                  name="facebook"
+                  type="text"
+                  placeholder="Facebook"
+                  className="my-3 mx-3 min-w-[200px] max-[500px]:w-full w-auto border-b-2 border-vet-purple-light"
+                />
+                <input
+                  required
+                  onChange={handleChange}
+                  name="tiktok"
+                  type="text"
+                  placeholder="Tiktok"
+                  className="my-3 mx-3 min-w-[200px] max-[500px]:w-full w-auto border-b-2 border-vet-purple-light"
+                />
+              </div>
+              <p>Selecciones todos los servicios que brinda</p>
+              <div className="flex flex-wrap">
+                {checkboxes.map((checkbox) => (
+                  <label key={checkbox.value} className="mx-2">
+                    <input
+                      type="checkbox"
+                      value={checkbox.value}
+                      checked={checkbox.isChecked}
+                      onChange={handleChange}
+                    />
+                    {checkbox.value}
+                  </label>
+                ))}
+              </div>
+              <span className="text-red-600 text-sm text-center" > {message} </span>
+              <button
               className="my-2 m-auto duration-300 text-lg px-6 py-1 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple"
-            >
-              Registrarse
-            </button>
+              onClick={() => setStateForm(true)}
+              > 
+                Atras </button>
+              <button
+                type="submit"
+                className="my-2 m-auto duration-300 text-lg px-6 py-1 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple"
+              >
+                Registrarse
+              </button>
+            </div>
+
+            
           </form>
         </div>
       </div>
