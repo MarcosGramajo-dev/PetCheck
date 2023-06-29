@@ -136,6 +136,7 @@ export default function Register() {
 
               <div className="flex justify-between flex-wrap">
                 <input
+                  id="emailRegister"
                   onChange={handleChangeUser}
                   type="email"
                   name="email"
@@ -143,6 +144,7 @@ export default function Register() {
                   placeholder="Correo ELectronico"
                 />
                 <input
+                  id="passRegister"
                   onChange={handleChangeUser}
                   name="password"
                   type="password"
@@ -151,6 +153,7 @@ export default function Register() {
                 />
 
                 <button 
+                  id="nextRegister"
                   className="my-2 m-auto duration-300 text-lg px-6 py-1 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple"
                   onClick={() => setStateForm(!stateForm)}
                 > Siguiente </button>
@@ -256,6 +259,7 @@ export default function Register() {
 
               <input
                 required
+                id="nameLocalRegister"
                 onChange={handleChange}
                 type="text"
                 placeholder="Nombre de la Veterinaria"
@@ -264,6 +268,7 @@ export default function Register() {
               />
               <div className="flex justify-between flex-wrap">
                 <input
+                  id="ownerVetRegister"
                   required
                   onChange={handleChange}
                   name="ownerVet"
@@ -272,6 +277,7 @@ export default function Register() {
                   className="my-3 mx-3 min-w-[200px] max-[500px]:w-full border-b-2 border-vet-purple-light"
                 />
                 <input
+                  id="numMatriculaRegister"
                   required
                   onChange={handleChange}
                   name="numMatricula"
@@ -292,6 +298,7 @@ export default function Register() {
                       <option
                         key={option.properties.id}
                         value={option.properties.id}
+                        id={option.properties.id}
                       >
                         {option.properties.nombre}
                       </option>
@@ -308,6 +315,7 @@ export default function Register() {
                       <option
                         key={element.properties.id}
                         value={element.properties.id}
+                        id={element.properties.id}
                       >
                         {element.properties.nombre}
                       </option>
@@ -316,6 +324,7 @@ export default function Register() {
                 </div>
 
                 <input
+                  id="direccionRegister"
                   required
                   onChange={handleChange}
                   name="address"
@@ -326,6 +335,7 @@ export default function Register() {
               </div>
               <div className="flex justify-between flex-wrap">
                 <input
+                  id="direccionTel"
                   required
                   onChange={handleChange}
                   name="tel"
@@ -334,6 +344,7 @@ export default function Register() {
                   className="my-3 mx-3 min-w-[200px] max-[500px]:w-full w-auto border-b-2 border-vet-purple-light"
                 />
                 <input
+                  id="direccionTelWp"
                   required
                   onChange={handleChange}
                   name="telWp"
@@ -345,6 +356,7 @@ export default function Register() {
               <p>Redes Solciales</p>
               <div className="flex justify-between flex-wrap">
                 <input
+                  id="direccionWeb"
                   required
                   onChange={handleChange}
                   name="web"
@@ -353,6 +365,7 @@ export default function Register() {
                   className="my-3 mx-3 min-w-[200px] max-[500px]:w-full w-auto border-b-2 border-vet-purple-light"
                 />
                 <input
+                  id="direccionInstagram"
                   required
                   onChange={handleChange}
                   name="instagram"
@@ -363,6 +376,7 @@ export default function Register() {
               </div>
               <div className="flex justify-between flex-wrap">
                 <input
+                  id="direccionFacebook"
                   required
                   onChange={handleChange}
                   name="facebook"
@@ -371,6 +385,7 @@ export default function Register() {
                   className="my-3 mx-3 min-w-[200px] max-[500px]:w-full w-auto border-b-2 border-vet-purple-light"
                 />
                 <input
+                  id="direccionTiktok"
                   required
                   onChange={handleChange}
                   name="tiktok"
@@ -384,6 +399,7 @@ export default function Register() {
                 {checkboxes.map((checkbox) => (
                   <label key={checkbox.value} className="mx-2">
                     <input
+                      id={checkbox.value}
                       type="checkbox"
                       value={checkbox.value}
                       checked={checkbox.isChecked}
@@ -400,6 +416,7 @@ export default function Register() {
               > 
                 Atras </button>
               <button
+                id="submitRegister"
                 type="submit"
                 className="my-2 m-auto duration-300 text-lg px-6 py-1 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple"
               >
