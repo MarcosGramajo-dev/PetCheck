@@ -8,8 +8,8 @@ import { UserVet } from "../Context/Type";
 
 export default function Login() {
   const [user, setUser] = useState({});
-  const [errorMessage, setErrorMessage] = React.useState<string | null>();
-  const [successMessage, setSuccessMessage] = React.useState<string | null>();
+  const [errorMessage, setErrorMessage] = useState<string | null>();
+  const [successMessage, setSuccessMessage] = useState<string | null>();
   const [stateBtn, setStateBtn] = useState(false)
   // let token = 0
   const login = useLoginState()
@@ -97,8 +97,8 @@ export default function Login() {
             onChange={handleChange}
           />
         </div>
-        {errorMessage ? <p className="text-red-500">{errorMessage}</p> : ""}
-        {successMessage ? <p className="text-green-500">{successMessage}</p> : ""}
+        {errorMessage ? <p id="MError" className="text-red-500">{errorMessage}</p> : ""}
+        {successMessage ? <p id="MSuccess" className="text-green-500">{successMessage}</p> : ""}
         <button 
           id="submitLogin"
           disabled={stateBtn}

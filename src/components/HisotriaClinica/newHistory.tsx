@@ -28,6 +28,7 @@ export default function NuevaHistoria() {
   let [imgBase64, setImgBase64] = useState("");
 
   const [arrayDepart, setArrayDepart] = useState<Depart[]>([]);
+  const [Message, setMessage] = useState("")
 
   const [newHC, setNewHC] = useState<History>({
     Vacunas: [{
@@ -268,8 +269,8 @@ const handleChangePet = (e: React.ChangeEvent<HTMLInputElement>) => {
   
     axios
       .post(`${login?.authContext.URL}auth/newHistory`, newHC)
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
+      .then((res) => setMessage(res.data))
+      .catch((err) => setMessage(err.response.data));
   
     console.log(newHC);
   };
@@ -348,6 +349,7 @@ return (
           {" "}
           Foto de la mascota{" "}
         </label>
+        <label htmlFor="IDLibreta">ID</label>
         <input
           id="idLibretaNewHC"
           type="number"
@@ -399,7 +401,7 @@ return (
             onChange={selectChange}
           >
             <option value=""> Selecciona una Provincia </option>
-            {provinciasJSON.features.map((option) => (
+            {provinciasJSON?.features.map((option) => (
               <option
                 key={option.properties.id}
                 value={option.properties.id}
@@ -416,7 +418,7 @@ return (
             onChange={selectDepart}
           >
             <option value="">Seleccione su Localidad</option>
-            {arrayDepart.map((element) => (
+            {arrayDepart?.map((element) => (
               <option
                 key={element.properties.id}
                 value={element.properties.id}
@@ -522,7 +524,7 @@ return (
           {toggleSelectedRegister()}
         </div>
       </div>
-
+              <p id="messageNewHC" >{Message}</p>
       <div className="flex justify-center">
         <button id="SubmitNewHC" className="min-w-[120px] my-3 m-auto duration-300 text-lg px-4 border border-vet-purple text-neutral-50 bg-vet-purple rounded-lg hover:text-vet-purple hover:bg-neutral-50 max-sm:hidden">
           {" "}
