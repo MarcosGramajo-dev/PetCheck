@@ -10,7 +10,7 @@ export default function Login() {
   const [user, setUser] = useState({});
   const [errorMessage, setErrorMessage] = useState<string | null>();
   const [successMessage, setSuccessMessage] = useState<string | null>();
-  const [stateBtn, setStateBtn] = useState(false)
+  const [stateBtnSubmit, setStateBtnSubmit] = useState(false)
   // let token = 0
   const login = useLoginState()
 
@@ -30,7 +30,7 @@ export default function Login() {
   };
 
   const verifyUser = () =>{
-    setStateBtn(true)
+    setStateBtnSubmit(true)
     //consultar si existe el usuario
     // console.log(user)
     axios.post(`${login?.authContext.URL}auth/login`, user)
@@ -45,14 +45,14 @@ export default function Login() {
         login.authContext.addToken(res.data.password)
         login.authContext.saveInLocalStorage(res.data)
         login.authContext.toggleLogin(true)
-        setStateBtn(true)
+        setStateBtnSubmit(true)
       }
     })
     .catch(error => {
       // console.log(error)
       // console.log(error.response.data)
       setErrorMessage(error.response.data)
-      setStateBtn(false)
+      setStateBtnSubmit(false)
     })
   }
   
@@ -101,7 +101,7 @@ export default function Login() {
         {successMessage ? <p id="MSuccess" className="text-green-500">{successMessage}</p> : ""}
         <button 
           id="submitLogin"
-          disabled={stateBtn}
+          disabled={stateBtnSubmit}
           onClick={(event) => {
             event.preventDefault();
             // props.toggleOpen();

@@ -5,10 +5,11 @@ import departamentosJSON from "../../departamentos.json";
 import axios from 'axios'
 import { UserVet } from "../Context/Type";
 import { useLoginState } from "../Context/Context";
+import { MultiSelect } from "react-multi-select-component";
 
 interface CheckboxState {
+  label: string;
   value: string;
-  isChecked: boolean;
 }
 
 interface Depart {
@@ -26,25 +27,52 @@ export default function Register() {
   const [stateForm, setStateForm] = useState(true)
   const [user, setUser] = useState({
     email: "",
-    password: ""
+    password: "",
+    passwordComparation:""
 })
-  const [vet, setVet] = useState({})
-  const [newUser, setNewUser] = useState({});
-  const [checkboxes, setCheckboxes] = useState<CheckboxState[]>([
-    { value: "Baño y corte", isChecked: false },
-    { value: "Guarderia", isChecked: false },
-    { value: "Cirugias", isChecked: false },
+  const [options, setOptions] = useState<CheckboxState[]>([
+    { label: "Baño y corte", value: "Baño y corte" },
+    { label: "Guarderia", value: "Guarderia" },
+    { label: "Cirugias", value: "Cirugias" },
+    { label: "Venta", value: "Venta" },
+    { label: "Consulta", value: "Consulta" },
+    { label: "Hospedaje", value: "Hospedaje" },
+    { label: "Estetica", value: "Estetica" },
   ]);
+  const [selected, setSelected] = useState([]);
+  const [vet, setVet] = useState({
+    address: "",
+    departament: "",
+    image: "",
+    nameLocal:"",
+    numMatricula:"",
+    ownerVet:"",
+    province:"",
+    service: [],
+    tel:"",
+    telWp:"",
+    web:"",
+    facebook:"",
+    instagram:"",
+    tiktok:""
+  })
+  const [newUser, setNewUser] = useState({});
   let [imgBase64, setImgBase64] = useState("");
   const [arrayDepart, setArrayDepart] = useState<Depart[]>([]);
   const [message, setMessage] = useState("")
+  const [messagePass, setMessagePass] = useState("")
+  const [stateBtnNext, setStateBtnNext] = useState(false)
+  const [classNameInput, setClassNameInput] = useState("my-3 mx-3 min-w-[200px] max-[500px]:w-full border-b-2 border-vet-purple-light");
+  const [stateEmail, setStateEmail] = useState(false)
+  const [statePass, setStatePass] = useState(false)
 
   const login = useLoginState()
+  const regexEmail = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
+
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log({user, vet})
-    // setNewUser()
     sendtoBack({user, vet});
   };
 
@@ -61,22 +89,46 @@ export default function Register() {
 
   //informacion del Usuario, Email y Contraseña
   const handleChangeUser = (e: React.ChangeEvent<HTMLInputElement>) =>{
-    setUser({...user, [e.target.name]: e.target.value})
+    setUser(() => ({
+      ...user, 
+      [e.target.name]: e.target.value
+    }))
+    setMessagePass("")
+    
+    if(e.target.name === "email"){
+      if(regexEmail.test(e.target.value)){
+        //console.log("es un email valido")
+        setClassNameInput("my-3 mx-3 min-w-[200px] max-[500px]:w-full border-b-2 border-vet-purple-light border-green-600")
+      }
+      else{
+        setMessagePass("Email Invalido")
+        setClassNameInput("my-3 mx-3 min-w-[200px] max-[500px]:w-full border-b-2 border-vet-purple-light border-red-600")
+        setStateBtnNext(false);
 
+      }
+    }
+    if(e.target.name === "password"){
+      if(e.target.value.length < 6 && e.target.value.length >= 1){
+        setMessagePass("La contraseña debe tener como minimo 6 caracteres")
+        setStateBtnNext(false);
+      }
+    }
+    if(e.target.name ==="passwordComparation"){
+      if(e.target.value === user.password){
+        setMessagePass("")
+        //console.log("Son iguales")
+        setStateBtnNext(true);
+        //console.log(e.target.classList)
+      } else{
+        setStateBtnNext(false);
+        setMessagePass("Las contraseñas no coinciden")
+      }
+    }
   }
 
   //Informacion de la Vet, Datos, fotos, horarios y especialidades
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.type === "checkbox") {
-      const { value, checked } = e.target;
-      const updatedCheckboxes = checkboxes.map((checkbox) =>
-        checkbox.value === value
-          ? { ...checkbox, isChecked: checked }
-          : checkbox
-      );
-      setCheckboxes(updatedCheckboxes);
-      setVet({ ...vet, service: updatedCheckboxes });
-    } else if (e.target.type === "file") {
+    if (e.target.type === "file") {
       const file = e.target.files?.[0];
       if (file) {
         const reader = new FileReader();
@@ -90,7 +142,7 @@ export default function Register() {
         };
       }
     } else {
-      setVet({ ...vet, [e.target.name]: e.target.value, service: [] });
+      setVet({ ...vet, [e.target.name]: e.target.value, service: selected });
     }
   };
 
@@ -123,7 +175,7 @@ export default function Register() {
   return (
     <div className="w-full h-full flex justify-center items-center ">
       <div className="max-sm:w-full max-sm:border-0 w-11/12 p-5 m-auto my-20 bg-white/80 border-8 border-vet-purple-light rounded-lg max-w-[900px] flex flex-col justify-center">
-        <div className="max-w-[500px] m-auto">
+        <div className="max-w-[500px] m-auto w-full">
           <p className="text-center text-vet-purple text-xl my-5">
             REGISTRO DE VETERINARIA
           </p>
@@ -132,15 +184,15 @@ export default function Register() {
             className="flex justify-center flex-col"
           >
             <div className={!stateForm ? "hidden" : ""}>
-              <p>Datos del Usuario</p>
+              <p className=" font-[600]">Datos del Usuario</p>
 
-              <div className="flex justify-between flex-wrap">
+              <div className="flex justify-between flex-wrap flex-col w-full">
                 <input
                   id="emailRegister"
                   onChange={handleChangeUser}
                   type="email"
                   name="email"
-                  className="my-3 mx-3 min-w-[200px] max-[500px]:w-full border-b-2 border-vet-purple-light invalid:border-red-600 valid:border-green-600"
+                  className={classNameInput}
                   placeholder="Correo ELectronico"
                 />
                 <input
@@ -148,115 +200,42 @@ export default function Register() {
                   onChange={handleChangeUser}
                   name="password"
                   type="password"
-                  className="my-3 mx-3 min-w-[200px] max-[500px]:w-full border-b-2 border-vet-purple-light"
+                  className="my-3 mx-3 min-w-[200px] max-[500px]:w-full border-b-2 border-vet-purple-light "
                   placeholder="Contraseña"
                 />
 
+                <input
+                  id="passComparationRegister"
+                  onChange={handleChangeUser}
+                  name="passwordComparation"
+                  type="password"
+                  className="my-3 mx-3 min-w-[200px] max-[500px]:w-full border-b-2 border-vet-purple-light"
+                  placeholder="Contraseña"
+                />
+                <div className="my-2 h-4">
+                  <p className="text-red-600">{messagePass}</p>
+                </div>
                 <button 
                   id="nextRegister"
                   className="my-2 m-auto duration-300 text-lg px-6 py-1 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple"
-                  onClick={() => setStateForm(!stateForm)}
-                > Siguiente </button>
+                  onClick={() => stateBtnNext ? setStateForm(!stateForm) : setMessagePass("Completa los campos para continuar")} > 
+                  Siguiente 
+                  </button>
               </div>
             </div>
 
             <div className={stateForm ? "hidden" : ""}>
-              <p>Datos de la Veterinaria</p>
+              <p className="font-[600]">Datos de la Veterinaria</p>
               <div
                 className="h-[100px] flex justify-left items-center"
-                onChange={handleChange}
-              >
+                onChange={handleChange}>
                 <input type="file" id="img" className="hidden" />
                 <label
                   htmlFor="img"
-                  className="text-center cursor-pointer w-full border-dashed border-2 border-vet-purple px-2 py-6"
-                >
-                  {" "}
-                  Foto del Local{" "}
+                  className="text-center cursor-pointer w-full border-dashed border-2 border-vet-purple px-2 py-6">
+                  {" "}Foto del Local{" "}
                 </label>
               </div>
-              <p>Horarios de Atencion</p>
-              <div className="flex justify-between flex-wrap items-center">
-                <div className="flex flex-col">
-                  <label className=" w-32 text-sm">Lunes a Viernes:</label>
-                    <div className="flex items-center justify-center">
-                      <p className=" w-32 ml-6 text-sm">Mañana</p>                
-                        <input
-                          onChange={handleChange}
-                          type="time"
-                          placeholder="Turno Mañana Ej: 8:00 a 12:00"
-                          name="LaVManana"
-                          className="my-1 mx-3 px-2 border-b-2 border-vet-purple-light w-24 max-sm:mx-1 max-sm:my-1"
-                        />
-                        <p>a</p>
-                        <input
-                          onChange={handleChange}
-                          type="time"
-                          placeholder="Turno Tarde Ej: 15:00 a 17:00"
-                          name="LaVTarde"
-                          className="my-1 mx-3 px-2 border-b-2 border-vet-purple-light w-24 max-sm:mx-1 max-sm:my-1"
-                        />
-                    </div>
-                    <div className="flex items-center">
-                      <p className=" w-32 ml-6 text-sm">Tarde</p>
-                        <input
-                          onChange={handleChange}
-                          type="time"
-                          placeholder="Turno Mañana Ej: 8:00 a 12:00"
-                          name="LaVManana"
-                          className="my-1 mx-3 px-2 border-b-2 border-vet-purple-light w-24 max-sm:mx-1 max-sm:my-1"
-                        />
-                        <p>a</p>
-                        <input
-                          onChange={handleChange}
-                          type="time"
-                          placeholder="Turno Tarde Ej: 15:00 a 17:00"
-                          name="LaVTarde"
-                          className="my-1 mx-3 px-2 border-b-2 border-vet-purple-light w-24 max-sm:mx-1 max-sm:my-1"
-                        />
-                    </div>
-                </div>
-
-                <div className="w-full h-[2px] bg-vet-blue bg-opacity-25"></div>
-
-                <div className="flex justify-between flex-wrap items-center">
-                  <label className=" w-32">Sabados:</label>
-                  <input
-                    onChange={handleChange}
-                    type="time"
-                    placeholder="Turno Mañana Ej: 8:00 a 12:00"
-                    name="SabManana"
-                    className="my-3 mx-3 px-2 border-b-2 border-vet-purple-light w-24 max-sm:mx-1 max-sm:my-1"
-                  />
-                  <p>A</p>
-                  <input
-                    onChange={handleChange}
-                    type="time"
-                    placeholder="Turno Tarde Ej: 15:00 a 19:00"
-                    name="SabTarde"
-                    className="my-3 mx-3 px-2 border-b-2 border-vet-purple-light w-24 max-sm:mx-1 max-sm:my-1"
-                  />
-                </div>
-
-                <div className="flex justify-between flex-wrap items-center">
-                  <label className="w-32">Domingos:</label>
-                  <input
-                    onChange={handleChange}
-                    type="time"
-                    placeholder="Turno Mañana Ej: 8:00 a 12:00"
-                    name="DomMañana"
-                    className="my-3 mx-3 px-2 border-b-2 border-vet-purple-light w-24 max-sm:mx-1 max-sm:my-1"
-                  />
-                  <input
-                    onChange={handleChange}
-                    type="time"
-                    placeholder="Turno Tarde Ej: 15:00 a 19:00"
-                    name="DomTarde"
-                    className="my-3 mx-3 px-2 border-b-2 border-vet-purple-light w-24 max-sm:mx-1 max-sm:my-1"
-                  />
-                </div>
-              </div>
-
               <input
                 required
                 id="nameLocalRegister"
@@ -264,7 +243,7 @@ export default function Register() {
                 type="text"
                 placeholder="Nombre de la Veterinaria"
                 name="nameLocal"
-                className="my-3 mx-3 border-b-2 border-vet-purple-light"
+                className="my-3 mx-3 border-b-2 border-vet-purple-light w-[95%]"
               />
               <div className="flex justify-between flex-wrap">
                 <input
@@ -325,6 +304,7 @@ export default function Register() {
                   </select>
                 </div>
 
+              </div>
                 <input
                   id="direccionRegister"
                   required
@@ -334,7 +314,6 @@ export default function Register() {
                   placeholder="Direccion"
                   className="my-3 mx-3 min-w-[200px] max-[500px]:w-full w-auto border-b-2 border-vet-purple-light"
                 />
-              </div>
               <div className="flex justify-between flex-wrap">
                 <input
                   id="direccionTel"
@@ -355,11 +334,23 @@ export default function Register() {
                   className="my-3 mx-3 min-w-[200px] max-[500px]:w-full w-auto border-b-2 border-vet-purple-light"
                 />
               </div>
+              <div className="my-4">
+                <p className="font-[600]">¿Que servicios ofrece?</p>
+                <div className="flex flex-wrap ">
+                  <MultiSelect
+                    options={options}
+                    value={selected}
+                    onChange={setSelected}
+                    hasSelectAll={false}
+                    labelledBy="Selecciona tus servicios"
+                    className="w-full"
+                  />
+                </div>
+              </div>
               <p>Redes Solciales</p>
               <div className="flex justify-between flex-wrap">
                 <input
                   id="direccionWeb"
-                  required
                   onChange={handleChange}
                   name="web"
                   type="text"
@@ -368,7 +359,6 @@ export default function Register() {
                 />
                 <input
                   id="direccionInstagram"
-                  required
                   onChange={handleChange}
                   name="instagram"
                   type="text"
@@ -379,7 +369,6 @@ export default function Register() {
               <div className="flex justify-between flex-wrap">
                 <input
                   id="direccionFacebook"
-                  required
                   onChange={handleChange}
                   name="facebook"
                   type="text"
@@ -388,7 +377,6 @@ export default function Register() {
                 />
                 <input
                   id="direccionTiktok"
-                  required
                   onChange={handleChange}
                   name="tiktok"
                   type="text"
@@ -396,34 +384,22 @@ export default function Register() {
                   className="my-3 mx-3 min-w-[200px] max-[500px]:w-full w-auto border-b-2 border-vet-purple-light"
                 />
               </div>
-              <p>Selecciones todos los servicios que brinda</p>
-              <div className="flex flex-wrap">
-                {checkboxes.map((checkbox) => (
-                  <label key={checkbox.value} className="mx-2">
-                    <input
-                      id={checkbox.value}
-                      type="checkbox"
-                      value={checkbox.value}
-                      checked={checkbox.isChecked}
-                      onChange={handleChange}
-                    />
-                    {checkbox.value}
-                  </label>
-                ))}
+
+              <div className="h-4"><p className="text-red-600 text-sm text-center" > {message} </p></div>
+              <div className=" flex justify-end">
+                <button
+                className="m-2 duration-300 text-lg px-6 py-1 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple"
+                onClick={() => setStateForm(true)}
+                > 
+                  Atras </button>
+                <button
+                  id="submitRegister"
+                  type="submit"
+                  className="m-2 duration-300 text-lg px-6 py-1 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple"
+                >
+                  Registrarse
+                </button>
               </div>
-              <span className="text-red-600 text-sm text-center" > {message} </span>
-              <button
-              className="my-2 m-auto duration-300 text-lg px-6 py-1 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple"
-              onClick={() => setStateForm(true)}
-              > 
-                Atras </button>
-              <button
-                id="submitRegister"
-                type="submit"
-                className="my-2 m-auto duration-300 text-lg px-6 py-1 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple"
-              >
-                Registrarse
-              </button>
             </div>
 
             
