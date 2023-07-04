@@ -3,7 +3,7 @@ import iconName from '../images/nameIcon.svg'
 import iconNameBlank from '../images/nameIcon_blank.svg'
 import iconBook from '../images/bookIcon.svg'
 import iconBookBlank from '../images/bookIcon_blank.svg'
-import imgCat from '../images/Rectangle 1.png'
+import imgCat from '../images/backgroun-cat.png'
 
 import {Link} from 'react-router-dom'
 
@@ -16,8 +16,8 @@ import axios from 'axios'
 
 export default function Nav() {
 
-  const [toggleMenu, setToggleMenu] = useState("burguerMenu sm:hidden");
-  const [lowerMenu, setLowerMenu] = useState("sm:hidden h-0 overflow-hidden");
+  const [toggleMenu, setToggleMenu] = useState("burguerMenu md:hidden");
+  const [lowerMenu, setLowerMenu] = useState("md:hidden h-0 overflow-hidden");
   const [state, setState] = useState(false)
 
   const login = useLoginState();
@@ -39,8 +39,6 @@ export default function Nav() {
       }
     }).catch(error => console.log(error))
   }
-  
-  setInterval(getToken, 5 * 60 * 1000)
 
 
   // function toggleOpen() {
@@ -55,12 +53,12 @@ export default function Nav() {
   function changeState(){
     setState(!state)
     if(state){
-      setToggleMenu("burguerMenu sm:hidden")
-      setLowerMenu("desployMenu sm:hidden")
+      setToggleMenu("burguerMenu md:hidden")
+      setLowerMenu("desployMenu md:hidden")
     }
     else{
-      setToggleMenu("crossMenu sm:hidden") 
-      setLowerMenu("desployedMenu sm:hidden")
+      setToggleMenu("crossMenu md:hidden") 
+      setLowerMenu("desployedMenu md:hidden")
     }
   }
 
@@ -160,18 +158,18 @@ export default function Nav() {
     if(sesion){
       return(
         <div className="flex m-5 items-center z-10">
-          <Link to="nuevaHistoria"> <button className=" min-w-[150px] mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple max-sm:hidden"> Nueva Historia Clinica </button> </Link>
-          <Link to="gestion"> <button className="mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple max-sm:hidden"> Gestion </button> </Link>
-          <Link to="perfil"> <button className="mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple max-sm:hidden"> Perfil </button> </Link>
-          <Link to="/"> <button onClick={() => {login?.authContext.toggleLogin(false), localStorage.clear()}} className=" mx-1 duration-300 text-xs px-4 h-6 border border-vet-red text-white bg-vet-red rounded-lg hover:text-vet-red hover:bg-neutral-50 max-sm:hidden"> Salir </button></Link>
+          <Link to="nuevaHistoria"> <button className=" min-w-[150px] mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple max-md:hidden"> Nueva Historia Clinica </button> </Link>
+          <Link to="gestion"> <button className="mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple max-md:hidden"> Gestion </button> </Link>
+          <Link to="perfil"> <button className="mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple max-md:hidden"> Perfil </button> </Link>
+          <Link to="/"> <button onClick={() => {login?.authContext.toggleLogin(false), localStorage.clear()}} className=" mx-1 duration-300 text-xs px-4 h-6 border border-vet-red text-white bg-vet-red rounded-lg hover:text-vet-red hover:bg-neutral-50 max-md:hidden"> Salir </button></Link>
         </div>
       )
     } else{
       return(
         <div className="flex m-5 items-center z-10">
-          <button className="min-w-[120px] mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple max-sm:hidden" onClick={()=>{login?.authContext.toggleOpen(), login?.changeState()}}> Iniciar Sesion </button>
+          <button className="min-w-[145px] mx-1 duration-300 px-4 h-[35px] border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple max-md:hidden" onClick={()=>{login?.authContext.toggleOpen(), login?.changeState()}}> Iniciar Sesion </button>
           <Link to="register">
-            <button className="min-w-[120px] mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-neutral-50 bg-vet-purple rounded-lg hover:text-vet-purple hover:bg-neutral-50 max-sm:hidden"> Registrate Aquí </button>
+            <button className="min-w-[145px] mx-1 duration-300 px-4 h-[35px] border border-vet-purple text-neutral-50 bg-vet-purple rounded-lg hover:text-vet-purple hover:bg-neutral-50 max-md:hidden"> Registrate Aquí </button>
           </Link>
         </div>
         
@@ -181,7 +179,8 @@ export default function Nav() {
 
   return (
     <div>
-      <div className="flex w-full z-50 my-0 justify-between items-center m-auto max-sm:bg-vet-purple-dark relative max-sm:fixed">
+      <img src="src\images\bannerNav.png" alt="banner nav" className="fixed imgPosition max-md:hidden"/>
+      <div className="flex w-full z-50 my-0 justify-between items-center m-auto max-md:bg-vet-purple-dark fixed max-md:fixed max-w-[1400px]">
         <div className={toggleMenu} onClick={ ()=> changeState() }>
           <div></div>
           <div></div>
@@ -189,20 +188,20 @@ export default function Nav() {
         </div>
         <div className=" mx-5 z-10 flex">
           <Link to="/" className="flex justify-center items-center">
-            <img src={iconBook} className="w-20 mx-3 max-sm:hidden pt-3"/>
-            <img src={iconName} className="w-36 max-sm:hidden pt-3"/>
+            <img src={iconBook} className="w-20 mx-3 max-md:hidden pt-3"/>
+            <img src={iconName} className="w-36 max-md:hidden pt-3"/>
           </Link>
 
           <Link onClick={ ()=> state ? changeState() : "" } to="/" className="flex justify-center items-center">
             <div className="flex">
-              <div className="relative w-16 h-16"><img src={iconBookBlank} className="object-cover w-24 h-24 sm:hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"/></div>
-              <div className="relative w-20 h-16"><img src={iconNameBlank} className="object-cover w-24 h-24 sm:hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"/></div>
+              <div className="relative w-16 h-16"><img src={iconBookBlank} className="object-cover w-24 h-24 md:hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"/></div>
+              <div className="relative w-20 h-16"><img src={iconNameBlank} className="object-cover w-24 h-24 md:hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"/></div>
             </div>
           </Link>
         </div>
         {btnDesktop(login.authContext.isLogin)}
       </div>
-        <img src={imgCat} className="absolute right-0 top-0 z-[-1] max-sm:hidden"/>
+        <img src={imgCat} className="absolute w-[500px] right-0 top-0 z-[-1] max-[1100px]:hidden"/>
       <div className={lowerMenu}>
         
         {menuMobile(login.authContext.isLogin)}

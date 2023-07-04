@@ -104,6 +104,14 @@
     position: absolute;
 }
 
+.imgPosition{
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    min-width: 1700px;
+    z-index: 20;
+}
+
 
 @keyframes contract {
     from {height: 100vh}

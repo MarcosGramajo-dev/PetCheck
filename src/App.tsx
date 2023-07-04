@@ -19,7 +19,7 @@ function App() {
   return (
     <LoginContextProvider>
       <div className='absolute w-full background-complete overflow-hidden'>
-        <div className="bg-white min-h-screen z-10 relative max-w-[900px] m-auto shadow-xl pb-5 overflow-hidden backGroundImage">
+        <div className="bg-white min-h-screen z-10 relative max-w-[1400px] m-auto shadow-xl pb-5 overflow-hidden backGroundImage">
           <Router>
               <Nav/>
             <Routes>
