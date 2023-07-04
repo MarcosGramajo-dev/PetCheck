@@ -46,7 +46,7 @@ export default function search() {
 
   return (
     <div className="w-full max-w-[800px] max-[1100px]:m-auto ">
-      <div className="w-full max-w-[500px] m-auto max-sm:mx-5 backdrop-blur-md shadow-2xl text-vet-blue rounded-lg mt-8 flex flex-col z-20 p-4">
+      <div className="w-full max-w-[500px] m-auto max-sm:m-auto backdrop-blur-md shadow-2xl text-vet-blue rounded-lg mt-8 flex flex-col z-20 p-4">
         <p className="font-semibold text-xl my-1 text-left ">
           Ingresa el ID de tu libreta
         </p>
