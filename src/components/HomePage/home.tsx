@@ -1,6 +1,7 @@
 import Info from './info'
 import Search from './search'
 import ConteinerCard  from './conteinerCard'
+import Footer from './footer'
 
 export default function home(){
     return(
@@ -8,6 +9,7 @@ export default function home(){
             <Info/>
             <Search/>
             <ConteinerCard/>
+            <Footer/>
         </div>
     )
 }

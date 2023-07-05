@@ -46,7 +46,7 @@ export default function search() {
 
   return (
     <div className="w-full max-w-[800px] max-[1100px]:m-auto ">
-      <div className="w-full max-w-[500px] m-auto max-sm:m-auto backdrop-blur-md shadow-2xl text-vet-blue rounded-lg mt-8 flex flex-col z-20 p-4">
+      <div className="w-full max-w-[500px] m-auto max-sm:m-auto max-sm:my-[20px] backdrop-blur-md shadow-2xl text-vet-blue rounded-lg mt-8 flex flex-col z-20 p-4">
         <p className="font-semibold text-xl my-1 text-left ">
           Ingresa el ID de tu libreta
         </p>
@@ -55,8 +55,8 @@ export default function search() {
         </p>
         <div className="text-center">
           <select name="type" className="border-vet-purple border my-2 m-auto px-2 h-8">
-            <option value="dni">DNI</option>
             <option value="id">ID</option>
+            <option value="dni">DNI</option>
             <option value="nChip">N° Chip</option>
           </select>
           <input
