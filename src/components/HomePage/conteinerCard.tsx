@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import Card from './card'
+import Cards from './cards'
 import axios from 'axios'
 import { UserVet } from '../Context/Type'
 import { useLoginState } from '../Context/Context'
@@ -27,7 +27,7 @@ export default function ContainerTarjet(){
 
                 {
                     cardsDB.map((element, index)=>(
-                        <Card infoCard={element} key={index}/>
+                        <Cards infoCard={element} key={index}/>
                     ))
                 }
 
