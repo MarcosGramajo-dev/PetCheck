@@ -4,6 +4,7 @@ import iconNameBlank from '../images/nameIcon_blank.svg'
 import iconBook from '../images/bookIcon.svg'
 import iconBookBlank from '../images/bookIcon_blank.svg'
 import imgCat from '../images/backgroun-cat.png'
+import banner from '../images/bannerNav.png'
 
 import {Link} from 'react-router-dom'
 
@@ -179,7 +180,7 @@ export default function Nav() {
 
   return (
     <div>
-      <img src="src\images\bannerNav.png" alt="banner nav" className="fixed imgPosition max-md:hidden"/>
+      <img src={banner} alt="banner nav" className="fixed imgPosition max-md:hidden"/>
       <div className="flex w-full z-50 my-0 justify-between items-center m-auto max-md:bg-vet-purple-dark fixed max-md:fixed max-w-[1400px]">
         <div className={toggleMenu} onClick={ ()=> changeState() }>
           <div></div>
