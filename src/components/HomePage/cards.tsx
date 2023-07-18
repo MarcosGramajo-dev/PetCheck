@@ -36,19 +36,19 @@ const Cards=(props:IProps)=>{
                     <div className="bg-purple-200 p-2 rounded" >
                         {/* hacer map aqui despues */}
                         <p className="bg-amber-500 rounded-full m-1">
-                            <img className="p-1 w-8" src={Bag} alt="#" />
+                           Shop <img className="p-1 w-8" src={Bag} alt="#" />
                         </p>
                         <p className=" bg-teal-500 rounded-full m-1">
-                            <img className="p-1 w-8" src={Car} alt="#" />
+                           Traslados <img className="p-1 w-8" src={Car} alt="#" />
                         </p>
                         <p className="bg-red-500 rounded-full m-1">
-                            <img className="p-1 w-8" src={Emergency} alt="#" />
+                           Emergencias <img className="p-1 w-8" src={Emergency} alt="#" />
                         </p>
                         <p className="bg-cyan-500 rounded-full m-1">
-                            <img className="p-1 w-8"src={Shower} alt="#" />
+                           Baño y corte <img className="p-1 w-8"src={Shower} alt="#" />
                         </p>
                         <p className="bg-green-500 rounded-full m-1">
-                            <img className="p-1 w-8" src={Local24} alt="#" />
+                           Atencion <img className="p-1 w-8" src={Local24} alt="#" />
                         </p>
                      </div>
                      )}
@@ -60,9 +60,9 @@ const Cards=(props:IProps)=>{
                  </button>
                  {isLilacOpen && (
                 <div className="bg-purple-300 p-2 rounded">
-                    <p><img src={Facebook} alt={props.infoCard.vet.facebook} className="mx-1 cursor-pointer" /></p>
-                    <p><img src={Instagram} alt={props.infoCard.vet.instagram} className="mx-1 cursor-pointer"/></p>
-                    <p><img src={Whatsapp} alt="" className="mx-1 cursor-pointer"/></p>
+                    <p> Facebook <img src={Facebook} alt={props.infoCard.vet.facebook} className="mx-1 cursor-pointer" /></p>
+                    <p> Instagram <img src={Instagram} alt={props.infoCard.vet.instagram} className="mx-1 cursor-pointer"/></p>
+                    <p> Whatsapp <img src={Whatsapp} alt="" className="mx-1 cursor-pointer"/></p>
                 </div>
                 )}
             </div>
