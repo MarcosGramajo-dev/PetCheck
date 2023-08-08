@@ -13,6 +13,7 @@ export default function search() {
   const [idLibreta, setIdLibreta] = useState("");
   const [mensaje, setMensaje] = useState("");
   const [status, setStatus] = useState(false);
+  const [stateSelect, setStateSelectet] = useState("id");
   
   const navigate = useNavigate();
   const login = useLoginState()
@@ -26,23 +27,49 @@ export default function search() {
     }
   };
 
+
   // debemos realizar una consulta al back para verificar que el numero de ID existe
   //si es correcto redireccionamos a "Historiaclinica", sino a la pestaña de "Error" pero con un mensaje mas personalizado "No se encontro la libreta"
   //la otra opcion es ponele un pequeño modal que salte diciendo que no se encontro
 
   const verifyId = async () => {
     // consultamos con axios al back, segun la repuesta utilizamos un boolean para manejar la redireccion
-    await axios.get(`${login?.authContext.URL}HistoryClinic/${idLibreta}`)
-    .then( res => {
-      login?.authContext.addHC(res.data)
-      setStatus(true)
-      navigate("/historiaClinica")
-    })
-    .catch(error => {
-      console.log(error)
-      setStatus(false)
-    })
-  };
+    if(stateSelect === "id"){
+      console.log(`${login?.authContext.URL}/HistoryClinic/id/${idLibreta}`)
+      await axios.get(`${login?.authContext.URL}/HistoryClinic/id/${idLibreta}`)
+      .then( res => {
+        login?.authContext.addHC(res.data)
+        setStatus(true)
+        navigate("/historiaClinica")
+      })
+      .catch(error => {
+        console.log(error)
+        setStatus(false)
+      })
+    } else if (stateSelect === "dni") {
+      await axios.get(`${login?.authContext.URL}/HistoryClinic/dni/${idLibreta}`)
+      .then( res => {
+        login?.authContext.addHC(res.data)
+        setStatus(true)
+        navigate("/historiaClinica")
+      })
+      .catch(error => {
+        console.log(error)
+        setStatus(false)
+      })
+    } else {
+      await axios.get(`${login?.authContext.URL}/HistoryClinic/nchip/${idLibreta}`)
+      .then( res => {
+        login?.authContext.addHC(res.data)
+        setStatus(true)
+        navigate("/historiaClinica")
+      })
+      .catch(error => {
+        console.log(error)
+        setStatus(false)
+      })
+    }
+  }
 
   return (
     <div className="w-full max-w-[800px] max-[1100px]:m-auto ">
@@ -54,7 +81,7 @@ export default function search() {
           TODA LA INFORMACION DE TU MASCOTA A UN CLICK
         </p>
         <div className="text-center">
-          <select name="type" className="border-vet-purple border my-2 m-auto px-2 h-8">
+          <select onChange={(event) => setStateSelectet(event.target.value)} name="type" className="border-vet-purple border my-2 m-auto px-2 h-8">
             <option value="id">ID</option>
             <option value="dni">DNI</option>
             <option value="nChip">N° Chip</option>
