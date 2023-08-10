@@ -62,7 +62,7 @@ export default function Register() {
   const [message, setMessage] = useState("")
   const [messagePass, setMessagePass] = useState("")
   const [stateBtnNext, setStateBtnNext] = useState(false)
-  const [classNameInput, setClassNameInput] = useState("my-3 mx-3 min-w-[200px] max-[500px]:w-full border-b-2 border-vet-purple-light");
+  const [classNameInput, setClassNameInput] = useState("my-1 border-vet-blue border rounded-md w-full px-2 drop-shadow");
   const [stateEmail, setStateEmail] = useState(false)
   const [statePass, setStatePass] = useState(false)
 
@@ -98,11 +98,11 @@ export default function Register() {
     if(e.target.name === "email"){
       if(regexEmail.test(e.target.value)){
         //console.log("es un email valido")
-        setClassNameInput("my-3 mx-3 min-w-[200px] max-[500px]:w-full border-b-2 border-vet-purple-light border-green-600")
+        setClassNameInput("my-1 border-vet-blue border rounded-md w-full px-2 drop-shadow border-green-600")
       }
       else{
         setMessagePass("Email Invalido")
-        setClassNameInput("my-3 mx-3 min-w-[200px] max-[500px]:w-full border-b-2 border-vet-purple-light border-red-600")
+        setClassNameInput("my-1 border-vet-blue border rounded-md w-full px-2 drop-shadow border-red-600")
         setStateBtnNext(false);
 
       }
@@ -174,7 +174,7 @@ export default function Register() {
 
   return (
     <div className="w-full h-full flex justify-center items-center ">
-      <div className="max-sm:w-full max-sm:border-0 w-11/12 p-5 m-auto my-20 bg-white/80 border-8 border-vet-purple-light rounded-lg max-w-[900px] flex flex-col justify-center">
+      <div className="max-sm:w-full max-sm:border-0 w-11/12 p-5 m-auto my-40 bg-white/80 border-8 border-vet-purple-light rounded-lg max-w-[900px] flex flex-col justify-center">
         <div className="max-w-[500px] m-auto w-full">
           <p className="text-center text-vet-purple text-xl my-5">
             REGISTRO DE VETERINARIA
@@ -200,7 +200,7 @@ export default function Register() {
                   onChange={handleChangeUser}
                   name="password"
                   type="password"
-                  className="my-3 mx-3 min-w-[200px] max-[500px]:w-full border-b-2 border-vet-purple-light "
+                  className="my-1 border-vet-blue border rounded-md w-full px-2 drop-shadow"
                   placeholder="Contraseña"
                 />
 
@@ -209,7 +209,7 @@ export default function Register() {
                   onChange={handleChangeUser}
                   name="passwordComparation"
                   type="password"
-                  className="my-3 mx-3 min-w-[200px] max-[500px]:w-full border-b-2 border-vet-purple-light"
+                  className="my-1 border-vet-blue border rounded-md w-full px-2 drop-shadow"
                   placeholder="Contraseña"
                 />
                 <div className="my-2 h-4">

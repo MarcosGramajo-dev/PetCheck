@@ -17,52 +17,67 @@ interface IProps{
 
 
 const Cards=(props:IProps)=>{
-    const [isPurpleOpen, setPurpleOpen] = useState(false);
+    const [isPurpleOpen, setPurpleOpen] = useState(true);
   const [isLilacOpen, setLilacOpen] = useState(false);
 
-  const togglePurpleOpen = () => setPurpleOpen(!isPurpleOpen);
-  const toggleLilacOpen = () => setLilacOpen(!isLilacOpen);
+
+    function openTab(tab:string){
+        if(tab === 'services'){
+            setPurpleOpen(true);
+            setLilacOpen(false);
+        } else {
+            setPurpleOpen(false);
+            setLilacOpen(true);
+        }
+    }
 
     return(
-        <div className="max-w-xs mx-auto bg-white rounded shadow-lg">
+        <div className="max-w-xs bg-white rounded shadow-lg w-3/12 m-2 justify-between">
             
                 <img src={props.infoCard.vet.image} alt="#" className="w-full h-32 object-cover object-center"/>
                 <div className="p-4">
                     <h2 className="text-xl font-semibold mb-2">{props.infoCard.vet.nameLocal}</h2>
-                    <button className="text-xl font-semibold mb-2" onClick={togglePurpleOpen}>
-                        Servicios
-                    </button>
-                    {isPurpleOpen && (
-                    <div className="bg-purple-200 p-2 rounded" >
+                    <h4 className="text-xl font-semibold mb-2">{props.infoCard.vet.address}</h4>
+                    <div>
+                        <button className="text-xl font-semibold mb-2" onClick={() => openTab('services') }>
+                            Servicios
+                        </button>
+                        <button className="w-full bg-purple-500 text-white py-2 px-4 rounded" onClick={() => openTab('')}>
+                            Redes Sociales
+                        </button>
+                    </div>
+
+                    
+            
+            <div className="py-4">
+                
+                {isPurpleOpen && (
+                    <div className="p-2 rounded flex justify-between" >
+                        
                         {/* hacer map aqui despues */}
-                        <p className="bg-amber-500 rounded-full m-1">
-                           Shop <img className="p-1 w-8" src={Bag} alt="#" />
+                        <p className="bg-amber-500 rounded-full h-8 w-8 m-1">
+                           <img className="p-1 w-8" src={Bag} alt="#" />
                         </p>
-                        <p className=" bg-teal-500 rounded-full m-1">
-                           Traslados <img className="p-1 w-8" src={Car} alt="#" />
+                        <p className=" bg-teal-500 rounded-full h-8 w-8 m-1">
+                           <img className="p-1 w-8" src={Car} alt="#" />
                         </p>
-                        <p className="bg-red-500 rounded-full m-1">
-                           Emergencias <img className="p-1 w-8" src={Emergency} alt="#" />
+                        <p className="bg-red-500 rounded-full h-8 w-8 m-1">
+                           <img className="p-1 w-8" src={Emergency} alt="#" />
                         </p>
-                        <p className="bg-cyan-500 rounded-full m-1">
-                           Baño y corte <img className="p-1 w-8"src={Shower} alt="#" />
+                        <p className="bg-cyan-500 rounded-full h-8 w-8 m-1">
+                           <img className="p-1 w-8"src={Shower} alt="#" />
                         </p>
-                        <p className="bg-green-500 rounded-full m-1">
-                           Atencion <img className="p-1 w-8" src={Local24} alt="#" />
+                        <p className="bg-green-500 rounded-full h-8 w-8 m-1">
+                           <img className="p-1 w-8" src={Local24} alt="#" />
                         </p>
                      </div>
                      )}
-            
-            <div className="py-4">
-                <h4 className="text-xl font-semibold mb-2">{props.infoCard.vet.address}</h4>
-                <button className="w-full bg-purple-500 text-white py-2 px-4 rounded" onClick={toggleLilacOpen}>
-                 Redes Sociales
-                 </button>
+                
                  {isLilacOpen && (
-                <div className="bg-purple-300 p-2 rounded">
-                    <p> Facebook <img src={Facebook} alt={props.infoCard.vet.facebook} className="mx-1 cursor-pointer" /></p>
-                    <p> Instagram <img src={Instagram} alt={props.infoCard.vet.instagram} className="mx-1 cursor-pointer"/></p>
-                    <p> Whatsapp <img src={Whatsapp} alt="" className="mx-1 cursor-pointer"/></p>
+                <div className="p-2 rounded flex">
+                    <a href={props.infoCard.vet.facebook}><img src={Facebook} alt={props.infoCard.vet.facebook} className="mx-2 cursor-pointer" /></a>
+                    <a href={props.infoCard.vet.instagram}><img src={Instagram} alt={props.infoCard.vet.instagram} className="mx-2 cursor-pointer"/></a>
+                    <a href={""}><img src={Whatsapp} alt="" className="mx-2 cursor-pointer"/></a>
                 </div>
                 )}
             </div>
@@ -95,3 +110,19 @@ export default Cards;
 //                 </div>
 //             </div>
 //         </div>
+
+{/* <p className="bg-amber-500 rounded-full m-1">
+                           Shop <img className="p-1 w-8" src={Bag} alt="#" />
+                        </p>
+                        <p className=" bg-teal-500 rounded-full m-1">
+                           Traslados <img className="p-1 w-8" src={Car} alt="#" />
+                        </p>
+                        <p className="bg-red-500 rounded-full m-1">
+                           Emergencias <img className="p-1 w-8" src={Emergency} alt="#" />
+                        </p>
+                        <p className="bg-cyan-500 rounded-full m-1">
+                           Baño y corte <img className="p-1 w-8"src={Shower} alt="#" />
+                        </p>
+                        <p className="bg-green-500 rounded-full m-1">
+                           Atencion <img className="p-1 w-8" src={Local24} alt="#" />
+                        </p> */}

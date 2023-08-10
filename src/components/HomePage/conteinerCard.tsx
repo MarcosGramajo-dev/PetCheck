@@ -3,6 +3,7 @@ import Cards from './cards'
 import axios from 'axios'
 import { UserVet } from '../Context/Type'
 import { useLoginState } from '../Context/Context'
+import loadingImage from '../../images/loading.gif'
 
 export default function ContainerTarjet(){
     const [cardsDB, setCardsDB] = useState([])
@@ -33,7 +34,7 @@ export default function ContainerTarjet(){
 
             </div> }
             {
-                loading && <div> loading... </div>
+                loading && <div> <img className="w-[150px] my-[120px] mx-auto" src={loadingImage} alt="loading..."/> </div>
             }
         </div>
     )

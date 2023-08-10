@@ -42,8 +42,8 @@ export default function Modal(props: IProps) {
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
 
-              <Dialog.Panel className="w-full py-5 px-3 relative transform overflow-hidden rounded-lg border-vet-purple-light border-4 bg-white text-left shadow-xl transition-all sm:my-8 max-sm:w-full sm:max-w-lg">
-                <div onClick={() => login?.authContext.toggleOpen()} className="cursor-pointer absolute right-[-0.5rem] top-[-0.5rem] w-10 h-10 p-2 rounded-full bg-vet-purple-light"> <img src={Close} alt="#" /> </div>
+              <Dialog.Panel className="w-full py-5 px-3 relative transform overflow-hidden rounded-lg border-vet-purple border-2 bg-white text-left shadow-xl transition-all sm:my-8 max-sm:w-full sm:max-w-lg">
+                <div onClick={() => login?.authContext.toggleOpen()} className="absolute right-[5px] top-[5px] w-10 h-10 p-2 rounded-full bg-vet-purple cursor-pointer"> <img src={Close} className="cursor-pointer" alt="#" /> </div>
                 {props.modalType === "login" ? <Login /> : null}
                 {props.modalType === "newSell" ? <NewSell/> : null}
 
@@ -55,10 +55,3 @@ export default function Modal(props: IProps) {
     </Transition.Root>
   )
 }
-
-{/* <Dialog.Panel className="w-full py-5 px-3 relative transform overflow-hidden rounded-lg border-vet-purple-light border-4 bg-white text-left shadow-xl transition-all sm:my-8 max-sm:w-full sm:max-w-lg">
-<div onClick={() => login?.authContext.toggleOpen()} className="cursor-pointer absolute right-[-0.5rem] top-[-0.5rem] w-10 h-10 p-2 rounded-full bg-vet-purple-light"> <img src={Close} alt="#" /> </div>
-{props.modalType === "login" ? <Login toggleOpen={props.toggleOpen} toggleLogin={props.toggleLogin} /> : null}
-{props.modalType === "newSell" ? <NewSell toggleOpen={props.toggleOpen}/> : null}
-
-</Dialog.Panel> */}

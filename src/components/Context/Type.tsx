@@ -5,7 +5,7 @@ export type UserVet = {
         image: string,
         nameLocal: string ,
         ownerVet: string,
-        service: { value: string, isChecked: boolean}[],
+        services: { value: string, isChecked: boolean}[],
         numMatricula: number,
         province: string,
         departament: string,

@@ -71,34 +71,40 @@ export default function Login() {
   };
 
   return (
-    <div className="relative">
+    <div className="relative w-8/12 m-auto">
       <form
         className="flex flex-col justify-center items-center py-3"
         onSubmit={handleSubmit}
       >
         <p className=" text-xl pb-2">Iniciar Sesion</p>
         <div className={`relative w-60 object-cover my-2`}>
+          <label htmlFor="emailLogin">Correo Electronico:</label>
           <input
             id="emailLogin"
             name="email"
-            className="my-1 w-60 px-2 border-b-4 border-t-2 border-vet-purple-light rounded-md"
+            className=" border-vet-blue border rounded-md w-full px-2 drop-shadow"
             type="email"
-            placeholder="Usuario"
             onChange={handleChange}
           />
         </div>
         <div className="relative w-60 object-cover my-2">
+          <label htmlFor="pass">Contraseña:</label>
           <input
             id="pass"
             name="password"
-            className="my-1 w-60 px-2 border-b-4 border-t-2 border-vet-purple-light rounded-md"
+            className="border-vet-blue border rounded-md w-full px-2 drop-shadow"
             type="password"
-            placeholder="Password"
             onChange={handleChange}
           />
         </div>
-        {errorMessage ? <p id="MError" className="text-red-500">{errorMessage}</p> : ""}
-        {successMessage ? <p id="MSuccess" className="text-green-500">{successMessage}</p> : ""}
+        <Link to="newPass" className="text-vet-purple-dark text-xs my-2 text-right m-auto mt-0 mb-3 w-6/12">
+          {" "}
+          ¿Olvidaste tu Contraseña?
+        </Link>
+        <div className="h-6">
+          {errorMessage ? <p id="MError" className="text-red-500">{errorMessage}</p> : ""}
+          {successMessage ? <p id="MSuccess" className="text-green-500">{successMessage}</p> : ""}
+        </div>
         <button 
           id="submitLogin"
           disabled={stateBtnSubmit}
@@ -113,10 +119,7 @@ export default function Login() {
         >
           Iniciar Sesion
         </button>
-        <Link to="newPass" className="text-vet-purple-dark text-xs my-2">
-          {" "}
-          ¿Olvidaste tu Contraseña?
-        </Link>
+        
         <Link to="register" className="text-vet-purple-dark text-xs my-2">
           {" "}
           ¿No tiene Cuenta?. Registrate Aquí
