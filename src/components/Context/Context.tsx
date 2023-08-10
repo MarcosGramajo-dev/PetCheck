@@ -71,7 +71,7 @@ export default function LoginContextProvider({children}:Props){
                 image: "",
                 nameLocal: "" ,
                 ownerVet: "",
-                service: [{value: "", isChecked: false}],
+                services: [{value: "", isChecked: false}],
                 numMatricula: 0,
                 province: "",
                 departament: "",
