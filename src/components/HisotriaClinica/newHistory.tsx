@@ -336,20 +336,20 @@ return (
       NUEVA HISTORIA CLINICA
     </p>
     <form className="flex justify-center flex-col" onSubmit={submit}>
-      <div className="h-[100px] flex justify-left items-center flex-col">
-        <input
-          type="file"
-          className="hidden"
-          onChange={handleChange}
-        />
-        <label
-          htmlFor="img"
+      <div className="h-[120px] flex justify-left items-center flex-col">
+          <label
+          htmlFor="imgInput"
           className="text-center cursor-pointer w-full border-dashed border-2 border-vet-purple px-2 py-6"
         >
-          {" "}
-          Foto de la mascota{" "}
+          Foto de la mascota
         </label>
-        <label htmlFor="IDLibreta">ID</label>
+        <input
+          type="file"
+          id="imgInput"
+          className="hidden"
+          name="img"
+          onChange={handleChange}
+        />
         <input
           id="idLibretaNewHC"
           type="number"
@@ -359,7 +359,7 @@ return (
           placeholder="ID de la Libreta"
         />
       </div>
-      <p className="py-2">DATOS DEL PROPIETARIO</p>
+      <p className="my-2">DATOS DEL PROPIETARIO</p>
       <div className="flex flex-wrap justify-around border-b-2 border-vet-purple py-2 border-dashed">
         <input
           onChange={handleChange}
