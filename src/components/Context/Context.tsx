@@ -59,7 +59,7 @@ export default function LoginContextProvider({children}:Props){
           id: 0        
     })
 
-    const URL = "https://backpetcheck2.onrender.com/"
+    const URL = "https://backpetcheck2.onrender.com"
     // const URL = "http://localhost:3000"
 
     const [token, setToken] = useState("")
