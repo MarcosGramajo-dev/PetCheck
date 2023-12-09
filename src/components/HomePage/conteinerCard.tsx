@@ -43,7 +43,6 @@ export default function ContainerTarjet() {
           imagen: veterinaria.imagen || "",
         }));
 
-        // Utilizar una referencia mutable para almacenar el valor actualizado de cardsDB
         const updatedCardsDB = [...cardsDB, ...datos];
 
         setCardsDB(updatedCardsDB);
@@ -54,16 +53,13 @@ export default function ContainerTarjet() {
         console.error("Error en la llamada a la API:", error);
       })
       .finally(() => setLoading(false));
-  }, []); // El array vacío [] asegura que useEffect se ejecute solo una vez al montar el componente
+  }, []);
 
   useEffect(() => {
-    // Este código se ejecutará cada vez que cardsDB se actualice, excepto en la primera renderización
     if (cardsDBRef.current !== undefined) {
       console.log("cardsDB actualizado:", cardsDBRef.current);
-
-      // Puedes realizar más operaciones aquí si es necesario
     }
-  }, [cardsDBRef.current]); // Dependencia cardsDBRef.current en lugar de cardsDB
+  }, [cardsDBRef.current]);
 
   return (
     <div className='mt-8'>
