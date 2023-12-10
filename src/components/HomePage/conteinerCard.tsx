@@ -126,11 +126,11 @@ export default function ContainerTarjet() {
 
       <SearchVet/>
 
-      { cardsDB == [] && 
+      {/* { cardsDB == [] && 
         <div>
           No se encontraron veterinarias
           ${cardsDB}
-        </div> }
+        </div> } */}
       {!loading && (
         <div className='my-10 flex flex-wrap justify-around'>
           {cardsDB.map((element, index) => (
