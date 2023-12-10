@@ -35,8 +35,8 @@ export default function search() {
   const verifyId = async () => {
     // consultamos con axios al back, segun la repuesta utilizamos un boolean para manejar la redireccion
     if(stateSelect === "id"){
-      console.log(`${login?.authContext.URL}/HistoryClinic/id/${idLibreta}`)
-      await axios.get(`${login?.authContext.URL}/HistoryClinic/id/${idLibreta}`)
+      console.log(`${login?.authContext.URL}HistoryClinic/id/${idLibreta}`)
+      await axios.get(`${login?.authContext.URL}HistoryClinic/id/${idLibreta}`)
       .then( res => {
         login?.authContext.addHC(res.data)
         setStatus(true)
