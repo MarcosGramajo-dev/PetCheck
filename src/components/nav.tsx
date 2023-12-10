@@ -82,7 +82,7 @@ export default function Nav() {
   const verifyUser = () => {
     //consultar si existe el usuario
     axios
-      .post(`${login?.authContext.URL}/auth/login`, user)
+      .post(`${login?.authContext.URL}auth/login`, user)
       .then((res) => {
         console.log(res.status);
         console.log(res);
@@ -210,21 +210,21 @@ export default function Nav() {
         <div className='flex m-5 items-center z-10'>
           <Link to='nuevaHistoria'>
             {" "}
-            <button className=' min-w-[150px] mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple max-md:hidden'>
+            <button className=' min-w-[150px] mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple hidden md:block'>
               {" "}
               Nueva Historia Clinica{" "}
             </button>{" "}
           </Link>
           <Link to='gestion'>
             {" "}
-            <button className='mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple max-md:hidden'>
+            <button className='mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple hidden md:block'>
               {" "}
               Gestion{" "}
             </button>{" "}
           </Link>
           <Link to='perfil'>
             {" "}
-            <button className='mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple max-md:hidden'>
+            <button className='mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple hidden md:block'>
               {" "}
               Perfil{" "}
             </button>{" "}
@@ -235,7 +235,7 @@ export default function Nav() {
               onClick={() => {
                 login?.authContext.toggleLogin(false), localStorage.clear();
               }}
-              className=' mx-1 duration-300 text-xs px-4 h-6 border border-vet-red text-white bg-vet-red rounded-lg hover:text-vet-red hover:bg-neutral-50 max-md:hidden'>
+              className=' mx-1 duration-300 text-xs px-4 h-6 border border-vet-red text-white bg-vet-red rounded-lg hover:text-vet-red hover:bg-neutral-50 hidden md:block'>
               {" "}
               Salir{" "}
             </button>
@@ -246,7 +246,7 @@ export default function Nav() {
       return (
         <div className='flex m-5 items-center z-10'>
           <button
-            className='min-w-[145px] mx-1 duration-300 px-4 h-[35px] border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple max-md:hidden'
+            className='min-w-[145px] mx-1 duration-300 px-4 h-[35px] border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple hidden md:block'
             onClick={() => {
               login?.authContext.toggleOpen(), login?.changeState();
             }}>
@@ -254,7 +254,7 @@ export default function Nav() {
             Iniciar Sesion{" "}
           </button>
           <Link to='register'>
-            <button className='min-w-[145px] mx-1 duration-300 px-4 h-[35px] border border-vet-purple text-neutral-50 bg-vet-purple rounded-lg hover:text-vet-purple hover:bg-neutral-50 max-md:hidden'>
+            <button className='min-w-[145px] mx-1 duration-300 px-4 h-[35px] border border-vet-purple text-neutral-50 bg-vet-purple rounded-lg hover:text-vet-purple hover:bg-neutral-50 hidden md:block'>
               {" "}
               Registrate Aquí{" "}
             </button>
@@ -269,9 +269,9 @@ export default function Nav() {
       <img
         src={banner}
         alt='banner nav'
-        className='fixed imgPosition max-md:hidden'
+        className='fixed imgPosition hidden md:block'
       />
-      <div className='flex w-full z-50 my-0 justify-between items-center m-auto max-md:bg-vet-purple-dark fixed max-md:fixed max-w-[1400px]'>
+      <div className='flex w-full z-50 my-0 justify-between items-center m-auto bg-vet-purple-dark fixed md:bg-transparent max-w-[1400px]'>
         <div className={toggleMenu} onClick={() => changeState()}>
           <div></div>
           <div></div>
@@ -279,8 +279,8 @@ export default function Nav() {
         </div>
         <div className=' mx-5 z-10 flex'>
           <Link to='/' className='flex justify-center items-center'>
-            <img src={iconBook} className='w-20 mx-3 max-md:hidden pt-3' />
-            <img src={iconName} className='w-36 max-md:hidden pt-3' />
+            <img src={iconBook} className='w-20 mx-3 hidden md:block pt-3' />
+            <img src={iconName} className='w-36 hidden md:block pt-3' />
           </Link>
 
           <Link
@@ -307,7 +307,7 @@ export default function Nav() {
       </div>
       <img
         src={imgCat}
-        className='absolute w-[500px] right-0 top-0 z-[-1] max-[1100px]:hidden'
+        className='absolute hidden md:block w-[500px] right-0 top-0 z-[-1]'
       />
       <div className={lowerMenu}>{menuMobile(login.authContext.isLogin)}</div>
       <Modal modalType={"login"} />

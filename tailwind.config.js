@@ -13,13 +13,7 @@ module.exports = withMT ( {
         'vet-blue': '#6C74BB',
         'vet-red': '#F55C5C'
       },
-      screens: {
-        "sm": "540px",
-        "md": "720px",
-        "lg": "960px",
-      }
     },
-    
   },
   plugins: [],
 });
