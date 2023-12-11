@@ -33,7 +33,7 @@ export default function Login() {
     setStateBtnSubmit(true)
     //consultar si existe el usuario
     // console.log(user)
-    axios.post(`${login?.authContext.URL}auth/login`, user)
+    axios.post(`${login?.authContext.URL}/auth/login`, user)
     .then(res => {
       // console.log(res.status)
       // console.log(res)
