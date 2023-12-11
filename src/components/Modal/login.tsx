@@ -40,7 +40,6 @@ export default function Login() {
     setStateBtnSubmit(true)
     //consultar si existe el usuario
     // console.log(user)
-<<<<<<< HEAD
     if(user.email == '' || user.password == '' || user.email == ' ' || user.password == ' '){
       setErrorMessage("Correo electrónico o contraseña incorrecta");
     } else {
@@ -62,29 +61,6 @@ export default function Login() {
         setStateBtnSubmit(false)
       })
     }
-=======
-    axios.post(`${login?.authContext.URL}/auth/login`, user)
-    .then(res => {
-      // console.log(res.status)
-      // console.log(res)
-      //si existe debera cambiar el estado login e inicar sesion
-      //si NO existe mostrara un mensaje de error
-      if(res.status === 200){
-        setSuccessMessage('Usuario Confirmado')
-        login.authContext.toggleOpen()
-        login.authContext.addToken(res.data.password)
-        login.authContext.saveInLocalStorage(res.data)
-        login.authContext.toggleLogin(true)
-        setStateBtnSubmit(true)
-      }
-    })
-    .catch(error => {
-      // console.log(error)
-      // console.log(error.response.data)
-      setErrorMessage(error.response.data)
-      setStateBtnSubmit(false)
-    })
->>>>>>> 837c34a15638ea062adfdc326747020f2fa37a35
   }
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
