@@ -93,8 +93,7 @@ export default function Register() {
 
     try {
       // Realiza la solicitud POST con Axios
-      const response = await axios.post(
-        "http://localhost:4000/auth/registro",
+      const response = await axios.post(`${login?.authContext.URL}/auth/registro`,
         formDataToSend
       );
 
