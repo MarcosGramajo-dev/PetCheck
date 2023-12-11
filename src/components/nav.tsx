@@ -34,7 +34,7 @@ export default function Nav() {
     tokenLocal = localStorage.getItem('token')
     // console.log(tokenLocal)
     
-    axios.get( `${login?.authContext.URL}auth/perfil`, {params: {tokenLocal}}).then(res => {
+    axios.get( `${login?.authContext.URL}/auth/perfil`, {params: {tokenLocal}}).then(res => {
       if(res.data === 'Success'){
         login?.authContext.toggleLogin(true)
       }
