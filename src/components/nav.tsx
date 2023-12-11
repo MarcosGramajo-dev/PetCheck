@@ -86,7 +86,7 @@ export default function Nav() {
   const verifyUser = () => {
     //consultar si existe el usuario
     axios
-      .post(`${login?.authContext.URL}auth/login`, user)
+      .post(`${login?.authContext.URL}/auth/login`, user)
       .then((res) => {
         console.log(res.status);
         console.log(res);
