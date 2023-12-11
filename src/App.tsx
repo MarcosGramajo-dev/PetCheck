@@ -33,7 +33,7 @@ function App() {
                 <Route path="perfil" Component={Perfil}/>
                 <Route path="nuevaHistoria" Component={NuevaHistoria}/>
                 <Route path='historiaClinica' Component={HistoriaClinica}/>
-                <Route path='newPass' Component={NewPass}/>
+                {/* <Route path='newPass' Component={NewPass}/> */}
                 <Route path='*' Component={Error404} />
               </Routes>
             </Router>

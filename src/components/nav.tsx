@@ -264,12 +264,14 @@ export default function Nav() {
             onClick={() => {
               login?.authContext.toggleOpen(), login?.changeState();
             }}
+
+            className="hidden md:block min-w-[140px]"
           >
               Iniciar Sesion
             </Button>
           <Link to='register'>
             <Button
-              className="bg-vet-blue hover:bg-vet-blue/50"
+              className="bg-vet-blue hover:bg-vet-blue/50 hidden md:block min-w-[145px]"
               size="sm"
             >
               Registrate Aquí
