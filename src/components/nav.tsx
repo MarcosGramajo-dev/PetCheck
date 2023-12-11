@@ -132,24 +132,24 @@ export default function Nav() {
               <button
                 onClick={() => changeState()}
                 className='my-1 h-12 w-full m-auto border-2 border-vet-purple-dark text-vet-purple-dark bg-white hover:bg-vet-purple-dark hover:border-white hover:text-white'>
-                {" "}
-                Nueva Historia Clinica{" "}
-              </button>{" "}
+                
+                Nueva Historia Clinica
+              </button>
             </Link>
             <Link to='gestion'>
               <button
                 onClick={() => changeState()}
                 className='my-1 h-12 w-full m-auto border-2 border-vet-purple-dark text-vet-purple-dark bg-white hover:bg-vet-purple-dark hover:border-white hover:text-white'>
-                {" "}
-                Gestion{" "}
-              </button>{" "}
+                
+                Gestion
+              </button>
             </Link>
             <Link to='perfil'>
               <button
                 onClick={() => changeState()}
                 className='my-1 h-12 w-full m-auto border-2 border-vet-purple-dark text-vet-purple-dark bg-white hover:bg-vet-purple-dark hover:border-white hover:text-white'>
-                {" "}
-                Perfil{" "}
+                
+                Perfil
               </button>
             </Link>
           </div>
@@ -160,8 +160,8 @@ export default function Nav() {
                   login?.authContext.toggleLogin(false), localStorage.clear();
                 }}
                 className='my-3 h-12 w-full m-auto mb-16 text-white bg-vet-red hover:bg-white hover:text-vet-red'>
-                {" "}
-                Salir{" "}
+                
+                Salir
               </button>
             </Link>
           </div>
@@ -212,39 +212,61 @@ export default function Nav() {
   function btnDesktop(sesion: boolean) {
     if (sesion) {
       return (
-        <div className='flex m-5 items-center z-10'>
-          <Link to='nuevaHistoria'>
-            {" "}
-            <button className=' min-w-[150px] mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple hidden md:block'>
-              {" "}
-              Nueva Historia Clinica{" "}
-            </button>{" "}
-          </Link>
-          <Link to='gestion'>
-            {" "}
-            <button className='mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple hidden md:block'>
-              {" "}
-              Gestion{" "}
-            </button>{" "}
-          </Link>
-          <Link to='perfil'>
-            {" "}
-            <button className='mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple hidden md:block'>
-              {" "}
-              Perfil{" "}
-            </button>{" "}
-          </Link>
-          <Link to='/'>
-            {" "}
-            <button
-              onClick={() => {
-                login?.authContext.toggleLogin(false), localStorage.clear();
-              }}
-              className=' mx-1 duration-300 text-xs px-4 h-6 border border-vet-red text-white bg-vet-red rounded-lg hover:text-vet-red hover:bg-neutral-50 hidden md:block'>
-              {" "}
-              Salir{" "}
-            </button>
-          </Link>
+        <div className='flex m-5 items-center z-10 gap-3'>
+          <div>
+            <Link to='nuevaHistoria'>
+              
+              <Button 
+                // className=' min-w-[150px] mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple hidden md:block'
+                variant="outlined"
+                size="sm"
+                className="border border-vet-blue text-vet-blue hidden md:block min-w-[190px]"
+              >
+                Nueva Historia Clinica
+              </Button>
+            </Link>
+          </div>
+          <div>
+            <Link to='gestion'>
+              
+              <Button 
+              // className='mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple hidden md:block'
+                variant="outlined"
+                size="sm"
+                className="border border-vet-blue text-vet-blue hidden md:block"
+              >
+                Gestion
+              </Button>
+            </Link>
+          </div>
+          <div>
+            <Link to='perfil'>
+              
+              <Button 
+              // className='mx-1 duration-300 text-xs px-4 h-6 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple hidden md:block'
+                variant="outlined"
+                size="sm"
+                className="border border-vet-blue text-vet-blue hidden md:block"
+              >
+                Perfil
+              </Button>
+            </Link>
+          </div>
+          <div>
+            <Link to='/'>
+              
+              <Button
+                size="sm"
+                onClick={() => {
+                  login?.authContext.toggleLogin(false), localStorage.clear();
+                }}
+                // className=' mx-1 duration-300 text-xs px-4 h-6 border border-vet-red text-white bg-vet-red rounded-lg hover:text-vet-red hover:bg-neutral-50 hidden md:block'
+                  className="bg-vet-red hidden md:block"
+                >
+                Salir
+              </Button>
+            </Link>
+          </div>
         </div>
       );
     } else {
@@ -255,8 +277,8 @@ export default function Nav() {
             onClick={() => {
               login?.authContext.toggleOpen(), login?.changeState();
             }}>
-            {" "}
-            Iniciar Sesion{" "}
+            
+            Iniciar Sesion
           </button> */}
           <Button
             variant="outlined"
@@ -277,8 +299,8 @@ export default function Nav() {
               Registrate Aquí
             </Button>
             {/* <button className='min-w-[145px] mx-1 duration-300 px-4 h-[35px] border border-vet-purple text-neutral-50 bg-vet-purple rounded-lg hover:text-vet-purple hover:bg-neutral-50 hidden md:block'>
-              {" "}
-              Registrate Aquí{" "}
+              
+              Registrate Aquí
             </button> */}
           </Link>
         </div>
