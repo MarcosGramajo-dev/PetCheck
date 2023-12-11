@@ -8,7 +8,7 @@ import Shower from "../../images/icons/shower.svg";
 
 export default function SearchVet(){
     return(
-        <div className="flex flex-wrap justify-center mt-4 text-white">
+        <div className="flex flex-wrap justify-around justify-center mt-4 text-white">
             <Button className="flex flex-wrap items-center justify-center mt-8 text-white bg-light-blue-300 mx-2">
                 <span> <img src={Car} alt="car"/> </span>
                 <span className="mx-2 hidden md:block" >Servicio a domicilio</span>

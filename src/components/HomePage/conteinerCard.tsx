@@ -42,7 +42,7 @@ export default function ContainerTarjet() {
   const loadData = (pages:number) => {
     setLoading(true);
 
-    console.log(`${login?.authContext.URL}/?page=${pages}`)
+    // console.log(`${login?.authContext.URL}/?page=${pages}`)
 
     axios
       .get(`${login?.authContext.URL}/?page=${pages}`)

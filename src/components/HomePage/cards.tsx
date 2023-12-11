@@ -1,8 +1,8 @@
-import Bag from "../../images/icons/bag.svg";
-import Car from "../../images/icons/car.svg";
-import Emergency from "../../images/icons/emergency.svg";
-import Local24 from "../../images/icons/local_24.svg";
-import Shower from "../../images/icons/shower.svg";
+import Venta from "../../images/icons/bag.svg";
+import Consulta from "../../images/icons/car.svg";
+import Cirugias from "../../images/icons/emergency.svg";
+import Hospedaje from "../../images/icons/local_24.svg";
+import Estetica from "../../images/icons/shower.svg";
 import Vet from "../../images/localVet.jpg";
 import Facebook from "../../images/redes/Facebook.svg";
 import FFacebook from "../../images/redes/f-facebook.png";
@@ -73,30 +73,40 @@ const Cards = (props: IProps) => {
           </CardHeader>
           <CardBody>
             <div className="mb-3 flex items-center justify-between">
-              <Typography variant="h5" color="blue-gray" className="font-medium">
+              <Typography variant="h5" color="blue-gray" className="font-medium text-center">
                 {props.infoCard.nombreVeterinaria}
               </Typography>
             </div>
-              <Typography variant="h5" color="blue-gray" className="font-medium">
+              <Typography variant="h5" color="blue-gray" className="font-medium text-sm">
                 {props.infoCard.direccion}
               </Typography>
-            <div className="group mt-4 flex gap-3">
-              <div className="flex w-10">
+            <div className="group mt-4 flex gap-3 min-h-[40px]">
                 
-                {/* { props.infoCard.servicios.map((item) => (
-                    <Tooltip content="Servicio a domicilio">
-                      <span className="cursor-pointer rounded-full border border-gray-900/5 bg-light-blue-300 p-1 text-gray-900 transition-colors hover:border-gray-900/10 hover:bg-light-blue-100 hover:!opacity-100 group-hover:opacity-70">
-                        <img src={item} alt="car"/>
+                { props.infoCard.servicios.map((item) => (
+                  <div className="flex w-10">
+                    <Tooltip content={item} key={item} >
+                      <span className={`cursor-pointer rounded-full border border-gray-900/5 text-gray-900 transition-colors hover:border-gray-900/10 hover:!opacity-100 group-hover:opacity-70
+                      ${item == 'Cirugias' ? 'bg-light-blue-300 p-1 hover:bg-light-blue-100' : ''}
+                      ${item == 'Venta' ? 'bg-orange-400 p-1 hover:bg-orange-200' : ''}
+                      ${item == 'Consulta' ? 'bg-red-400 p-1 hover:bg-red-200' : ''}
+                      ${item == 'Hospedaje' ? 'bg-green-400 p-1 hover:bg-green-200' : ''}
+                      ${item == 'Estetica' ? 'bg-teal-400 p-1 hover:bg-teal-200' : ''}
+                      `}>
+                        {item == 'Cirugias' ? <img src={Cirugias} alt={item}/> : null}
+                        {item == 'Venta' ? <img src={Venta} alt={item}/> : null}
+                        {item == 'Consulta' ? <img src={Consulta} alt={item}/> : null}
+                        {item == 'Hospedaje' ? <img src={Hospedaje} alt={item}/> : null}
+                        {item == 'Estetica' ? <img src={Estetica} alt={item}/> : null}
                       </span>
                     </Tooltip>
-                )) } */}
-                <Tooltip content="Servicio a domicilio">
+                  </div>
+                )) }
+                {/* <Tooltip content="Servicio a domicilio">
                   <span className="cursor-pointer rounded-full border border-gray-900/5 bg-light-blue-300 p-1 text-gray-900 transition-colors hover:border-gray-900/10 hover:bg-light-blue-100 hover:!opacity-100 group-hover:opacity-70">
                     <img src={Car} alt="car"/>
                   </span>
-                </Tooltip>
-              </div>
-              <div className="flex w-10">
+                </Tooltip> */}
+              {/* <div className="flex w-10">
               <Tooltip content="Compras">
                 <span className="cursor-pointer rounded-full border border-gray-900/5 bg-orange-400 p-1 text-gray-900 transition-colors hover:border-gray-900/10 hover:bg-orange-200 hover:!opacity-100 group-hover:opacity-70">
                   <img src={Bag} alt="car"/>
@@ -123,7 +133,7 @@ const Cards = (props: IProps) => {
                   <img src={Shower} alt="car"/>
                 </span>
               </Tooltip>
-              </div>
+              </div> */}
               
             </div>
           </CardBody>

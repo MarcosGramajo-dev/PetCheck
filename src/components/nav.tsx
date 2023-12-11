@@ -6,6 +6,10 @@ import iconBookBlank from "../images/bookIcon_blank.svg";
 import imgCat from "../images/backgroun-cat.png";
 import banner from "../images/bannerNav.png";
 
+import {
+  Button
+} from "@material-tailwind/react"
+
 import { Link } from "react-router-dom";
 
 import Modal from "./Modal/modal";
@@ -166,7 +170,8 @@ export default function Nav() {
     } else {
       return (
         <form className='flex flex-col justify-center items-center py-3 mt-16'>
-          <button className='text-white text-xl pb-2'>Iniciar Sesion</button>
+          {/* <button className='text-white text-xl pb-2'>Iniciar Sesion</button> */}
+          <Button variant="outlined">Iniciar Sesion</Button>
           <div className='relative w-60 object-cover my-2'>
             <input
               className='w-60 rounded-lg px-2'
@@ -244,20 +249,35 @@ export default function Nav() {
       );
     } else {
       return (
-        <div className='flex m-5 items-center z-10'>
-          <button
+        <div className='flex m-5 items-center z-10 gap-3'>
+          {/* <button
             className='min-w-[145px] mx-1 duration-300 px-4 h-[35px] border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple hidden md:block'
             onClick={() => {
               login?.authContext.toggleOpen(), login?.changeState();
             }}>
             {" "}
             Iniciar Sesion{" "}
-          </button>
+          </button> */}
+          <Button
+            variant="outlined"
+            size="sm"
+            onClick={() => {
+              login?.authContext.toggleOpen(), login?.changeState();
+            }}
+          >
+              Iniciar Sesion
+            </Button>
           <Link to='register'>
-            <button className='min-w-[145px] mx-1 duration-300 px-4 h-[35px] border border-vet-purple text-neutral-50 bg-vet-purple rounded-lg hover:text-vet-purple hover:bg-neutral-50 hidden md:block'>
+            <Button
+              className="bg-vet-blue hover:bg-vet-blue/50"
+              size="sm"
+            >
+              Registrate Aquí
+            </Button>
+            {/* <button className='min-w-[145px] mx-1 duration-300 px-4 h-[35px] border border-vet-purple text-neutral-50 bg-vet-purple rounded-lg hover:text-vet-purple hover:bg-neutral-50 hidden md:block'>
               {" "}
               Registrate Aquí{" "}
-            </button>
+            </button> */}
           </Link>
         </div>
       );
@@ -307,7 +327,7 @@ export default function Nav() {
       </div>
       <img
         src={imgCat}
-        className='absolute hidden md:block w-[500px] right-0 top-0 z-[-1]'
+        className='absolute hidden xl:block w-[500px] right-0 top-0 z-[-1]'
       />
       <div className={lowerMenu}>{menuMobile(login.authContext.isLogin)}</div>
       <Modal modalType={"login"} />
