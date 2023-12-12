@@ -136,14 +136,14 @@ export default function Nav() {
                 Nueva Historia Clinica
               </button>
             </Link>
-            <Link to='gestion'>
+            {/* <Link to='gestion'>
               <button
                 onClick={() => changeState()}
                 className='my-1 h-12 w-full m-auto border-2 border-vet-purple-dark text-vet-purple-dark bg-white hover:bg-vet-purple-dark hover:border-white hover:text-white'>
                 
                 Gestion
               </button>
-            </Link>
+            </Link> */}
             <Link to='perfil'>
               <button
                 onClick={() => changeState()}
@@ -226,7 +226,7 @@ export default function Nav() {
               </Button>
             </Link>
           </div>
-          <div>
+          <div className="hidden">
             <Link to='gestion'>
               
               <Button 

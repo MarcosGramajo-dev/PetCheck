@@ -1,4 +1,5 @@
 
+import { Typography } from '@material-tailwind/react';
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useLoginState } from '../Context/Context';
@@ -68,33 +69,32 @@ export default function HistoriaClinica() {
   return (
     <div>
       <div>
-        <div>
-          <div className="max-sm:w-full max-sm:border-0 w-11/12 p-5 m-auto my-10 bg-white/80 border-8 border-vet-purple-light rounded-lg max-w-[900px] flex justify-around items-center">
+        <div className="bg-white pt-10 md:pt-20 ">
+          
+          <div className="w-full max-sm:border-0 p-5 m-auto my-10 bg-white max-w-[900px] flex flex-wrap justify-between gap-3">
             <div>
+              <Typography variant="h5" className="font-semibold text-vet-blue text-left">DATOS DEL DUEÑO</Typography>
+              <Typography variant="paragraph" className="m-1 font-semibold">Nombre: <span className="font-normal">{HC?.ownerPet.NombreDueño}</span> </Typography>
+              <Typography variant="paragraph" className="m-1 font-semibold">DNI: <span className="font-normal">{HC?.ownerPet.DNI}</span></Typography>
+              <Typography variant="paragraph" className="m-1 font-semibold">Direccion: <span className="font-normal">{HC?.ownerPet.Direccion}</span></Typography>
+              <Typography variant="paragraph" className="m-1 font-semibold">Telefono: <span className="font-normal">{HC?.ownerPet.Telefono}</span></Typography>
+              <Typography variant="paragraph" className="m-1 font-semibold">Provincia: <span className="font-normal">{HC?.ownerPet.province}</span></Typography>
+              <Typography variant="paragraph" className="m-1 font-semibold">Localidad: <span className="font-normal">{HC?.ownerPet.departament}</span></Typography>
+            </div>
+            <div>
+              <Typography variant="h5" className="font-semibold text-vet-blue text-left">DATOS DE LA MASCOTA</Typography>
+              <Typography variant="paragraph" className="m-1 font-semibold">Nombre: <span className="font-normal">{HC?.DataPet.NombreMascota}</span> </Typography>
+              <Typography variant="paragraph" className="m-1 font-semibold">Sexo: <span className="font-normal">{HC?.DataPet.Sexo}</span></Typography>
+              <Typography variant="paragraph" className="m-1 font-semibold">Fecha de Nac: <span className="font-normal">{HC?.DataPet.Date}</span></Typography>
+              <Typography variant="paragraph" className="m-1 font-semibold">Pedigree: <span className="font-normal">{HC?.DataPet.Pedigree}</span></Typography>
+              <Typography variant="paragraph" className="m-1 font-semibold">Nchip: <span className="font-normal">{HC?.DataPet.Nchip}</span></Typography>
+              <Typography variant="paragraph" className="m-1 font-semibold">Detalle: <span className="font-normal">{HC?.DataPet.detalles}</span></Typography>
+            </div>
+            <div className="w-full flex justify-center items-center sm:w-auto">
               <img className="w-[200px]" src={HC?.DataPet.image} alt="foto mascota"/>
             </div>
-            <div>
-              <p className="font-semibold text-vet-blue text-2xl text-left">PERFIL DE LA MASCOTA</p>
-              <p className="m-1 font-semibold">Nombre: <span className="font-normal">{HC?.DataPet.NombreMascota}</span> </p>
-              <p className="m-1 font-semibold">Sexo: <span className="font-normal">{HC?.DataPet.Sexo}</span></p>
-              <p className="m-1 font-semibold">Fecha de Nac: <span className="font-normal">{HC?.DataPet.Date}</span></p>
-              <p className="m-1 font-semibold">Pedigree: <span className="font-normal">{HC?.DataPet.Pedigree}</span></p>
-              <p className="m-1 font-semibold">Nchip: <span className="font-normal">{HC?.DataPet.Nchip}</span></p>
-              <p className="m-1 font-semibold">Detalle: <span className="font-normal">{HC?.DataPet.detalles}</span></p>
-            </div>
           </div>
-          <div className="max-sm:w-full max-sm:border-0 w-11/12 p-5 m-auto my-10 bg-white/80 border-8 border-vet-purple-light rounded-lg max-w-[900px] flex flex-col justify-center">
-            <div>
-              <p className="font-semibold text-vet-blue text-2xl text-left">PERFIL DEL DUEÑO</p>
-              <p className="m-1 font-semibold">Nombre: <span className="font-normal">{HC?.ownerPet.NombreDueño}</span> </p>
-              <p className="m-1 font-semibold">DNI: <span className="font-normal">{HC?.ownerPet.DNI}</span></p>
-              <p className="m-1 font-semibold">Direccion: <span className="font-normal">{HC?.ownerPet.Direccion}</span></p>
-              <p className="m-1 font-semibold">Telefono: <span className="font-normal">{HC?.ownerPet.Telefono}</span></p>
-              <p className="m-1 font-semibold">Provincia: <span className="font-normal">{HC?.ownerPet.province}</span></p>
-              <p className="m-1 font-semibold">Localidad: <span className="font-normal">{HC?.ownerPet.departament}</span></p>
-            </div>
-          </div>
-          <div className="max-sm:w-full max-sm:border-0 w-11/12 p-5 m-auto my-10 bg-white/80 border-8 border-vet-purple-light rounded-lg max-w-[900px] flex justify-around items-center">
+          <div className="w-full max-sm:border-0 p-5 m-auto my-10 bg-white border-8 max-w-[900px] flex justify-around items-center">
             <div>
               <p className="font-semibold text-vet-blue text-2xl text-left">RESUMEN CLINICO</p>
               <p className="m-1 font-semibold text-vet-blue">Vacunacion</p>

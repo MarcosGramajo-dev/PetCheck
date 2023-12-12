@@ -8,7 +8,8 @@ import { UserVet } from "../Context/Type";
 import {
   Typography,
   Input,
-  Button
+  Button,
+  Alert
 } from "@material-tailwind/react"
 
 
@@ -28,7 +29,7 @@ export default function Login() {
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
       if (event.target.name === "password") {
       if (event.target.value.length < 6 && event.target.value.length >= 1) {
-        setErrorMessage("La contraseña debe tener al menos 6 caracteres");
+        setErrorMessage("La contraseña es corta");
       } else {
         setErrorMessage("");
       }
@@ -66,8 +67,9 @@ export default function Login() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setErrorMessage("");
-    // props.toggleOpen();
-    // props.toggleLogin()
+    setTimeout(()=>{
+
+    }, 3000);
   };
 
   return (
@@ -82,23 +84,8 @@ export default function Login() {
               Iniciar Sesion
             </Typography>
         </div>
-        <div className="mb-1 flex flex-col gap-4">
-          {/* <Typography variant="h6" color="blue-gray" className="-mb-3">
-            Correo Electronico:
-          </Typography> */}
-          {/* <Input
-            id="emailLogin"
-            name="email"
-            type="email"
-            size="lg"
-            placeholder="name@mail.com"
-            className=" !border-t-blue-gray-200 focus:!border-t-gray-900 p-0"
-            labelProps={{
-              className: "before:content-none after:content-none",
-            }}
-            onChange={handleChange}
-          /> */}
-          <div className="w-72  my-2">
+        
+          <div className="w-full my-2 flex justify-center">
             <Input label="Correo Electronico"
             onChange={handleChange}
             id="emailLogin"
@@ -107,36 +94,46 @@ export default function Login() {
             required
             />
           </div>
-        </div>
+          <div className="w-full my-2 flex justify-center">
+            {/* <label htmlFor="pass">Contraseña:</label>
+            <input
+              id="pass"
+              name="password"
+              className="border-vet-blue border rounded-md w-full px-2 drop-shadow"
+              type="password"
+              onChange={handleChange}
+            /> */}
+            <Input label="Contraseña"
+              onChange={handleChange}
+              id="pass"
+              name="password"
+              type="password"    
+              required        
+              />
+          </div>
         {/* <div className="relative w-60 object-cover my-2"> */}
-        <div className="w-72 my-2">
-          {/* <label htmlFor="pass">Contraseña:</label>
-          <input
-            id="pass"
-            name="password"
-            className="border-vet-blue border rounded-md w-full px-2 drop-shadow"
-            type="password"
-            onChange={handleChange}
-          /> */}
-          <Input label="Contraseña"
-            onChange={handleChange}
-            id="pass"
-            name="password"
-            type="password"    
-            required        
-            />
-        </div>
         {/* <Link to="newPass" className="text-vet-purple-dark text-xs my-2 text-right m-auto mt-0 mb-3 w-6/12">
           {" "}
           ¿Olvidaste tu Contraseña?
         </Link> */}
+        <div className="mb-1 flex flex-col gap-4">
+          <div className="h-10 w-full">
+            {errorMessage ? 
+                  <Alert  className="rounded-none border-l-4 border-[#c92e3b] bg-[#c92e3b]/10 font-medium text-[#c92e3b]" >
+                    <Typography variant="small">{errorMessage}</Typography>
+                  </Alert> : ""}
+            {successMessage ? 
+                  <Alert 
+                  className="rounded-none border-l-4 border-[#2ec946] bg-[#2ec946]/10 font-medium text-[#2ec946]"
+                  >
+                    <Typography variant="small">{successMessage}</Typography>
+                  </Alert> : ""}
+          </div>
+        </div> 
         <Button variant="text" className="text-vet-purple" onClick={() => setIsWatch(!isWacht)}>
           ¿Olvidaste tu Contraseña?
         </Button>
-        <div className="h-6">
-          {errorMessage ? <p id="MError" className="text-red-500">{errorMessage}</p> : ""}
-          {successMessage ? <p id="MSuccess" className="text-green-500">{successMessage}</p> : ""}
-        </div>
+        
         <Button 
           id="submitLogin"
           disabled={stateBtnSubmit}
@@ -155,9 +152,10 @@ export default function Login() {
         <Link to="register" className="text-vet-purple-dark text-xs my-2" onClick={() => {
               login?.authContext.toggleOpen(), login?.changeState();
             }}>
-          {" "}
+          
           ¿No tiene Cuenta?. Registrate Aquí
         </Link>
+         
       </form>
       { isWacht && <form action="">
         <div className="bg-vet-purple  rounded-md py-5 w-full absolute top-[-90px]">
