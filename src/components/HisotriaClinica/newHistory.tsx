@@ -13,6 +13,15 @@ import {
 import axios from "axios";
 import { useLoginState } from "../Context/Context";
 
+import {
+  Button,
+  Select,
+  Input,
+  Typography,
+  Option,
+  Alert
+} from '@material-tailwind/react'
+
 interface Depart {
   properties: {
     nombre: string;
@@ -303,16 +312,16 @@ export default function NuevaHistoria() {
   };
 
   return (
-    <div className='max-sm:w-full max-sm:border-0 w-11/12 p-5 m-auto my-20 bg-white/80 border-8 border-vet-purple-light rounded-lg max-w-[900px] flex flex-col justify-center'>
-      <div className='w-full m-auto flex flex-col justify-center'>
-        <p className='text-center text-vet-purple text-xl my-5'>
+    <div className='w-full p-5 m-auto my-20 bg-white flex flex-col justify-center'>
+      <div className='w-2/3 m-auto flex flex-col justify-center lg:mt-14'>
+        <Typography variant="h4" className='text-center text-vet-purple'>
           NUEVA HISTORIA CLINICA
-        </p>
+        </Typography>
         <form className='flex justify-center flex-col' onSubmit={submit}>
           <div className='h-[120px] flex justify-left items-center flex-col'>
             <label
               htmlFor='img'
-              className='text-center cursor-pointer w-full border-dashed border-2 border-vet-purple px-2 py-6'>
+              className='text-center cursor-pointer w-1/2 border-dashed border-2 border-vet-purple px-2 py-6'>
               Foto de la mascota
             </label>
             <input
@@ -322,182 +331,229 @@ export default function NuevaHistoria() {
               name='img'
               onChange={handleImageChange}
             />
-            <input
-              id='idLibretaNewHC'
-              type='number'
-              onChange={handleChange}
-              name='IDLibreta'
-              className='m-1 my-4 max-sm:w-full w-[250px] font-semibold border-b-2 border-vet-purple-light'
-              placeholder='ID de la Libreta'
-            />
+            <div className="my-3">
+              <Input
+                id='idLibretaNewHC'
+                type='number'
+                onChange={handleChange}
+                name='IDLibreta'
+                // className='m-1 my-4 max-sm:w-full w-[250px] font-semibold border-b-2 border-vet-purple-light'
+                label='ID de la Libreta'  
+              />
+            </div>
           </div>
-          <p className='my-2'>DATOS DEL PROPIETARIO</p>
-          <div className='flex flex-wrap justify-around border-b-2 border-vet-purple py-2 border-dashed'>
-            <input
-              onChange={handleChange}
-              name='NombreDueno'
-              type='text'
-              id='NombreNewHC'
-              className='m-1 my-2 max-sm:w-full w-[250px] font-semibold border-b-2 border-vet-purple-light'
-              placeholder='Nombre'
-            />
-            <input
-              onChange={handleChange}
-              name='DNI'
-              type='number'
-              id='DNINewHC'
-              className='m-1 my-2 max-sm:w-full w-[250px] font-semibold border-b-2 border-vet-purple-light'
-              placeholder='D.N.I'
-            />
-            <input
-              onChange={handleChange}
-              name='Telefono'
-              type='number'
-              id='telefonoNewHC'
-              className='m-1 my-2 max-sm:w-full w-[250px] font-semibold border-b-2 border-vet-purple-light'
-              placeholder='Telefono'
-            />
-            <input
-              onChange={handleChange}
-              name='Direccion'
-              type='text'
-              id='direccionNewHC'
-              className='m-1 my-2 max-sm:w-full w-[250px] font-semibold border-b-2 border-vet-purple-light'
-              placeholder='Direccion'
-            />
-            <div className='flex flex-wrap justify-between min-w-[200px] max-[500px]:w-full w-auto'>
-              <select
-                id='provinciaNewHC'
-                required
-                className='my-3 mx-3 w-[200px] max-[500px]:w-full border-b-2 border-vet-purple-light'
-                onChange={selectChange}>
-                <option value=''> Selecciona una Provincia </option>
-                {provinciasJSON?.features.map((option) => (
-                  <option
-                    key={option.properties.id}
-                    value={option.properties.id}>
-                    {option.properties.nombre}
-                  </option>
-                ))}
-              </select>
+          <Typography variant="h6" className='gap-3'>DATOS DEL PROPIETARIO</Typography>
+          <div className='flex flex-wrap justify-around border-vet-purple py-2 border-b'>
+            <div>
+              <Input
+                onChange={handleChange}
+                name='NombreDueno'
+                type='text'
+                id='NombreNewHC'
+                // className='m-1 my-2 max-sm:w-full w-[250px] font-semibold border-b-2 border-vet-purple-light'
+                label='Nombre'
+              />
+            </div>
+            <div>
+              <Input
+                onChange={handleChange}
+                name='DNI'
+                type='number'
+                id='DNINewHC'
+                // className='m-1 my-2 max-sm:w-full w-[250px] font-semibold border-b-2 border-vet-purple-light'
+                label='D.N.I'
+              />
+            </div>
+            <div>
+              <Input
+                onChange={handleChange}
+                name='Telefono'
+                type='number'
+                id='telefonoNewHC'
+                // className='m-1 my-2 max-sm:w-full w-[250px] font-semibold border-b-2 border-vet-purple-light'
+                label='Telefono'
+              />
+            </div>
+            <div>
+              <Input
+                onChange={handleChange}
+                name='Direccion'
+                type='text'
+                id='direccionNewHC'
+                // className='m-1 my-2 max-sm:w-full w-[250px] font-semibold border-b-2 border-vet-purple-light'
+                label='Direccion'
+              />
+            </div>
+            <div className='flex flex-wrap justify-center w-full my-3'>
+              <div className="mx-3">
+                <Select
+                  id='provinciaNewHC'
+                  label="Selecionar provincia"
+                  // className='my-3 mx-3 w-[200px] max-[500px]:w-full border-b-2 border-vet-purple-light'
+                  onChange={()=>selectChange}>
+                  {/* <Option value=''> Selecciona una Provincia </Option> */}
+                  {provinciasJSON?.features.map((option) => (
+                    <Option
+                      key={option.properties.id}
+                      value={option.properties.id}>
+                      {option.properties.nombre}
+                    </Option>
+                  ))}
+                </Select>
+              </div>
 
-              <select
-                id='departamentNewHC'
-                className='my-3 mx-3 w-[200px] max-[500px]:w-full border-b-2 border-vet-purple-light'
-                required
-                onChange={selectDepart}>
-                <option value=''>Seleccione su Localidad</option>
-                {arrayDepart?.map((element) => (
-                  <option
-                    key={element.properties.id}
-                    value={element.properties.id}>
-                    {element.properties.nombre}
-                  </option>
-                ))}
-              </select>
+              <div className="mx-4">
+                <Select
+                  id='departamentNewHC'
+                  // className='my-3 mx-3 w-[200px] max-[500px]:w-full border-b-2 border-vet-purple-light'
+                  label="Selecionar departamento"
+                  onChange={()=>selectDepart}>
+                  {arrayDepart?.map((element) => (
+                    <Option
+                      key={element.properties.id}
+                      value={element.properties.id}>
+                      {element.properties.nombre}
+                    </Option>
+                  ))}
+                </Select>
+              </div>
             </div>
           </div>
 
-          <p className='py-2'>DATOS DE LA MASCOTA</p>
-          <div className='flex flex-wrap justify-around border-b-2 border-vet-purple py-2 border-dashed'>
-            <input
-              id='nombreMascotaNewHC'
-              onChange={handleChangePet}
-              type='text'
-              name='NombreMascota'
-              className='m-1 my-2 max-sm:w-full w-[250px] font-semibold border-b-2 border-vet-purple-light'
-              placeholder='Nombre'
-            />
-            <input
-              id='especieNewHC'
-              onChange={handleChangePet}
-              type='text'
-              name='Especie'
-              className='m-1 my-2 max-sm:w-full w-[250px] font-semibold border-b-2 border-vet-purple-light'
-              placeholder='Especie'
-            />
-            <input
-              id='sexoNewHC'
-              onChange={handleChangePet}
-              type='text'
-              name='Sexo'
-              className='m-1 my-2 max-sm:w-full w-[250px] font-semibold border-b-2 border-vet-purple-light'
-              placeholder='Sexo'
-            />
-            <input
-              id='NchipNewHC'
-              onChange={handleChangePet}
-              type='number'
-              name='Nchip'
-              className='m-1 my-2 max-sm:w-full w-[250px] font-semibold border-b-2 border-vet-purple-light'
-              placeholder='N° Chip'
-            />
-            <input
-              id='pedigreeNewHC'
-              onChange={handleChangePet}
-              type='number'
-              name='Pedigree'
-              className='m-1 my-2 max-sm:w-full w-[250px] font-semibold border-b-2 border-vet-purple-light'
-              placeholder='Registro Pedigree'
-            />
-            <input
-              id='dateNewHC'
-              onChange={handleChangePet}
-              type='date'
-              name='Date'
-              className='m-1 my-2 max-sm:w-full w-[250px] font-semibold border-b-2 border-vet-purple-light'
-              placeholder='Fecha de nacimiento'
-            />
-            <input
-              id='detallesNewHC'
-              onChange={handleChangePet}
-              type='text'
-              name='detalles'
-              className='m-1 my-2 max-sm:w-full w-[250px] font-semibold border-b-2 border-vet-purple-light'
-              placeholder='Marcas Particulares'
-            />
+          <Typography variant="h6" className="mt-3">DATOS DE LA MASCOTA</Typography>
+          <div className='flex flex-wrap justify-around border-vet-purple py-5 border-b gap-3 '>
+            <div>
+              <Input
+                id='nombreMascotaNewHC'
+                onChange={handleChangePet}
+                type='text'
+                name='NombreMascota'
+                // className='m-1 my-2 max-sm:w-full w-[250px] font-semibold border-b-2 border-vet-purple-light'
+                label='Nombre'
+              />
+            </div>
+            <div>
+              <Input
+                id='especieNewHC'
+                onChange={handleChangePet}
+                type='text'
+                name='Especie'
+                // className='m-1 my-2 max-sm:w-full w-[250px] font-semibold border-b-2 border-vet-purple-light'
+                label='Especie'
+              />
+            </div>
+            <div>
+              <Input
+                id='sexoNewHC'
+                onChange={handleChangePet}
+                type='text'
+                name='Sexo'
+                // className='m-1 my-2 max-sm:w-full w-[250px] font-semibold border-b-2 border-vet-purple-light'
+                label='Sexo'
+              />
+            </div>
+            <div>
+              <Input
+                id='NchipNewHC'
+                onChange={handleChangePet}
+                type='number'
+                name='Nchip'
+                // className='m-1 my-2 max-sm:w-full w-[250px] font-semibold border-b-2 border-vet-purple-light'
+                label='N° Chip'
+              />
+            </div>
+            <div>
+              <Input
+                id='pedigreeNewHC'
+                onChange={handleChangePet}
+                type='number'
+                name='Pedigree'
+                // className='m-1 my-2 max-sm:w-full w-[250px] font-semibold border-b-2 border-vet-purple-light'
+                label='Registro Pedigree'
+              />
+            </div>
+            <div>
+              <Input
+                id='dateNewHC'
+                onChange={handleChangePet}
+                type='date'
+                name='Date'
+                // className='m-1 my-2 max-sm:w-full w-[250px] font-semibold border-b-2 border-vet-purple-light'
+                label='Fecha de nacimiento'
+              />
+            </div>
+            <div>
+              <Input
+                id='detallesNewHC'
+                onChange={handleChangePet}
+                type='text'
+                name='detalles'
+                // className='m-1 my-2 max-sm:w-full w-[250px] font-semibold border-b-2 border-vet-purple-light'
+                label='Marcas Particulares'
+              />
+            </div>
           </div>
 
-          <div className='flex flex-col justify-around border-b-2 border-vet-purple py-2 border-dashed'>
-            <p>VACUNAS</p>
+          <div className='flex flex-col justify-around pb-3 border-vet-purple py-2 border-b'>
+            <Typography variant="h6">VACUNAS</Typography>
             <div className=' w-3/4 m-auto flex flex-wrap justify-around'>
-              <select
+              <Select
                 id='vacunasNewHC'
-                onChange={handleChangeVacunas}
-                className='m-1 my-2 max-sm:w-full w-[250px] font-semibold border-b-2 border-vet-purple-light'>
-                <option value=''>Selecciona el tipo de Vacuna</option>
-                <option value='VacunaAntirrabica'>Vacuna Antirrabica</option>
-                <option value='QuintupleFelina'>Quintuple Felina</option>
-              </select>
+                onChange={() => handleChangeVacunas}
+                label="Selecciona el tipo de Vacuna"
+                // className='m-1 my-2 max-sm:w-full w-[250px] font-semibold border-b-2 border-vet-purple-light'
+                >
+                <Option value=''>Ninguno</Option>
+                <Option value='VacunaAntirrabica'>Vacuna Antirrabica</Option>
+                <Option value='QuintupleFelina'>Quintuple Felina</Option>
+              </Select>
               {toggleSelectedVacuna()}
             </div>
           </div>
 
-          <div className='flex flex-col justify-around border-b-2 border-vet-purple p-2 border-dashed'>
-            <p>REGISTRO</p>
+          <div className='flex flex-col justify-around border-b border-vet-purple py-3'>
+            <Typography variant="h6">REGISTRO</Typography>
             <div className=' w-3/4 m-auto flex flex-col justify-center items-center'>
-              <select
+              <Select
                 id='RegistroNewHC'
-                onChange={handleChangeRegister}
-                className='m-1 my-2 max-sm:w-full w-[250px] font-semibold border-b-2 border-vet-purple-light'>
-                <option value=''>Selecciona el tipo de Registro</option>
-                <option value='Agresiones'>Agresiones</option>
-                <option value='EnfermedadesCronicas'>
+                onChange={() => handleChangeRegister}
+                label="Selecciona el tipo de Registro"
+                // className='m-1 my-2 max-sm:w-full w-[250px] font-semibold border-b-2 border-vet-purple-light'
+                >
+                <Option value=''>Ninguno</Option>
+                <Option value='Agresiones'>Agresiones</Option>
+                <Option value='EnfermedadesCronicas'>
                   Enfermedades Cronicas
-                </option>
-                <option value='Lesiones'>Lesiones</option>
-              </select>
+                </Option>
+                <Option value='Lesiones'>Lesiones</Option>
+              </Select>
               {toggleSelectedRegister()}
             </div>
           </div>
-          <p id='messageNewHC'>{Message}</p>
-          <div className='flex justify-center'>
-            <button
+          {/* <Typography variant="lead" className="text-center text-red-500" id='messageNewHC'>{Message}{'Test'}</Typography> */}
+          
+          <div className='flex justify-center my-3'>
+            <Button
               id='SubmitNewHC'
-              className='min-w-[120px] my-3 m-auto duration-300 text-lg px-4 border border-vet-purple text-neutral-50 bg-vet-purple rounded-lg hover:text-vet-purple hover:bg-neutral-50 max-sm:hidden'>
-              {" "}
-              Crear Nueva Historia Clinica{" "}
-            </button>
+              className="bg-vet-purple"
+              // className='min-w-[120px] my-3 m-auto duration-300 text-lg px-4 border border-vet-purple text-neutral-50 bg-vet-purple rounded-lg hover:text-vet-purple hover:bg-neutral-50 max-sm:hidden'
+              >
+              Crear Nueva Historia Clinica
+            </Button>
+          </div>
+          <div>
+          <Alert 
+            className="rounded-none border-l-4 border-[#c92e3b] bg-[#c92e3b]/10 font-medium text-[#c92e3b]"
+            // color="red"
+            >
+              An error alert for showing message.
+          </Alert>
+
+          <Alert
+            className="rounded-none border-l-4 border-[#2ec946] bg-[#2ec946]/10 font-medium text-[#2ec946]"
+          >
+            A simple alert for showing message.
+          </Alert>
           </div>
         </form>
       </div>
