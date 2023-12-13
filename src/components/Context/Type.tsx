@@ -72,7 +72,8 @@ export type loginContext = {
         isLogin: boolean,
         addHC: (history: History) => void,
         HC: History
-    }
+        tokenAutorizacion: (data: string) => void;
+      }
 }
 export type dataOwnerPet = {
     NombreDueño: string,

@@ -336,6 +336,7 @@ export default function Register() {
                     onChange={handleChange}
                     name='numMatricula'
                     type='number'
+                    min="0"
                     label='Numero de Matricula'
                     // className=' my-3 mx-3 min-w-[200px] max-[500px]:w-full w-auto border-b-2 border-vet-purple-light'
                   />
@@ -399,6 +400,7 @@ export default function Register() {
                     onChange={handleChange}
                     name='tel'
                     type='number'
+                    min="0"
                     label='Numero de Contacto'
                     // className='my-3 mx-3 min-w-[200px] max-[500px]:w-full w-auto border-b-2 border-vet-purple-light'
                   />
@@ -410,6 +412,7 @@ export default function Register() {
                     onChange={handleChange}
                     name='telWp'
                     type='number'
+                    min="0"
                     label='Numero de WhatsApp'
                     // className='my-3 mx-3 min-w-[200px] max-[500px]:w-full w-auto border-b-2 border-vet-purple-light'
                   />

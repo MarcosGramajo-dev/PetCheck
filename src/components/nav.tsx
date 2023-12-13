@@ -31,11 +31,11 @@ export default function Nav() {
   }, []);
 
   const getToken = () => {
-    tokenLocal = localStorage.getItem("token");
+    tokenLocal = localStorage.getItem("authorizationtoken");
     // console.log(tokenLocal)
 
     axios
-      .get(`${login?.authContext.URL}/auth/perfil`, { params: { tokenLocal } })
+      .get(`${login?.authContext.URL}/auth/perfil`, {headers: {autorizationtoken : `${tokenLocal}`}})
       .then((res) => {
         if (res.data === "Success") {
           login?.authContext.toggleLogin(true);
@@ -43,15 +43,6 @@ export default function Nav() {
       })
       .catch((error) => console.log(error));
   };
-
-  // function toggleOpen() {
-  //   setShowModal(!showModal)
-  // }
-
-  // function toggleLogin(){
-  //     setIsLogin(!isLogin);
-  //     console.log(isLogin)
-  // }
 
   function changeState() {
     setState(!state);

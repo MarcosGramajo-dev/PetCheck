@@ -119,6 +119,10 @@ export default function LoginContextProvider({ children }: Props) {
     localStorage.setItem("vet", JSON.stringify(dataUser));
   };
 
+  const tokenAutorizacion = (data: string) => {
+    localStorage.setItem("authorizationToken", JSON.stringify(data));
+  };
+
   const authContext = {
     changeState,
     login,
@@ -130,6 +134,7 @@ export default function LoginContextProvider({ children }: Props) {
     toggleLogin,
     toggleOpen,
     isOpen,
+    tokenAutorizacion,
     showModal,
     isLogin,
     addHC,

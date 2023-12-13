@@ -2,9 +2,9 @@
   "features": [
     {
       "properties": {
-        "nombre_completo": "Partido de JosÃ© C. Paz",
+        "nombre_completo": "Partido de José C. Paz",
         "fuente": "ARBA - Gerencia de Servicios Catastrales",
-        "nombre": "JosÃ© C. Paz",
+        "nombre": "José C. Paz",
         "id": "06412",
         "provincia": {
           "nombre": "Buenos Aires",
@@ -22,7 +22,7 @@
     {
       "properties": {
         "nombre_completo": "Departamento O'Higgins",
-        "fuente": "Direc. Pcial. de Catastro y CartografÃ­a",
+        "fuente": "Direc. Pcial. de Catastro y Cartografía",
         "nombre": "O'Higgins",
         "id": "22112",
         "provincia": {
@@ -135,9 +135,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento QuemÃº QuemÃº",
+        "nombre_completo": "Departamento Quemú Quemú",
         "fuente": "Direc. Grl. de Catastro",
-        "nombre": "QuemÃº QuemÃº",
+        "nombre": "Quemú Quemú",
         "id": "42119",
         "provincia": {
           "nombre": "La Pampa",
@@ -287,9 +287,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento CatrilÃ³",
+        "nombre_completo": "Departamento Catriló",
         "fuente": "Direc. Grl. de Catastro",
-        "nombre": "CatrilÃ³",
+        "nombre": "Catriló",
         "id": "42028",
         "provincia": {
           "nombre": "La Pampa",
@@ -306,9 +306,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento AtreucÃ³",
+        "nombre_completo": "Departamento Atreucó",
         "fuente": "Direc. Grl. de Catastro",
-        "nombre": "AtreucÃ³",
+        "nombre": "Atreucó",
         "id": "42007",
         "provincia": {
           "nombre": "La Pampa",
@@ -325,9 +325,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento GuatrachÃ©",
+        "nombre_completo": "Departamento Guatraché",
         "fuente": "Direc. Grl. de Catastro",
-        "nombre": "GuatrachÃ©",
+        "nombre": "Guatraché",
         "id": "42070",
         "provincia": {
           "nombre": "La Pampa",
@@ -344,9 +344,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento UtracÃ¡n",
+        "nombre_completo": "Departamento Utracán",
         "fuente": "Direc. Grl. de Catastro",
-        "nombre": "UtracÃ¡n",
+        "nombre": "Utracán",
         "id": "42154",
         "provincia": {
           "nombre": "La Pampa",
@@ -363,9 +363,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento LoventuÃ©",
+        "nombre_completo": "Departamento Loventué ",
         "fuente": "Direc. Grl. de Catastro",
-        "nombre": "LoventuÃ©",
+        "nombre": "Loventué ",
         "id": "42098",
         "provincia": {
           "nombre": "La Pampa",
@@ -496,9 +496,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento San MartÃ­n",
+        "nombre_completo": "Departamento San Martín",
         "fuente": "IGN",
-        "nombre": "San MartÃ­n",
+        "nombre": "San Martín",
         "id": "18147",
         "provincia": {
           "nombre": "Corrientes",
@@ -805,7 +805,7 @@
         "nombre": "Conesa",
         "id": "62028",
         "provincia": {
-          "nombre": "RÃ­o Negro",
+          "nombre": "Río Negro",
           "id": "62",
           "interseccion": 0.0482368092783802
         },
@@ -820,7 +820,7 @@
     {
       "properties": {
         "nombre_completo": "Departamento Sargento Cabral",
-        "fuente": "Direc. Pcial. de Catastro y CartografÃ­a",
+        "fuente": "Direc. Pcial. de Catastro y Cartografía",
         "nombre": "Sargento Cabral",
         "id": "22154",
         "provincia": {
@@ -839,7 +839,7 @@
     {
       "properties": {
         "nombre_completo": "Departamento Independencia",
-        "fuente": "Direc. Pcial. de Catastro y CartografÃ­a",
+        "fuente": "Direc. Pcial. de Catastro y Cartografía",
         "nombre": "Independencia",
         "id": "22070",
         "provincia": {
@@ -858,7 +858,7 @@
     {
       "properties": {
         "nombre_completo": "Departamento Mayor Luis J. Fontana",
-        "fuente": "Direc. Pcial. de Catastro y CartografÃ­a",
+        "fuente": "Direc. Pcial. de Catastro y Cartografía",
         "nombre": "Mayor Luis J. Fontana",
         "id": "22098",
         "provincia": {
@@ -876,9 +876,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento Fray Justo Santa MarÃ­a de Oro",
-        "fuente": "Direc. Pcial. de Catastro y CartografÃ­a",
-        "nombre": "Fray Justo Santa MarÃ­a de Oro",
+        "nombre_completo": "Departamento Fray Justo Santa Marí­a de Oro",
+        "fuente": "Direc. Pcial. de Catastro y Cartografía",
+        "nombre": "Fray Justo Santa María de Oro",
         "id": "22043",
         "provincia": {
           "nombre": "Chaco",
@@ -895,9 +895,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento 1Â° de Mayo",
-        "fuente": "Direc. Pcial. de Catastro y CartografÃ­a",
-        "nombre": "1Â° de Mayo",
+        "nombre_completo": "Departamento 1° de Mayo",
+        "fuente": "Direc. Pcial. de Catastro y Cartografía",
+        "nombre": "1° de Mayo",
         "id": "22126",
         "provincia": {
           "nombre": "Chaco",
@@ -933,9 +933,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Partido de MaipÃº",
+        "nombre_completo": "Partido de Maipú",
         "fuente": "ARBA - Gerencia de Servicios Catastrales",
-        "nombre": "MaipÃº",
+        "nombre": "Maipú",
         "id": "06511",
         "provincia": {
           "nombre": "Buenos Aires",
@@ -953,7 +953,7 @@
     {
       "properties": {
         "nombre_completo": "Departamento 12 de Octubre",
-        "fuente": "Direc. Pcial. de Catastro y CartografÃ­a",
+        "fuente": "Direc. Pcial. de Catastro y Cartografía",
         "nombre": "12 de Octubre",
         "id": "22036",
         "provincia": {
@@ -971,12 +971,12 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento Santa MarÃ­a",
+        "nombre_completo": "Departamento Santa María",
         "fuente": "Direc. Grl. de Catastro",
-        "nombre": "Santa MarÃ­a",
+        "nombre": "Santa María",
         "id": "14147",
         "provincia": {
-          "nombre": "CÃ³rdoba",
+          "nombre": "Córdoba",
           "id": "14",
           "interseccion": 0.0195798910685345
         },
@@ -995,7 +995,7 @@
         "nombre": "San Alberto",
         "id": "14126",
         "provincia": {
-          "nombre": "CÃ³rdoba",
+          "nombre": "Córdoba",
           "id": "14",
           "interseccion": 0.0204941334065178
         },
@@ -1009,12 +1009,12 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento RÃ­o Segundo",
+        "nombre_completo": "Departamento Río Segundo",
         "fuente": "Direc. Grl. de Catastro",
-        "nombre": "RÃ­o Segundo",
+        "nombre": "Río Segundo",
         "id": "14119",
         "provincia": {
-          "nombre": "CÃ³rdoba",
+          "nombre": "Córdoba",
           "id": "14",
           "interseccion": 0.0312622981453106
         },
@@ -1033,7 +1033,7 @@
         "nombre": "San Justo",
         "id": "14140",
         "provincia": {
-          "nombre": "CÃ³rdoba",
+          "nombre": "Córdoba",
           "id": "14",
           "interseccion": 0.0939130502757357
         },
@@ -1047,12 +1047,12 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento UniÃ³n",
+        "nombre_completo": "Departamento Unión",
         "fuente": "Direc. Grl. de Catastro",
-        "nombre": "UniÃ³n",
+        "nombre": "Unión",
         "id": "14182",
         "provincia": {
-          "nombre": "CÃ³rdoba",
+          "nombre": "Córdoba",
           "id": "14",
           "interseccion": 0.0666910830698044
         },
@@ -1071,7 +1071,7 @@
         "nombre": "Tercero Arriba",
         "id": "14161",
         "provincia": {
-          "nombre": "CÃ³rdoba",
+          "nombre": "Córdoba",
           "id": "14",
           "interseccion": 0.0312538113858359
         },
@@ -1104,12 +1104,12 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento RÃ­o Cuarto",
+        "nombre_completo": "Departamento Río Cuarto",
         "fuente": "Direc. Grl. de Catastro",
-        "nombre": "RÃ­o Cuarto",
+        "nombre": "Río Cuarto",
         "id": "14098",
         "provincia": {
-          "nombre": "CÃ³rdoba",
+          "nombre": "Córdoba",
           "id": "14",
           "interseccion": 0.114337724965032
         },
@@ -1142,9 +1142,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento PilagÃ¡s",
+        "nombre_completo": "Departamento Pilagás",
         "fuente": "IGN",
-        "nombre": "PilagÃ¡s",
+        "nombre": "Pilagás",
         "id": "34042",
         "provincia": {
           "nombre": "Formosa",
@@ -1161,9 +1161,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento LaishÃ­",
+        "nombre_completo": "Departamento Laishí",
         "fuente": "IGN",
-        "nombre": "LaishÃ­",
+        "nombre": "Laishí",
         "id": "34021",
         "provincia": {
           "nombre": "Formosa",
@@ -1180,9 +1180,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento PiranÃ©",
+        "nombre_completo": "Departamento Pirané",
         "fuente": "IGN",
-        "nombre": "PiranÃ©",
+        "nombre": "Pirané",
         "id": "34056",
         "provincia": {
           "nombre": "Formosa",
@@ -1199,9 +1199,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento General GÃ¼emes",
-        "fuente": "Direc. Pcial. de Catastro y CartografÃ­a",
-        "nombre": "General GÃ¼emes",
+        "nombre_completo": "Departamento General Güemes",
+        "fuente": "Direc. Pcial. de Catastro y Cartografía",
+        "nombre": "General Güemes",
         "id": "22063",
         "provincia": {
           "nombre": "Chaco",
@@ -1218,12 +1218,12 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento Ã‘orquinco",
+        "nombre_completo": "Departamento Ñorquinco",
         "fuente": "A.R.T - Gerencia de Catastro",
-        "nombre": "Ã‘orquinco",
+        "nombre": "Ñorquinco",
         "id": "62056",
         "provincia": {
-          "nombre": "RÃ­o Negro",
+          "nombre": "Río Negro",
           "id": "62",
           "interseccion": 0.0415935198850545
         },
@@ -1256,9 +1256,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Partido de PuÃ¡n",
+        "nombre_completo": "Partido de Puán",
         "fuente": "ARBA - Gerencia de Servicios Catastrales",
-        "nombre": "PuÃ¡n",
+        "nombre": "Puán",
         "id": "06651",
         "provincia": {
           "nombre": "Buenos Aires",
@@ -1294,12 +1294,12 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento Presidente Roque SÃ¡enz PeÃ±a",
+        "nombre_completo": "Departamento Presidente Roque Sáenz Peña",
         "fuente": "Direc. Grl. de Catastro",
-        "nombre": "Presidente Roque SÃ¡enz PeÃ±a",
+        "nombre": "Presidente Roque Sáenz Peña",
         "id": "14084",
         "provincia": {
-          "nombre": "CÃ³rdoba",
+          "nombre": "Córdoba",
           "id": "14",
           "interseccion": 0.05112440068579
         },
@@ -1337,7 +1337,7 @@
         "nombre": "General Roca",
         "id": "14035",
         "provincia": {
-          "nombre": "CÃ³rdoba",
+          "nombre": "Córdoba",
           "id": "14",
           "interseccion": 0.0789015037408561
         },
@@ -1370,9 +1370,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento RÃ­o Hondo",
+        "nombre_completo": "Departamento Río Hondo",
         "fuente": "Direc. Grl. de Catastro",
-        "nombre": "RÃ­o Hondo",
+        "nombre": "Río Hondo",
         "id": "86147",
         "provincia": {
           "nombre": "Santiago del Estero",
@@ -1485,7 +1485,7 @@
     {
       "properties": {
         "nombre_completo": "Departamento Capital",
-        "fuente": "Ministerio de EcologÃ­a",
+        "fuente": "Ministerio de Ecología",
         "nombre": "Capital",
         "id": "54028",
         "provincia": {
@@ -1503,9 +1503,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento IguazÃº",
-        "fuente": "Ministerio de EcologÃ­a",
-        "nombre": "IguazÃº",
+        "nombre_completo": "Departamento Iguazú",
+        "fuente": "Ministerio de Ecología",
+        "nombre": "Iguazú",
         "id": "54063",
         "provincia": {
           "nombre": "Misiones",
@@ -1522,9 +1522,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento OberÃ¡",
-        "fuente": "Ministerio de EcologÃ­a",
-        "nombre": "OberÃ¡",
+        "nombre_completo": "Departamento Oberá",
+        "fuente": "Ministerio de Ecología",
+        "nombre": "Oberá",
         "id": "54091",
         "provincia": {
           "nombre": "Misiones",
@@ -1542,7 +1542,7 @@
     {
       "properties": {
         "nombre_completo": "Departamento San Ignacio",
-        "fuente": "Ministerio de EcologÃ­a",
+        "fuente": "Ministerio de Ecología",
         "nombre": "San Ignacio",
         "id": "54098",
         "provincia": {
@@ -1579,12 +1579,12 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento RÃ­o Seco",
+        "nombre_completo": "Departamento Río Seco",
         "fuente": "Direc. Grl. de Catastro",
-        "nombre": "RÃ­o Seco",
+        "nombre": "Río Seco",
         "id": "14112",
         "provincia": {
-          "nombre": "CÃ³rdoba",
+          "nombre": "Córdoba",
           "id": "14",
           "interseccion": 0.0396380369442401
         },
@@ -1603,7 +1603,7 @@
         "nombre": "Avellaneda",
         "id": "62014",
         "provincia": {
-          "nombre": "RÃ­o Negro",
+          "nombre": "Río Negro",
           "id": "62",
           "interseccion": 0.0967655021662825
         },
@@ -1622,7 +1622,7 @@
         "nombre": "General Roca",
         "id": "62042",
         "provincia": {
-          "nombre": "RÃ­o Negro",
+          "nombre": "Río Negro",
           "id": "62",
           "interseccion": 0.0703061139321081
         },
@@ -1637,7 +1637,7 @@
     {
       "properties": {
         "nombre_completo": "Departamento San Fernando",
-        "fuente": "Direc. Pcial. de Catastro y CartografÃ­a",
+        "fuente": "Direc. Pcial. de Catastro y Cartografía",
         "nombre": "San Fernando",
         "id": "22140",
         "provincia": {
@@ -1679,7 +1679,7 @@
         "nombre": "Los Lagos",
         "id": "58070",
         "provincia": {
-          "nombre": "NeuquÃ©n",
+          "nombre": "Neuquén",
           "id": "58",
           "interseccion": 0.0459909042229338
         },
@@ -1693,9 +1693,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento BelÃ©n",
+        "nombre_completo": "Departamento Belén",
         "fuente": "Adm. Grl. de Catastro",
-        "nombre": "BelÃ©n",
+        "nombre": "Belén",
         "id": "10035",
         "provincia": {
           "nombre": "Catamarca",
@@ -1717,7 +1717,7 @@
         "nombre": "Confluencia",
         "id": "58035",
         "provincia": {
-          "nombre": "NeuquÃ©n",
+          "nombre": "Neuquén",
           "id": "58",
           "interseccion": 0.0766044684486798
         },
@@ -1736,7 +1736,7 @@
         "nombre": "Picunches",
         "id": "58105",
         "provincia": {
-          "nombre": "NeuquÃ©n",
+          "nombre": "Neuquén",
           "id": "58",
           "interseccion": 0.0639319261797913
         },
@@ -1750,12 +1750,12 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento AÃ±elo",
+        "nombre_completo": "Departamento Añelo",
         "fuente": "Direc. Pcial. de Catastro e Inf. Territorial",
-        "nombre": "AÃ±elo",
+        "nombre": "Añelo",
         "id": "58014",
         "provincia": {
-          "nombre": "NeuquÃ©n",
+          "nombre": "Neuquén",
           "id": "58",
           "interseccion": 0.127246526684915
         },
@@ -1769,12 +1769,12 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento LoncopuÃ©",
+        "nombre_completo": "Departamento Loncopué",
         "fuente": "Direc. Pcial. de Catastro e Inf. Territorial",
-        "nombre": "LoncopuÃ©",
+        "nombre": "Loncopué",
         "id": "58063",
         "provincia": {
-          "nombre": "NeuquÃ©n",
+          "nombre": "Neuquén",
           "id": "58",
           "interseccion": 0.0578305565246805
         },
@@ -1788,12 +1788,12 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento Ã‘orquÃ­n",
+        "nombre_completo": "Departamento Ñorquín",
         "fuente": "Direc. Pcial. de Catastro e Inf. Territorial",
-        "nombre": "Ã‘orquÃ­n",
+        "nombre": "Ñorquín",
         "id": "58084",
         "provincia": {
-          "nombre": "NeuquÃ©n",
+          "nombre": "Neuquén",
           "id": "58",
           "interseccion": 0.0580205474391479
         },
@@ -1850,7 +1850,7 @@
         "nombre": "Pehuenches",
         "id": "58091",
         "provincia": {
-          "nombre": "NeuquÃ©n",
+          "nombre": "Neuquén",
           "id": "58",
           "interseccion": 0.0868435154751623
         },
@@ -1869,7 +1869,7 @@
         "nombre": "Minas",
         "id": "58077",
         "provincia": {
-          "nombre": "NeuquÃ©n",
+          "nombre": "Neuquén",
           "id": "58",
           "interseccion": 0.0625816911130228
         },
@@ -1888,7 +1888,7 @@
         "nombre": "Chos Malal",
         "id": "58042",
         "provincia": {
-          "nombre": "NeuquÃ©n",
+          "nombre": "Neuquén",
           "id": "58",
           "interseccion": 0.0473333119334717
         },
@@ -1945,7 +1945,7 @@
         "nombre": "Comuna 2",
         "id": "02014",
         "provincia": {
-          "nombre": "Ciudad AutÃ³noma de Buenos Aires",
+          "nombre": "Ciudad Autónoma de Buenos Aires",
           "id": "02",
           "interseccion": 0.0307559943965981
         },
@@ -1964,7 +1964,7 @@
         "nombre": "Comuna 8",
         "id": "02056",
         "provincia": {
-          "nombre": "Ciudad AutÃ³noma de Buenos Aires",
+          "nombre": "Ciudad Autónoma de Buenos Aires",
           "id": "02",
           "interseccion": 0.109258099192413
         },
@@ -1978,9 +1978,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento RamÃ³n Lista",
+        "nombre_completo": "Departamento Ramón Lista",
         "fuente": "IGN",
-        "nombre": "RamÃ³n Lista",
+        "nombre": "Ramón Lista",
         "id": "34063",
         "provincia": {
           "nombre": "Formosa",
@@ -2002,7 +2002,7 @@
         "nombre": "Sobremonte",
         "id": "14154",
         "provincia": {
-          "nombre": "CÃ³rdoba",
+          "nombre": "Córdoba",
           "id": "14",
           "interseccion": 0.0191030519350052
         },
@@ -2054,9 +2054,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento Villa ConstituciÃ³n",
-        "fuente": "Servicio de Catastro e InformaciÃ³n Territorial",
-        "nombre": "Villa ConstituciÃ³n",
+        "nombre_completo": "Departamento Villa Constitución",
+        "fuente": "Servicio de Catastro e Información Territorial",
+        "nombre": "Villa Constitución",
         "id": "82028",
         "provincia": {
           "nombre": "Santa Fe",
@@ -2073,9 +2073,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento MÃ¡rtires",
+        "nombre_completo": "Departamento Mártires",
         "fuente": "IGN",
-        "nombre": "MÃ¡rtires",
+        "nombre": "Mártires",
         "id": "26063",
         "provincia": {
           "nombre": "Chubut",
@@ -2130,9 +2130,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento LanguiÃ±eo",
+        "nombre_completo": "Departamento Languiñeo",
         "fuente": "IGN",
-        "nombre": "LanguiÃ±eo",
+        "nombre": "Languiñeo",
         "id": "26056",
         "provincia": {
           "nombre": "Chubut",
@@ -2192,7 +2192,7 @@
         "nombre": "Comuna 14",
         "id": "02098",
         "provincia": {
-          "nombre": "Ciudad AutÃ³noma de Buenos Aires",
+          "nombre": "Ciudad Autónoma de Buenos Aires",
           "id": "02",
           "interseccion": 0.0772248739608658
         },
@@ -2206,9 +2206,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento GuasayÃ¡n",
+        "nombre_completo": "Departamento Guasayán",
         "fuente": "Direc. Grl. de Catastro",
-        "nombre": "GuasayÃ¡n",
+        "nombre": "Guasayán",
         "id": "86084",
         "provincia": {
           "nombre": "Santiago del Estero",
@@ -2230,7 +2230,7 @@
         "nombre": "Capital",
         "id": "14014",
         "provincia": {
-          "nombre": "CÃ³rdoba",
+          "nombre": "Córdoba",
           "id": "14",
           "interseccion": 0.00345106448502012
         },
@@ -2282,9 +2282,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento FutaleufÃº",
+        "nombre_completo": "Departamento Futaleufú",
         "fuente": "IGN",
-        "nombre": "FutaleufÃº",
+        "nombre": "Futaleufú",
         "id": "26035",
         "provincia": {
           "nombre": "Chubut",
@@ -2301,9 +2301,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento RÃ­o Chico",
+        "nombre_completo": "Departamento Río Chico",
         "fuente": "IGN",
-        "nombre": "RÃ­o Chico",
+        "nombre": "Río Chico",
         "id": "78049",
         "provincia": {
           "nombre": "Santa Cruz",
@@ -2344,7 +2344,7 @@
         "nombre": "El Cuy",
         "id": "62035",
         "provincia": {
-          "nombre": "RÃ­o Negro",
+          "nombre": "Río Negro",
           "id": "62",
           "interseccion": 0.10515104838663
         },
@@ -2401,7 +2401,7 @@
         "nombre": "Pichi Mahuida",
         "id": "62063",
         "provincia": {
-          "nombre": "RÃ­o Negro",
+          "nombre": "Río Negro",
           "id": "62",
           "interseccion": 0.0763935846297727
         },
@@ -2420,7 +2420,7 @@
         "nombre": "Adolfo Alsina",
         "id": "62007",
         "provincia": {
-          "nombre": "RÃ­o Negro",
+          "nombre": "Río Negro",
           "id": "62",
           "interseccion": 0.0445254504471909
         },
@@ -2439,7 +2439,7 @@
         "nombre": "Comuna 3",
         "id": "02021",
         "provincia": {
-          "nombre": "Ciudad AutÃ³noma de Buenos Aires",
+          "nombre": "Ciudad Autónoma de Buenos Aires",
           "id": "02",
           "interseccion": 0.0310094008250203
         },
@@ -2515,7 +2515,7 @@
         "nombre": "Villaguay",
         "id": "30113",
         "provincia": {
-          "nombre": "Entre RÃ­os",
+          "nombre": "Entre Ríos",
           "id": "30",
           "interseccion": 0.083547074250022
         },
@@ -2553,7 +2553,7 @@
         "nombre": "San Salvador",
         "id": "30088",
         "provincia": {
-          "nombre": "Entre RÃ­os",
+          "nombre": "Entre Ríos",
           "id": "30",
           "interseccion": 0.0168894737699881
         },
@@ -2586,12 +2586,12 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento NogoyÃ¡",
+        "nombre_completo": "Departamento Nogoyá",
         "fuente": "ATER - Direc. de Catastro",
-        "nombre": "NogoyÃ¡",
+        "nombre": "Nogoyá",
         "id": "30077",
         "provincia": {
-          "nombre": "Entre RÃ­os",
+          "nombre": "Entre Ríos",
           "id": "30",
           "interseccion": 0.0559498475303484
         },
@@ -2610,7 +2610,7 @@
         "nombre": "Tala",
         "id": "30091",
         "provincia": {
-          "nombre": "Entre RÃ­os",
+          "nombre": "Entre Ríos",
           "id": "30",
           "interseccion": 0.0338110157656643
         },
@@ -2629,7 +2629,7 @@
         "nombre": "La Paz",
         "id": "30070",
         "provincia": {
-          "nombre": "Entre RÃ­os",
+          "nombre": "Entre Ríos",
           "id": "30",
           "interseccion": 0.083630578277297
         },
@@ -2644,7 +2644,7 @@
     {
       "properties": {
         "nombre_completo": "Departamento San Lorenzo",
-        "fuente": "Direc. Pcial. de Catastro y CartografÃ­a",
+        "fuente": "Direc. Pcial. de Catastro y Cartografía",
         "nombre": "San Lorenzo",
         "id": "22147",
         "provincia": {
@@ -2719,9 +2719,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Partido de PehuajÃ³",
+        "nombre_completo": "Partido de Pehuajó",
         "fuente": "ARBA - Gerencia de Servicios Catastrales",
-        "nombre": "PehuajÃ³",
+        "nombre": "Pehuajó",
         "id": "06609",
         "provincia": {
           "nombre": "Buenos Aires",
@@ -2757,9 +2757,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento CapayÃ¡n",
+        "nombre_completo": "Departamento Capayán",
         "fuente": "Adm. Grl. de Catastro",
-        "nombre": "CapayÃ¡n",
+        "nombre": "Capayán",
         "id": "10042",
         "provincia": {
           "nombre": "Catamarca",
@@ -2795,9 +2795,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Partido de Roque PÃ©rez",
+        "nombre_completo": "Partido de Roque Pérez",
         "fuente": "ARBA - Gerencia de Servicios Catastrales",
-        "nombre": "Roque PÃ©rez",
+        "nombre": "Roque Pérez",
         "id": "06693",
         "provincia": {
           "nombre": "Buenos Aires",
@@ -2833,9 +2833,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Partido de LujÃ¡n",
+        "nombre_completo": "Partido de Luján",
         "fuente": "ARBA - Gerencia de Servicios Catastrales",
-        "nombre": "LujÃ¡n",
+        "nombre": "Luján",
         "id": "06497",
         "provincia": {
           "nombre": "Buenos Aires",
@@ -2871,9 +2871,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento ConcepciÃ³n",
-        "fuente": "Ministerio de EcologÃ­a",
-        "nombre": "ConcepciÃ³n",
+        "nombre_completo": "Departamento Concepción",
+        "fuente": "Ministerio de Ecología",
+        "nombre": "Concepción",
         "id": "54035",
         "provincia": {
           "nombre": "Misiones",
@@ -2947,9 +2947,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Partido de General RodrÃ­guez",
+        "nombre_completo": "Partido de General Rodrí­guez",
         "fuente": "ARBA - Gerencia de Servicios Catastrales",
-        "nombre": "General RodrÃ­guez",
+        "nombre": "General Rodrí­guez",
         "id": "06364",
         "provincia": {
           "nombre": "Buenos Aires",
@@ -2966,9 +2966,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Partido de ExaltaciÃ³n de la Cruz",
+        "nombre_completo": "Partido de Exaltación de la Cruz",
         "fuente": "ARBA - Gerencia de Servicios Catastrales",
-        "nombre": "ExaltaciÃ³n de la Cruz",
+        "nombre": "Exaltación de la Cruz",
         "id": "06266",
         "provincia": {
           "nombre": "Buenos Aires",
@@ -3004,9 +3004,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Partido de San AndrÃ©s de Giles",
+        "nombre_completo": "Partido de San Andrés de Giles",
         "fuente": "ARBA - Gerencia de Servicios Catastrales",
-        "nombre": "San AndrÃ©s de Giles",
+        "nombre": "San Andrés de Giles",
         "id": "06728",
         "provincia": {
           "nombre": "Buenos Aires",
@@ -3023,9 +3023,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Partido de JunÃ­n",
+        "nombre_completo": "Partido de Juní­n",
         "fuente": "ARBA - Gerencia de Servicios Catastrales",
-        "nombre": "JunÃ­n",
+        "nombre": "Juní­n",
         "id": "06413",
         "provincia": {
           "nombre": "Buenos Aires",
@@ -3061,12 +3061,12 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento JuÃ¡rez Celman",
+        "nombre_completo": "Departamento Juárez Celman",
         "fuente": "Direc. Grl. de Catastro",
-        "nombre": "JuÃ¡rez Celman",
+        "nombre": "Juárez Celman",
         "id": "14056",
         "provincia": {
-          "nombre": "CÃ³rdoba",
+          "nombre": "Córdoba",
           "id": "14",
           "interseccion": 0.0487480781437347
         },
@@ -3119,7 +3119,7 @@
     {
       "properties": {
         "nombre_completo": "Departamento 2 de Abril",
-        "fuente": "Direc. Pcial. de Catastro y CartografÃ­a",
+        "fuente": "Direc. Pcial. de Catastro y Cartografía",
         "nombre": "2 de Abril",
         "id": "22039",
         "provincia": {
@@ -3156,9 +3156,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Partido de MorÃ³n",
+        "nombre_completo": "Partido de Morón",
         "fuente": "ARBA - Gerencia de Servicios Catastrales",
-        "nombre": "MorÃ³n",
+        "nombre": "Morón",
         "id": "06568",
         "provincia": {
           "nombre": "Buenos Aires",
@@ -3175,9 +3175,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Partido de Ciudad Libertador San MartÃ­n",
+        "nombre_completo": "Partido de Ciudad Libertador San Martí­n",
         "fuente": "ARBA - Gerencia de Servicios Catastrales",
-        "nombre": "Ciudad Libertador San MartÃ­n",
+        "nombre": "Ciudad Libertador San Martí­n",
         "id": "06371",
         "provincia": {
           "nombre": "Buenos Aires",
@@ -3213,9 +3213,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Partido de ItuzaingÃ³",
+        "nombre_completo": "Partido de Ituzaingó",
         "fuente": "ARBA - Gerencia de Servicios Catastrales",
-        "nombre": "ItuzaingÃ³",
+        "nombre": "Ituzaingó",
         "id": "06410",
         "provincia": {
           "nombre": "Buenos Aires",
@@ -3233,7 +3233,7 @@
     {
       "properties": {
         "nombre_completo": "Departamento La Capital",
-        "fuente": "Servicio de Catastro e InformaciÃ³n Territorial",
+        "fuente": "Servicio de Catastro e Información Territorial",
         "nombre": "La Capital",
         "id": "82063",
         "provincia": {
@@ -3251,9 +3251,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento Santo TomÃ©",
+        "nombre_completo": "Departamento Santo Tomé",
         "fuente": "IGN",
-        "nombre": "Santo TomÃ©",
+        "nombre": "Santo Tomé",
         "id": "18168",
         "provincia": {
           "nombre": "Corrientes",
@@ -3384,9 +3384,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Partido de LanÃºs",
+        "nombre_completo": "Partido de Lanús",
         "fuente": "ARBA - Gerencia de Servicios Catastrales",
-        "nombre": "LanÃºs",
+        "nombre": "Lanús",
         "id": "06434",
         "provincia": {
           "nombre": "Buenos Aires",
@@ -3460,9 +3460,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Partido de CaÃ±uelas",
+        "nombre_completo": "Partido de Cañuelas",
         "fuente": "ARBA - Gerencia de Servicios Catastrales",
-        "nombre": "CaÃ±uelas",
+        "nombre": "Cañuelas",
         "id": "06134",
         "provincia": {
           "nombre": "Buenos Aires",
@@ -3593,9 +3593,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Partido de San BolÃ­var",
+        "nombre_completo": "Partido de San Bolí­var",
         "fuente": "ARBA - Gerencia de Servicios Catastrales",
-        "nombre": "BolÃ­var",
+        "nombre": "Bolí­var",
         "id": "06105",
         "provincia": {
           "nombre": "Buenos Aires",
@@ -3631,9 +3631,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Partido de HipÃ³lito Yrigoyen",
+        "nombre_completo": "Partido de Hipólito Yrigoyen",
         "fuente": "ARBA - Gerencia de Servicios Catastrales",
-        "nombre": "HipÃ³lito Yrigoyen",
+        "nombre": "Hipólito Yrigoyen",
         "id": "06406",
         "provincia": {
           "nombre": "Buenos Aires",
@@ -3726,9 +3726,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento TapenagÃ¡",
-        "fuente": "Direc. Pcial. de Catastro y CartografÃ­a",
-        "nombre": "TapenagÃ¡",
+        "nombre_completo": "Departamento Tapenagá",
+        "fuente": "Direc. Pcial. de Catastro y Cartografía",
+        "nombre": "Tapenagá",
         "id": "22161",
         "provincia": {
           "nombre": "Chaco",
@@ -3750,7 +3750,7 @@
         "nombre": "Concordia",
         "id": "30015",
         "provincia": {
-          "nombre": "Entre RÃ­os",
+          "nombre": "Entre Ríos",
           "id": "30",
           "interseccion": 0.0414709107026056
         },
@@ -3769,7 +3769,7 @@
         "nombre": "Federal",
         "id": "30035",
         "provincia": {
-          "nombre": "Entre RÃ­os",
+          "nombre": "Entre Ríos",
           "id": "30",
           "interseccion": 0.0657469680182571
         },
@@ -3783,12 +3783,12 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento GualeguaychÃº",
+        "nombre_completo": "Departamento Gualeguaychú",
         "fuente": "ATER - Direc. de Catastro",
-        "nombre": "GualeguaychÃº",
+        "nombre": "Gualeguaychú",
         "id": "30056",
         "provincia": {
-          "nombre": "Entre RÃ­os",
+          "nombre": "Entre Ríos",
           "id": "30",
           "interseccion": 0.0970821967786673
         },
@@ -3807,7 +3807,7 @@
         "nombre": "Islas del Ibicuy",
         "id": "30063",
         "provincia": {
-          "nombre": "Entre RÃ­os",
+          "nombre": "Entre Ríos",
           "id": "30",
           "interseccion": 0.0639921224207814
         },
@@ -3840,9 +3840,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Partido de GuaminÃ­",
+        "nombre_completo": "Partido de Guaminí­",
         "fuente": "ARBA - Gerencia de Servicios Catastrales",
-        "nombre": "GuaminÃ­",
+        "nombre": "Guaminí­",
         "id": "06399",
         "provincia": {
           "nombre": "Buenos Aires",
@@ -3916,9 +3916,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Partido de ColÃ³n",
+        "nombre_completo": "Partido de Colón",
         "fuente": "ARBA - Gerencia de Servicios Catastrales",
-        "nombre": "ColÃ³n",
+        "nombre": "Colón",
         "id": "06175",
         "provincia": {
           "nombre": "Buenos Aires",
@@ -4030,9 +4030,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Partido de LoberÃ­a",
+        "nombre_completo": "Partido de Loberí­a",
         "fuente": "ARBA - Gerencia de Servicios Catastrales",
-        "nombre": "LoberÃ­a",
+        "nombre": "Loberí­a",
         "id": "06476",
         "provincia": {
           "nombre": "Buenos Aires",
@@ -4106,9 +4106,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Partido de San NicolÃ¡s",
+        "nombre_completo": "Partido de San Nicolás",
         "fuente": "ARBA - Gerencia de Servicios Catastrales",
-        "nombre": "San NicolÃ¡s",
+        "nombre": "San Nicolás",
         "id": "06763",
         "provincia": {
           "nombre": "Buenos Aires",
@@ -4164,7 +4164,7 @@
     {
       "properties": {
         "nombre_completo": "Departamento Chacabuco",
-        "fuente": "Direc. Pcial. de Catastro y CartografÃ­a",
+        "fuente": "Direc. Pcial. de Catastro y Cartografía",
         "nombre": "Chacabuco",
         "id": "22028",
         "provincia": {
@@ -4182,9 +4182,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento GuaymallÃ©n",
+        "nombre_completo": "Departamento Guaymallén",
         "fuente": "IGN",
-        "nombre": "GuaymallÃ©n",
+        "nombre": "Guaymallén",
         "id": "50028",
         "provincia": {
           "nombre": "Mendoza",
@@ -4221,7 +4221,7 @@
     {
       "properties": {
         "nombre_completo": "Departamento 25 de Mayo",
-        "fuente": "Direc. Pcial. de Catastro y CartografÃ­a",
+        "fuente": "Direc. Pcial. de Catastro y Cartografía",
         "nombre": "25 de Mayo",
         "id": "22168",
         "provincia": {
@@ -4239,9 +4239,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Partido de Coronel SuÃ¡rez",
+        "nombre_completo": "Partido de Coronel Suárez",
         "fuente": "ARBA - Gerencia de Servicios Catastrales",
-        "nombre": "Coronel SuÃ¡rez",
+        "nombre": "Coronel Suárez",
         "id": "06203",
         "provincia": {
           "nombre": "Buenos Aires",
@@ -4315,9 +4315,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento MaipÃº",
+        "nombre_completo": "Departamento Maipú",
         "fuente": "IGN",
-        "nombre": "MaipÃº",
+        "nombre": "Maipú",
         "id": "50070",
         "provincia": {
           "nombre": "Mendoza",
@@ -4372,9 +4372,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento AndalgalÃ¡",
+        "nombre_completo": "Departamento Andalgalá",
         "fuente": "Adm. Grl. de Catastro",
-        "nombre": "AndalgalÃ¡",
+        "nombre": "Andalgalá",
         "id": "10021",
         "provincia": {
           "nombre": "Catamarca",
@@ -4410,9 +4410,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Partido de BahÃ­a Blanca",
+        "nombre_completo": "Partido de Bahí­a Blanca",
         "fuente": "ARBA - Gerencia de Servicios Catastrales",
-        "nombre": "BahÃ­a Blanca",
+        "nombre": "Bahí­a Blanca",
         "id": "06056",
         "provincia": {
           "nombre": "Buenos Aires",
@@ -4448,9 +4448,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Partido de General PueyrredÃ³n",
+        "nombre_completo": "Partido de General Pueyrredón",
         "fuente": "ARBA - Gerencia de Servicios Catastrales",
-        "nombre": "General PueyrredÃ³n",
+        "nombre": "General Pueyrredón",
         "id": "06357",
         "provincia": {
           "nombre": "Buenos Aires",
@@ -4505,9 +4505,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento JunÃ­n",
+        "nombre_completo": "Departamento Juní­n",
         "fuente": "IGN",
-        "nombre": "JunÃ­n",
+        "nombre": "Juní­n",
         "id": "50035",
         "provincia": {
           "nombre": "Mendoza",
@@ -4544,7 +4544,7 @@
     {
       "properties": {
         "nombre_completo": "Departamento Quitilipi",
-        "fuente": "Direc. Pcial. de Catastro y CartografÃ­a",
+        "fuente": "Direc. Pcial. de Catastro y Cartografía",
         "nombre": "Quitilipi",
         "id": "22133",
         "provincia": {
@@ -4657,9 +4657,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Partido de Vicente LÃ³pez",
+        "nombre_completo": "Partido de Vicente López",
         "fuente": "ARBA - Gerencia de Servicios Catastrales",
-        "nombre": "Vicente LÃ³pez",
+        "nombre": "Vicente López",
         "id": "06861",
         "provincia": {
           "nombre": "Buenos Aires",
@@ -4696,7 +4696,7 @@
     {
       "properties": {
         "nombre_completo": "Departamento Presidencia de la Plaza",
-        "fuente": "Direc. Pcial. de Catastro y CartografÃ­a",
+        "fuente": "Direc. Pcial. de Catastro y Cartografía",
         "nombre": "Presidencia de la Plaza",
         "id": "22119",
         "provincia": {
@@ -4719,7 +4719,7 @@
         "nombre": "Victoria",
         "id": "30105",
         "provincia": {
-          "nombre": "Entre RÃ­os",
+          "nombre": "Entre Ríos",
           "id": "30",
           "interseccion": 0.0853566278503008
         },
@@ -4733,9 +4733,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento General Ãngel V. PeÃ±aloza",
+        "nombre_completo": "Departamento General Ángel V. Peñaloza",
         "fuente": "IGN",
-        "nombre": "General Ãngel V. PeÃ±aloza",
+        "nombre": "General Ángel V. Peñaloza",
         "id": "46056",
         "provincia": {
           "nombre": "La Rioja",
@@ -4757,7 +4757,7 @@
         "nombre": "Diamante",
         "id": "30021",
         "provincia": {
-          "nombre": "Entre RÃ­os",
+          "nombre": "Entre Ríos",
           "id": "30",
           "interseccion": 0.0342267295120938
         },
@@ -4776,7 +4776,7 @@
         "nombre": "Uruguay",
         "id": "30098",
         "provincia": {
-          "nombre": "Entre RÃ­os",
+          "nombre": "Entre Ríos",
           "id": "30",
           "interseccion": 0.0656737412682729
         },
@@ -4790,12 +4790,12 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento ParanÃ¡",
+        "nombre_completo": "Departamento Paraná",
         "fuente": "ATER - Direc. de Catastro",
-        "nombre": "ParanÃ¡",
+        "nombre": "Paraná",
         "id": "30084",
         "provincia": {
-          "nombre": "Entre RÃ­os",
+          "nombre": "Entre Ríos",
           "id": "30",
           "interseccion": 0.0649019858620617
         },
@@ -4928,7 +4928,7 @@
         "nombre": "Lules",
         "id": "90063",
         "provincia": {
-          "nombre": "TucumÃ¡n",
+          "nombre": "Tucumán",
           "id": "90",
           "interseccion": 0.0272511145586003
         },
@@ -4947,7 +4947,7 @@
         "nombre": "Yerba Buena",
         "id": "90119",
         "provincia": {
-          "nombre": "TucumÃ¡n",
+          "nombre": "Tucumán",
           "id": "90",
           "interseccion": 0.00630225694305269
         },
@@ -4961,12 +4961,12 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento TafÃ­ Viejo",
+        "nombre_completo": "Departamento Tafí­ Viejo",
         "fuente": "Direc. Grl. de Catastro",
-        "nombre": "TafÃ­ Viejo",
+        "nombre": "Tafí­ Viejo",
         "id": "90105",
         "provincia": {
-          "nombre": "TucumÃ¡n",
+          "nombre": "Tucumán",
           "id": "90",
           "interseccion": 0.0521184370583673
         },
@@ -4980,12 +4980,12 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento BurruyacÃº",
+        "nombre_completo": "Departamento Burruyacú",
         "fuente": "Direc. Grl. de Catastro",
-        "nombre": "BurruyacÃº",
+        "nombre": "Burruyacú",
         "id": "90007",
         "provincia": {
-          "nombre": "TucumÃ¡n",
+          "nombre": "Tucumán",
           "id": "90",
           "interseccion": 0.160597667286576
         },
@@ -4999,9 +4999,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento Rosario Vera PeÃ±aloza",
+        "nombre_completo": "Departamento Rosario Vera Peñaloza",
         "fuente": "IGN",
-        "nombre": "Rosario Vera PeÃ±aloza",
+        "nombre": "Rosario Vera Peñaloza",
         "id": "46112",
         "provincia": {
           "nombre": "La Rioja",
@@ -5019,7 +5019,7 @@
     {
       "properties": {
         "nombre_completo": "Departamento Vera",
-        "fuente": "Servicio de Catastro e InformaciÃ³n Territorial",
+        "fuente": "Servicio de Catastro e Información Territorial",
         "nombre": "Vera",
         "id": "82133",
         "provincia": {
@@ -5038,7 +5038,7 @@
     {
       "properties": {
         "nombre_completo": "Departamento 9 de Julio",
-        "fuente": "Servicio de Catastro e InformaciÃ³n Territorial",
+        "fuente": "Servicio de Catastro e Información Territorial",
         "nombre": "9 de Julio",
         "id": "82077",
         "provincia": {
@@ -5075,9 +5075,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento Valle FÃ©rtil",
+        "nombre_completo": "Departamento Valle Fértil",
         "fuente": "Direc. de Geodesia y Catastro",
-        "nombre": "Valle FÃ©rtil",
+        "nombre": "Valle Fértil",
         "id": "70119",
         "provincia": {
           "nombre": "San Juan",
@@ -5113,9 +5113,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento AlbardÃ³n",
+        "nombre_completo": "Departamento Albardón",
         "fuente": "Direc. de Geodesia y Catastro",
-        "nombre": "AlbardÃ³n",
+        "nombre": "Albardón",
         "id": "70007",
         "provincia": {
           "nombre": "San Juan",
@@ -5208,9 +5208,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento La ViÃ±a",
+        "nombre_completo": "Departamento La Viña",
         "fuente": "Direc. Grl. de Inmuebles",
-        "nombre": "La ViÃ±a",
+        "nombre": "La Viña",
         "id": "66098",
         "provincia": {
           "nombre": "Salta",
@@ -5246,9 +5246,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento MetÃ¡n",
+        "nombre_completo": "Departamento Metán",
         "fuente": "Direc. Grl. de Inmuebles",
-        "nombre": "MetÃ¡n",
+        "nombre": "Metán",
         "id": "66112",
         "provincia": {
           "nombre": "Salta",
@@ -5284,9 +5284,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Partido de SalliquelÃ³",
+        "nombre_completo": "Partido de Salliqueló",
         "fuente": "ARBA - Gerencia de Servicios Catastrales",
-        "nombre": "SalliquelÃ³",
+        "nombre": "Salliqueló",
         "id": "06721",
         "provincia": {
           "nombre": "Buenos Aires",
@@ -5322,9 +5322,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento General GÃ¼emes",
+        "nombre_completo": "Departamento General Güemes",
         "fuente": "Direc. Grl. de Inmuebles",
-        "nombre": "General GÃ¼emes",
+        "nombre": "General Güemes",
         "id": "66049",
         "provincia": {
           "nombre": "Salta",
@@ -5398,9 +5398,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento Fray Mamerto EsquiÃº",
+        "nombre_completo": "Departamento Fray Mamerto Esquiú",
         "fuente": "Adm. Grl. de Catastro",
-        "nombre": "Fray Mamerto EsquiÃº",
+        "nombre": "Fray Mamerto Esquiú",
         "id": "10063",
         "provincia": {
           "nombre": "Catamarca",
@@ -5436,9 +5436,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Partido de Presidente PerÃ³n",
+        "nombre_completo": "Partido de Presidente Perón",
         "fuente": "ARBA - Gerencia de Servicios Catastrales",
-        "nombre": "Presidente PerÃ³n",
+        "nombre": "Presidente Perón",
         "id": "06648",
         "provincia": {
           "nombre": "Buenos Aires",
@@ -5460,7 +5460,7 @@
         "nombre": "9 de julio",
         "id": "62049",
         "provincia": {
-          "nombre": "RÃ­o Negro",
+          "nombre": "Río Negro",
           "id": "62",
           "interseccion": 0.119950199992749
         },
@@ -5474,9 +5474,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento General San MartÃ­n",
+        "nombre_completo": "Departamento General San Martí­n",
         "fuente": "IGN",
-        "nombre": "General San MartÃ­n",
+        "nombre": "General San Martí­n",
         "id": "46091",
         "provincia": {
           "nombre": "La Rioja",
@@ -5551,7 +5551,7 @@
     {
       "properties": {
         "nombre_completo": "Departamento Libertad",
-        "fuente": "Direc. Pcial. de Catastro y CartografÃ­a",
+        "fuente": "Direc. Pcial. de Catastro y Cartografía",
         "nombre": "Libertad",
         "id": "22077",
         "provincia": {
@@ -5569,12 +5569,12 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento RÃ­o Grande",
+        "nombre_completo": "Departamento Río Grande",
         "fuente": "Gerencia de Catastro Pcial.",
         "nombre": "Tolhuin",
         "id": "94011",
         "provincia": {
-          "nombre": "Tierra del Fuego, AntÃ¡rtida e Islas del AtlÃ¡ntico Sur",
+          "nombre": "Tierra del Fuego, Antártida e Islas del Atlántico Sur",
           "id": "94",
           "interseccion": 0.00157466830624736
         },
@@ -5608,7 +5608,7 @@
     {
       "properties": {
         "nombre_completo": "Departamento Garay",
-        "fuente": "Servicio de Catastro e InformaciÃ³n Territorial",
+        "fuente": "Servicio de Catastro e Información Territorial",
         "nombre": "Garay",
         "id": "82035",
         "provincia": {
@@ -5627,7 +5627,7 @@
     {
       "properties": {
         "nombre_completo": "Departamento Las Colonias",
-        "fuente": "Servicio de Catastro e InformaciÃ³n Territorial",
+        "fuente": "Servicio de Catastro e Información Territorial",
         "nombre": "Las Colonias",
         "id": "82070",
         "provincia": {
@@ -5645,9 +5645,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento RealicÃ³",
+        "nombre_completo": "Departamento Realicó",
         "fuente": "Direc. Grl. de Catastro",
-        "nombre": "RealicÃ³",
+        "nombre": "Realicó",
         "id": "42133",
         "provincia": {
           "nombre": "La Pampa",
@@ -5683,9 +5683,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento PaclÃ­n",
+        "nombre_completo": "Departamento Paclí­n",
         "fuente": "Adm. Grl. de Catastro",
-        "nombre": "PaclÃ­n",
+        "nombre": "Paclí­n",
         "id": "10077",
         "provincia": {
           "nombre": "Catamarca",
@@ -5721,9 +5721,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento Comandante FernÃ¡ndez",
-        "fuente": "Direc. Pcial. de Catastro y CartografÃ­a",
-        "nombre": "Comandante FernÃ¡ndez",
+        "nombre_completo": "Departamento Comandante Fernández",
+        "fuente": "Direc. Pcial. de Catastro y Cartografía",
+        "nombre": "Comandante Fernández",
         "id": "22021",
         "provincia": {
           "nombre": "Chaco",
@@ -5760,7 +5760,7 @@
     {
       "properties": {
         "nombre_completo": "Departamento General Belgrano",
-        "fuente": "Direc. Pcial. de Catastro y CartografÃ­a",
+        "fuente": "Direc. Pcial. de Catastro y Cartografía",
         "nombre": "General Belgrano",
         "id": "22049",
         "provincia": {
@@ -5779,7 +5779,7 @@
     {
       "properties": {
         "nombre_completo": "Departamento General Donovan",
-        "fuente": "Direc. Pcial. de Catastro y CartografÃ­a",
+        "fuente": "Direc. Pcial. de Catastro y Cartografía",
         "nombre": "General Donovan",
         "id": "22056",
         "provincia": {
@@ -5835,12 +5835,12 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento IschilÃ­n",
+        "nombre_completo": "Departamento Ischilí­n",
         "fuente": "Direc. Grl. de Catastro",
-        "nombre": "IschilÃ­n",
+        "nombre": "Ischilí­n",
         "id": "14049",
         "provincia": {
-          "nombre": "CÃ³rdoba",
+          "nombre": "Córdoba",
           "id": "14",
           "interseccion": 0.0301571490017903
         },
@@ -5859,7 +5859,7 @@
         "nombre": "Totoral",
         "id": "14168",
         "provincia": {
-          "nombre": "CÃ³rdoba",
+          "nombre": "Córdoba",
           "id": "14",
           "interseccion": 0.018230001241508
         },
@@ -5873,12 +5873,12 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento General San MartÃ­n",
+        "nombre_completo": "Departamento General San Martí­n",
         "fuente": "Direc. Grl. de Catastro",
-        "nombre": "General San MartÃ­n",
+        "nombre": "General San Martí­n",
         "id": "14042",
         "provincia": {
-          "nombre": "CÃ³rdoba",
+          "nombre": "Córdoba",
           "id": "14",
           "interseccion": 0.0304100989142548
         },
@@ -5897,7 +5897,7 @@
         "nombre": "San Javier",
         "id": "14133",
         "provincia": {
-          "nombre": "CÃ³rdoba",
+          "nombre": "Córdoba",
           "id": "14",
           "interseccion": 0.00936192219059843
         },
@@ -5954,7 +5954,7 @@
         "nombre": "Comuna 9",
         "id": "02063",
         "provincia": {
-          "nombre": "Ciudad AutÃ³noma de Buenos Aires",
+          "nombre": "Ciudad Autónoma de Buenos Aires",
           "id": "02",
           "interseccion": 0.0804060446068976
         },
@@ -6006,12 +6006,12 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento PicÃºn LeufÃº",
+        "nombre_completo": "Departamento Picún Leufú",
         "fuente": "Direc. Pcial. de Catastro e Inf. Territorial",
-        "nombre": "PicÃºn LeufÃº",
+        "nombre": "Picún Leufú",
         "id": "58098",
         "provincia": {
-          "nombre": "NeuquÃ©n",
+          "nombre": "Neuquén",
           "id": "58",
           "interseccion": 0.0491712806922097
         },
@@ -6025,12 +6025,12 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento AluminÃ©",
+        "nombre_completo": "Departamento Aluminé",
         "fuente": "Direc. Pcial. de Catastro e Inf. Territorial",
-        "nombre": "AluminÃ©",
+        "nombre": "Aluminé",
         "id": "58007",
         "provincia": {
-          "nombre": "NeuquÃ©n",
+          "nombre": "Neuquén",
           "id": "58",
           "interseccion": 0.050518159412755
         },
@@ -6106,7 +6106,7 @@
         "nombre": "Comuna 7",
         "id": "02049",
         "provincia": {
-          "nombre": "Ciudad AutÃ³noma de Buenos Aires",
+          "nombre": "Ciudad Autónoma de Buenos Aires",
           "id": "02",
           "interseccion": 0.0603399681565348
         },
@@ -6125,7 +6125,7 @@
         "nombre": "25 de Mayo",
         "id": "62091",
         "provincia": {
-          "nombre": "RÃ­o Negro",
+          "nombre": "Río Negro",
           "id": "62",
           "interseccion": 0.13820605141908
         },
@@ -6144,7 +6144,7 @@
         "nombre": "Comuna 10",
         "id": "02070",
         "provincia": {
-          "nombre": "Ciudad AutÃ³noma de Buenos Aires",
+          "nombre": "Ciudad Autónoma de Buenos Aires",
           "id": "02",
           "interseccion": 0.0614316758371424
         },
@@ -6158,12 +6158,12 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento AntÃ¡rtida Argentina",
+        "nombre_completo": "Departamento Antártida Argentina",
         "fuente": "SCAR",
-        "nombre": "AntÃ¡rtida Argentina",
+        "nombre": "Antártida Argentina",
         "id": "94028",
         "provincia": {
-          "nombre": "Tierra del Fuego, AntÃ¡rtida e Islas del AtlÃ¡ntico Sur",
+          "nombre": "Tierra del Fuego, Antártida e Islas del Atlántico Sur",
           "id": "94",
           "interseccion": 0.990899967306979
         },
@@ -6177,12 +6177,12 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento Islas del AtlÃ¡ntico Sur",
+        "nombre_completo": "Departamento Islas del Atlántico Sur",
         "fuente": "IGN",
-        "nombre": "Islas del AtlÃ¡ntico Sur",
+        "nombre": "Islas del Atlántico Sur",
         "id": "94021",
         "provincia": {
-          "nombre": "Tierra del Fuego, AntÃ¡rtida e Islas del AtlÃ¡ntico Sur",
+          "nombre": "Tierra del Fuego, Antártida e Islas del Atlántico Sur",
           "id": "94",
           "interseccion": 0.00388565920855043
         },
@@ -6220,7 +6220,7 @@
         "nombre": "Comuna 11",
         "id": "02077",
         "provincia": {
-          "nombre": "Ciudad AutÃ³noma de Buenos Aires",
+          "nombre": "Ciudad Autónoma de Buenos Aires",
           "id": "02",
           "interseccion": 0.0683121218307569
         },
@@ -6296,7 +6296,7 @@
         "nombre": "Pilcaniyeu",
         "id": "62070",
         "provincia": {
-          "nombre": "RÃ­o Negro",
+          "nombre": "Río Negro",
           "id": "62",
           "interseccion": 0.0547075912759328
         },
@@ -6386,9 +6386,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento Santa MarÃ­a",
+        "nombre_completo": "Departamento Santa Marí­a",
         "fuente": "Adm. Grl. de Catastro",
-        "nombre": "Santa MarÃ­a",
+        "nombre": "Santa Marí­a",
         "id": "10091",
         "provincia": {
           "nombre": "Catamarca",
@@ -6448,7 +6448,7 @@
         "nombre": "Pocho",
         "id": "14077",
         "provincia": {
-          "nombre": "CÃ³rdoba",
+          "nombre": "Córdoba",
           "id": "14",
           "interseccion": 0.0183768545249898
         },
@@ -6524,7 +6524,7 @@
         "nombre": "Comuna 6",
         "id": "02042",
         "provincia": {
-          "nombre": "Ciudad AutÃ³noma de Buenos Aires",
+          "nombre": "Ciudad Autónoma de Buenos Aires",
           "id": "02",
           "interseccion": 0.0332687543965735
         },
@@ -6543,7 +6543,7 @@
         "nombre": "Tulumba",
         "id": "14175",
         "provincia": {
-          "nombre": "CÃ³rdoba",
+          "nombre": "Córdoba",
           "id": "14",
           "interseccion": 0.058494390488329
         },
@@ -6562,7 +6562,7 @@
         "nombre": "Cruz del Eje",
         "id": "14028",
         "provincia": {
-          "nombre": "CÃ³rdoba",
+          "nombre": "Córdoba",
           "id": "14",
           "interseccion": 0.0408242204152082
         },
@@ -6581,7 +6581,7 @@
         "nombre": "Punilla",
         "id": "14091",
         "provincia": {
-          "nombre": "CÃ³rdoba",
+          "nombre": "Córdoba",
           "id": "14",
           "interseccion": 0.0148439854552405
         },
@@ -6600,7 +6600,7 @@
         "nombre": "Minas",
         "id": "14070",
         "provincia": {
-          "nombre": "CÃ³rdoba",
+          "nombre": "Córdoba",
           "id": "14",
           "interseccion": 0.0214539101076573
         },
@@ -6619,7 +6619,7 @@
         "nombre": "Valcheta",
         "id": "62084",
         "provincia": {
-          "nombre": "RÃ­o Negro",
+          "nombre": "Río Negro",
           "id": "62",
           "interseccion": 0.105417002957889
         },
@@ -6638,7 +6638,7 @@
         "nombre": "San Antonio",
         "id": "62077",
         "provincia": {
-          "nombre": "RÃ­o Negro",
+          "nombre": "Río Negro",
           "id": "62",
           "interseccion": 0.071489428825207
         },
@@ -6672,7 +6672,7 @@
     {
       "properties": {
         "nombre_completo": "Departamento 9 de Julio",
-        "fuente": "Direc. Pcial. de Catastro y CartografÃ­a",
+        "fuente": "Direc. Pcial. de Catastro y Cartografía",
         "nombre": "9 de Julio",
         "id": "22105",
         "provincia": {
@@ -6804,12 +6804,12 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento LÃ¡car",
+        "nombre_completo": "Departamento Lácar",
         "fuente": "Direc. Pcial. de Catastro e Inf. Territorial",
-        "nombre": "LÃ¡car",
+        "nombre": "Lácar",
         "id": "58056",
         "provincia": {
-          "nombre": "NeuquÃ©n",
+          "nombre": "Neuquén",
           "id": "58",
           "interseccion": 0.0539014474054944
         },
@@ -6828,7 +6828,7 @@
         "nombre": "Comuna 13",
         "id": "02091",
         "provincia": {
-          "nombre": "Ciudad AutÃ³noma de Buenos Aires",
+          "nombre": "Ciudad Autónoma de Buenos Aires",
           "id": "02",
           "interseccion": 0.0725620589607013
         },
@@ -6842,9 +6842,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento GÃ¼er Aike",
+        "nombre_completo": "Departamento Güer Aike",
         "fuente": "IGN",
-        "nombre": "GÃ¼er Aike",
+        "nombre": "Güer Aike",
         "id": "78021",
         "provincia": {
           "nombre": "Santa Cruz",
@@ -6861,12 +6861,12 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento RÃ­o Grande",
+        "nombre_completo": "Departamento Río Grande",
         "fuente": "Gerencia de Catastro Pcial.",
-        "nombre": "RÃ­o Grande",
+        "nombre": "Río Grande",
         "id": "94008",
         "provincia": {
-          "nombre": "Tierra del Fuego, AntÃ¡rtida e Islas del AtlÃ¡ntico Sur",
+          "nombre": "Tierra del Fuego, Antártida e Islas del Atlántico Sur",
           "id": "94",
           "interseccion": 0.00157956890093448
         },
@@ -6885,7 +6885,7 @@
         "nombre": "Ushuaia",
         "id": "94015",
         "provincia": {
-          "nombre": "Tierra del Fuego, AntÃ¡rtida e Islas del AtlÃ¡ntico Sur",
+          "nombre": "Tierra del Fuego, Antártida e Islas del Atlántico Sur",
           "id": "94",
           "interseccion": 0.00189495779781716
         },
@@ -6899,9 +6899,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento MalargÃ¼e",
+        "nombre_completo": "Departamento Malargüe",
         "fuente": "IGN",
-        "nombre": "MalargÃ¼e",
+        "nombre": "Malargüe",
         "id": "50077",
         "provincia": {
           "nombre": "Mendoza",
@@ -6918,9 +6918,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento PomÃ¡n",
+        "nombre_completo": "Departamento Pomán",
         "fuente": "Adm. Grl. de Catastro",
-        "nombre": "PomÃ¡n",
+        "nombre": "Pomán",
         "id": "10084",
         "provincia": {
           "nombre": "Catamarca",
@@ -6942,7 +6942,7 @@
         "nombre": "Graneros",
         "id": "90035",
         "provincia": {
-          "nombre": "TucumÃ¡n",
+          "nombre": "Tucumán",
           "id": "90",
           "interseccion": 0.0752212989919278
         },
@@ -6995,7 +6995,7 @@
     {
       "properties": {
         "nombre_completo": "Departamento Almirante Brown",
-        "fuente": "Direc. Pcial. de Catastro y CartografÃ­a",
+        "fuente": "Direc. Pcial. de Catastro y Cartografía",
         "nombre": "Almirante Brown",
         "id": "22007",
         "provincia": {
@@ -7032,9 +7032,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento MaipÃº",
-        "fuente": "Direc. Pcial. de Catastro y CartografÃ­a",
-        "nombre": "MaipÃº",
+        "nombre_completo": "Departamento Maipú",
+        "fuente": "Direc. Pcial. de Catastro y Cartografía",
+        "nombre": "Maipú",
         "id": "22091",
         "provincia": {
           "nombre": "Chaco",
@@ -7070,12 +7070,12 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento ColÃ³n",
+        "nombre_completo": "Departamento Colón",
         "fuente": "ATER - Direc. de Catastro",
-        "nombre": "ColÃ³n",
+        "nombre": "Colón",
         "id": "30008",
         "provincia": {
-          "nombre": "Entre RÃ­os",
+          "nombre": "Entre Ríos",
           "id": "30",
           "interseccion": 0.0352000163682348
         },
@@ -7089,9 +7089,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento TunuyÃ¡n",
+        "nombre_completo": "Departamento Tunuyán",
         "fuente": "IGN",
-        "nombre": "TunuyÃ¡n",
+        "nombre": "Tunuyán",
         "id": "50119",
         "provincia": {
           "nombre": "Mendoza",
@@ -7108,9 +7108,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento LujÃ¡n de Cuyo",
+        "nombre_completo": "Departamento Luján de Cuyo",
         "fuente": "IGN",
-        "nombre": "LujÃ¡n de Cuyo",
+        "nombre": "Luján de Cuyo",
         "id": "50063",
         "provincia": {
           "nombre": "Mendoza",
@@ -7127,9 +7127,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento RÃ­o Senguer",
+        "nombre_completo": "Departamento Río Senguer",
         "fuente": "IGN",
-        "nombre": "RÃ­o Senguer",
+        "nombre": "Río Senguer",
         "id": "26084",
         "provincia": {
           "nombre": "Chubut",
@@ -7151,7 +7151,7 @@
         "nombre": "Bariloche",
         "id": "62021",
         "provincia": {
-          "nombre": "RÃ­o Negro",
+          "nombre": "Río Negro",
           "id": "62",
           "interseccion": 0.0272576968030313
         },
@@ -7170,7 +7170,7 @@
         "nombre": "Huiliches",
         "id": "58049",
         "provincia": {
-          "nombre": "NeuquÃ©n",
+          "nombre": "Neuquén",
           "id": "58",
           "interseccion": 0.043328390088419
         },
@@ -7184,12 +7184,12 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento CatÃ¡n Lil",
+        "nombre_completo": "Departamento Catán Lil",
         "fuente": "Direc. Pcial. de Catastro e Inf. Territorial",
-        "nombre": "CatÃ¡n Lil",
+        "nombre": "Catán Lil",
         "id": "58021",
         "provincia": {
-          "nombre": "NeuquÃ©n",
+          "nombre": "Neuquén",
           "id": "58",
           "interseccion": 0.0589415846721871
         },
@@ -7203,12 +7203,12 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento CollÃ³n CurÃ¡",
+        "nombre_completo": "Departamento Collón Curá",
         "fuente": "Direc. Pcial. de Catastro e Inf. Territorial",
-        "nombre": "CollÃ³n CurÃ¡",
+        "nombre": "Collón Curá",
         "id": "58028",
         "provincia": {
-          "nombre": "NeuquÃ©n",
+          "nombre": "Neuquén",
           "id": "58",
           "interseccion": 0.0622877591825553
         },
@@ -7260,9 +7260,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Partido de CapitÃ¡n Sarmiento",
+        "nombre_completo": "Partido de Capitán Sarmiento",
         "fuente": "ARBA - Gerencia de Servicios Catastrales",
-        "nombre": "CapitÃ¡n Sarmiento",
+        "nombre": "Capitán Sarmiento",
         "id": "06140",
         "provincia": {
           "nombre": "Buenos Aires",
@@ -7303,7 +7303,7 @@
         "nombre": "Gualeguay",
         "id": "30049",
         "provincia": {
-          "nombre": "Entre RÃ­os",
+          "nombre": "Entre Ríos",
           "id": "30",
           "interseccion": 0.0853045235595408
         },
@@ -7317,12 +7317,12 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento FederaciÃ³n",
+        "nombre_completo": "Departamento Federación",
         "fuente": "ATER - Direc. de Catastro",
-        "nombre": "FederaciÃ³n",
+        "nombre": "Federación",
         "id": "30028",
         "provincia": {
-          "nombre": "Entre RÃ­os",
+          "nombre": "Entre Ríos",
           "id": "30",
           "interseccion": 0.0474475301143475
         },
@@ -7341,7 +7341,7 @@
         "nombre": "Feliciano",
         "id": "30042",
         "provincia": {
-          "nombre": "Entre RÃ­os",
+          "nombre": "Entre Ríos",
           "id": "30",
           "interseccion": 0.0397686579449664
         },
@@ -7412,9 +7412,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Partido de OlavarrÃ­a",
+        "nombre_completo": "Partido de Olavarrí­a",
         "fuente": "ARBA - Gerencia de Servicios Catastrales",
-        "nombre": "OlavarrÃ­a",
+        "nombre": "Olavarrí­a",
         "id": "06595",
         "provincia": {
           "nombre": "Buenos Aires",
@@ -7431,9 +7431,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Partido de Esteban EcheverrÃ­a",
+        "nombre_completo": "Partido de Esteban Echeverrí­a",
         "fuente": "ARBA - Gerencia de Servicios Catastrales",
-        "nombre": "Esteban EcheverrÃ­a",
+        "nombre": "Esteban Echeverrí­a",
         "id": "06260",
         "provincia": {
           "nombre": "Buenos Aires",
@@ -7507,9 +7507,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Partido de TapalquÃ©",
+        "nombre_completo": "Partido de Tapalqué",
         "fuente": "ARBA - Gerencia de Servicios Catastrales",
-        "nombre": "TapalquÃ©",
+        "nombre": "Tapalqué",
         "id": "06798",
         "provincia": {
           "nombre": "Buenos Aires",
@@ -7583,9 +7583,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Partido de JosÃ© M. Ezeiza",
+        "nombre_completo": "Partido de José M. Ezeiza",
         "fuente": "ARBA - Gerencia de Servicios Catastrales",
-        "nombre": "JosÃ© M. Ezeiza",
+        "nombre": "José M. Ezeiza",
         "id": "06270",
         "provincia": {
           "nombre": "Buenos Aires",
@@ -7602,9 +7602,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento CuracÃ³",
+        "nombre_completo": "Departamento Curacó",
         "fuente": "Direc. Grl. de Catastro",
-        "nombre": "CuracÃ³",
+        "nombre": "Curacó",
         "id": "42042",
         "provincia": {
           "nombre": "La Pampa",
@@ -7640,9 +7640,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento PuelÃ©n",
+        "nombre_completo": "Departamento Puelén",
         "fuente": "Direc. Grl. de Catastro",
-        "nombre": "PuelÃ©n",
+        "nombre": "Puelén",
         "id": "42112",
         "provincia": {
           "nombre": "La Pampa",
@@ -7678,9 +7678,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento SilÃ­pica",
+        "nombre_completo": "Departamento Silí­pica",
         "fuente": "Direc. Grl. de Catastro",
-        "nombre": "SilÃ­pica",
+        "nombre": "Silí­pica",
         "id": "86189",
         "provincia": {
           "nombre": "Santiago del Estero",
@@ -7698,7 +7698,7 @@
     {
       "properties": {
         "nombre_completo": "Departamento 25de Mayo",
-        "fuente": "Ministerio de EcologÃ­a",
+        "fuente": "Ministerio de Ecología",
         "nombre": "25 de Mayo",
         "id": "54119",
         "provincia": {
@@ -7849,9 +7849,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Partido de Benito JuÃ¡rez",
+        "nombre_completo": "Partido de Benito Juárez",
         "fuente": "ARBA - Gerencia de Servicios Catastrales",
-        "nombre": "Benito JuÃ¡rez",
+        "nombre": "Benito Juárez",
         "id": "06084",
         "provincia": {
           "nombre": "Buenos Aires",
@@ -7887,9 +7887,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento Libertador General San MartÃ­n",
-        "fuente": "Direc. Pcial. de Catastro y CartografÃ­a",
-        "nombre": "Libertador General San MartÃ­n",
+        "nombre_completo": "Departamento Libertador General San Martí­n",
+        "fuente": "Direc. Pcial. de Catastro y Cartografía",
+        "nombre": "Libertador General San Martí­n",
         "id": "22084",
         "provincia": {
           "nombre": "Chaco",
@@ -7944,9 +7944,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Partido de ZÃ¡rate",
+        "nombre_completo": "Partido de Zárate",
         "fuente": "ARBA - Gerencia de Servicios Catastrales",
-        "nombre": "ZÃ¡rate",
+        "nombre": "Zárate",
         "id": "06882",
         "provincia": {
           "nombre": "Buenos Aires",
@@ -8021,7 +8021,7 @@
     {
       "properties": {
         "nombre_completo": "Departamento Bermejo",
-        "fuente": "Direc. Pcial. de Catastro y CartografÃ­a",
+        "fuente": "Direc. Pcial. de Catastro y Cartografía",
         "nombre": "Bermejo",
         "id": "22014",
         "provincia": {
@@ -8039,9 +8039,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento JunÃ­n",
+        "nombre_completo": "Departamento Juní­n",
         "fuente": "Direc. de Geodesia y Catastro",
-        "nombre": "JunÃ­n",
+        "nombre": "Juní­n",
         "id": "74049",
         "provincia": {
           "nombre": "San Luis",
@@ -8058,9 +8058,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento San MartÃ­n",
+        "nombre_completo": "Departamento San Martí­n",
         "fuente": "IGN",
-        "nombre": "San MartÃ­n",
+        "nombre": "San Martí­n",
         "id": "50098",
         "provincia": {
           "nombre": "Mendoza",
@@ -8082,7 +8082,7 @@
         "nombre": "Zapala",
         "id": "58112",
         "provincia": {
-          "nombre": "NeuquÃ©n",
+          "nombre": "Neuquén",
           "id": "58",
           "interseccion": 0.0554679305245708
         },
@@ -8096,12 +8096,12 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento ColÃ³n",
+        "nombre_completo": "Departamento Colón",
         "fuente": "Direc. Grl. de Catastro",
-        "nombre": "ColÃ³n",
+        "nombre": "Colón",
         "id": "14021",
         "provincia": {
-          "nombre": "CÃ³rdoba",
+          "nombre": "Córdoba",
           "id": "14",
           "interseccion": 0.014050333431972
         },
@@ -8116,7 +8116,7 @@
     {
       "properties": {
         "nombre_completo": "Departamento Caseros",
-        "fuente": "Servicio de Catastro e InformaciÃ³n Territorial",
+        "fuente": "Servicio de Catastro e Información Territorial",
         "nombre": "Caseros",
         "id": "82014",
         "provincia": {
@@ -8135,7 +8135,7 @@
     {
       "properties": {
         "nombre_completo": "Departamento Rosario",
-        "fuente": "Servicio de Catastro e InformaciÃ³n Territorial",
+        "fuente": "Servicio de Catastro e Información Territorial",
         "nombre": "Rosario",
         "id": "82084",
         "provincia": {
@@ -8154,7 +8154,7 @@
     {
       "properties": {
         "nombre_completo": "Departamento San Lorenzo",
-        "fuente": "Servicio de Catastro e InformaciÃ³n Territorial",
+        "fuente": "Servicio de Catastro e Información Territorial",
         "nombre": "San Lorenzo",
         "id": "82119",
         "provincia": {
@@ -8173,7 +8173,7 @@
     {
       "properties": {
         "nombre_completo": "Departamento Iriondo",
-        "fuente": "Servicio de Catastro e InformaciÃ³n Territorial",
+        "fuente": "Servicio de Catastro e Información Territorial",
         "nombre": "Iriondo",
         "id": "82056",
         "provincia": {
@@ -8192,7 +8192,7 @@
     {
       "properties": {
         "nombre_completo": "Departamento Belgrano",
-        "fuente": "Servicio de Catastro e InformaciÃ³n Territorial",
+        "fuente": "Servicio de Catastro e Información Territorial",
         "nombre": "Belgrano",
         "id": "82007",
         "provincia": {
@@ -8210,9 +8210,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento San JerÃ³nimo",
-        "fuente": "Servicio de Catastro e InformaciÃ³n Territorial",
-        "nombre": "San JerÃ³nimo",
+        "nombre_completo": "Departamento San Jerónimo",
+        "fuente": "Servicio de Catastro e Información Territorial",
+        "nombre": "San Jerónimo",
         "id": "82105",
         "provincia": {
           "nombre": "Santa Fe",
@@ -8267,9 +8267,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento General JosÃ© de San MartÃ­n",
+        "nombre_completo": "Departamento General José de San Martí­n",
         "fuente": "Direc. Grl. de Inmuebles",
-        "nombre": "General JosÃ© de San MartÃ­n",
+        "nombre": "General José de San Martí­n",
         "id": "66056",
         "provincia": {
           "nombre": "Salta",
@@ -8305,12 +8305,12 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento RÃ­o Primero",
+        "nombre_completo": "Departamento Río Primero",
         "fuente": "Direc. Grl. de Catastro",
-        "nombre": "RÃ­o Primero",
+        "nombre": "Río Primero",
         "id": "14105",
         "provincia": {
-          "nombre": "CÃ³rdoba",
+          "nombre": "Córdoba",
           "id": "14",
           "interseccion": 0.0405731882190903
         },
@@ -8343,12 +8343,12 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento Marcos JuÃ¡rez",
+        "nombre_completo": "Departamento Marcos Juárez",
         "fuente": "Direc. Grl. de Catastro",
-        "nombre": "Marcos JuÃ¡rez",
+        "nombre": "Marcos Juárez",
         "id": "14063",
         "provincia": {
-          "nombre": "CÃ³rdoba",
+          "nombre": "Córdoba",
           "id": "14",
           "interseccion": 0.0563845640638525
         },
@@ -8367,7 +8367,7 @@
         "nombre": "Calamuchita",
         "id": "14007",
         "provincia": {
-          "nombre": "CÃ³rdoba",
+          "nombre": "Córdoba",
           "id": "14",
           "interseccion": 0.0283412536709863
         },
@@ -8400,9 +8400,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento Juan MartÃ­n de PueyrredÃ³n",
+        "nombre_completo": "Departamento Juan Martí­n de Pueyrredón",
         "fuente": "Direc. de Geodesia y Catastro",
-        "nombre": "Juan MartÃ­n de PueyrredÃ³n",
+        "nombre": "Juan Martí­n de Pueyrredón",
         "id": "74056",
         "provincia": {
           "nombre": "San Luis",
@@ -8457,9 +8457,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento Libertador General San MartÃ­n",
+        "nombre_completo": "Departamento Libertador General San Martí­n",
         "fuente": "Direc. de Geodesia y Catastro",
-        "nombre": "Libertador General San MartÃ­n",
+        "nombre": "Libertador General San Martí­n",
         "id": "74063",
         "provincia": {
           "nombre": "San Luis",
@@ -8500,7 +8500,7 @@
         "nombre": "Comuna 1",
         "id": "02007",
         "provincia": {
-          "nombre": "Ciudad AutÃ³noma de Buenos Aires",
+          "nombre": "Ciudad Autónoma de Buenos Aires",
           "id": "02",
           "interseccion": 0.0868584651239787
         },
@@ -8519,7 +8519,7 @@
         "nombre": "Comuna 4",
         "id": "02028",
         "provincia": {
-          "nombre": "Ciudad AutÃ³noma de Buenos Aires",
+          "nombre": "Ciudad Autónoma de Buenos Aires",
           "id": "02",
           "interseccion": 0.110581967663086
         },
@@ -8538,7 +8538,7 @@
         "nombre": "Comuna 5",
         "id": "02035",
         "provincia": {
-          "nombre": "Ciudad AutÃ³noma de Buenos Aires",
+          "nombre": "Ciudad Autónoma de Buenos Aires",
           "id": "02",
           "interseccion": 0.0323438620273213
         },
@@ -8571,9 +8571,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento JÃ¡chal",
+        "nombre_completo": "Departamento Jáchal",
         "fuente": "Direc. de Geodesia y Catastro",
-        "nombre": "JÃ¡chal",
+        "nombre": "Jáchal",
         "id": "70056",
         "provincia": {
           "nombre": "San Juan",
@@ -8609,9 +8609,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento MburucuyÃ¡",
+        "nombre_completo": "Departamento Mburucuyá",
         "fuente": "IGN",
-        "nombre": "MburucuyÃ¡",
+        "nombre": "Mburucuyá",
         "id": "18098",
         "provincia": {
           "nombre": "Corrientes",
@@ -8647,9 +8647,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento ItuzaingÃ³",
+        "nombre_completo": "Departamento Ituzaingó",
         "fuente": "IGN",
-        "nombre": "ItuzaingÃ³",
+        "nombre": "Ituzaingó",
         "id": "18084",
         "provincia": {
           "nombre": "Corrientes",
@@ -8685,9 +8685,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento ItatÃ­",
+        "nombre_completo": "Departamento Itatí­",
         "fuente": "IGN",
-        "nombre": "ItatÃ­",
+        "nombre": "Itatí­",
         "id": "18077",
         "provincia": {
           "nombre": "Corrientes",
@@ -8709,7 +8709,7 @@
         "nombre": "Comuna 12",
         "id": "02084",
         "provincia": {
-          "nombre": "Ciudad AutÃ³noma de Buenos Aires",
+          "nombre": "Ciudad Autónoma de Buenos Aires",
           "id": "02",
           "interseccion": 0.0761149101282747
         },
@@ -8724,7 +8724,7 @@
     {
       "properties": {
         "nombre_completo": "Departamento San Javier",
-        "fuente": "Ministerio de EcologÃ­a",
+        "fuente": "Ministerio de Ecología",
         "nombre": "San Javier",
         "id": "54105",
         "provincia": {
@@ -8742,9 +8742,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento ApÃ³stoles",
-        "fuente": "Ministerio de EcologÃ­a",
-        "nombre": "ApÃ³stoles",
+        "nombre_completo": "Departamento Apóstoles",
+        "fuente": "Ministerio de Ecología",
+        "nombre": "Apóstoles",
         "id": "54007",
         "provincia": {
           "nombre": "Misiones",
@@ -8762,7 +8762,7 @@
     {
       "properties": {
         "nombre_completo": "Departamento Eldorado",
-        "fuente": "Ministerio de EcologÃ­a",
+        "fuente": "Ministerio de Ecología",
         "nombre": "Eldorado",
         "id": "54042",
         "provincia": {
@@ -8781,7 +8781,7 @@
     {
       "properties": {
         "nombre_completo": "Departamento San Pedro",
-        "fuente": "Ministerio de EcologÃ­a",
+        "fuente": "Ministerio de Ecología",
         "nombre": "San Pedro",
         "id": "54112",
         "provincia": {
@@ -8800,7 +8800,7 @@
     {
       "properties": {
         "nombre_completo": "Departamento Montecarlo",
-        "fuente": "Ministerio de EcologÃ­a",
+        "fuente": "Ministerio de Ecología",
         "nombre": "Montecarlo",
         "id": "54084",
         "provincia": {
@@ -8818,9 +8818,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Partido de ChascomÃºs",
+        "nombre_completo": "Partido de Chascomús",
         "fuente": "ARBA - Gerencia de Servicios Catastrales",
-        "nombre": "ChascomÃºs",
+        "nombre": "Chascomús",
         "id": "06217",
         "provincia": {
           "nombre": "Buenos Aires",
@@ -8842,7 +8842,7 @@
         "nombre": "Comuna 15",
         "id": "02105",
         "provincia": {
-          "nombre": "Ciudad AutÃ³noma de Buenos Aires",
+          "nombre": "Ciudad Autónoma de Buenos Aires",
           "id": "02",
           "interseccion": 0.0695318005000028
         },
@@ -8856,9 +8856,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento San MartÃ­n",
+        "nombre_completo": "Departamento San Martí­n",
         "fuente": "Direc. Grl. de Catastro",
-        "nombre": "San MartÃ­n",
+        "nombre": "San Martí­n",
         "id": "86175",
         "provincia": {
           "nombre": "Santiago del Estero",
@@ -8875,9 +8875,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento JimÃ©nez",
+        "nombre_completo": "Departamento Jiménez",
         "fuente": "Direc. Grl. de Catastro",
-        "nombre": "JimÃ©nez",
+        "nombre": "Jiménez",
         "id": "86091",
         "provincia": {
           "nombre": "Santiago del Estero",
@@ -8932,9 +8932,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento YavÃ­",
+        "nombre_completo": "Departamento Yaví­",
         "fuente": "Direc. Grl. de Inmuebles",
-        "nombre": "YavÃ­",
+        "nombre": "Yaví­",
         "id": "38112",
         "provincia": {
           "nombre": "Jujuy",
@@ -9008,9 +9008,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento PatiÃ±o",
+        "nombre_completo": "Departamento Patiño",
         "fuente": "IGN",
-        "nombre": "PatiÃ±o",
+        "nombre": "Patiño",
         "id": "34035",
         "provincia": {
           "nombre": "Formosa",
@@ -9122,9 +9122,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento OrÃ¡n",
+        "nombre_completo": "Departamento Orán",
         "fuente": "Direc. Grl. de Inmuebles",
-        "nombre": "OrÃ¡n",
+        "nombre": "Orán",
         "id": "66126",
         "provincia": {
           "nombre": "Salta",
@@ -9160,9 +9160,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento PalpalÃ¡",
+        "nombre_completo": "Departamento Palpalá",
         "fuente": "Direc. Grl. de Inmuebles",
-        "nombre": "PalpalÃ¡",
+        "nombre": "Palpalá",
         "id": "38042",
         "provincia": {
           "nombre": "Jujuy",
@@ -9236,9 +9236,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento Santa BÃ¡rbara",
+        "nombre_completo": "Departamento Santa Bárbara",
         "fuente": "Direc. Grl. de Inmuebles",
-        "nombre": "Santa BÃ¡rbara",
+        "nombre": "Santa Bárbara",
         "id": "38070",
         "provincia": {
           "nombre": "Jujuy",
@@ -9298,7 +9298,7 @@
         "nombre": "Chicligasta",
         "id": "90021",
         "provincia": {
-          "nombre": "TucumÃ¡n",
+          "nombre": "Tucumán",
           "id": "90",
           "interseccion": 0.0573478055735044
         },
@@ -9317,7 +9317,7 @@
         "nombre": "Monteros",
         "id": "90070",
         "provincia": {
-          "nombre": "TucumÃ¡n",
+          "nombre": "Tucumán",
           "id": "90",
           "interseccion": 0.0527851191531185
         },
@@ -9336,7 +9336,7 @@
         "nombre": "Leales",
         "id": "90056",
         "provincia": {
-          "nombre": "TucumÃ¡n",
+          "nombre": "Tucumán",
           "id": "90",
           "interseccion": 0.0874199091607964
         },
@@ -9350,12 +9350,12 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento FamaillÃ¡",
+        "nombre_completo": "Departamento Famaillá",
         "fuente": "Direc. Grl. de Catastro",
-        "nombre": "FamaillÃ¡",
+        "nombre": "Famaillá",
         "id": "90028",
         "provincia": {
-          "nombre": "TucumÃ¡n",
+          "nombre": "Tucumán",
           "id": "90",
           "interseccion": 0.0203477427693039
         },
@@ -9374,7 +9374,7 @@
         "nombre": "Capital",
         "id": "90084",
         "provincia": {
-          "nombre": "TucumÃ¡n",
+          "nombre": "Tucumán",
           "id": "90",
           "interseccion": 0.00395746216290431
         },
@@ -9393,7 +9393,7 @@
         "nombre": "Cruz Alta",
         "id": "90014",
         "provincia": {
-          "nombre": "TucumÃ¡n",
+          "nombre": "Tucumán",
           "id": "90",
           "interseccion": 0.0532364512908291
         },
@@ -9412,7 +9412,7 @@
         "nombre": "Trancas",
         "id": "90112",
         "provincia": {
-          "nombre": "TucumÃ¡n",
+          "nombre": "Tucumán",
           "id": "90",
           "interseccion": 0.132955228797671
         },
@@ -9426,12 +9426,12 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento TafÃ­ del Valle",
+        "nombre_completo": "Departamento Tafí­ del Valle",
         "fuente": "Direc. Grl. de Catastro",
-        "nombre": "TafÃ­ del Valle",
+        "nombre": "Tafí­ del Valle",
         "id": "90098",
         "provincia": {
-          "nombre": "TucumÃ¡n",
+          "nombre": "Tucumán",
           "id": "90",
           "interseccion": 0.108239413581945
         },
@@ -9445,9 +9445,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento San MartÃ­n",
-        "fuente": "Servicio de Catastro e InformaciÃ³n Territorial",
-        "nombre": "San MartÃ­n",
+        "nombre_completo": "Departamento San Martí­n",
+        "fuente": "Servicio de Catastro e Información Territorial",
+        "nombre": "San Martí­n",
         "id": "82126",
         "provincia": {
           "nombre": "Santa Fe",
@@ -9483,9 +9483,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento BerÃ³n de Astrada",
+        "nombre_completo": "Departamento Berón de Astrada",
         "fuente": "IGN",
-        "nombre": "BerÃ³n de Astrada",
+        "nombre": "Berón de Astrada",
         "id": "18014",
         "provincia": {
           "nombre": "Corrientes",
@@ -9503,7 +9503,7 @@
     {
       "properties": {
         "nombre_completo": "Departamento Castellanos",
-        "fuente": "Servicio de Catastro e InformaciÃ³n Territorial",
+        "fuente": "Servicio de Catastro e Información Territorial",
         "nombre": "Castellanos",
         "id": "82021",
         "provincia": {
@@ -9522,7 +9522,7 @@
     {
       "properties": {
         "nombre_completo": "Departamento San Justo",
-        "fuente": "Servicio de Catastro e InformaciÃ³n Territorial",
+        "fuente": "Servicio de Catastro e Información Territorial",
         "nombre": "San Justo",
         "id": "82112",
         "provincia": {
@@ -9540,9 +9540,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento San CristÃ³bal",
-        "fuente": "Servicio de Catastro e InformaciÃ³n Territorial",
-        "nombre": "San CristÃ³bal",
+        "nombre_completo": "Departamento San Cristóbal",
+        "fuente": "Servicio de Catastro e Información Territorial",
+        "nombre": "San Cristóbal",
         "id": "82091",
         "provincia": {
           "nombre": "Santa Fe",
@@ -9560,7 +9560,7 @@
     {
       "properties": {
         "nombre_completo": "Departamento San Javier",
-        "fuente": "Servicio de Catastro e InformaciÃ³n Territorial",
+        "fuente": "Servicio de Catastro e Información Territorial",
         "nombre": "San Javier",
         "id": "82098",
         "provincia": {
@@ -9579,7 +9579,7 @@
     {
       "properties": {
         "nombre_completo": "Departamento General Obligado",
-        "fuente": "Servicio de Catastro e InformaciÃ³n Territorial",
+        "fuente": "Servicio de Catastro e Información Territorial",
         "nombre": "General Obligado",
         "id": "82049",
         "provincia": {
@@ -9616,9 +9616,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento San MartÃ­n",
+        "nombre_completo": "Departamento San Martí­n",
         "fuente": "Direc. de Geodesia y Catastro",
-        "nombre": "San MartÃ­n",
+        "nombre": "San Martí­n",
         "id": "70091",
         "provincia": {
           "nombre": "San Juan",
@@ -9697,7 +9697,7 @@
         "nombre": "La Cocha",
         "id": "90049",
         "provincia": {
-          "nombre": "TucumÃ¡n",
+          "nombre": "Tucumán",
           "id": "90",
           "interseccion": 0.0426115850585463
         },
@@ -9716,7 +9716,7 @@
         "nombre": "Juan Bautista Alberdi",
         "id": "90042",
         "provincia": {
-          "nombre": "TucumÃ¡n",
+          "nombre": "Tucumán",
           "id": "90",
           "interseccion": 0.0328052934259343
         },
@@ -9730,12 +9730,12 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento RÃ­o Chico",
+        "nombre_completo": "Departamento Río Chico",
         "fuente": "Direc. Grl. de Catastro",
-        "nombre": "RÃ­o Chico",
+        "nombre": "Río Chico",
         "id": "90077",
         "provincia": {
-          "nombre": "TucumÃ¡n",
+          "nombre": "Tucumán",
           "id": "90",
           "interseccion": 0.0272006610777302
         },
@@ -9754,7 +9754,7 @@
         "nombre": "Simoca",
         "id": "90091",
         "provincia": {
-          "nombre": "TucumÃ¡n",
+          "nombre": "Tucumán",
           "id": "90",
           "interseccion": 0.0596025531091905
         },
@@ -9768,9 +9768,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento General LÃ³pez",
-        "fuente": "Servicio de Catastro e InformaciÃ³n Territorial",
-        "nombre": "General LÃ³pez",
+        "nombre_completo": "Departamento General López",
+        "fuente": "Servicio de Catastro e Información Territorial",
+        "nombre": "General López",
         "id": "82042",
         "provincia": {
           "nombre": "Santa Fe",
@@ -9788,7 +9788,7 @@
     {
       "properties": {
         "nombre_completo": "Departamento Candelaria",
-        "fuente": "Ministerio de EcologÃ­a",
+        "fuente": "Ministerio de Ecología",
         "nombre": "Candelaria",
         "id": "54021",
         "provincia": {
@@ -9806,9 +9806,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento CainguÃ¡s",
-        "fuente": "Ministerio de EcologÃ­a",
-        "nombre": "CainguÃ¡s",
+        "nombre_completo": "Departamento Cainguás",
+        "fuente": "Ministerio de Ecología",
+        "nombre": "Cainguás",
         "id": "54014",
         "provincia": {
           "nombre": "Misiones",
@@ -9825,9 +9825,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento Libertador General San MartÃ­n",
-        "fuente": "Ministerio de EcologÃ­a",
-        "nombre": "Libertador General San MartÃ­n",
+        "nombre_completo": "Departamento Libertador General San Martí­n",
+        "fuente": "Ministerio de Ecología",
+        "nombre": "Libertador General San Martí­n",
         "id": "54077",
         "provincia": {
           "nombre": "Misiones",
@@ -9845,7 +9845,7 @@
     {
       "properties": {
         "nombre_completo": "Departamento General Manuel Belgrano",
-        "fuente": "Ministerio de EcologÃ­a",
+        "fuente": "Ministerio de Ecología",
         "nombre": "General Manuel Belgrano",
         "id": "54049",
         "provincia": {
@@ -9863,9 +9863,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento GuaranÃ­",
-        "fuente": "Ministerio de EcologÃ­a",
-        "nombre": "GuaranÃ­",
+        "nombre_completo": "Departamento Guaraní­",
+        "fuente": "Ministerio de Ecología",
+        "nombre": "Guaraní­",
         "id": "54056",
         "provincia": {
           "nombre": "Misiones",
@@ -9901,9 +9901,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento Santa LucÃ­a",
+        "nombre_completo": "Departamento Santa Lucí­a",
         "fuente": "Direc. de Geodesia y Catastro",
-        "nombre": "Santa LucÃ­a",
+        "nombre": "Santa Lucí­a",
         "id": "70098",
         "provincia": {
           "nombre": "San Juan",
@@ -9977,9 +9977,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento ChapaleufÃº",
+        "nombre_completo": "Departamento Chapaleufú",
         "fuente": "Direc. Grl. de Catastro",
-        "nombre": "ChapaleufÃº",
+        "nombre": "Chapaleufú",
         "id": "42056",
         "provincia": {
           "nombre": "La Pampa",
@@ -9996,9 +9996,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento MaracÃ³",
+        "nombre_completo": "Departamento Maracó",
         "fuente": "Direc. Grl. de Catastro",
-        "nombre": "MaracÃ³",
+        "nombre": "Maracó",
         "id": "42105",
         "provincia": {
           "nombre": "La Pampa",
@@ -10015,9 +10015,9 @@
     },
     {
       "properties": {
-        "nombre_completo": "Departamento ConcepciÃ³n",
+        "nombre_completo": "Departamento Concepción",
         "fuente": "IGN",
-        "nombre": "ConcepciÃ³n",
+        "nombre": "Concepción",
         "id": "18028",
         "provincia": {
           "nombre": "Corrientes",
@@ -10035,7 +10035,7 @@
     {
       "properties": {
         "nombre_completo": "Departamento Leandro N. Alem",
-        "fuente": "Ministerio de EcologÃ­a",
+        "fuente": "Ministerio de Ecología",
         "nombre": "Leandro N. Alem",
         "id": "54070",
         "provincia": {

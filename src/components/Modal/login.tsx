@@ -44,19 +44,23 @@ export default function Login() {
     if(user.email == '' || user.password == '' || user.email == ' ' || user.password == ' '){
       setErrorMessage("Correo electrónico o contraseña incorrecta");
     } else {
-      axios.post(`${login?.authContext.URL}/auth/login`, user)
-      .then(res => {
-        //si existe debera cambiar el estado login e inicar sesion
-        //si NO existe mostrara un mensaje de error
-        if(res.status === 200){
-          setSuccessMessage('Usuario Confirmado')
-          login.authContext.toggleOpen()
-          login.authContext.addToken(res.data.password)
-          login.authContext.saveInLocalStorage(res.data)
-          login.authContext.toggleLogin(true)
-          setStateBtnSubmit(true)
-        }
-      })
+      axios
+        .post(`${login?.authContext.URL}/auth/login`, user)
+        .then((res) => {
+          console.log(res.headers);
+          //si existe debera cambiar el estado login e inicar sesion
+          //si NO existe mostrara un mensaje de error
+          if (res.status === 200) {
+            const encabezado = res.headers["authorizationtoken"];
+            setSuccessMessage("Usuario Confirmado");
+            login.authContext.toggleOpen();
+            login.authContext.addToken(res.data.password);
+            login.authContext.saveInLocalStorage(res.data);
+            login.authContext.tokenAutorizacion(encabezado);
+            login.authContext.toggleLogin(true);
+            setStateBtnSubmit(true);
+          }
+        })
       .catch(error => {
         setErrorMessage(error.response.data)
         setStateBtnSubmit(false)
@@ -119,7 +123,7 @@ export default function Login() {
         <div className="mb-1 flex flex-col gap-4">
           <div className="h-10 w-full">
             {errorMessage ? 
-                  <Alert  className="rounded-none border-l-4 border-[#c92e3b] bg-[#c92e3b]/10 font-medium text-[#c92e3b]" >
+                  <Alert  className=" py-2 rounded-none border-l-4 border-[#c92e3b] bg-[#c92e3b]/10 font-medium text-[#c92e3b]" >
                     <Typography variant="small">{errorMessage}</Typography>
                   </Alert> : ""}
             {successMessage ? 
@@ -130,9 +134,7 @@ export default function Login() {
                   </Alert> : ""}
           </div>
         </div> 
-        <Button variant="text" className="text-vet-purple" onClick={() => setIsWatch(!isWacht)}>
-          ¿Olvidaste tu Contraseña?
-        </Button>
+        
         
         <Button 
           id="submitLogin"
@@ -147,6 +149,10 @@ export default function Login() {
           className="bg-vet-purple"
         >
           Iniciar Sesion
+        </Button>
+
+        <Button variant="text" className="text-vet-purple" onClick={() => setIsWatch(!isWacht)}>
+          ¿Olvidaste tu Contraseña?
         </Button>
         
         <Link to="register" className="text-vet-purple-dark text-xs my-2" onClick={() => {

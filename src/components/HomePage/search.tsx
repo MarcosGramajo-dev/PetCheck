@@ -14,7 +14,8 @@ import {
   MenuItem,
   Button,
   Select, 
-  Option
+  Option,
+  Alert
 } from "@material-tailwind/react";
 
 
@@ -80,6 +81,7 @@ export default function search() {
           type="number"
           placeholder="Ingresa su codigo"
           className="rounded-l-none !border-t-blue-gray-200 focus:!border-t-gray-900"
+          min="0"
           labelProps={{
             className: "before:content-none after:content-none",
           }}
@@ -89,14 +91,16 @@ export default function search() {
         />
       </div>
         
-        <span className=" text-sm text-red-600 text-center h-4"> {mensaje} </span>
-        <Link to={idLibreta.length >= 6 && status ? `historiaClinica?search=${idLibreta}` : ""} className="text-right">
-        {/* className="disabled:opacity-75 m-auto mx-1 duration-300 px-6 h-8 border border-vet-purple text-neutral-50 bg-vet-purple rounded-lg hover:text-vet-purple hover:bg-neutral-50" */}
+      <div className="flex justify-end items-center h-16">
+        { mensaje != '' ? <Alert className="rounded-none border-l-4 border-[#c92e3b] bg-[#c92e3b]/10 font-medium text-[#c92e3b]"> {mensaje} </Alert> : null}
+          <Link to={idLibreta.length >= 6 && status ? `historiaClinica?search=${idLibreta}` : ""} className="text-right">
+          {/* className="disabled:opacity-75 m-auto mx-1 duration-300 px-6 h-8 border border-vet-purple text-neutral-50 bg-vet-purple rounded-lg hover:text-vet-purple hover:bg-neutral-50" */}
 
-          <Button onClick={()=> verifyId()} className="bg-vet-blue hover:bg-vet-blue/50" >
-            BUSCAR
-          </Button>
-        </Link>
+            <Button onClick={()=> verifyId()} className="bg-vet-blue hover:bg-vet-blue/50" >
+              BUSCAR
+            </Button>
+          </Link>
+      </div>
       </div>
     </div>
   );
