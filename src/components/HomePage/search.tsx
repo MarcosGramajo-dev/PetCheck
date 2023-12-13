@@ -46,6 +46,8 @@ export default function search() {
 
   const verifyId = async () => {
     // consultamos con axios al back, segun la repuesta utilizamos un boolean para manejar la redireccion
+    if(stateSelect != '' && idLibreta != ''){
+
       await axios.get(`${login?.authContext.URL}/HistoryClinic/${stateSelect}/${idLibreta}`)
       .then( res => {
         login?.authContext.addHC(res.data)
@@ -54,8 +56,13 @@ export default function search() {
       })
       .catch(error => {
         console.log(error)
+        setMensaje(error.response.data)
         setStatus(false)
       })
+    } else{
+      setMensaje("Tipo o código invalido");
+
+    }
   }
 
   return (
@@ -92,7 +99,7 @@ export default function search() {
       </div>
         
       <div className="flex justify-end items-center h-16">
-        { mensaje != '' ? <Alert className="rounded-none border-l-4 border-[#c92e3b] bg-[#c92e3b]/10 font-medium text-[#c92e3b]"> {mensaje} </Alert> : null}
+        { mensaje != '' ? <Alert className="rounded-none text-sm border-l-4 border-[#c92e3b] bg-[#c92e3b]/10 font-medium text-[#c92e3b]"> {mensaje} </Alert> : null}
           <Link to={idLibreta.length >= 6 && status ? `historiaClinica?search=${idLibreta}` : ""} className="text-right">
           {/* className="disabled:opacity-75 m-auto mx-1 duration-300 px-6 h-8 border border-vet-purple text-neutral-50 bg-vet-purple rounded-lg hover:text-vet-purple hover:bg-neutral-50" */}
 
@@ -105,19 +112,3 @@ export default function search() {
     </div>
   );
 }
-
-{/* <div className="text-center">
-  <select onChange={(event) => setStateSelectet(event.target.value)} name="type" className="border-vet-purple border my-2 m-auto px-2 h-8">
-    <option value="id">ID</option>
-    <option value="dni">DNI</option>
-    <option value="nChip">N° Chip</option>
-  </select>
-  <input
-    onChange={handleChange}
-    value={idLibreta}
-    minLength={6}
-    placeholder="Ej: 489465"
-    className=" border-vet-purple border my-2 max-w-[300px] m-auto px-2 h-8"
-    type="number"
-  />
-</div> */}

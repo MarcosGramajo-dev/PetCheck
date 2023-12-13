@@ -211,9 +211,9 @@ export default function Register() {
     console.log(vet)
   };
   //-----------------------------------------------------------------------------------------------------------------------------------------------------
-  const selectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+  const selectChange = (e:any) => {
     let arrayDepartamentos = departamentosJSON.features.filter(
-      (depart) => depart.properties.provincia.id === e.target.value
+      (depart) => depart.properties.provincia.id === e
     );
     setArrayDepart(arrayDepartamentos);
 
@@ -223,9 +223,9 @@ export default function Register() {
     });
   };
 
-  const selectDepart = (e: React.ChangeEvent<HTMLSelectElement>) => {
+  const selectDepart = (e: any) => {
     let departSelect = arrayDepart.filter(
-      (departSelected) => departSelected.properties.id === e.target.value
+      (departSelected) => departSelected.properties.id === e
     );
 
     setVet({
@@ -348,9 +348,7 @@ export default function Register() {
                   <Select
                     id='provinciatRegister'
                     label="Selecciona una Provincia"
-                    // className='my-3 mx-3 w-[200px] max-[500px]:w-full border-b-2 border-vet-purple-light'
-                    onChange={() => selectChange}>
-                    {/* <option value=''> Selecciona una Provincia </option> */}
+                    onChange={(event) => selectChange(event)}>
                     {provinciasJSON.features.map((option) => (
                       <Option
                         key={option.properties.id}
@@ -365,9 +363,8 @@ export default function Register() {
                 <div className="w-full mb-3 md:w-auto md:m-0 ">
                   <Select
                     id='departRegister'
-                    // className='my-3 mx-3 w-[200px] max-[500px]:w-full border-b-2 border-vet-purple-light'
                     label="Seleccione su Localidad"
-                    onChange={() => selectDepart}
+                    onChange={(event) => selectDepart(event)}
                     >
                     {arrayDepart.map((element) => (
                       <Option
@@ -389,7 +386,6 @@ export default function Register() {
                   name='address'
                   type='text'
                   label='Direccion'
-                  // className='my-3 mx-3 min-w-[200px] max-[500px]:w-full w-auto border-b-2 border-vet-purple-light'
                 />
               </div>
               <div className='flex justify-between flex-wrap gap-3'>
@@ -402,7 +398,6 @@ export default function Register() {
                     type='number'
                     min="0"
                     label='Numero de Contacto'
-                    // className='my-3 mx-3 min-w-[200px] max-[500px]:w-full w-auto border-b-2 border-vet-purple-light'
                   />
                 </div>
                 <div className="w-full mb-3 md:w-auto md:m-0 ">
@@ -414,7 +409,6 @@ export default function Register() {
                     type='number'
                     min="0"
                     label='Numero de WhatsApp'
-                    // className='my-3 mx-3 min-w-[200px] max-[500px]:w-full w-auto border-b-2 border-vet-purple-light'
                   />
                 </div>
               </div>
@@ -426,7 +420,6 @@ export default function Register() {
                     options={options}
                     value={selected}
                     onChange={setSelected}
-                    // hasSelectAll={false}
                     labelledBy='Selecciona tus servicios'
                     className='w-full'
                   />
@@ -445,7 +438,6 @@ export default function Register() {
                     name='web'
                     type='text'
                     placeholder='Pagina Web'
-                    // className='my-3 mx-3 min-w-[200px] max-[500px]:w-full w-auto border-b-2 border-vet-purple-light'
                   />
                 </div>
                   <div className="w-full mb-3 md:w-auto md:m-0 ">
@@ -455,7 +447,6 @@ export default function Register() {
                     name='instagram'
                     type='text'
                     placeholder='Instagram'
-                    // className='my-3 mx-3 min-w-[200px] max-[500px]:w-full w-auto border-b-2 border-vet-purple-light'
                   />
                 </div>
                 <div className="w-full mb-3 md:w-auto md:m-0 ">
@@ -465,7 +456,6 @@ export default function Register() {
                     name='facebook'
                     type='text'
                     placeholder='Facebook'
-                    // className='my-3 mx-3 min-w-[200px] max-[500px]:w-full w-auto border-b-2 border-vet-purple-light'
                   />
                 </div>
                 <div className="w-full mb-3 md:w-auto md:m-0 ">
@@ -475,7 +465,6 @@ export default function Register() {
                     name='tiktok'
                     type='text'
                     placeholder='Tiktok'
-                    // className='my-3 mx-3 min-w-[200px] max-[500px]:w-full w-auto border-b-2 border-vet-purple-light'
                   />
                 </div>
               </div>
@@ -488,7 +477,6 @@ export default function Register() {
                 <div className="flex gap-3">
                   <div>
                     <Button
-                      // className='m-2 duration-300 text-lg px-6 py-1 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple'
                       onClick={() => setStateForm(true)}
                       variant="outlined"
                       >
@@ -500,8 +488,6 @@ export default function Register() {
                       id='submitRegister'
                       type='submit'
                       className="bg-vet-purple"
-                      // className='m-2 duration-300 text-lg px-6 py-1 border border-vet-purple text-vet-purple rounded-lg bg-white hover:text-neutral-50 hover:bg-vet-purple'
-
                       disabled= {isDisabled}
                       >
                       Registrarse
