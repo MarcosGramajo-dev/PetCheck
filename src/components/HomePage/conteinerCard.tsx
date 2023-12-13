@@ -38,6 +38,7 @@ export default function ContainerTarjet() {
     direccion: string;
     redesSociales: redesSociales;
     imagen: string;
+    telCelular : string
     servicios:string[]
   };
 
@@ -65,6 +66,7 @@ export default function ContainerTarjet() {
           const datos = res.data.data.map((veterinaria: tarjetas) => ({
           email: veterinaria.email,
           nombreVeterinaria: veterinaria.nombreVeterinaria || "",
+          telCelular: veterinaria.telCelular  || "",
           direccion: veterinaria.direccion || "",
           redesSociales: veterinaria.redesSociales || {},
           imagen: veterinaria.imagen || "",

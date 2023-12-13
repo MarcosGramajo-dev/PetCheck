@@ -39,6 +39,7 @@ type tarjetas = {
   redesSociales: redesSociales;
   imagen: string;
   servicios: string[];
+  telCelular:string;
 };
 
 interface IProps {
@@ -153,8 +154,8 @@ const Cards = (props: IProps) => {
                 <img src={Laptop} alt="wp"/>
             </Button> : null }
 
-            { props.infoCard.redesSociales.instagram != '' ?  
-            <Button onClick={()=>  window.open(`https://wa.me/54${props.infoCard.redesSociales.instagram}`, '_blank') } size="lg" fullWidth={true} className="m-1 bg-[#25D366]">
+            { props.infoCard.telCelular != '' ?  
+            <Button onClick={()=>  window.open(`https://wa.me/54${props.infoCard.telCelular}`, '_blank') } size="lg" fullWidth={true} className="m-1 bg-[#25D366]">
                 <img src={Whatsapp} alt="wp"/>
             </Button> : null }
           </CardFooter>
