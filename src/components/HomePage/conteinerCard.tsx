@@ -5,6 +5,17 @@ import { UserVet } from "../Context/Type";
 import { useLoginState } from "../Context/Context";
 import loadingImage from "../../images/loading.gif";
 
+import Car from "../../images/icons/car.svg";
+import Bag from "../../images/icons/bag.svg";
+import Emergency from "../../images/icons/emergency.svg";
+import Local24 from "../../images/icons/local_24.svg";
+import Shower from "../../images/icons/shower.svg";
+
+import {
+  Button,
+
+} from '@material-tailwind/react'
+
 import SearchVet from './searchVet'
 
 
@@ -39,15 +50,18 @@ export default function ContainerTarjet() {
 
   const [pageCard, setPageCard] = useState(0)
 
+  const [services, setServices] = useState('')
+
   const loadData = (pages:number) => {
     setLoading(true);
 
-    // console.log(`${login?.authContext.URL}/?page=${pages}`)
+    
+
+    console.log(`${login?.authContext.URL}/?servicio=${services}&page=${pages}`)
 
     axios
-      .get(`${login?.authContext.URL}/?page=${pages}`)
+      .get(`${login?.authContext.URL}/?servicio=${services}&page=${pages}`)
       .then((res) => {
-        // const datos = res.data.data.map((veterinaria: tarjetas) => ({
           const datos = res.data.data.map((veterinaria: tarjetas) => ({
           email: veterinaria.email,
           nombreVeterinaria: veterinaria.nombreVeterinaria || "",
@@ -56,8 +70,6 @@ export default function ContainerTarjet() {
           imagen: veterinaria.imagen || "",
           servicios: veterinaria.servicios || [],
         }));
-
-        // console.log(res.data.data)
 
         setPagination({
           page: parseInt(res.data.page,10),
@@ -80,7 +92,7 @@ export default function ContainerTarjet() {
   useEffect(() => {
     loadData(pageCard);
 
-  }, []);
+  }, [services]);
 
   useEffect(() => {
     if (cardsDBRef.current !== undefined) {
@@ -124,7 +136,34 @@ export default function ContainerTarjet() {
         </p>
       </div>
 
-      <SearchVet/>
+      {/* <SearchVet/> */}
+
+      <div className="flex flex-wrap justify-around mt-4 text-white">
+          <Button onClick={()=> setServices('Consulta')} className="flex flex-wrap items-center justify-center mt-8 text-white bg-light-blue-300 mx-2">
+              <span> <img src={Car} alt="car"/> </span>
+              <span className="mx-2 hidden md:block" >Consulta</span>
+          </Button>
+          <Button onClick={()=> setServices('Venta')} className="flex flex-wrap items-center justify-center mt-8 text-white bg-orange-400 mx-2">
+              <span> <img src={Bag} alt="car"/> </span>
+              <span className="mx-2 hidden md:block" >Venta</span>
+          </Button>
+          <Button onClick={()=> setServices('Consulta')} className="flex flex-wrap items-center justify-center mt-8 text-white bg-red-400 mx-2">
+              <span> <img src={Emergency} alt="car"/> </span>
+              <span className="mx-2 hidden md:block" >Cirugias</span>
+          </Button>
+          <Button onClick={()=> setServices('Hospedaje')} className="flex flex-wrap items-center justify-center mt-8 text-white bg-green-400 mx-2">
+              <span> <img src={Local24} alt="car"/> </span>
+              <span className="mx-2 hidden md:block" >Hospedaje</span>
+          </Button>
+          <Button onClick={()=> setServices('Baño%y%Corte')} className="flex flex-wrap items-center justify-center mt-8 text-white bg-teal-400 mx-2">
+              <span> <img src={Shower} alt="car"/> </span>
+              <span className="mx-2 hidden md:block" >Baño y Corte</span>
+          </Button>
+          <Button onClick={()=> setServices('')} className="flex flex-wrap items-center justify-center mt-8 text-white bg-teal-400 mx-2">
+              <span> <img src={Shower} alt="car"/> </span>
+              <span className="mx-2 hidden md:block" >Quitar filtro</span>
+          </Button>
+      </div>
 
       {/* { cardsDB == [] && 
         <div>
@@ -167,7 +206,7 @@ export default function ContainerTarjet() {
         </div>
 
         <button
-          onClick={() => {setPageCard(pagination.page + 1 > pagination.totalPages ? pagination.page + 0 : pagination.page + 1 ); loadData(pagination.page + 1 > pagination.totalPages ? pagination.page + 0 : pagination.page + 1 ); paginationCreate()}}
+          onClick={() => {setPageCard(pagination.page + 1 > pagination.totalPages ? pagination.page + 0 : pagination.page + 1 ); loadData(pagination.page + 1 > pagination.totalPages ? pagination.page + 0 : pagination.page + 1); paginationCreate()}}
           className="flex items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center text-gray-900 uppercase align-middle transition-all rounded-full select-none hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
           type="button">
           <span className="hidden md:block" >Siguiente</span>
