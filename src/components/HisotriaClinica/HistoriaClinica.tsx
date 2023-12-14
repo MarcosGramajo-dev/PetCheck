@@ -53,7 +53,7 @@ export default function HistoriaClinica() {
   // console.log(searchParams.get('search'))
 
   useEffect(() => {
-    console.log(HC?.Registros[0])
+    console.log(HC?.Vacunas)
   }, []);
 
   function handleChange() {
@@ -100,11 +100,11 @@ export default function HistoriaClinica() {
               <p className="m-1 font-semibold text-vet-blue">Vacunacion</p>
               {HC?.Vacunas.map((element) =>(
                 <div>
-                  <p className="m-1 font-semibold"><span className="font-normal">{element.Vacuna}</span></p>
-                  <p className="m-1 font-semibold"><span className="font-normal">{element.DataVacuna}</span></p>
-                  <p className="m-1 font-semibold"><span className="font-normal">{element.fecha}</span></p>
-                  <p className="m-1 font-semibold"><span className="font-normal">{element.Certification}</span></p>
-                  <p className="m-1 font-semibold"><span className="font-normal">{element.nameAndMatricule}</span></p>
+                  <Typography className="m-1 font-semibold"><span className="font-normal">Vacuna: {element.Vacuna}</span></Typography>
+                  <Typography className="m-1 font-semibold"><span className="font-normal">Descripcion: {element.DataVacuna}</span></Typography>
+                  <Typography className="m-1 font-semibold"><span className="font-normal">Fecha: {element.fecha}</span></Typography>
+                  <Typography className="m-1 font-semibold"><span className="font-normal">Certificado: {element.Certification}</span></Typography>
+                  <Typography className="m-1 font-semibold"><span className="font-normal">Firma: {element.nameAndMatricule}</span></Typography>
                 </div>
               ))}
             </div>

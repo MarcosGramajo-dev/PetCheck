@@ -141,25 +141,26 @@ export default function ContainerTarjet() {
       {/* <SearchVet/> */}
 
       <div className="flex flex-wrap justify-around mt-4 text-white">
-          <Button onClick={()=> setServices('Consulta')} className="flex flex-wrap items-center justify-center mt-8 text-white bg-light-blue-300 mx-2">
-              <span> <img src={Car} alt="car"/> </span>
-              <span className="mx-2 hidden md:block" >Consulta</span>
+          <Button className="flex flex-wrap items-center justify-center mt-8 text-white bg-orange-400 mx-2">
+                <span> <img src={Local24} alt="car"/> </span>
+              <span className="mx-2 hidden md:block" >Guardería</span>
           </Button>
-          <Button onClick={()=> setServices('Venta')} className="flex flex-wrap items-center justify-center mt-8 text-white bg-orange-400 mx-2">
-              <span> <img src={Bag} alt="car"/> </span>
-              <span className="mx-2 hidden md:block" >Venta</span>
-          </Button>
-          <Button onClick={()=> setServices('Consulta')} className="flex flex-wrap items-center justify-center mt-8 text-white bg-red-400 mx-2">
-              <span> <img src={Emergency} alt="car"/> </span>
-              <span className="mx-2 hidden md:block" >Cirugias</span>
-          </Button>
-          <Button onClick={()=> setServices('Hospedaje')} className="flex flex-wrap items-center justify-center mt-8 text-white bg-green-400 mx-2">
-              <span> <img src={Local24} alt="car"/> </span>
-              <span className="mx-2 hidden md:block" >Hospedaje</span>
-          </Button>
-          <Button onClick={()=> setServices('Baño%y%Corte')} className="flex flex-wrap items-center justify-center mt-8 text-white bg-teal-400 mx-2">
+          <Button className="flex flex-wrap items-center justify-center mt-8 text-white bg-light-blue-300 mx-2">
+              
               <span> <img src={Shower} alt="car"/> </span>
-              <span className="mx-2 hidden md:block" >Baño y Corte</span>
+              <span className="mx-2 hidden md:block" >Peluqueria</span>
+          </Button>
+          <Button className="flex flex-wrap items-center justify-center mt-8 text-white bg-red-400 mx-2">
+              <span> <img src={Emergency} alt="car"/> </span>
+              <span className="mx-2 hidden md:block" >Cirugía</span>
+          </Button>
+          <Button className="flex flex-wrap items-center justify-center mt-8 text-white bg-green-400 mx-2">
+              <span> <img src={Bag} alt="car"/> </span>
+              <span className="mx-2 hidden md:block" >Tienda</span>
+          </Button>
+          <Button className="flex flex-wrap items-center justify-center mt-8 text-white bg-teal-400 mx-2">
+              <span> <img src={Car} alt="car"/> </span>
+              <span className="mx-2 hidden md:block" >Traslado</span>
           </Button>
           <Button onClick={()=> setServices('')} className="flex flex-wrap items-center justify-center mt-8 text-white bg-teal-400 mx-2">
               <span> <img src={Shower} alt="car"/> </span>
