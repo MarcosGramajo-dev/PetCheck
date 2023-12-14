@@ -99,14 +99,6 @@ export default function Login() {
             />
           </div>
           <div className="w-full my-2 flex justify-center">
-            {/* <label htmlFor="pass">Contraseña:</label>
-            <input
-              id="pass"
-              name="password"
-              className="border-vet-blue border rounded-md w-full px-2 drop-shadow"
-              type="password"
-              onChange={handleChange}
-            /> */}
             <Input label="Contraseña"
               onChange={handleChange}
               id="pass"
@@ -115,11 +107,6 @@ export default function Login() {
               required        
               />
           </div>
-        {/* <div className="relative w-60 object-cover my-2"> */}
-        {/* <Link to="newPass" className="text-vet-purple-dark text-xs my-2 text-right m-auto mt-0 mb-3 w-6/12">
-          {" "}
-          ¿Olvidaste tu Contraseña?
-        </Link> */}
         <div className="mb-1 flex flex-col gap-4">
           <div className="h-10 w-full">
             {errorMessage ? 
