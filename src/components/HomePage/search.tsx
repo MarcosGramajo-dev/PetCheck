@@ -52,7 +52,7 @@ export default function search() {
       .then( res => {
         login?.authContext.addHC(res.data)
         setStatus(true)
-        navigate(`/historiaClinica?type=${stateSelect}%cod=${idLibreta}`)
+        navigate(`/historiaClinica?type=${stateSelect}&cod=${idLibreta}`)
       })
       .catch(error => {
         console.log(error)
