@@ -10,9 +10,10 @@ import Bag from "../../images/icons/bag.svg";
 import Emergency from "../../images/icons/emergency.svg";
 import Local24 from "../../images/icons/local_24.svg";
 import Shower from "../../images/icons/shower.svg";
+import Clear from "../../images/icons/clear.svg";
 
 import {
-  Button,
+  Button, Typography,
 
 } from '@material-tailwind/react'
 
@@ -131,11 +132,11 @@ export default function ContainerTarjet() {
   }
 
   return (
-    <div className='mt-8'>
-      <div>
-        <p className='text-vet-blue font-semibold text-center text-2xl max-sm:text-lg'>
-          VETERINARIAS COMPROMETIDAS
-        </p>
+    <div className='mt-16'>
+      <div className="border py-4 bg-vet-blue  shadow-md">
+        <Typography variant="h3" className='text-white text-center'>
+          VETERINARIAS ASOCIADAS
+        </Typography>
       </div>
 
       {/* <SearchVet/> */}
@@ -162,8 +163,8 @@ export default function ContainerTarjet() {
               <span> <img src={Car} alt="car"/> </span>
               <span className="mx-2 hidden md:block" >Traslado</span>
           </Button>
-          <Button onClick={()=> setServices('')} className="flex flex-wrap items-center justify-center mt-8 text-white bg-teal-400 mx-2">
-              <span> <img src={Shower} alt="car"/> </span>
+          <Button onClick={()=> setServices('')} className="flex flex-wrap items-center justify-center mt-8 text-white bg-gray-500 mx-2">
+              <span> <img src={Clear} alt="car"/> </span>
               <span className="mx-2 hidden md:block" >Quitar filtro</span>
           </Button>
       </div>
