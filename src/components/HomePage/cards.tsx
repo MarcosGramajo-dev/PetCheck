@@ -1,8 +1,8 @@
-import Venta from "../../images/icons/bag.svg";
-import Consulta from "../../images/icons/car.svg";
-import Cirugias from "../../images/icons/emergency.svg";
-import Hospedaje from "../../images/icons/local_24.svg";
-import Estetica from "../../images/icons/shower.svg";
+import Tienda from "../../images/icons/bag.svg";
+import Traslado from "../../images/icons/car.svg";
+import Cirugia from "../../images/icons/emergency.svg";
+import Guarderia from "../../images/icons/local_24.svg";
+import Peluqueria from "../../images/icons/shower.svg";
 import Vet from "../../images/localVet.jpg";
 import Facebook from "../../images/redes/Facebook.svg";
 import FFacebook from "../../images/redes/f-facebook.png";
@@ -87,54 +87,21 @@ const Cards = (props: IProps) => {
                   <div className="flex w-10">
                     <Tooltip content={item} key={item} >
                       <span className={`cursor-pointer rounded-full border border-gray-900/5 text-gray-900 transition-colors hover:border-gray-900/10 hover:!opacity-100 group-hover:opacity-70
-                      ${item == 'Cirugias' ? 'bg-light-blue-300 p-1 hover:bg-light-blue-100' : ''}
-                      ${item == 'Venta' ? 'bg-orange-400 p-1 hover:bg-orange-200' : ''}
-                      ${item == 'Consulta' ? 'bg-red-400 p-1 hover:bg-red-200' : ''}
-                      ${item == 'Hospedaje' ? 'bg-green-400 p-1 hover:bg-green-200' : ''}
-                      ${item == 'Estetica' ? 'bg-teal-400 p-1 hover:bg-teal-200' : ''}
+                      ${item == 'Peluqueria' ? 'bg-light-blue-300 p-1 hover:bg-light-blue-100' : ''}
+                      ${item == 'Guarderia' ? 'bg-orange-400 p-1 hover:bg-orange-200' : ''}
+                      ${item == 'Cirugia' ? 'bg-red-400 p-1 hover:bg-red-200' : ''}
+                      ${item == 'Tienda' ? 'bg-green-400 p-1 hover:bg-green-200' : ''}
+                      ${item == 'Traslado' ? 'bg-teal-400 p-1 hover:bg-teal-200' : ''}
                       `}>
-                        {item == 'Cirugias' ? <img src={Cirugias} alt={item}/> : null}
-                        {item == 'Venta' ? <img src={Venta} alt={item}/> : null}
-                        {item == 'Consulta' ? <img src={Consulta} alt={item}/> : null}
-                        {item == 'Hospedaje' ? <img src={Hospedaje} alt={item}/> : null}
-                        {item == 'Estetica' ? <img src={Estetica} alt={item}/> : null}
+                        {item == 'Peluqueria' ? <img src={Peluqueria} alt={item}/> : null}
+                        {item == 'Guarderia' ? <img src={Guarderia} alt={item}/> : null}
+                        {item == 'Cirugia' ? <img src={Cirugia} alt={item}/> : null}
+                        {item == 'Tienda' ? <img src={Tienda} alt={item}/> : null}
+                        {item == 'Traslado' ? <img src={Traslado} alt={item}/> : null}
                       </span>
                     </Tooltip>
                   </div>
                 )) }
-                {/* <Tooltip content="Servicio a domicilio">
-                  <span className="cursor-pointer rounded-full border border-gray-900/5 bg-light-blue-300 p-1 text-gray-900 transition-colors hover:border-gray-900/10 hover:bg-light-blue-100 hover:!opacity-100 group-hover:opacity-70">
-                    <img src={Car} alt="car"/>
-                  </span>
-                </Tooltip> */}
-              {/* <div className="flex w-10">
-              <Tooltip content="Compras">
-                <span className="cursor-pointer rounded-full border border-gray-900/5 bg-orange-400 p-1 text-gray-900 transition-colors hover:border-gray-900/10 hover:bg-orange-200 hover:!opacity-100 group-hover:opacity-70">
-                  <img src={Bag} alt="car"/>
-                </span>
-              </Tooltip>
-              </div>
-              <div className="flex w-10">
-              <Tooltip content="Cirugias">
-                <span className="cursor-pointer rounded-full border border-gray-900/5 bg-red-400 p-1 text-gray-900 transition-colors hover:border-gray-900/10 hover:bg-red-200 hover:!opacity-100 group-hover:opacity-70">
-                  <img src={Emergency} alt="car"/>
-                </span>
-              </Tooltip>
-              </div>
-              <div className="flex w-10">
-              <Tooltip content="24Hs">
-                <span className="cursor-pointer rounded-full border border-gray-900/5 bg-green-400 p-1 text-gray-900 transition-colors hover:border-gray-900/10 hover:bg-green-200 hover:!opacity-100 group-hover:opacity-70">
-                  <img src={Local24} alt="car"/>
-                </span>
-              </Tooltip>
-              </div>
-              <div className="flex w-10">
-              <Tooltip content="Baño y Corte">
-                <span className="cursor-pointer rounded-full border border-gray-900/5 bg-teal-400 p-1 text-gray-900 transition-colors hover:border-gray-900/10 hover:bg-teal-100 hover:!opacity-100 group-hover:opacity-70">
-                  <img src={Shower} alt="car"/>
-                </span>
-              </Tooltip>
-              </div> */}
               
             </div>
           </CardBody>
