@@ -61,7 +61,7 @@ export default function LoginContextProvider({ children }: Props) {
       province: "",
       departament: "",
     },
-    id: 0,
+    id: '',
   });
 
   //   const URL = "https://backpetcheck2.onrender.com";

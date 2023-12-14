@@ -39,7 +39,7 @@ export default function HistoriaClinica() {
         province: "",
         departament: ""
     },
-    id: 0
+    id: ''
   })
 
   const login = useLoginState( )
