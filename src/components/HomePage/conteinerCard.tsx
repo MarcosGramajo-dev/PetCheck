@@ -60,7 +60,7 @@ export default function ContainerTarjet() {
     
 
     // console.log(`${login?.authContext.URL}/?servicio=${services}&page=${pages}`)
-
+    console.log(`${login?.authContext.URL}/?servicio=${services}&page=${pages}`)
     axios
       .get(`${login?.authContext.URL}/?servicio=${services}&page=${pages}`)
       .then((res) => {
@@ -142,24 +142,24 @@ export default function ContainerTarjet() {
       {/* <SearchVet/> */}
 
       <div className="flex flex-wrap justify-around mt-4 text-white">
-          <Button className="flex flex-wrap items-center justify-center mt-8 text-white bg-orange-400 mx-2">
+          <Button onClick={()=> setServices('Guarderia')} className="flex flex-wrap items-center justify-center mt-8 text-white bg-orange-400 mx-2">
                 <span> <img src={Local24} alt="car"/> </span>
               <span className="mx-2 hidden md:block" >Guardería</span>
           </Button>
-          <Button className="flex flex-wrap items-center justify-center mt-8 text-white bg-light-blue-300 mx-2">
+          <Button onChange={()=> setServices('Peluqueria')} className="flex flex-wrap items-center justify-center mt-8 text-white bg-light-blue-300 mx-2">
               
               <span> <img src={Shower} alt="car"/> </span>
               <span className="mx-2 hidden md:block" >Peluqueria</span>
           </Button>
-          <Button className="flex flex-wrap items-center justify-center mt-8 text-white bg-red-400 mx-2">
+          <Button onClick={()=> setServices('Cirugía')} className="flex flex-wrap items-center justify-center mt-8 text-white bg-red-400 mx-2">
               <span> <img src={Emergency} alt="car"/> </span>
               <span className="mx-2 hidden md:block" >Cirugía</span>
           </Button>
-          <Button className="flex flex-wrap items-center justify-center mt-8 text-white bg-green-400 mx-2">
+          <Button onClick={()=> setServices('Tienda')} className="flex flex-wrap items-center justify-center mt-8 text-white bg-green-400 mx-2">
               <span> <img src={Bag} alt="car"/> </span>
               <span className="mx-2 hidden md:block" >Tienda</span>
           </Button>
-          <Button className="flex flex-wrap items-center justify-center mt-8 text-white bg-teal-400 mx-2">
+          <Button onClick={()=> setServices('Traslado')} className="flex flex-wrap items-center justify-center mt-8 text-white bg-teal-400 mx-2">
               <span> <img src={Car} alt="car"/> </span>
               <span className="mx-2 hidden md:block" >Traslado</span>
           </Button>

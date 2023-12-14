@@ -42,13 +42,11 @@ export default function Register() {
     passwordComparation: "",
   });
   const options = [
-    { label: "Baño y corte", value: "Baño y corte" },
+    { label: "Peluqueria", value: "Peluqueria" },
     { label: "Guarderia", value: "Guarderia" },
-    { label: "Cirugias", value: "Cirugias" },
-    { label: "Venta", value: "Venta" },
-    { label: "Consulta", value: "Consulta" },
-    { label: "Hospedaje", value: "Hospedaje" },
-    { label: "Estetica", value: "Estetica" },
+    { label: "Cirugia", value: "Cirugia" },
+    { label: "Tienda", value: "Tienda" },
+    { label: "Traslado", value: "Traslado" },
   ];
   const [selected, setSelected] = useState([]);
   const [vet, setVet] = useState({
