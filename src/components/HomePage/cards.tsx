@@ -107,23 +107,23 @@ const Cards = (props: IProps) => {
           </CardBody>
           <CardFooter className="flex pt-3">
             { props.infoCard.redesSociales.facebook != '' ? 
-            <Button onClick={()=>  window.open(props.infoCard.redesSociales.facebook, '_blank') } size="lg" fullWidth={true} className="m-1 bg-[#6c74bb]">
-                <img src={FFacebook} alt="wp"/>
+            <Button onClick={()=>  window.open(props.infoCard.redesSociales.facebook, '_blank') } size="lg" fullWidth={true} className="flex justify-center items-center m-1 bg-[#6c74bb]">
+                <img src={FFacebook} alt="wp" className="max-w-[30px]"/>
             </Button> : null }
 
             { props.infoCard.redesSociales.instagram != '' ?  
-            <Button onClick={()=>  window.open(props.infoCard.redesSociales.instagram, '_blank') } size="lg" fullWidth={true} className="m-1 bg-gradient-to-b from-[#7722ba] to-[#db8e3f]">
-                <img src={Insta} alt="wp"/>
+            <Button onClick={()=>  window.open(props.infoCard.redesSociales.instagram, '_blank') } size="lg" fullWidth={true} className="flex justify-center items-center m-1 bg-gradient-to-b from-[#7722ba] to-[#db8e3f]">
+                <img src={Insta} alt="wp" className="max-w-[30px]" />
             </Button> : null }
             
             { props.infoCard.redesSociales.webpage != '' ?  
-            <Button onClick={()=>  window.open(props.infoCard.redesSociales.webpage, '_blank') } size="lg" fullWidth={true} className="m-1 bg-gray-200">
-                <img src={Laptop} alt="wp"/>
+            <Button onClick={()=>  window.open(props.infoCard.redesSociales.webpage, '_blank') } size="lg" fullWidth={true} className="flex justify-center items-center m-1 bg-gray-200">
+                <img src={Laptop} alt="wp" className="max-w-[30px]"/>
             </Button> : null }
 
             { props.infoCard.telCelular != '' ?  
-            <Button onClick={()=>  window.open(`https://wa.me/54${props.infoCard.telCelular}`, '_blank') } size="lg" fullWidth={true} className="m-1 bg-[#25D366]">
-                <img src={Whatsapp} alt="wp"/>
+            <Button onClick={()=>  window.open(`https://wa.me/54${props.infoCard.telCelular}`, '_blank') } size="lg" fullWidth={true} className="flex justify-center items-center m-1 bg-[#25D366]">
+                <img src={Whatsapp} alt="wp" className="max-w-[30px]"/>
             </Button> : null }
           </CardFooter>
         </Card>
