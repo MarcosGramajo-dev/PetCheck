@@ -40,7 +40,7 @@ export type History = {
         province: string,
         departament: string
     },
-    id: number
+    id: string
   }
 
 export type loginContext = {

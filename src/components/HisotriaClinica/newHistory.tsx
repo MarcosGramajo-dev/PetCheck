@@ -90,7 +90,7 @@ export default function NuevaHistoria() {
       province: "",
       departament: "",
     },
-    id: 0,
+    id: '',
   });
 
   const [dataPet, setDataPet] = useState<dataPet>({
@@ -131,7 +131,7 @@ export default function NuevaHistoria() {
       fecha: "",
     });
 
-  const [idLibreta, setIdLibreta] = useState(0);
+  const [idLibreta, setIdLibreta] = useState('');
 
   const [file, setFile] = useState<File>();
 
@@ -148,8 +148,10 @@ export default function NuevaHistoria() {
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+   
     if (e.target.name === "IDLibreta") {
-      setIdLibreta(parseInt(e.target.value));
+      console.log(e.target.value)
+      setIdLibreta(e.target.value);
     } else {
       setDataOwnerPet({ ...dataOwnerPet, [e.target.name]: e.target.value });
     }
@@ -362,7 +364,7 @@ export default function NuevaHistoria() {
                   <Input
                     id='idLibretaNewHC'
                     type='number'
-                    onChange={handleChangeOwner}
+                    onChange={handleChange}
                     required
                     name='IDLibreta'
                     label='ID de la Libreta'  
