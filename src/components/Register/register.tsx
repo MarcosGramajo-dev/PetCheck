@@ -113,7 +113,7 @@ export default function Register() {
       );
 
       if(response.request.status === 201){
-        console.log(response) 
+        // console.log(response) 
         setMessage("¡Cuenta creada!");
 
         setTimeout(() => {
@@ -130,7 +130,7 @@ export default function Register() {
       // console.log(user)
       // console.log(vet)
 
-      console.log("Solicitud exitosa:", response.data);
+      // console.log("Solicitud exitosa:", response.data);
     } catch (error) {
       console.error("Error en la solicitud:", error);
     }
@@ -149,7 +149,7 @@ export default function Register() {
       ...user,
       [e.target.name]: e.target.value,
     }));
-    console.log(user)
+    // console.log(user)
     setMessagePass("");
 
     if (e.target.name === "email") {
@@ -205,10 +205,10 @@ export default function Register() {
       copia.redesSociales.tiktok = e.target.value;
       setVet(copia);
     } else {
-      console.log({ ...vet });
+      // console.log({ ...vet });
       setVet({ ...vet, [e.target.name]: e.target.value });
     }
-    console.log(vet)
+    // console.log(vet)
   };
   //-----------------------------------------------------------------------------------------------------------------------------------------------------
   const selectChange = (e:any) => {

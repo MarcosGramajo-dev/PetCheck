@@ -7,8 +7,7 @@ import {
   dataOwnerPet,
   dataPet,
   History,
-  Registros,
-  Vacunas,
+  Registro
 } from "../Context/Type";
 import axios from "axios";
 import { useLoginState } from "../Context/Context";
@@ -34,6 +33,14 @@ interface Depart {
   };
 }
 
+interface Vacuna {
+  Certification: number;
+  DataVacuna: string;
+  Vacuna: string;
+  fecha: string;
+  nameAndMatricule: string;
+}
+
 // interface Data {
 //   [key: string]: {
 //     [key: string]: string;
@@ -46,6 +53,7 @@ export default function NuevaHistoria() {
   const [arrayDepart, setArrayDepart] = useState<Depart[]>([]);
   const [Message, setMessage] = useState("");
   const formRef = useRef<HTMLFormElement | null>(null);
+  const [date, setdate] = useState(new Date().toLocaleDateString())
 
   const [newHC, setNewHC] = useState<History>({
     Vacunas: [
@@ -59,8 +67,8 @@ export default function NuevaHistoria() {
     ],
     Registros: [
       {
-        Info: "",
-        Registro: "",
+        info: "",
+        registro: "",
         fecha: "",
       },
     ],
@@ -75,7 +83,7 @@ export default function NuevaHistoria() {
       detalles: "",
     },
     ownerPet: {
-      NombreDueño: "",
+      NombreDueno: "",
       DNI: 0,
       Telefono: 0,
       Direccion: "",
@@ -97,19 +105,17 @@ export default function NuevaHistoria() {
   });
 
   const [vacunaSelected, setVacunaSelected] = useState("");
-  const [dataVacunas, setDataVacunas] = useState<Vacunas>([
-    {
-      Certification: 0,
-      DataVacuna: "",
-      Vacuna: "",
-      fecha: "",
-      nameAndMatricule: "",
-    },
-  ]);
+  const [dataVacunas, setDataVacunas] = useState<Vacuna>({
+    Certification: 0,
+    DataVacuna: "",
+    Vacuna: "",
+    fecha: "",
+    nameAndMatricule: "",
+  });
   const [booleanVacunas, setBooleanVacunas] = useState(false);
 
   const [dataOwnerPet, setDataOwnerPet] = useState<dataOwnerPet>({
-    NombreDueño: "",
+    NombreDueno: "",
     DNI: 0,
     Telefono: 0,
     Direccion: "",
@@ -118,13 +124,12 @@ export default function NuevaHistoria() {
   });
 
   const [registerSelected, setRegisterSelected] = useState("");
-  const [dataRegister, setDataRegister] = useState<Registros>([
+  const [dataRegister, setDataRegister] = useState<Registro>(
     {
-      Info: "",
-      Registro: "",
+      info: "",
+      registro: "",
       fecha: "",
-    },
-  ]);
+    });
 
   const [idLibreta, setIdLibreta] = useState(0);
 
@@ -189,26 +194,41 @@ export default function NuevaHistoria() {
     setDataPet({ ...dataPet, [e.target.name]: e.target.value });
   };
 
+  const handleChangeOwner = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setDataOwnerPet({ ...dataOwnerPet, [e.target.name]: e.target.value });
+  };
+
+  const handleChangeTextArea = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setDataRegister({ ...dataRegister, [e.target.name]: e.target.value });
+  }
+
   const handleChangeVacunas = (e: any) => {
+    // console.log(e.target.value)
       setVacunaSelected(e);
+      setDataVacunas({ ...dataVacunas, 'Vacuna': e, 'fecha': date });
   };
 
   const handleChangeRegister = (e: any) => {
+    setdate(new Date().toLocaleString())
       setRegisterSelected(e);
+      setDataRegister({ ...dataRegister, 'registro': e, 'fecha': date });
+  };
+
+  const handleChangeVac = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setDataVacunas({ ...dataVacunas, [e.target.name]: e.target.value });
   };
 
   const submit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const newHC: History = {
-      Vacunas: dataVacunas,
-      Registros: dataRegister,
+      Vacunas: [dataVacunas],
+      Registros: [dataRegister],
       DataPet: dataPet,
       ownerPet: dataOwnerPet,
       id: idLibreta,
     };
 
-    // console.log(newHC)
 
     setNewHC(newHC);
     const formDataToSend = new FormData();
@@ -220,7 +240,10 @@ export default function NuevaHistoria() {
     if (newHC) {
       const datos = JSON.stringify(newHC);
       formDataToSend.append("HistoriaClinica", datos);
+      
+      console.log(newHC)
     }
+
 
     // =======================DESCOMENTAR==================
     axios
@@ -242,9 +265,12 @@ export default function NuevaHistoria() {
       return (
         <div className="flex flex-wrap justify-around gap-3 w-full">
           <div className="w-full">
+            <Input type="text" name="fecha" onChange={handleChangeVac} disabled value={`${date}`} />
+          </div>
+          <div className="w-full">
             <Input
               id='dataVacunasNewHC'
-              onChange={handleChangeVacunas}
+              onChange={handleChangeVac}
               name='DataVacuna'
               type='text'
               label='Detalle la Vacuna'
@@ -253,7 +279,7 @@ export default function NuevaHistoria() {
           <div className="w-full">
             <Input
               id='certificationNewHC'
-              onChange={handleChangeVacunas}
+              onChange={handleChangeVac}
               name='Certification'
               type='number'
               label='N° de Certificacion'
@@ -262,7 +288,7 @@ export default function NuevaHistoria() {
           <div className="w-full">  
             <Input
               id='nameAndMatriculeNewHC'
-              onChange={handleChangeVacunas}
+              onChange={handleChangeVac}
               name='nameAndMatricule'
               type='text'
               label='Nombre y Matricula del Doctor'   
@@ -278,11 +304,12 @@ export default function NuevaHistoria() {
   const toggleSelectedRegister = () => {
     if (registerSelected != "") {
       return (
-        <div className="flex flex-wrap justify-around w-full">
+        <div className="flex flex-wrap justify-around w-full gap-3">
+          <Input type="text" name="fecha" disabled value={`${date}`} />
           <Textarea label="Message"
             id='textAreaNewHC'
-            onChange={handleChangeRegister}
-            name=''
+            onChange={handleChangeTextArea}
+            name='info'
             cols={40}
             rows={10}
             />
@@ -330,12 +357,12 @@ export default function NuevaHistoria() {
           <div className="flex flex-wrap">
             <div className="w-full border-0 md:w-1/2 md:border-vet-purple md:border-r">
               <Typography variant="h6" className='m-3'>DATOS DEL PROPIETARIO</Typography>
-              <div className='flex flex-wrap justify-around  gap-3  w-full min-h-60'>
+              <div className='flex flex-wrap justify-around  gap-3  w-full min-h-72'>
                 <div className="w-full xl:w-auto mx-3">
                   <Input
                     id='idLibretaNewHC'
                     type='number'
-                    onChange={handleChange}
+                    onChange={handleChangeOwner}
                     required
                     name='IDLibreta'
                     label='ID de la Libreta'  
@@ -343,7 +370,7 @@ export default function NuevaHistoria() {
                 </div>
                 <div className="w-full xl:w-auto mx-3">
                   <Input
-                    onChange={handleChange}
+                    onChange={handleChangeOwner}
                     required
                     name='NombreDueno'
                     type='text'
@@ -353,7 +380,7 @@ export default function NuevaHistoria() {
                 </div>
                 <div className="w-full xl:w-auto mx-3">
                   <Input
-                    onChange={handleChange}
+                    onChange={handleChangeOwner}
                     required
                     name='DNI'
                     type='number'
@@ -363,7 +390,7 @@ export default function NuevaHistoria() {
                 </div>
                 <div className="w-full xl:w-auto mx-3">
                   <Input
-                    onChange={handleChange}
+                    onChange={handleChangeOwner}
                     name='Telefono'
                     type='number'
                     id='telefonoNewHC'
@@ -401,7 +428,7 @@ export default function NuevaHistoria() {
                 </div>
                 <div className="w-full xl:w-auto mx-3">
                   <Input
-                    onChange={handleChange}
+                    onChange={handleChangeOwner}
                     name='Direccion'
                     type='text'
                     id='direccionNewHC'
@@ -413,7 +440,7 @@ export default function NuevaHistoria() {
             </div>
             <div className="w-full border-0 md:w-1/2 md:border-vet-purple md:border-l">
               <Typography variant="h6" className="m-3">DATOS DE LA MASCOTA</Typography>
-              <div className='flex flex-wrap justify-around gap-3 w-full min-h-60'>
+              <div className='flex flex-wrap justify-around gap-3 w-full min-h-72'>
                 <div className="w-full xl:w-auto mx-3">
                   <Input
                     id='nombreMascotaNewHC'
@@ -488,30 +515,32 @@ export default function NuevaHistoria() {
 
             <div className='w-full border-0 md:w-1/2 md:border-vet-purple md:border-r'>
               <Typography variant="h6" className="m-3">VACUNAS</Typography>
-              <div className='flex flex-wrap justify-around gap-3 w-full min-h-60'>
+              <div className='flex flex-wrap justify-around gap-3 w-full min-h-72'>
                 <div className=' w-full mx-3 flex flex-wrap justify-around gap-3'>
                   <Select
                     id='vacunasNewHC'
                     onChange={handleChangeVacunas}
                     label="Selecciona el tipo de Vacuna"
+                    name="vacuna"
                     >
                     <Option value=''>Ninguno</Option>
                     <Option value='VacunaAntirrabica'>Vacuna Antirrabica</Option>
                     <Option value='QuintupleFelina'>Quintuple Felina</Option>
                   </Select>
-                  <div className="w-full gap-3 h-60">
+                  <div className="w-full gap-3 h-72">
                     {toggleSelectedVacuna()}
                   </div>
                 </div>
               </div>
             </div>
-            <div className='w-full border-0 md:w-1/2 md:border-vet-purple md:border-l '>
+          <div className='w-full border-0 md:w-1/2 md:border-vet-purple md:border-l '>
             <Typography variant="h6" className="m-3">REGISTRO</Typography>
-            <div className='flex flex-wrap justify-around gap-3 w-full min-h-60'>
+            <div className='flex flex-wrap justify-around gap-3 w-full min-h-72'>
               <div className=' w-full mx-3 flex flex-wrap justify-around gap-3'>
                 <Select
                   id='RegistroNewHC'
                   onChange={handleChangeRegister}
+                  name="registro"
                   label="Selecciona el tipo de Registro"
                   // className='m-1 my-2 max-sm:w-full w-[250px] font-semibold border-b-2 border-vet-purple-light'
                   >

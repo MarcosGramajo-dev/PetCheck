@@ -47,7 +47,7 @@ export default function Login() {
       axios
         .post(`${login?.authContext.URL}/auth/login`, user)
         .then((res) => {
-          console.log(res.headers);
+          // console.log(res.headers);
           //si existe debera cambiar el estado login e inicar sesion
           //si NO existe mostrara un mensaje de error
           if (res.status === 200) {

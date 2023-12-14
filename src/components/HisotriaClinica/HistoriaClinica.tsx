@@ -17,8 +17,8 @@ export default function HistoriaClinica() {
       nameAndMatricule: ""
     }],
     Registros: [{
-      Info: "",
-      Registro: "",
+      info: "",
+      registro: "",
       fecha: ""
     }],
     DataPet: {
@@ -32,7 +32,7 @@ export default function HistoriaClinica() {
         detalles: ""
     },
     ownerPet: {
-        NombreDueño: "",
+        NombreDueno: "",
         DNI: 0,
         Telefono: 0,
         Direccion: "",
@@ -53,12 +53,12 @@ export default function HistoriaClinica() {
   // console.log(searchParams.get('search'))
 
   useEffect(() => {
-    
+    console.log(HC?.Registros[0])
   }, []);
 
   function handleChange() {
     // Lógica para manejar los cambios en los campos de entrada
-    console.log(login?.authContext.HC)
+    // console.log(login?.authContext.HC)
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -74,7 +74,7 @@ export default function HistoriaClinica() {
           <div className="w-full max-sm:border-0 p-5 m-auto my-10 bg-white max-w-[900px] flex flex-wrap justify-between gap-3">
             <div>
               <Typography variant="h5" className="font-semibold text-vet-blue text-left">DATOS DEL DUEÑO</Typography>
-              <Typography variant="paragraph" className="m-1 font-semibold">Nombre: <span className="font-normal">{HC?.ownerPet.NombreDueño}</span> </Typography>
+              <Typography variant="paragraph" className="m-1 font-semibold">Nombre: <span className="font-normal">{HC?.ownerPet.NombreDueno}</span> </Typography>
               <Typography variant="paragraph" className="m-1 font-semibold">DNI: <span className="font-normal">{HC?.ownerPet.DNI}</span></Typography>
               <Typography variant="paragraph" className="m-1 font-semibold">Direccion: <span className="font-normal">{HC?.ownerPet.Direccion}</span></Typography>
               <Typography variant="paragraph" className="m-1 font-semibold">Telefono: <span className="font-normal">{HC?.ownerPet.Telefono}</span></Typography>
@@ -112,9 +112,9 @@ export default function HistoriaClinica() {
             <p className="m-1 font-semibold text-vet-blue">Historia Clinica</p>
               {HC?.Registros.map((element) =>(
                 <div>
-                  <p className="m-1 font-semibold"><span className="font-normal">{element.Registro}</span></p>
+                  <p className="m-1 font-semibold"><span className="font-normal">{element.registro}</span></p>
                   <p className="m-1 font-semibold"><span className="font-normal">{element.fecha}</span></p>
-                  <p className="m-1 font-semibold"><span className="font-normal">{element.Info}</span></p>
+                  <p className="m-1 font-semibold"><span className="font-normal">{element.info}</span></p>
                 </div>
               ))}
 

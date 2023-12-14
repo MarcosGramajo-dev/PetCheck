@@ -38,8 +38,8 @@ export default function LoginContextProvider({ children }: Props) {
     ],
     Registros: [
       {
-        Info: "",
-        Registro: "",
+        info: "",
+        registro: "",
         fecha: "",
       },
     ],
@@ -54,7 +54,7 @@ export default function LoginContextProvider({ children }: Props) {
       detalles: "",
     },
     ownerPet: {
-      NombreDueño: "",
+      NombreDueno: "",
       DNI: 0,
       Telefono: 0,
       Direccion: "",
@@ -96,14 +96,14 @@ export default function LoginContextProvider({ children }: Props) {
 
   function toggleLogin(bool: boolean) {
     setIsLogin(bool);
-    console.log(isLogin);
+    // console.log(isLogin);
   }
 
   const changeState = () => {
     setLogin(!login);
     setisOpen(!isOpen);
-    console.log(login);
-    console.log(user);
+    // console.log(login);
+    // console.log(user);
   };
 
   const addToken = (newToken: string) => {
@@ -111,6 +111,7 @@ export default function LoginContextProvider({ children }: Props) {
   };
 
   const addHC = (history: History) => {
+    console.log(history)
     setHC(history);
   };
 

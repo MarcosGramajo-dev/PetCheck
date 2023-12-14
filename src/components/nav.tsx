@@ -79,8 +79,8 @@ export default function Nav() {
     axios
       .post(`${login?.authContext.URL}/auth/login`, user)
       .then((res) => {
-        console.log(res.status);
-        console.log(res);
+        // console.log(res.status);
+        // console.log(res);
         //si existe debera cambiar el estado login e inicar sesion
         //si NO existe mostrara un mensaje de error
         if (res.status === 200) {

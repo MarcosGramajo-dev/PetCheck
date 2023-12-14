@@ -58,7 +58,7 @@ export default function ContainerTarjet() {
 
     
 
-    console.log(`${login?.authContext.URL}/?servicio=${services}&page=${pages}`)
+    // console.log(`${login?.authContext.URL}/?servicio=${services}&page=${pages}`)
 
     axios
       .get(`${login?.authContext.URL}/?servicio=${services}&page=${pages}`)
@@ -98,7 +98,7 @@ export default function ContainerTarjet() {
 
   useEffect(() => {
     if (cardsDBRef.current !== undefined) {
-      console.log("cardsDB actualizado:", cardsDBRef.current);
+      // console.log("cardsDB actualizado:", cardsDBRef.current);
     }
     paginationCreate()
   }, [cardsDBRef.current]);

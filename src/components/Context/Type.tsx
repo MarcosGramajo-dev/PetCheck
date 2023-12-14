@@ -20,18 +20,8 @@ export type UserVet = {
 }
 
 export type History = {
-    Vacunas: [{
-      Certification: number,
-      DataVacuna: string,
-      Vacuna: string,
-      fecha: string,
-      nameAndMatricule: string
-    }],
-    Registros: [{
-      Info: string,
-      Registro: string,
-      fecha: string
-    }],
+    Vacunas: Vacuna[],
+    Registros: Registro[],
     DataPet: {
         image: string,
         NombreMascota: string,
@@ -43,7 +33,7 @@ export type History = {
         detalles: string
     },
     ownerPet: {
-        NombreDueño: string,
+        NombreDueno: string,
         DNI: number,
         Telefono: number,
         Direccion: string,
@@ -76,7 +66,7 @@ export type loginContext = {
       }
 }
 export type dataOwnerPet = {
-    NombreDueño: string,
+    NombreDueno: string,
     DNI: number,
     Telefono: number,
     Direccion: string,
@@ -95,17 +85,17 @@ export type dataPet = {
     detalles: string;
 }
 
-export type Vacunas = [{
+export type Vacuna = {
     Certification: number,
     DataVacuna: string,
     Vacuna: string,
     fecha: string,
     nameAndMatricule: string
-  }]
+  }
 
-export type Registros = [{
-    Info: string,
-    Registro: string,
+export type Registro = {
+    info: string,
+    registro: string,
     fecha: string
-  }]
+  }
 // setUser: React.Dispatch<React.SetStateAction<UserVet>>

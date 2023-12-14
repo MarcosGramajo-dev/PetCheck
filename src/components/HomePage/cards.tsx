@@ -60,7 +60,7 @@ const Cards = (props: IProps) => {
     }
   }
 
-  console.log(props)
+  // console.log(props)
 
   return (
         <Card className="w-full max-w-[26rem] max-h-[600px] shadow-lg mt-6">
