@@ -5,6 +5,8 @@ import { useSearchParams } from 'react-router-dom';
 import { useLoginState } from '../Context/Context';
 import { History } from '../Context/Type';
 
+import axios from 'axios'
+
 
 export default function HistoriaClinica() {
   const [historiaClinica, setHistoriaClinica] = useState({});
@@ -43,7 +45,40 @@ export default function HistoriaClinica() {
   })
 
   const login = useLoginState( )
-  const HC = login?.authContext.HC
+  const [HC, setHC] = useState<any>()
+
+  
+  useEffect(()=>{
+    const url = new URL(window.location.href);
+  
+  // Obtener los parámetros de la URL
+    const params = new URLSearchParams(url.search);
+  
+    // Acceder a los valores de los parámetros
+    const typeParam = params.get('type');
+    const codParam = params.get('cod');
+
+    if(typeParam && codParam){
+      axios.get(`${login?.authContext.URL}/HistoryClinic/${typeParam}/${codParam}`)
+        .then( res => {
+          // login?.authContext.addHC(res.data)
+          setHC(res.data)
+          
+          // setStatus(true)
+          // navigate(`/historiaClinica?type=${stateSelect}%cod=${codParam}`)
+        })
+        .catch(error => {
+          console.log(error)
+          // setMensaje(error.response.data)
+          // setStatus(false)
+        })
+      } else{
+        // setMensaje("Tipo o código invalido");
+  
+      }
+      console.log(HC)
+  },[])
+
 
   function asignValue(){
 
@@ -98,7 +133,7 @@ export default function HistoriaClinica() {
             <div>
               <p className="font-semibold text-vet-blue text-2xl text-left">RESUMEN CLINICO</p>
               <p className="m-1 font-semibold text-vet-blue">Vacunacion</p>
-              {HC?.Vacunas.map((element) =>(
+              {HC?.Vacunas.map((element:any) =>(
                 <div>
                   <Typography className="m-1 font-semibold"><span className="font-normal">Vacuna: {element.Vacuna}</span></Typography>
                   <Typography className="m-1 font-semibold"><span className="font-normal">Descripcion: {element.DataVacuna}</span></Typography>
@@ -110,7 +145,7 @@ export default function HistoriaClinica() {
             </div>
             <div>
             <p className="m-1 font-semibold text-vet-blue">Historia Clinica</p>
-              {HC?.Registros.map((element) =>(
+              {HC?.Registros.map((element:any) =>(
                 <div>
                   <p className="m-1 font-semibold"><span className="font-normal">{element.registro}</span></p>
                   <p className="m-1 font-semibold"><span className="font-normal">{element.fecha}</span></p>
