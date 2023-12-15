@@ -6,9 +6,9 @@ export default function Footer(){
 
     return(
         <div className="w-full bg-[#818181] text-white py-5">
-            <div className="flex flex-wrap w-full justify-center items-start px-6 max-[1000px]:flex-col">
+            <div className="flex flex-wrap justify-center items-start px-6 w-full">
                 
-                <div className="w-4/12 max-[1000px]:w-full">
+                <div className=" w-full md:w-4/12">
                     <p>Alumnos:</p>
                     <ul>
                         <li>
@@ -26,14 +26,14 @@ export default function Footer(){
                         <a href="/"><img className="w-[30] h-[30] p-3" src={filetext} alt="file"/></a>
                     </div>
                 </div>
-                <div className="flex w-8/12 max-[1000px]:w-full max-[600px]:flex-col">
-                    <div className="w-6/12 max-[1000px]:w-full pl-8">
+                <div className="flex w-full flex-col md:w-8/12 md:flex-row">
+                    <div className="w-full md:pl-8 md:w-6/12">
                         <p>Materia:</p>
                         <p className="pl-5">Proyecto Final</p>
                         <p>Profesor:</p>
                         <p className="pl-5">Ing. Copas Elios</p>
                     </div>
-                    <div className="w-6/12 flex justify-end max-[1000px]:w-full max-[600px]:justify-center">
+                    <div className=" flex justify-center w-full py-2 md:justify-center">
                         <img className="w-[300px] h-[100px] min-w-[300px]" src={unsta} alt="unsta"/>
                     </div>
                 </div>
