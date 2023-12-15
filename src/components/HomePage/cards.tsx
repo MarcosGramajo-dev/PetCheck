@@ -87,14 +87,14 @@ const Cards = (props: IProps) => {
                   <div className="flex w-10">
                     <Tooltip content={item} key={item} >
                       <span className={`cursor-pointer rounded-full border border-gray-900/5 text-gray-900 transition-colors hover:border-gray-900/10 hover:!opacity-100 group-hover:opacity-70
-                      ${item == 'Peluqueria' ? 'bg-light-blue-300 p-1 hover:bg-light-blue-100' : ''}
                       ${item == 'Guarderia' ? 'bg-orange-400 p-1 hover:bg-orange-200' : ''}
+                      ${item == 'Peluqueria' ? 'bg-light-blue-300 p-1 hover:bg-light-blue-100' : ''}
                       ${item == 'Cirugia' ? 'bg-red-400 p-1 hover:bg-red-200' : ''}
                       ${item == 'Tienda' ? 'bg-green-400 p-1 hover:bg-green-200' : ''}
                       ${item == 'Traslado' ? 'bg-teal-400 p-1 hover:bg-teal-200' : ''}
                       `}>
-                        {item == 'Peluqueria' ? <img src={Peluqueria} alt={item}/> : null}
                         {item == 'Guarderia' ? <img src={Guarderia} alt={item}/> : null}
+                        {item == 'Peluqueria' ? <img src={Peluqueria} alt={item}/> : null}
                         {item == 'Cirugia' ? <img src={Cirugia} alt={item}/> : null}
                         {item == 'Tienda' ? <img src={Tienda} alt={item}/> : null}
                         {item == 'Traslado' ? <img src={Traslado} alt={item}/> : null}

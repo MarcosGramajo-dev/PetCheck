@@ -42,8 +42,8 @@ export default function Register() {
     passwordComparation: "",
   });
   const options = [
-    { label: "Peluqueria", value: "Peluqueria" },
     { label: "Guarderia", value: "Guarderia" },
+    { label: "Peluqueria", value: "Peluqueria" },
     { label: "Cirugia", value: "Cirugia" },
     { label: "Tienda", value: "Tienda" },
     { label: "Traslado", value: "Traslado" },
