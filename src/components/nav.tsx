@@ -7,7 +7,10 @@ import imgCat from "../images/backgroun-cat.png";
 import banner from "../images/bannerNav.png";
 
 import {
-  Button
+  Button,
+  Input,
+  Alert,
+  Typography
 } from "@material-tailwind/react"
 
 import { Link } from "react-router-dom";
@@ -162,39 +165,48 @@ export default function Nav() {
       return (
         <form className='flex flex-col justify-center items-center py-3 mt-16'>
           {/* <button className='text-white text-xl pb-2'>Iniciar Sesion</button> */}
-          <Button variant="outlined">Iniciar Sesion</Button>
+          {/* <Button variant="outlined">Iniciar Sesion</Button> */}
           <div className='relative w-60 object-cover my-2'>
-            <input
-              className='w-60 rounded-lg px-2'
+            <Input
+              className="bg-white"
               name='email'
               onChange={handleChange}
               type='email'
-              placeholder='Correo Electronico'
+              label='Correo Electronico'
             />
           </div>
           <div className='relative w-60 object-cover my-2'>
-            <input
-              className='w-60 rounded-lg px-2'
+            <Input
+            className="bg-white"
               name='password'
               onChange={handleChange}
               type='password'
-              placeholder='Password'
+              label='Contrasena'
             />
           </div>
-          {errorMessage ? <p className='text-red-500'>{errorMessage}</p> : ""}
-          <button
+          
+          <Button
             onClick={(e) => {
               e.preventDefault(), verifyUser();
             }}
-            className='mx-1 w-32 px-4 h-8 border bg-white border-vet-purple-dark text-vet-purple-dark rounded-lg hover:text-white hover:bg-vet-purple-dark hover:border-white text-sm'>
+            className="bg-white text-vet-purple-dark"
+            // className='mx-1 w-32 px-4 h-8 border bg-white border-vet-purple-dark text-vet-purple-dark rounded-lg hover:text-white hover:bg-vet-purple-dark hover:border-white text-sm'
+            >
             Iniciar Sesion
-          </button>
+          </Button>
           <Link
             onClick={() => changeState()}
             to='register'
-            className='text-white text-xs my-2'>
+            >
+              <Button  variant="text" className='text-white'>
+
             ¿No tiene Cuenta?. Registrate Aquí
+              </Button>
           </Link>
+          
+          {errorMessage ? <Alert  className=" py-2 rounded-none border-l-4 border-[#c92e3b] bg-[#c92e3b]/10 font-medium text-[#c92e3b]" >
+            <Typography variant="small">{errorMessage}</Typography>
+          </Alert> : null}
         </form>
       );
     }
