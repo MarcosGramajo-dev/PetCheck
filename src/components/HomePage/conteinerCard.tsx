@@ -57,10 +57,8 @@ export default function ContainerTarjet() {
   const loadData = (pages:number) => {
     setLoading(true);
 
-    
-
-    // console.log(`${login?.authContext.URL}/?servicio=${services}&page=${pages}`)
     console.log(`${login?.authContext.URL}/?servicio=${services}&page=${pages}`)
+
     axios
       .get(`${login?.authContext.URL}/?servicio=${services}&page=${pages}`)
       .then((res) => {
@@ -146,8 +144,7 @@ export default function ContainerTarjet() {
                 <span> <img src={Local24} alt="car"/> </span>
               <span className="mx-2 hidden md:block" >Guardería</span>
           </Button>
-          <Button onChange={()=> setServices('Peluqueria')} className="flex flex-wrap items-center justify-center mt-8 text-white bg-light-blue-300 mx-2">
-              
+          <Button onClick={()=> setServices('Peluqueria')} className="flex flex-wrap items-center justify-center mt-8 text-white bg-light-blue-300 mx-2">
               <span> <img src={Shower} alt="car"/> </span>
               <span className="mx-2 hidden md:block" >Peluqueria</span>
           </Button>
