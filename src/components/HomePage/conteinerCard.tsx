@@ -148,7 +148,7 @@ export default function ContainerTarjet() {
               <span> <img src={Shower} alt="car"/> </span>
               <span className="mx-2 hidden md:block" >Peluqueria</span>
           </Button>
-          <Button onClick={()=> setServices('Cirugía')} className="flex flex-wrap items-center justify-center mt-8 text-white bg-red-400 mx-2">
+          <Button onClick={()=> setServices('Cirugia')} className="flex flex-wrap items-center justify-center mt-8 text-white bg-red-400 mx-2">
               <span> <img src={Emergency} alt="car"/> </span>
               <span className="mx-2 hidden md:block" >Cirugía</span>
           </Button>
